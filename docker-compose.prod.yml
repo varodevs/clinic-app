@@ -64,7 +64,7 @@ services:
     container_name: composer
     volumes:
       - ./src:/var/www/html
-    working_dir: /var/www/html
+    working_dir: .
     depends_on:
       - php
     networks:
