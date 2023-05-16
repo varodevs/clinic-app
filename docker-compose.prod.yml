@@ -53,6 +53,7 @@ services:
   
   composer:
     image: composer:latest
+    dockerfile: Dockerfile
     container_name: composer
     volumes:
       - ./clinic:/var/www/html
