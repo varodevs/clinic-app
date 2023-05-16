@@ -22,9 +22,9 @@ services:
       - "3306:3306"
     environment:
       MYSQL_DATABASE: clinic
-      MYSQL_USER:
-      MYSQL_PASSWORD:
-      MYSQL_ROOT_PASSWORD:
+      MYSQL_USER: clinic
+      MYSQL_PASSWORD: cKLm7ruN2a49dskn
+      MYSQL_ROOT_PASSWORD: u6Ha1mVq32d8AB7zK
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     networks:
