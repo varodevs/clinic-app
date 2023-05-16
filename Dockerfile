@@ -26,7 +26,12 @@ COPY . /var/www/html
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Install application dependencies and generate the autoload files
-RUN composer install --no-dev
+
+RUN sudo curl -sS https://getcomposer.org/installer | sudo php
+RUN sudo mv composer.phar /usr/local/bin/composer
+RUN sudo ln -s /usr/local/bin/composer /usr/bin/composer
+
+RUN composer install
 
 # Generate the application key
 RUN php artisan key:generate
