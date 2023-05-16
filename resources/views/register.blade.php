@@ -1,0 +1,33 @@
+@extends('layout')
+
+@section('content')
+
+    <div class="col-12">
+        <div class="container-fluid d-flex flex-column justify-content-center _div-azul">
+            <h3 class="mx-3">Sign in</h3>
+        </div>
+        <div class="d-flex justify-content-center _content">
+            <div class="d-flex flex-column justify-content-center">
+                <h4></h4>
+                <p></p>
+                <div class="d-flex flex-column justify-content-center px-5 py-3 _div-login">
+                    <form class="d-flex flex-column justify-content-center _form" action="{{ route('register-done') }}" method="POST">
+                        @csrf
+                        <label class="_form-label" for="uname">Username</label>
+                        <input class="form-control" type="text" name="uname" id="uname">
+                        <label class="_form-label" for="email">Email</label>
+                        <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
+                        <label class="_form-label" for="password">Password</label>
+                        <input class="form-control _form-input" type="password" name="password" id="password">
+                        <label class="_form-label" for="pass_conf">Confirm Password</label>
+                        <input class="form-control _form-input" type="password" name="pass_conf" id="pass_conf">
+                        <button class="btn btn-light _submit" type="submit">Sign up</button>
+                        <input class="form-check-input" type="checkbox" name="check_terms" id="terms">
+                        <label class="form-check-label" for="terms">I Accept the terms and conditions</label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection
