@@ -13,26 +13,6 @@ RUN apk add --no-cache \
 # Install PHP extensions
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl gd zip
 
-# Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-# Set the working directory inside the container
-WORKDIR /var/www/html
-
-# Copy the application files to the container
-COPY . /var/www/html
-
-# Install application dependencies and generate the autoload files
-
-RUN sudo curl -sS https://getcomposer.org/installer | sudo php
-RUN sudo mv composer.phar /usr/local/bin/composer
-RUN sudo ln -s /usr/local/bin/composer /usr/bin/composer
-
-RUN composer install
-
-# Generate the application key
-RUN php artisan key:generate
-
 # Expose the container port
 EXPOSE 9000
 

@@ -52,9 +52,7 @@ services:
       - laravel
   
   composer:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: composer:latest
     container_name: composer
     volumes:
       - ./clinic:/var/www/html
