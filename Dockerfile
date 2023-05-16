@@ -13,6 +13,8 @@ RUN apk add --no-cache \
 # Install PHP extensions
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl gd zip
 
+COPY . var/www/html
+
 # Expose the container port
 EXPOSE 9000
 
