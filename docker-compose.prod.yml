@@ -10,13 +10,16 @@ services:
     ports:
       - 80:80
     volumes:
-      - .:/usr/local/apache2/htdocs/
+      - ./src:/var/www/html
     networks:
       - laravel
 
   mysql:
     image: mysql:8.0.33
     container_name: mysql
+    volumes:
+      - ./mysql:/var/lib/mysql
+    restart: unless-stopped
     tty: true
     ports:
       - "3306:3306"
@@ -32,12 +35,17 @@ services:
   
   phpmyadmin:
     image: phpmyadmin:latest
+    container_name: phpmyadmin
+    volumes:
+      - ./src:/var/www/html
     ports:
       - 9001:80
     environment:
       - PMA_ARBITRARY=1
     depends_on:
       - mysql
+    networks:
+      - laravel
 
   php:
     build:
@@ -45,7 +53,7 @@ services:
       dockerfile: Dockerfile
     container_name: php
     volumes:
-      - ./clinic:/var/www/html
+      - ./src:/var/www/html
     ports:
       - "9000:9000"
     networks:
@@ -55,7 +63,7 @@ services:
     image: composer:latest
     container_name: composer
     volumes:
-      - ./clinic:/var/www/html
+      - ./src:/var/www/html
     working_dir: /var/www/html
     depends_on:
       - php
@@ -66,9 +74,11 @@ services:
     image: node:12.18.0
     container_name: npm
     volumes:
-      - ./clinic:/var/www/html
+      - ./src:/var/www/html
     working_dir: /var/www/html
     entrypoint: ['npm']
+    networks:
+      - laravel
 
   artisan:
     build:
@@ -76,7 +86,7 @@ services:
       dockerfile: Dockerfile
     container_name: artisan
     volumes:
-      - ./clinic:/var/www/html
+      - ./src:/var/www/html
     depends_on:
       - mysql
     working_dir: /var/www/html
