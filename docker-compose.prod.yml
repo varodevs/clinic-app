@@ -63,7 +63,7 @@ services:
       - laravel
   
   npm:
-    image: node:9.6.5
+    image: node:12.18.0
     container_name: npm
     volumes:
       - ./clinic:/var/www/html
