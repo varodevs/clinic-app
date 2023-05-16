@@ -26,7 +26,7 @@ COPY . /var/www/html
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Install application dependencies and generate the autoload files
-RUN composer install --optimize-autoloader --no-dev
+RUN composer install --no-dev
 
 # Generate the application key
 RUN php artisan key:generate
