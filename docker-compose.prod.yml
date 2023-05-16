@@ -60,13 +60,15 @@ services:
       - laravel
   
   composer:
-    image: composer:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: composer
     volumes:
       - .:/var/www/html
-    working_dir: /var/www/html
     depends_on:
       - php
+    entrypoint: [ 'composer', '--ignore-platform-reqs' ]
     networks:
       - laravel
   
@@ -75,6 +77,10 @@ services:
     container_name: npm
     volumes:
       - .:/var/www/html
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+      - "5173:5173"
     working_dir: /var/www/html
     entrypoint: ['npm']
     networks:
