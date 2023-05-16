@@ -22,9 +22,6 @@ WORKDIR /var/www/html
 # Copy the application files to the container
 COPY . /var/www/html
 
-# Set permissions for the storage and bootstrap/cache directories
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-
 # Install application dependencies and generate the autoload files
 
 RUN sudo curl -sS https://getcomposer.org/installer | sudo php
