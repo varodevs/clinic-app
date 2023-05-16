@@ -22,6 +22,14 @@ WORKDIR /var/www/html
 # Copy the application files to the container
 COPY . /var/www/html
 
+# Install application dependencies and generate the autoload files
+
+RUN sudo curl -sS https://getcomposer.org/installer | sudo php
+RUN sudo mv composer.phar /usr/local/bin/composer
+RUN sudo ln -s /usr/local/bin/composer /usr/bin/composer
+
+RUN composer install
+
 # Generate the application key
 RUN php artisan key:generate
 
