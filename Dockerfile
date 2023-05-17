@@ -1,25 +1,22 @@
 # Use the official PHP 8.0 image as the base image
 FROM php:8.0-fpm-alpine
 
-RUN mkdir -p /var/www/html
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 
+RUN apt-get update && apt-get upgrade -y \
+    && apt-get install -y git libzip-dev unzip \
+    && docker-php-ext-install \
+        pdo_mysql zip \
+    && docker-php-ext-enable \
+        pdo_mysql zip
+
+RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
 
-COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+COPY composer.json composer.lock ./
 
-# Install system dependencies
-RUN apk add --no-cache \
-    curl \
-    libpng-dev \
-    libzip-dev \
-    oniguruma-dev \
-    zip \
-    unzip
-
-# Install PHP extensions
-RUN docker-php-ext-install pdo pdo_mysql
-
-COPY . var/www/html
+RUN composer install \
+    && bin/console make:migration
 
 # Set the entrypoint command to run the Laravel application using PHP-FPM
 CMD ["php-fpm"]
