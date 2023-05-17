@@ -19,7 +19,7 @@ RUN apk add --no-cache \
 # Install PHP extensions
 RUN docker-php-ext-install pdo pdo_mysql
 
-COPY . var/www/html
+COPY . .
 
 # Set the entrypoint command to run the Laravel application using PHP-FPM
 CMD ["php-fpm"]
