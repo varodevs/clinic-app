@@ -38,7 +38,7 @@ services:
       - laravel
   
   phpmyadmin:
-    image: phpmyadmin:latest-alpine
+    image: phpmyadmin:latest
     container_name: phpmyadmin
     volumes:
       - .:/var/www/html
