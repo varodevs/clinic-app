@@ -5,6 +5,16 @@ networks:
 
 services:
 
+  apache:
+    image: httpd:2.4
+    container_name: apache
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/var/www/html
+    networks:
+      - laravel
+
   mysql:
     image: mysql:8.0.33
     container_name: mysql
