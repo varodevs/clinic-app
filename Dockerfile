@@ -3,6 +3,9 @@ FROM php:8.0-fpm-alpine
 
 RUN mkdir -p /var/www/html
 
+COPY ./composer.json var/www/html
+COPY ./composer.lock var/www/html
+
 WORKDIR /var/www/html
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
