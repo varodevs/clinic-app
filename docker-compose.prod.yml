@@ -41,7 +41,7 @@ services:
     image: phpmyadmin:latest
     container_name: phpmyadmin
     volumes:
-      - .:/var/www/html
+      - .:/usr/local/apache2/htdocs/
     ports:
       - 9001:80
     environment:
@@ -57,7 +57,7 @@ services:
       dockerfile: Dockerfile
     container_name: php
     volumes:
-      - .:/var/www/html
+      - .:/usr/local/apache2/htdocs/
     ports:
       - "9000:9000"
     networks:
@@ -69,7 +69,7 @@ services:
       dockerfile: Dockerfile
     container_name: composer
     volumes:
-      - .:/var/www/html
+      - .:/usr/local/apache2/htdocs/
     depends_on:
       - php
     networks:
@@ -79,12 +79,12 @@ services:
     image: node:12.18.0-alpine
     container_name: npm
     volumes:
-      - .:/var/www/html
+      - .:/usr/local/apache2/htdocs/
     ports:
       - "3000:3000"
       - "3001:3001"
       - "5173:5173"
-    working_dir: /var/www/html
+    working_dir: /usr/local/apache2/htdocs/
     entrypoint: ['npm']
     networks:
       - laravel
@@ -95,10 +95,10 @@ services:
       dockerfile: Dockerfile
     container_name: artisan
     volumes:
-      - .:/var/www/html
+      - .:/usr/local/apache2/htdocs/
     depends_on:
       - mysql
-    working_dir: /var/www/html
-    entrypoint: ['php', '/var/www/html/artisan']
+    working_dir: /usr/local/apache2/htdocs/
+    entrypoint: ['php', '/usr/local/apache2/htdocs/artisan']
     networks:
       - laravel
