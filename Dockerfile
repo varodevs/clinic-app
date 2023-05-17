@@ -1,11 +1,12 @@
 # Use the official PHP 8.0 image as the base image
 FROM php:8.0-fpm-alpine
 
-RUN mkdir -p /usr/local/apache2/htdocs/
+RUN mkdir -p /var/www/html
 
-WORKDIR /usr/local/apache2/htdocs/
+WORKDIR /var/www/html
 
-COPY composer.json composer.lock ./
+COPY ./composer.json ./composer.json
+COPY ./composer.lock ./composer.lock
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
