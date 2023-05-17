@@ -3,12 +3,7 @@ FROM php:8.0-fpm-alpine
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-RUN apt-get update && apt-get upgrade -y \
-    && apt-get install -y git libzip-dev unzip \
-    && docker-php-ext-install \
-        pdo_mysql zip \
-    && docker-php-ext-enable \
-        pdo_mysql zip
+RUN docker-php-ext-install pdo pdo_mysql
 
 RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
