@@ -19,7 +19,7 @@ services:
       - laravel
   
   mysql:
-    image: mysql:8.0.33-alpine
+    image: mysql:8.0.33
     container_name: mysql
     volumes:
       - ./mysql:/var/lib/mysql
