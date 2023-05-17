@@ -6,7 +6,7 @@ networks:
 services:
 
   apache:
-    image: httpd:2.4
+    image: latest
     container_name: apache
     ports:
       - 80:80
