@@ -10,8 +10,7 @@ WORKDIR /var/www/html
 
 COPY composer.json composer.lock ./
 
-RUN composer install \
-    && bin/console make:migration
+RUN composer install
 
 # Set the entrypoint command to run the Laravel application using PHP-FPM
 CMD ["php-fpm"]
