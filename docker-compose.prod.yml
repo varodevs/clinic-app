@@ -25,6 +25,7 @@ services:
       dockerfile: Dockerfile
       args:
         - APP_ENV=${APP_ENV}
+    container_name: php
     environment:
       - APP_ENV=${APP_ENV}
       - CONTAINER_ROLE=app  
