@@ -11,9 +11,6 @@ RUN pecl install -o -f redis \
 
 WORKDIR /var/www/html
 
-
-RUN mkdir -p /var/www/html
-
 COPY . .
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
