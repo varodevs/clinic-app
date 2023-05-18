@@ -1,6 +1,6 @@
 #!/bin/bash
 
-composer install --no-progress --no-interaction
+docker-compose run --rm composer install --no-progress --no-interaction
 
 if [ ! -f ".env" ]; then
     echo "Creating env file for env $APP_ENV"
