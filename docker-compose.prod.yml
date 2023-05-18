@@ -4,7 +4,7 @@ networks:
   laravel:
 
 services:
-
+  # Apache Service
   apache:
     image: httpd:2.4-alpine
     container_name: apache
@@ -17,16 +17,39 @@ services:
       - mysql
     networks:
       - laravel
-  
+
+  #PHP Service
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: php
+      args:
+        - APP_ENV=${APP_ENV}
+    environment:
+      - APP_ENV=${APP_ENV}
+      - CONTAINER_ROLE=app  
+    container_name: php
+    volumes:
+      - .:/var/www/html
+    ports:
+      - 9000:9000    
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - laravel
+
+  # MYSQL Service
   mysql:
-    image: mysql:8.0.33
+    image: mysql:8.0
     container_name: mysql
     volumes:
       - ./mysql:/var/lib/mysql
     restart: unless-stopped
     tty: true
     ports:
-      - "3306:3306"
+      - 3306:3306
     environment:
       MYSQL_DATABASE: clinic
       MYSQL_USER: clinic
@@ -37,6 +60,14 @@ services:
     networks:
       - laravel
   
+  # Redis Service
+  redis:
+    image: redis:alpine
+    command: redis-server --appendonly yes --requirepass "${REDIS_PASSWORD}"
+    ports:
+      - 6379:6379
+  
+  # PhpMyAdmin Service
   phpmyadmin:
     image: phpmyadmin:latest
     container_name: phpmyadmin
@@ -48,18 +79,6 @@ services:
       - PMA_ARBITRARY=1
     depends_on:
       - mysql
-    networks:
-      - laravel
-
-  php:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: php
-    volumes:
-      - .:/var/www/html
-    ports:
-      - "9000:9000"
     networks:
       - laravel
   
@@ -81,9 +100,9 @@ services:
     volumes:
       - .:/var/www/html
     ports:
-      - "3000:3000"
-      - "3001:3001"
-      - "5173:5173"
+      - 3000:3000
+      - 3001:3001
+      - 5173:5173
     working_dir: /var/www/html
     entrypoint: ['npm']
     networks:
@@ -102,3 +121,6 @@ services:
     entrypoint: ['php', '/var/www/htmlartisan']
     networks:
       - laravel
+
+volumes:
+  - data: ~
