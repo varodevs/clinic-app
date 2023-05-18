@@ -17,5 +17,4 @@ php artisan route:clear
 
 php artisan serve --port=$PORT --host=0.0.0.0
 
-php artisan migrate
 exec docker-php-entrypoint "$@"
