@@ -73,18 +73,6 @@ services:
     networks:
       - laravel
   
-  composer:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: composer
-    volumes:
-      - .:/var/www/html
-    depends_on:
-      - php
-    networks:
-      - laravel
-  
   npm:
     image: node:12.18.0-alpine
     container_name: npm
