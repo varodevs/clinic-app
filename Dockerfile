@@ -7,7 +7,8 @@ RUN docker-php-ext-install pdo pdo_mysql bcmath
 
 RUN pecl install -o -f redis \
     && rm -rf /tmp/pear \
-    && docker-php-ext-enable redis
+    && docker-php-ext-enable redis \
+    && chmod +x Docker/entrypoint.sh
 
 WORKDIR /var/www/html
 
@@ -15,6 +16,6 @@ COPY . .
 
 COPY --from=composer:2.3.5 /usr/bin/composer /usr/local/bin/composer
 
-RUN chmod +x Docker/entrypoint.sh
+
 ENV PORT=443
 ENTRYPOINT [ "Docker/entrypoint.sh" ]
