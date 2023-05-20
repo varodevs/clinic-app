@@ -7,8 +7,9 @@ RUN docker-php-ext-install pdo pdo_mysql bcmath
 
 RUN pecl install -o -f redis \
     && rm -rf /tmp/pear \
-    && docker-php-ext-enable redis \
-    && chmod +x Docker/entrypoint.sh
+    && docker-php-ext-enable redis
+    
+RUN chmod +x Docker/entrypoint.sh
 
 WORKDIR /var/www/html
 
