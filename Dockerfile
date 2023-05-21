@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY /nginx/default.conf /etc/nginx/conf.d/default.conf
+
 COPY . /var/www/html
 
 WORKDIR /var/www/html
