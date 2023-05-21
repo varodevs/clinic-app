@@ -1,24 +1,25 @@
-# Use the official PHP 8.0 image as the base image
-FROM php:8.1 as php
+FROM php:7.4-fpm
 
-RUN apt-get update -y
-RUN apt-get install -y unzip libpq-dev libcurl4-openssl-dev
-RUN docker-php-ext-install pdo pdo_mysql bcmath
+RUN apt-get update && apt-get install -y \
+    nginx \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
-RUN pecl install -o -f redis \
-    && rm -rf /tmp/pear \
-    && docker-php-ext-enable redis
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN npm install
+COPY default.conf /etc/nginx/conf.d/default.conf
+COPY . /var/www/html
 
 WORKDIR /var/www/html
 
-COPY . .
+RUN composer install
+RUN php artisan key:generate
+RUN php artisan migrate
 
-COPY --from=composer:2.3.5 /usr/bin/composer /usr/local/bin/composer
+CMD ["php-fpm"]
 
-
-
-ENV PORT=443
-RUN chmod +x Docker/entrypoint.sh
-ENTRYPOINT [ "Docker/entrypoint.sh" ]
+EXPOSE 9000
