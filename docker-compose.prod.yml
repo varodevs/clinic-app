@@ -1,5 +1,8 @@
 version: '3'
 
+networks:
+  laravel:
+
 services:
 
   web:
@@ -12,15 +15,22 @@ services:
       - .:/var/www/html
     depends_on:
       - db
+    networks:
+      - laravel
 
   db:
     image: mysql:5.7
     environment:
-      MYSQL_DATABASE: your_database_name
-      MYSQL_USER: your_mysql_user
-      MYSQL_PASSWORD: your_mysql_password
-      MYSQL_ROOT_PASSWORD: your_mysql_root_password
+      MYSQL_DATABASE: clinic
+      MYSQL_USER: clinic
+      MYSQL_PASSWORD: cKLm7ruN2a49dskn
+      MYSQL_ROOT_PASSWORD: u6Ha1mVq32d8AB7zK
+    tty: true
+    ports:
+      - 3306:3306  
     volumes:
       - ./mysql-data:/var/lib/mysql
+    networks:
+      - laravel
 volumes:
   db-data: ~
