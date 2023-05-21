@@ -47,7 +47,7 @@ services:
     volumes:
       - ./clinic:/var/www/html
     ports:
-      - "9000:9000"
+      - "8000:8000"
     networks:
       - laravel
   
