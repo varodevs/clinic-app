@@ -1,85 +1,25 @@
 version: '3'
 
-networks:
-  laravel:
-
 services:
-
-  apache:
-    image: httpd:2.4
-    ports:
-      - 8080:80
-    volumes:
-      - .:/usr/local/apache2/htdocs/
-    networks:
-      - laravel
-
-  mysql:
-    image: mysql:8.0.33
-    container_name: mysql
-    tty: true
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_DATABASE: clinic
-      MYSQL_USER:
-      MYSQL_PASSWORD:
-      MYSQL_ROOT_PASSWORD:
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
-    networks:
-      - laravel
-  
-  phpmyadmin:
-    image: phpmyadmin:latest
-    ports:
-      - 9001:80
-    environment:
-      - PMA_ARBITRARY=1
-    depends_on:
-      - mysql
-
-  php:
+  app:
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: php
+      dockerfile: Dockerfile2
+    image: Laravel-clinic
+    container_name: app
+    restart: unless-stopped
     volumes:
-      - ./clinic:/var/www/html
-    ports:
-      - "8000:8000"
-    networks:
-      - laravel
-  
-  composer:
-    image: composer:latest
-    container_name: composer
-    volumes:
-      - ./clinic:/var/www/html
-    working_dir: /var/www/html
-    depends_on:
-      - php
-    networks:
-      - laravel
-  
-  npm:
-    image: node:9.6.5
-    container_name: npm
-    volumes:
-      - ./clinic:/var/www/html
-    working_dir: /var/www/html
-    entrypoint: ['npm']
-
-  artisan:
-    build:
+      - ./ : /var/www
+      - ./config/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+  webserver:
+    build: 
       context: .
-      dockerfile: Dockerfile
-    container_name: artisan
+      dockerfile: Dockerfile_Nginx
+    image: Laravel-clinic
+    container_name: webserver
+    restart: unless-stopped
+    ports:
+      - "8080:80"
     volumes:
-      - ./clinic:/var/www/html
-    depends_on:
-      - mysql
-    working_dir: /var/www/html
-    entrypoint: ['php', '/var/www/html/artisan']
-    networks:
-      - laravel
+      - ./:/var/www
+      - ./config/nginx/conf.d/:/etc/nginx/conf.d/
