@@ -5,6 +5,41 @@ networks:
 
 services:
 
+  # NGINX Service
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - 80:80
+    volumes:
+      - .:/var/www/html
+      - .nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - laravel
+
+    # MYSQL Service
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    volumes:
+      - ./mysql:/var/lib/mysql
+    restart: unless-stopped
+    tty: true
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: clinic
+      MYSQL_USER: clinic
+      MYSQL_PASSWORD: cKLm7ruN2a49dskn
+      MYSQL_ROOT_PASSWORD: u6Ha1mVq32d8AB7zK
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - laravel
+
   # PHP Service
   php:
     build:
@@ -26,41 +61,6 @@ services:
     networks:
       - laravel
 
-  # MYSQL Service
-  mysql:
-    image: mysql:8.0
-    container_name: mysql
-    volumes:
-      - ./mysql:/var/lib/mysql
-    restart: unless-stopped
-    tty: true
-    ports:
-      - 3306:3306
-    environment:
-      MYSQL_DATABASE: clinic
-      MYSQL_USER: clinic
-      MYSQL_PASSWORD: cKLm7ruN2a49dskn
-      MYSQL_ROOT_PASSWORD: u6Ha1mVq32d8AB7zK
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
-    networks:
-      - laravel
-
-  # NGINX Service
-  nginx:
-    image: nginx:latest
-    container_name: nginx
-    ports:
-      - 80:80
-    volumes:
-      - .:/var/www/html
-      - .nginx/default.conf:/etc/nginx/conf.d/default.conf
-    depends_on:
-      - php
-      - mysql
-    networks:
-      - laravel
-  
   # PhpMyAdmin Service
   phpmyadmin:
     image: phpmyadmin:latest
