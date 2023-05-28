@@ -23,9 +23,9 @@ class RegisterController extends Controller
     public function Register_done(Request $request)
     {
         $this->validate(request(),[
-            $request->uname,$request->email,$request->password,$request->password_conf,$request->check_terms
+            $request->uname,$request->email,$request->password,$request->pass_conf,$request->check_terms
             ]);
-            if($request->password.equalTo($request->password_conf)){
+            if($request->password.equalTo($request->password_conf) && $request->check_terms != null){
                 $cod_verify = 'ABCD';
                 $role = 6;
                 $hash_pssw = Hash::make($request->password);
@@ -33,6 +33,8 @@ class RegisterController extends Controller
                 $response = Mail::to('alvarobarbafer@gmail.com')->send(new Email($request->uname,$cod_verify));
                 $result=$user->createUser($request->uname, $request->email, $request->hash_pssw, $cod_verify, $role, now());
                 return redirect('verify');
+            }else{
+                return redirect('register');
             }      
   
     }
