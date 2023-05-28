@@ -36,13 +36,13 @@ class LoginController extends Controller
             if($email == $user_by_id->email && $password == $user_by_id->password){
 
                 switch($user_by_id->role_cod_role){
-                    case 1:
+                    case 4:
                         return redirect('/')->with('status', 'Login successful');
                         break;
-                    case 2:
+                    case 5:
                         return redirect('/')->with('status', 'Login successful');
                         break;
-                    case 3:
+                    case 6:
                         return redirect('/')->with('status', 'Login successful');
                         break;
                     default:
