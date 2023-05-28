@@ -14,6 +14,6 @@ class TreatmentController extends Controller
      */
     public function Treatment_view()
     {
-        return view('treatment');
+        return view('treatments');
     }
 }
