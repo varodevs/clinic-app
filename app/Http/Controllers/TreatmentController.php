@@ -16,4 +16,12 @@ class TreatmentController extends Controller
     {
         return view('treatments');
     }
+
+    /**
+     * Returns to More page.
+     */
+    public function More_view()
+    {
+        return view('moreservices');
+    }
 }

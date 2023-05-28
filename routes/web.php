@@ -46,6 +46,7 @@ Route::get('contact', [ContactController::class, 'Contact_view'])->name('contact
 
 //Routes treatments
 Route::get('treatments', [TreatmentController::class, 'Treatment_view'])->name('treatment');
+Route::get('more-treatments', [TreatmentController::class, 'More_view'])->name('more');
 
 //Request route
 Route::get('request-sent', [RequestController::class, 'Request_view'])->name('request');

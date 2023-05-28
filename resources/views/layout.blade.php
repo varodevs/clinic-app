@@ -58,10 +58,10 @@
                   <a class="nav-link" href="{{ route('treatment') }}">Treatments</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">More Services</a>
+                  <a class="nav-link" href="{{ route('more') }}">More Services</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About us</a>
+                  <a class="nav-link" href="{{ route('about') }}">About us</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('contact') }}">Contact us</a>
