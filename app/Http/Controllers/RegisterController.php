@@ -27,10 +27,11 @@ class RegisterController extends Controller
             ]);
             if($request->password.equalTo($request->password_conf)){
                 $cod_verify = 'ABCD';
+                $role = 6;
                 $hash_pssw = Hash::make($request->password);
                 $user = new User();
                 $response = Mail::to('alvarobarbafer@gmail.com')->send(new Email($request->uname,$cod_verify));
-                $result=$user->createUser($request->uname, $request->email, $request->hash_pssw, $cod_verify, now());
+                $result=$user->createUser($request->uname, $request->email, $request->hash_pssw, $cod_verify, $role, now());
                 return redirect('verify');
             }      
   

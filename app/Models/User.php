@@ -52,6 +52,7 @@ class User extends Model
 		'cod_verify',
 		'active',
 		'reg_date',
+		'role_cod_role',
 		'img_path'
 	];
 
@@ -68,8 +69,8 @@ class User extends Model
 	 * 
 	 * @return $result Devuelve un bool
 	 */
-	public function createUser($username, $email, $password, $cod_verify, $reg_date){
-		$result = DB::table('user')->insert(array('username'=> $username, 'email'=>$email, 'password'=>$password, 'cod_verify'=>$cod_verify, 'active'=>1, '$reg_date'=>$reg_date));
+	public function createUser($username, $email, $password, $cod_verify, $role, $reg_date){
+		$result = DB::table('user')->insert(array('username'=> $username, 'email'=>$email, 'password'=>$password, 'cod_verify'=>$cod_verify, 'active'=>1, 'reg_date'=>$reg_date, 'role'=>$role));
 		return $result;
 	}
 
