@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -47,6 +48,9 @@ Route::get('contact', [ContactController::class, 'Contact_view'])->name('contact
 //Routes treatments
 Route::get('treatments', [TreatmentController::class, 'Treatment_view'])->name('treatment');
 Route::get('more-treatments', [TreatmentController::class, 'More_view'])->name('more');
+
+//Routes about
+Route::get('about-us', [AboutController::class, 'About_view'])->name('about');
 
 //Request route
 Route::get('request-sent', [RequestController::class, 'Request_view'])->name('request');
