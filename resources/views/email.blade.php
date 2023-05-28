@@ -10,8 +10,8 @@
     <title>Clinic</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <h1>Saludos, {{ name }}</h1>
-    <p>Your verification code is: {{ code }}</p>
+    <h1>Saludos, {{ $name }}</h1>
+    <p>Your verification code is: {{ $code }}</p>
 
 </body>
 </html>

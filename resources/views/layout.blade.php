@@ -55,7 +55,7 @@
                   <a class="nav-link" href="#">Our Team</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Treatments</a>
+                  <a class="nav-link" href="{{ route('treatment') }}">Treatments</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">More Services</a>

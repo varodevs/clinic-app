@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RequestController;
+use App\Http\Controllers\TreatmentController;
 use App\Mail\Email;
 use App\Models\Role;
 use Illuminate\Auth\Events\Login;
@@ -42,6 +43,9 @@ Route::post('verify-form', [RegisterController::class, 'Verify'])->name('verify'
 
 //Routes contact
 Route::get('contact', [ContactController::class, 'Contact_view'])->name('contact');
+
+//Routes treatments
+Route::get('treatments', [TreatmentController::class, 'Treatment_view'])->name('treatment');
 
 //Request route
 Route::get('request-sent', [RequestController::class, 'Request_view'])->name('request');

@@ -22,15 +22,17 @@ class RegisterController extends Controller
      */
     public function Register_done(Request $request)
     {
+        echo "entra";
         $this->validate(request(),[
             $request->uname,$request->email,$request->password,$request->pass_conf,$request->check_terms
             ]);
-            if($request->password == $request->password_conf && $request->check_terms != null){
+            if($request->password == $request->pass_conf && $request->check_terms != null){
                 $cod_verify = 'ABCD';
-                $role = 6;
+                $name = $request->uname;
+                $role = 3;
                 $hash_pssw = Hash::make($request->password);
                 $user = new User();
-                $response = Mail::to('alvarobarbafer@gmail.com')->send(new Email($request->uname,$cod_verify));
+                $response = Mail::to($request->email)->send(new Email($name,$cod_verify));
                 $result=$user->createUser($request->uname, $request->email, $request->hash_pssw, $cod_verify, $role, now());
                 return redirect('verify');
             }else{
