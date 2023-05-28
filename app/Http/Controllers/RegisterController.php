@@ -25,7 +25,7 @@ class RegisterController extends Controller
         $this->validate(request(),[
             $request->uname,$request->email,$request->password,$request->pass_conf,$request->check_terms
             ]);
-            if($request->password.equalTo($request->password_conf) && $request->check_terms != null){
+            if($request->password == $request->password_conf && $request->check_terms != null){
                 $cod_verify = 'ABCD';
                 $role = 6;
                 $hash_pssw = Hash::make($request->password);
