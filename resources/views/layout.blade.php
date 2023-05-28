@@ -52,7 +52,7 @@
                   <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Our Team</a>
+                  <a class="nav-link" href="{{ route('team') }}">Our Team</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('treatment') }}">Treatments</a>

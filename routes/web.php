@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RequestController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TreatmentController;
 use App\Mail\Email;
 use App\Models\Role;
@@ -51,6 +52,9 @@ Route::get('more-treatments', [TreatmentController::class, 'More_view'])->name('
 
 //Routes about
 Route::get('about-us', [AboutController::class, 'About_view'])->name('about');
+
+//Routes team
+Route::get('team', [TeamController::class, 'Team_view'])->name('team');
 
 //Request route
 Route::get('request-sent', [RequestController::class, 'Request_view'])->name('request');
