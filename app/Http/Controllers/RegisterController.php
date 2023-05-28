@@ -49,6 +49,8 @@ class RegisterController extends Controller
                 $active = 0;
                 $result=$user->updateUser($user_id, $user_by_id->username, $user_by_id->email, $user_by_id->password, $user_by_id->cod_verify, $active, $user_by_id->img_path);
                 return redirect('home');
+            }else{
+                return redirect('verify');
             }
             
             
