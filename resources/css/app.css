@@ -6,6 +6,8 @@
   border-radius: 5px;
   padding: 1rem;
   z-index: 1; }
+  ._menu .img {
+    width: 100px; }
 
 ._bg-img {
   height: 65vh;
@@ -98,9 +100,6 @@
 
 ._footer {
   background-color: #8e8b82; }
-
-._logo-img {
-  height: 20vh; }
 
 #NavsDiv {
   height: 65vh;
