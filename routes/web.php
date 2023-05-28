@@ -45,3 +45,13 @@ Route::get('contact', [ContactController::class, 'Contact_view'])->name('contact
 
 //Request route
 Route::get('request-sent', [RequestController::class, 'Request_view'])->name('request');
+
+//db test
+//Route::get('/dbtest', function () {
+//   try {
+//        DB::connection()->getPdo();
+//        return "Connected to the database. Data can be stored.";
+//    } catch (\Exception $e) {
+//        return "Unable to connect to the database.";
+//    }
+//});
