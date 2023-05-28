@@ -45,7 +45,7 @@
             </div>
           </nav>
           <div class="align-self-center w-50 m-1 _menu">
-            <h1>ActiveLife</h1>
+            <h1><img class="_logo-img" src="{{ asset('img/logo.png') }}" alt="Logo img"> ActiveLife</h1>
             <ul class="nav">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
