@@ -5,14 +5,9 @@
 
     RewriteEngine On
 
-    #Redirect http to https
-    RewriteCond %{HTTP_HOST} ^ec2-18-213-223-134.compute-1.amazonaws.com [NC]
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-
     # Handle Authorization Header
-    #RewriteCond %{HTTP:Authorization} .
-    #RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
