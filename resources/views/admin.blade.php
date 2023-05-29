@@ -45,7 +45,7 @@
                                 echo "</td>";
                             }
                         }else {
-                            echo "<td> -- No Data -- </td>"
+                            echo "<td> -- No Data -- </td>";
                         }
                         @endphp
                     </tbody>
