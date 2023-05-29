@@ -39,9 +39,9 @@
                         use App\Models\Patient;
 
                             foreach ($item as $appointment) {
-                                echo "<td>"
-                                echo $item->'cod_appoint'
-                                echo "</td>"
+                                echo "<td>";
+                                echo $item->'cod_appoint';
+                                echo "</td>";
                             }
                         @endphp
                     </tbody>
