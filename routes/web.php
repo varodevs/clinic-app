@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -58,6 +59,9 @@ Route::get('team', [TeamController::class, 'Team_view'])->name('team');
 
 //Request route
 Route::get('request-sent', [RequestController::class, 'Request_view'])->name('request');
+
+//Request Admin
+Route::get('admin', [AdminController::class, 'Admin_view'])->name('admin');
 
 //db test
 //Route::get('/dbtest', function () {
