@@ -37,7 +37,7 @@
                         use App\Models\Employee;
                         use App\Models\Appointment;
                         use App\Models\Patient;
-                            if(is_array($appointment)  != null){
+                            if(is_array($array)  != null){
                             foreach ($array as $item) {
 
                                 echo "<td>";
