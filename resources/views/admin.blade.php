@@ -37,8 +37,8 @@
                         use App\Models\Employee;
                         use App\Models\Appointment;
                         use App\Models\Patient;
-                        $appointment = new Appointment();
-                            foreach ($item as {{ $appointment }}) {
+
+                            foreach ($item as $appointment) {
                                 echo "<td>"
                                 echo $item->'cod_appoint'
                                 echo "</td>"
