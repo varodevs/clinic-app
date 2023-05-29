@@ -33,25 +33,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @php
-                        use App\Models\Employee;
-                        use App\Models\Appointment;
-                        use App\Models\Patient;
-                            if(is_array($array)  != null){
-                            foreach ($array as $item) {
-
-                                echo "<td>";
-                                echo $item->cod_appoint;
-                                echo "</td>";
-                            }
-                        }else {
-                            echo "<td> -- No Data -- </td>";
-                        }
-                        @endphp
+                        @if (is_array($array) && $array != null)
+                            @foreach ($array as $row)
+                                <tr>
+                                    @foreach ($row as $column)
+                                    <td>
+                                        @php
+                                        $item->cod_appoint;
+                                        @endphp                                        
+                                    </td>
+                                    @endforeach
+                                </tr>
+                            @endforeach
+                        @else
+                        echo "<tr><td> -- No Data -- </td></tr>";
+                        @endif
                     </tbody>
+                </table>
             </div>
-            <div></div>
-            <div></div>
         </div>
     </div>
 
