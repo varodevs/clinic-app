@@ -21,6 +21,6 @@ class AdminController extends Controller
         $appointment = new Appointment();
 
         $array = $appointment->getAppoints();
-        return view('admin', compact('appointment'));
+        return view('admin', compact('array'));
     }
 }

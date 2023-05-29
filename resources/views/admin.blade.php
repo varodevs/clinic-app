@@ -37,8 +37,8 @@
                         use App\Models\Employee;
                         use App\Models\Appointment;
                         use App\Models\Patient;
-                            if($appointment != null){
-                            foreach ($appointment as $item) {
+                            if(is_array($appointment)  != null){
+                            foreach ($array as $item) {
 
                                 echo "<td>";
                                 echo $item->cod_appoint;

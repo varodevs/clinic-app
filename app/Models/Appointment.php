@@ -58,7 +58,7 @@ class Appointment extends Model
 	/**
 	 * function getAppoints()
 	 * 
-	 * @return $return devuelve un array $users
+	 * @return $return devuelve un array $appoints
 	 */
 	public function getAppoints(){
 		$appoints = DB::table('appointment')->get();
