@@ -65,8 +65,26 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('contact') }}">Contact us</a>
+                </li>                
+                @php
+                use Illuminate\Http\Request;
+                  $request = new Request();
+                  if($request->session() != null && $request->session()->get('id_user') != null){
+                    if($request->session()->get('role') == 4 || $request->session()->get('role') == 5){
+                @endphp
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('admin') }}">Admin</a>
                 </li>
-            
+                @php
+                  }elseif ($request->session()->get('role') == 6) {                                    
+                @endphp
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('profile') }}">Profile</a>
+                </li>
+                @php
+              }
+            }
+                @endphp
               </ul>
           </div>
     </div>

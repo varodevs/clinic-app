@@ -23,7 +23,7 @@ use Symfony\Component\Routing\RequestContext;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::group(['middleware' => 'web'], function () {
 Route::get('/', function () {
     return view('home');
 })->name('index');
@@ -68,3 +68,4 @@ Route::get('request-sent', [RequestController::class, 'Request_view'])->name('re
 //        return "Unable to connect to the database.";
 //    }
 //});
+});
