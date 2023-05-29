@@ -37,12 +37,16 @@
                         use App\Models\Employee;
                         use App\Models\Appointment;
                         use App\Models\Patient;
-
+                            if($appointment != null){
                             foreach ($appointment as $item) {
+
                                 echo "<td>";
                                 echo $item->cod_appoint;
                                 echo "</td>";
                             }
+                        }else {
+                            echo "<td> -- No Data -- </td>"
+                        }
                         @endphp
                     </tbody>
             </div>
