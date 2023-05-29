@@ -40,7 +40,7 @@
 
                             foreach ($item as $appointment) {
                                 echo "<td>";
-                                echo $item->'cod_appoint';
+                                echo $item->cod_appoint;
                                 echo "</td>";
                             }
                         @endphp
