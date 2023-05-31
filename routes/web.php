@@ -60,7 +60,7 @@ Route::get('team', [TeamController::class, 'Team_view'])->name('team');
 
 //Routes request
 Route::get('request', [RequestController::class, 'Request_view'])->name('request');
-Route::get('request-form', [RequestController::class, 'Request_done'])->name('request-done');
+Route::post('request-form', [RequestController::class, 'Request_done'])->name('request-done');
 
 //Routes Admin
 Route::get('admin', [AdminController::class, 'Admin_view'])->name('admin');
