@@ -30,8 +30,10 @@ class RequestController extends Controller{
         $day = $dayName = \Carbon\Carbon::createFromFormat('Y-m-d', $last_date)->format('l');
         $hour = explode($last_date, "")(1);
         $date = explode($last_date, "")(0);
-        if(!$day.equalTo("Saturday") || !$day.equalTo("Sunday") && $hour < "20:30:59"){
+        if(!$day.equalTo("Saturday") || !$day.equalTo("Sunday") && $hour < "20:00:00"){
             $new_date = $last_date->addHour();
+        }else{
+            $new_date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $last_date . ' ' . "8:00:00");
         }
         
 
