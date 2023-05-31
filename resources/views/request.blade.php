@@ -4,7 +4,7 @@
 
     <div class="col-12">
         <div class="container-fluid d-flex flex-column justify-content-center _div-azul">
-            <h3 class="mx-3">Sign up</h3>
+            <h3 class="mx-3">Request your appointment</h3>
         </div>
         <div class="d-flex justify-content-center _content">
             <div class="d-flex flex-column justify-content-center w-50">
@@ -48,11 +48,11 @@
                             
                         </div>
                     </div>
-                        <div class="w-75">
+                        <div class="my-4 w-75">
                             <label class="_form-label" for="textarea" >Describe your problem:</label>
-                            <textarea class="form-control" name="textarea" id="textarea"></textarea>
+                            <textarea class="form-control" name="textarea" id="textarea"></textarea>                            
                         </div>
-                    
+                        <button class="btn btn-light _submit" type="submit">Sign in</button>
                     </form>
                 </div>
             </div>

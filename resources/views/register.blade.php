@@ -4,7 +4,7 @@
 
     <div class="col-12">
         <div class="container-fluid d-flex flex-column justify-content-center _div-azul">
-            <h3 class="mx-3">Sign in</h3>
+            <h3 class="mx-3">Sign up</h3>
         </div>
         <div class="d-flex justify-content-center _content">
             <div class="d-flex flex-column justify-content-center">

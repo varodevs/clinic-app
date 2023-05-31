@@ -19,8 +19,35 @@ class AdminController extends Controller
     public function Admin_view()
     {
         $appointment = new Appointment();
+        $sel=1;
+        $array = $appointment->getAppoints();
+        return view('admin', compact('array', 'sel'));
+    }
+
+    public function Admin_appo()
+    {
+        $appointment = new Appointment();
+        $sel=1;
 
         $array = $appointment->getAppoints();
-        return view('admin', compact('array'));
+        return view('admin', compact('array', 'sel'));
+    }
+
+    public function Admin_pat()
+    {
+        $patient = new Patient();
+        $sel=2;
+
+        $array = $patient->getPatients();
+        return view('admin', compact('array', 'sel'));
+    }
+
+    public function Admin_emp()
+    {
+        $employee = new Employee();
+        $sel=3;
+
+        $array = $employee->getEmployees();
+        return view('admin', compact('array', 'sel'));
     }
 }

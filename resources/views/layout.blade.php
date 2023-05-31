@@ -12,7 +12,7 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
     <div class="container-fluid d-flex flex-column" id="NavsDiv">
-      <img class="_bg-img" src="{{ asset("img/imagebg.jpg") }}" alt="Background Image">
+      <img class="_bg-img" src="{{ asset("img/imagebgmenu.jpg") }}" alt="Background Image">
         <nav class="navbar navbar-expand-lg p-0" id="NavTop">
             <div class="container-fluid d-flex justify-content-end">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Navbarcentered" aria-controls="Navbarcentered" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +45,7 @@
               </div>
             </div>
           </nav>
-          <div class="align-self-center w-50 m-1 _menu">
+          <div class="align-self-center w-75 m-1 _menu">      
             <div id="logo" class="d-flex"><img src="{{ asset('img/logo.png') }}" alt="Logo img" height="50vh"><h1>ActiveLife</h1></div>
             <ul class="nav">
                 <li class="nav-item">
@@ -59,6 +59,9 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('more') }}">More Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('more') }}">Request an appoitment</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('about') }}">About us</a>

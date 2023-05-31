@@ -30,8 +30,9 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/home', function () {
+    $style=0;
     return view('home');
-})->name('home');
+})->name('home', 'style');
 
 //Routes Login
 
@@ -57,11 +58,22 @@ Route::get('about-us', [AboutController::class, 'About_view'])->name('about');
 //Routes team
 Route::get('team', [TeamController::class, 'Team_view'])->name('team');
 
-//Request route
-Route::get('request-sent', [RequestController::class, 'Request_view'])->name('request');
+//Routes request
+Route::get('request', [RequestController::class, 'Request_view'])->name('request');
+Route::get('request-form', [RequestController::class, 'Request_done'])->name('request-done');
 
-//Request Admin
+//Routes Admin
 Route::get('admin', [AdminController::class, 'Admin_view'])->name('admin');
+
+//Routes Admin-appointments
+Route::get('admin/appointments', [AdminController::class, 'Admin_appo'])->name('admin-appo');
+
+//Routes Admin-Patients
+Route::get('admin/patients', [AdminController::class, 'Admin_pat'])->name('admin-pat');
+
+//Routes Admin-Employees
+Route::get('admin/employees', [AdminController::class, 'Admin_emp'])->name('admin-emp');
+
 
 //db test
 //Route::get('/dbtest', function () {

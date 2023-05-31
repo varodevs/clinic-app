@@ -6,5 +6,10 @@ class RequestController extends Controller{
     {
         return view('request');
     }
+
+    public function Request_done()
+    {
+        return view('request');
+    }
 }
 ?>
