@@ -18,7 +18,7 @@
                             <label class="_form-label" for="fname">First Name</label>
                             <input class="form-control" type="text" name="fname" id="fname">
                             <label class="_form-label" for="sname">Phone Number</label>
-                            <input class="form-control" type="text" name="sname" id="sname">
+                            <input class="form-control" type="text" name="phone" id="sname">
                             <label class="_form-label" for="birth">Date of Birth</label>
                             <input class="form-control" type="date" name="birth" id="birth">
                             <label class="_form-label" for="spec">Speciality</label>
@@ -52,7 +52,7 @@
                             <label class="_form-label" for="textarea" >Describe your problem:</label>
                             <textarea class="form-control" name="textarea" id="textarea"></textarea>                            
                         </div>
-                        <button class="btn btn-light _submit" type="submit">Sign in</button>
+                        <button class="btn btn-light _submit" type="submit">Send</button>
                     </form>
                 </div>
             </div>

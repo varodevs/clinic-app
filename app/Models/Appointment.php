@@ -65,6 +65,11 @@ class Appointment extends Model
 		return $appoints;
 	}
 
+	public function getLastAppoint(){
+		$appoints = DB::table('appointment')->first();
+		return $appoints;
+	}
+
 
 	/**
 	 * function getAppointsByPatient()
