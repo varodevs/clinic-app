@@ -28,14 +28,14 @@ class LoginController extends Controller
 
             $email = $request->email;
             $password = $request->password;
-
+            $hash_pssw = Hash::make($password);
             $id_user = $user->getUserIdByEmail($email)[0];
 
             $user_by_id=$user->getUserdById($id_user);
 
             $role = $user_by_id->role_cod_role;
 
-            if($email == $user_by_id->email && Hash::check($password, $user_by_id->password)){
+            if($email == $user_by_id->email && $hash_pssw.equalTo($user_by_id->password)){
 
                 $request->session()->put('id_user', $id_user);
                 $request->session()->put('role', $role);
