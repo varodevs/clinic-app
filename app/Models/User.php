@@ -70,7 +70,7 @@ class User extends Model
 	 * @return $result Devuelve un bool
 	 */
 	public function createUser($username, $email, $password, $cod_verify, $role, $reg_date){
-		$result = DB::table('user')->insert(array('username'=> $username, 'email'=>$email, 'password'=>$password, 'cod_verify'=>$cod_verify, 'active'=>1, 'reg_date'=>$reg_date, 'role'=>$role));
+		$result = DB::table('user')->insert(array('username'=> $username, 'email'=>$email, 'password'=>$password, 'cod_verify'=>$cod_verify, 'active'=>1, 'reg_date'=>$reg_date, 'role_cod_role'=>$role));
 		return $result;
 	}
 
