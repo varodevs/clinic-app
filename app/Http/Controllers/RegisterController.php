@@ -22,7 +22,6 @@ class RegisterController extends Controller
      */
     public function Register_done(Request $request)
     {
-        echo "entra";
         $this->validate(request(),[
             $request->uname,$request->email,$request->password,$request->pass_conf,$request->check_terms
             ]);
