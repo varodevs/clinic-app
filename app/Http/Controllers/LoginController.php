@@ -35,7 +35,7 @@ class LoginController extends Controller
 
             $role = $user_by_id->role_cod_role;
 
-            if($email == $user_by_id->email && $password == $user_by_id->password){
+            if($email == $user_by_id->email && Hash::check($password, $user_by_id->password)){
 
                 $request->session()->put('id_user', $id_user);
                 $request->session()->put('role', $role);
