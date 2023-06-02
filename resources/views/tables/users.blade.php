@@ -9,6 +9,9 @@
         </tr>
     </thead>
     <tbody>
+        @php
+            $array =[ ['23', 'alvaro', 'alvaro@email.com', 'no', 'hoy'],['23', 'alvaro', 'alvaro@email.com', 'no', 'hoy'] ]
+        @endphp
         @if (is_array($array) && $array != null)
             @foreach ($array as $row)
                 <tr>
