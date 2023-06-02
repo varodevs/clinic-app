@@ -50,6 +50,7 @@ class RegisterController extends Controller
             'password' => 'required|min:8|max:12',
             'code' => 'required|string',
             ]);
+            
             $hash_pssw = Hash::make($request->password);
             $user = new User();
             $user_id=$user->getUserIdByEmail($request->email)[0];

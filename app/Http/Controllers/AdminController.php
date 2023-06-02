@@ -50,4 +50,13 @@ class AdminController extends Controller
         $array = $employee->getEmployees();
         return view('admin', compact('array', 'sel'));
     }
+
+    public function Admin_usr()
+    {
+        $user = new User();
+        $sel=3;
+
+        $array = $user->getUsers();
+        return view('admin', compact('array', 'sel'));
+    }
 }

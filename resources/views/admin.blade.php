@@ -33,6 +33,9 @@
                           <a class="nav-link" href="{{ route('admin-emp') }}">Employees</a>    
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin-usr') }}">Users</a>    
+                          </li>
+                        <li class="nav-item">
                           <a class="nav-link disabled" href="" tabindex="-1" aria-disabled="true">Create</a>
                         </li>
                       </ul>

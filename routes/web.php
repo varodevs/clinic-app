@@ -77,6 +77,9 @@ Route::get('admin/patients', [AdminController::class, 'Admin_pat'])->name('admin
 //Routes Admin-Employees
 Route::get('admin/employees', [AdminController::class, 'Admin_emp'])->name('admin-emp');
 
+//Routes Admin-Users
+Route::get('admin/employees', [AdminController::class, 'Admin_usr'])->name('admin-usr');
+
 
 //db test
 //Route::get('/dbtest', function () {
