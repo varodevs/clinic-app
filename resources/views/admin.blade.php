@@ -45,22 +45,22 @@
                 @if ($sel != null)
                     @switch($sel)
                     @case(1)
-                        @include('tables.appointments')
+                        @include('tables.appointments', ['array' => $array])
                         @break
                     @case(2)
-                        @include('tables.patients')
+                        @include('tables.patients', ['array' => $array])
                         @break
                     @case(3)
-                        @include('tables.employees')
+                        @include('tables.employees', ['array' => $array])
                         @break
                     @case(4)
-                        @include('tables.users')
+                        @include('tables.users', ['array' => $array])
                         @break
                     @default
-                        @include('tables.appointments')                        
+                        @include('tables.appointments', ['array' => $array])           
                 @endswitch
                 @else
-                    @include('tables.appointments')
+                    @include('tables.appointments', ['array' => $array])
                 
                     
                 @endif
