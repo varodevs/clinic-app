@@ -30,7 +30,7 @@
                           <a class="nav-link" href="{{ route('admin-pat') }}">Patients</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('admin-emp') }}">Employees</a>    
+                          <a class="nav-link" href="{{ route('admin-emp')) }}">Employees</a>    
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin-usr') }}">Users</a>    
