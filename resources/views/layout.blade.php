@@ -13,6 +13,7 @@
 <body class="d-flex flex-column min-vh-100">
     <div class="container-fluid d-flex flex-column" id="NavsDiv">
       <img class="_bg-img" src="{{ asset("img/imagebgmenu.jpg") }}" alt="Background Image">
+
         <nav class="navbar navbar-expand-lg p-0" id="NavTop">
             <div class="container-fluid d-flex justify-content-end">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Navbarcentered" aria-controls="Navbarcentered" aria-expanded="false" aria-label="Toggle navigation">
