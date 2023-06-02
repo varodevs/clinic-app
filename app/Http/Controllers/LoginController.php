@@ -21,7 +21,8 @@ class LoginController extends Controller
     public function Login_done(Request $request)
     {
         $this->validate(request(),[
-            $request->email,$request->password
+            'email' => 'required|email|min:8|max:35',
+            'password' => 'required|min:8|max:12',
             ]);
 
             $user = new User();

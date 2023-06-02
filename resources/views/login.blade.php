@@ -14,9 +14,15 @@
                     <form class="d-flex flex-column justify-content-center _form" action="{{ route('login-done') }}" method="POST">
                         @csrf
                         <label class="_form-label" for="email">Email</label>
-                        <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
+                        <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com" required>
+                        @error('email')
+                        <span>{{ $message }}</span>
+                        @enderror
                         <label class="_form-label" for="password">Password</label>
-                        <input class="form-control _form-input" type="password" name="password" id="password">
+                        <input class="form-control _form-input" type="password" name="password" id="password" required>
+                        @error('password')
+                        <span>{{ $message }}</span>
+                        @enderror
                         <button class="btn btn-light _submit" type="submit">Sign in</button>
                     </form>
                 </div>

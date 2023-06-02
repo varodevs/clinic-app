@@ -14,16 +14,31 @@
                     <form class="d-flex flex-column justify-content-center _form" action="{{ route('register-done') }}" method="POST">
                         @csrf
                         <label class="_form-label" for="uname">Username</label>
-                        <input class="form-control" type="text" name="uname" id="uname">
+                        <input class="form-control" type="text" name="uname" id="uname" placeholder="username">
+                        @error('uname')
+                        <span>{{ $message }}</span>
+                        @enderror
                         <label class="_form-label" for="email">Email</label>
                         <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
+                        @error('email')
+                        <span>{{ $message }}</span>
+                        @enderror
                         <label class="_form-label" for="password">Password</label>
                         <input class="form-control _form-input" type="password" name="password" id="password">
+                        @error('password')
+                        <span>{{ $message }}</span>
+                        @enderror
                         <label class="_form-label" for="pass_conf">Confirm Password</label>
                         <input class="form-control _form-input" type="password" name="pass_conf" id="pass_conf">
+                        @error('pass_conf')
+                        <span>{{ $message }}</span>
+                        @enderror
                         <button class="btn btn-light _submit" type="submit">Sign up</button>
-                        <input class="form-check-input" type="checkbox" name="check_terms" id="terms">
                         <label class="form-check-label" for="terms">I Accept the terms and conditions</label>
+                        <input class="form-check-input" type="checkbox" name="check_terms" id="terms">
+                        @error('check_terms')
+                        <span>{{ $message }}</span>
+                        @enderror                        
                     </form>
                 </div>
             </div>

@@ -23,7 +23,11 @@ class RegisterController extends Controller
     public function Register_done(Request $request)
     {
         $this->validate(request(),[
-            $request->uname,$request->email,$request->password,$request->pass_conf,$request->check_terms
+            'uname' => 'required|string',
+            'email' => 'required|email',
+            'password' => 'required|min:8|max:12',
+            'pass_conf' => 'required|same:password',
+            'check_terms' => 'accepted',
             ]);
             if($request->password == $request->pass_conf && $request->check_terms != null){
                 $cod_verify = 'ABCD';
@@ -41,8 +45,10 @@ class RegisterController extends Controller
     }
     public function Verify(Request $request)
     {
-        $this->validate(request(),[
-            $request->email,$request->password,$request->code
+        $this->validate(request(),[            
+            'email' => 'required|email',
+            'password' => 'required|min:8|max:12',
+            'code' => 'required|string',
             ]);
             $hash_pssw = Hash::make($request->password);
             $user = new User();
