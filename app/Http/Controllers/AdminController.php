@@ -54,7 +54,7 @@ class AdminController extends Controller
     public function Admin_usr()
     {
         $user = new User();
-        $sel=3;
+        $sel=4;
 
         $array = $user->getUsers();
         return view('admin', compact('array', 'sel'));

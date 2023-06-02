@@ -30,7 +30,7 @@
                           <a class="nav-link" href="{{ route('admin-pat') }}">Patients</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('admin-emp')) }}">Employees</a>    
+                          <a class="nav-link" href="{{ route('admin-emp') }}">Employees</a>    
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin-usr') }}">Users</a>    
@@ -48,11 +48,14 @@
                         @include('tables.appointments')
                         @break
                     @case(2)
-                        @include('tables.appointments')
+                        @include('tables.patients')
                         @break
                     @case(3)
-                        @include('tables.appointments')
-                        @break                
+                        @include('tables.employees')
+                        @break
+                    @case(4)
+                        @include('tables.users')
+                        @break
                     @default
                         @include('tables.appointments')                        
                 @endswitch
