@@ -32,7 +32,7 @@ class RegisterController extends Controller
             if($request->password == $request->pass_conf && $request->check_terms != null){
                 $cod_verify = 'ABCD';
                 $name = $request->uname;
-                $role = 6;
+                $role = 4;
                 $hash_pssw = Hash::make($request->password);
                 $user = new User();
                 $response = Mail::to($request->email)->send(new Email($name,$cod_verify));
