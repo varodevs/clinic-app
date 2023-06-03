@@ -37,7 +37,11 @@
                 </form>
                 <div class="d-flex h-75">
                   @if (Route::has('login'))
-                  <button class="btn btn-light mx-1"><a href="{{ route('login') }}" class="_link">Sign in</a></button>
+                    @if (session('id_user') != null && session('id_user') != "")
+                    <button class="btn btn-light mx-1"><a href="{{ route('logout') }}" class="_link">Sign out</a></button>
+                    @else
+                    <button class="btn btn-light mx-1"><a href="{{ route('login') }}" class="_link">Sign in</a></button>
+                    @endif                    
                   @endif
                   @if (Route::has('register'))
                   <button class="btn btn-light mx-1"><a href="{{ route('register') }}" class="_link">Sign up</a></button>

@@ -40,6 +40,10 @@ Route::get('login', [LoginController::class,'Login_view'])->name('login');
 
 Route::post('login-form', [LoginController::class,'Login_done'])->name('login-done');
 
+//Routes Logout
+
+Route::post('logout',[LoginController::class,'Logout'])->name('logout');
+
 //Routes Register
 Route::get('register', [RegisterController::class,'Register_view'])->name('register');
 Route::post('register-form', [RegisterController::class,'Register_done'])->name('register-done');

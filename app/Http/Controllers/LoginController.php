@@ -63,4 +63,11 @@ class LoginController extends Controller
                 return redirect('login')->with('status', 'Login failed');
             }   
     }
+
+    public function Logout(Request $request){
+        $request->session()->put('id_user', "");
+        $request->session()->put('role', "");
+
+        return redirect('login')->with('status', 'Login failed');
+    }
 }
