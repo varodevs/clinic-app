@@ -64,9 +64,10 @@ class AdminController extends Controller
     {
         $id_user = $request->input('id_user');
         $user = new User();
+        $sel=4;
 
         $result = $user->deleteUser($id_user);
-        return view('admin');
+        return view('admin', ['sel', $sel]);
     }
 
     public function Admin_updUsr(Request $request)
