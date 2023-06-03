@@ -17,11 +17,7 @@
                         $i=0;
                     @endphp                    
                     @foreach ($row as $column)
-                    <td>
-                        @php
-                        $column;
-                        @endphp                                        
-                    </td>
+                    <td>{{ $column }}</td>
                     @php
                         if ($i == 0) {
                             $id=$column;

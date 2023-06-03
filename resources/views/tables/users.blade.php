@@ -10,17 +10,12 @@
     </thead>
     <tbody>
         @php
-            $array =[ [1, 2, 3, 4, 5],["23", "alvaro", "alvaro@email.com", "no", "hoy"] ]
         @endphp
         @if (is_array($array) && $array != null)
             @foreach ($array as $row)
                 <tr>
                     @foreach ($row as $column)
-                    <td>
-                        @php
-                        $column;
-                        @endphp                                        
-                    </td>
+                    <td>{{ $column }}</td>
                     @endforeach
                 </tr>
             @endforeach

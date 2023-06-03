@@ -15,11 +15,7 @@
             @foreach ($array as $row)
                 <tr>
                     @foreach ($row as $column)
-                    <td>
-                        @php
-                        $column;
-                        @endphp                                        
-                    </td>
+                    <td>{{ $column }}</td>
                     @endforeach
                 </tr>
             @endforeach
