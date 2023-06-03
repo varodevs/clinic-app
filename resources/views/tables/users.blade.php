@@ -22,9 +22,7 @@
             @foreach ($row as $column)
             @if ($i != 3)
                 @if ($i == 6)
-                    @php
-                        $carbonDate = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $column);
-                  @endphp
+                    {{ $carbonDate = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $column); }}
                 @else
                 <td>{{ $column }}</td>
                 @endif                
