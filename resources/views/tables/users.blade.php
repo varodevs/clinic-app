@@ -4,23 +4,27 @@
             <td>ID</td>
             <td>Username</td>
             <td>Email</td>
+            <td>Password</td>
             <td>Active</td>
-            <td>Reg. date</td>          
+            <td>Reg. date</td>
+            <td>Role</td>          
         </tr>
     </thead>
     <tbody>
-        @php
-        @endphp
-        @if (is_array($array) && $array != null)
-            @foreach ($array as $row)
-                <tr>
-                    @foreach ($row as $column)
-                    <td>{{ $column }}</td>
-                    @endforeach
-                </tr>
-            @endforeach
+        @if ($array != null)
+        @foreach ($array as $row)
+        <tr>
+            <td>{{ $row->id_user }}</td>
+            <td>{{ $row->username }}</td>
+            <td>{{ $row->email }}</td>
+            <td>{{ $row->password }}</td>
+            <td>{{ $row->active }}</td>
+            <td>{{ $row->reg_date }}</td>
+            <td>{{ $row->role_cod_role }}</td>
+        </tr>
+    @endforeach
         @else
-        <tr><td colspan="5"> -- No Data -- </td></tr>
+        <tr><td colspan="7"> -- No Data -- </td></tr>
         @endif
     </tbody>
 </table>

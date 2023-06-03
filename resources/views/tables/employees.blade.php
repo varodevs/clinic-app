@@ -11,7 +11,7 @@
         </tr>
     </thead>
     <tbody>
-        @if (is_array($array) && $array != null)
+        @if ($array != null)
             @foreach ($array as $row)
                 <tr>
                     @foreach ($row as $column)
