@@ -24,7 +24,6 @@
                 @if ($i == 6)
                     @php
                         $carbonDate = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $column);
-                        echo $carbonDate;
                   @endphp
                 @else
                 <td>{{ $column }}</td>
