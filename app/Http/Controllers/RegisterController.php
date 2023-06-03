@@ -37,7 +37,7 @@ class RegisterController extends Controller
                 $hash_pssw = Hash::make($request->password);
                 $user = new User();
                 $response = Mail::to($request->email)->send(new Email($name,$cod_verify));
-                $result=$user->createUser($request->uname, $request->email, $request->hash_pssw, $cod_verify, $role, now());
+                $result=$user->createUser($request->uname, $request->email, $hash_pssw, $cod_verify, $role, now());
                 return redirect('verify');
             }else{
                 return redirect('register');
