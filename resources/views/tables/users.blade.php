@@ -28,7 +28,7 @@
                 $id=$column;
             }
             if($i == 6){
-                $column->format('Y-m-d H:i:s');
+                $carbonDate = Carbon::createFromFormat('Y-m-d H:i:s', $column);
             }
             $i++;
             @endphp
