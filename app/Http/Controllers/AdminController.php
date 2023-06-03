@@ -67,7 +67,7 @@ class AdminController extends Controller
         $sel=4;
 
         $result = $user->deleteUser($id_user);
-        return redirect()->route('admin', ['sel' => $sel]);
+        return redirect()->route('admin-usr', ['sel' => $sel]);
     }
 
     public function Admin_updUsr(Request $request)
