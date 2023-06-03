@@ -43,6 +43,8 @@ Route::post('login-form', [LoginController::class,'Login_done'])->name('login-do
 //Routes Register
 Route::get('register', [RegisterController::class,'Register_view'])->name('register');
 Route::post('register-form', [RegisterController::class,'Register_done'])->name('register-done');
+
+//Routes Verify
 Route::get('verify', function () {
     return view('verify');
 })->name('verify');

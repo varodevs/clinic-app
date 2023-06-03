@@ -36,14 +36,14 @@ class LoginController extends Controller
 
             $role = $user_by_id->role_cod_role;
 
-            if($email == $user_by_id->email && $hash_pssw == $user_by_id->password){
+            if($email == $user_by_id->email && Hash::check($password, $hash_pssw)){
 
                 $request->session()->put('id_user', $id_user);
                 $request->session()->put('role', $role);
 
                 switch($role){
                     case 4:
-                        return redirect('/')->with('status', 'Login successful');
+                        return redirect('/admin')->with('status', 'Login successful');
                         break;
                     case 5:
                         return redirect('/')->with('status', 'Login successful');

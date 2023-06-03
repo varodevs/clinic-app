@@ -57,7 +57,7 @@ class RegisterController extends Controller
             $user_id=$user->getUserIdByEmail($request->email)[0];
             $user_by_id = $user->getUserdById($user_id);
 
-            if($hash_pssw.equalTo($user_by_id->password) && $request->code.equalTo($user_by_id->cod_verify)){
+            if(Hash::check($user_by_id->password, $hash_pssw) && $request->code.equalTo($user_by_id->cod_verify)){
                 $active = 0;
                 $result=$user->updateUser($user_id, $user_by_id->username, $user_by_id->email, $user_by_id->password, $user_by_id->cod_verify, $active, $user_by_id->img_path);
                 return redirect('home');
