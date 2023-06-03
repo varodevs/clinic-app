@@ -22,7 +22,7 @@ class LoginController extends Controller
     {
         $this->validate(request(),[
             'email' => 'required|email|min:8|max:35',
-            'password' => 'required|min:8|max:12',
+            'password' => 'required|min:8|max:15',
             ]);
 
             $user = new User();
