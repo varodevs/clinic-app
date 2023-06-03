@@ -27,6 +27,9 @@
             if ($i == 0) {
                 $id=$column;
             }
+            if($i == 5){
+                $column->format('Y-m-d H:i:s');
+            }
             $i++;
             @endphp
             @endforeach
