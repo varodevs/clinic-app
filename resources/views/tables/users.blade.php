@@ -14,13 +14,9 @@
         @if ($array != null)
         @foreach ($array as $row)
         <tr>
-            <td>{{ $row->id_user }}</td>
-            <td>{{ $row->username }}</td>
-            <td>{{ $row->email }}</td>
-            <td>{{ $row->password }}</td>
-            <td>{{ $row->active }}</td>
-            <td>{{ $row->reg_date }}</td>
-            <td>{{ $row->role_cod_role }}</td>
+            @foreach ($row as $column)
+            <td>{{ $column }}</td>
+            @endforeach
         </tr>
     @endforeach
         @else
