@@ -6,7 +6,7 @@
         <div class="text-center w-50"><h2>Welcome to ActiveLife Physio</h2></div>
         <div class="text-center w-75"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
     </div>
-
+    
     <div class="c-12 d-flex flex-column align-items-center pt-5 _div-treat" mb-5>
         <div class="text-center w-50 m-3"><h4>TREATMENTS</h4></div>
         <div id="carouselExampleControls" class="carousel slide w-25" data-bs-ride="carousel">

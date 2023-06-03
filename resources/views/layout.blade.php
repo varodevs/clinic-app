@@ -67,6 +67,12 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('about') }}">About us</a>
                 </li>
+                @if (session('role') == 4)
+                <li class="nav-item">
+                  <a class="nav-link" href="{{  route('admin')  }}">Admin</a>
+                </li>
+                @elseif (session('role') == 5 || session('role') == 6)
+                @endif
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('contact') }}">Contact us</a>
                 </li>                

@@ -47,9 +47,13 @@ class LoginController extends Controller
                         break;
                     case 5:
                         return redirect('/')->with('status', 'Login successful');
-                        break;
+                        break;                                                
                     case 6:
-                        return redirect('/')->with('status', 'Login successful');
+                        if($user_by_id->active != 0){
+                            return redirect('/verify')->with('status', 'Login successful, but needs verification');
+                        }else{
+                            return redirect('/profile')->with('status', 'Login successful');
+                        }
                         break;
                     default:
                     return redirect('login')->with('status', 'Login failed. The user has no role.');
