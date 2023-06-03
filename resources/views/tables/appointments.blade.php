@@ -7,6 +7,8 @@
             <td>Employee</td>
             <td>Patient</td>
             <td>Confirmed</td>
+            <td>Update</td>
+            <td>Delete</td>
         </tr>
     </thead>
     <tbody>
@@ -26,10 +28,17 @@
                     @endphp
                     @endforeach
                     <td>
+                        <form action="{{ route('admin-del-appo') }}">
+                            @csrf                    
+                            <input type="hidden" name="id" value={{ $id }} />
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
+                    </td>
+                    <td>
                         <form action="">
                             @csrf                    
-                        <input type="hidden" name="id" value={{ $id }} />
-                        <button type="submit" class="btn btn-primary">Update</button>
+                            <input type="hidden" name="id" value={{ $id }} />
+                            <button type="submit" class="btn btn-primary">Delete</button>
                         </form>
                     </td>
                 </tr>
