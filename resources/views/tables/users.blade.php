@@ -5,6 +5,7 @@
             <td>Username</td>
             <td>Email</td>
             <td>Password</td>
+            <td>Cod. verify</td>
             <td>Active</td>
             <td>Reg. date</td>
             <td>Role</td>          
