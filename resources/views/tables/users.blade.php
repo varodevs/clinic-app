@@ -27,7 +27,7 @@
             if ($i == 0) {
                 $id=$column;
             }
-            if($i == 5){
+            if($i == 6){
                 $column->format('Y-m-d H:i:s');
             }
             $i++;
