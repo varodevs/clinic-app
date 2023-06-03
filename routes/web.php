@@ -81,10 +81,10 @@ Route::get('admin/employees', [AdminController::class, 'Admin_emp'])->name('admi
 Route::get('admin/users', [AdminController::class, 'Admin_usr'])->name('admin-usr');
 
 //Routes Admin-Update
-Route::get('admin/users-upd', [AdminController::class, 'Admin_updUsr'])->name('admin-upd-usr');
+Route::post('admin/users-upd', [AdminController::class, 'Admin_updUsr'])->name('admin-upd-usr');
 
 //Routes Admin-Delete
-Route::get('admin/users-del', [AdminController::class, 'Admin_delUsr'])->name('admin-del-usr');
+Route::post('admin/users-del', [AdminController::class, 'Admin_delUsr'])->name('admin-del-usr');
 
 
 //db test
