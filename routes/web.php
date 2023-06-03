@@ -42,7 +42,7 @@ Route::post('login-form', [LoginController::class,'Login_done'])->name('login-do
 
 //Routes Logout
 
-Route::post('logout',[LoginController::class,'Logout'])->name('logout');
+Route::get('logout',[LoginController::class,'Logout'])->name('logout');
 
 //Routes Register
 Route::get('register', [RegisterController::class,'Register_view'])->name('register');
