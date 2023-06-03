@@ -17,7 +17,6 @@
         @foreach ($array as $row)
         <tr>
             @php
-            use Carbon\Carbon;
             $i=0;
             @endphp 
             @foreach ($row as $column)
@@ -29,7 +28,7 @@
                 $id=$column;
             }
             if($i == 6){
-                $carbonDate = Carbon::createFromFormat('Y-m-d H:i:s', $column);
+                $carbonDate = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $column);
             }
             $i++;
             @endphp
