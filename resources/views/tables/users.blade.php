@@ -17,6 +17,7 @@
         @foreach ($array as $row)
         <tr>
             @php
+            use Carbon\Carbon;
             $i=0;
             @endphp 
             @foreach ($row as $column)
