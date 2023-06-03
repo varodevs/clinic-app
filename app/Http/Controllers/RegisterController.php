@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use App\Models\User;
 use App\Mail\Email;
 
@@ -30,7 +31,7 @@ class RegisterController extends Controller
             'check_terms' => 'accepted',
             ]);
             if($request->password == $request->pass_conf && $request->check_terms != null){
-                $cod_verify = 'ABCD';
+                $cod_verify = Str::upper(Str::random(4));
                 $name = $request->uname;
                 $role = 4;
                 $hash_pssw = Hash::make($request->password);
