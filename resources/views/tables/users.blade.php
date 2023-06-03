@@ -7,9 +7,9 @@
             <td>Cod. verify</td>
             <td>Active</td>
             <td>Reg. date</td>
-            <td>Role</td> 
+            <td>Role</td>
             <td>-</td> 
-            <td>-</td>         
+            <td>-</td>
         </tr>
     </thead>
     <tbody>
@@ -18,19 +18,21 @@
         <tr>
             @php
             $i=0;
-            @endphp 
+            @endphp
             @foreach ($row as $column)
-            @if ($i != 3 && $i != 6)
-            <td>{{ $column }}</td>
+            @if ($i != 3)
+                @if ($i == 6)
+                    @php
+                        $carbonDate = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $column);
+                        echo $carbonDate;
+                  @endphp
+                @else
+                <td>{{ $column }}</td>
+                @endif                
             @endif            
             @php
             if ($i == 0) {
                 $id=$column;
-            }
-            if($i == 6){
-                $carbonDate = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $column);
-                echo $carbonDate;
-
             }
             $i++;
             @endphp
