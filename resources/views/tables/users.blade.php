@@ -22,7 +22,7 @@
             @foreach ($row as $column)
             @if ($i != 3)
                 @if ($i == 6)
-                    {{ Carbon::parse($column)->format('Y-m-d H:i:s') }}
+                    {{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}
                 @else
                 <td>{{ $column }}</td>
                 @endif                
