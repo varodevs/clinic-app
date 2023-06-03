@@ -4,7 +4,6 @@
             <td>ID</td>
             <td>Username</td>
             <td>Email</td>
-            <td>Password</td>
             <td>Cod. verify</td>
             <td>Active</td>
             <td>Reg. date</td>
@@ -21,7 +20,9 @@
             $i=0;
             @endphp 
             @foreach ($row as $column)
+            @if ($i != 3)
             <td>{{ $column }}</td>
+            @endif            
             @php
             if ($i == 0) {
                 $id=$column;
