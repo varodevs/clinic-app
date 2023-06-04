@@ -12,8 +12,6 @@ use Twilio\Rest\Client;
 class RequestController extends Controller{
     public function Request_view()
     {
-        $variable = 'Hello, world!';
-        dump($variable);
         $appoint = new Appointment();
 
         $result = $appoint->getAppoints();
@@ -64,12 +62,12 @@ class RequestController extends Controller{
 
             if($result){
 
-                //return redirect('user/dashboard')->with('status', 'Appoinment requested successfully.');
+                return redirect('dashboard')->with('status', 'Appoinment requested successfully.');
             }else{
-                //return redirect('request')->with('status', 'Appoinment request failed.');
+                return redirect('request')->with('status', 'Appoinment request failed.');
             }
         }else{
-            //return redirect('request')->with('status', 'Appoinment request failed.');
+            return redirect('request')->with('status', 'Appoinment request failed.');
         }
 
 
