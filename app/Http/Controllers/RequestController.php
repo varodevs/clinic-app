@@ -12,18 +12,7 @@ use Twilio\Rest\Client;
 class RequestController extends Controller{
     public function Request_view()
     {
-        $appoint = new Appointment();
-
-        $result = $appoint->getAppoints();
-        $currentYear = Carbon::now()->year;
-        $christmasDate = Carbon::create($currentYear, 12, 25);
-        $workday = Carbon::create($currentYear, 05, 1);
-        $array = [$christmasDate, $workday];
-        foreach($result as $row){
-            $array.array_push($row->date_appoint);
-        }
-        
-        return view('request', compact('resultado', 'dateTime'));
+        return view('request');
     }
 
     public function Request_done(Request $request)
@@ -67,7 +56,8 @@ class RequestController extends Controller{
                 return redirect('request', compact('resultado', 'dateTime'))->with('status', 'Appoinment request failed.');
             }
         }else{
-            return redirect('request', compact('resultado', 'dateTime'))->with('status', 'Appoinment request failed.');
+            return view('home', compact('result', 'dateTime'));
+            //return redirect('request', compact('resultado', 'dateTime'))->with('status', 'Appoinment request failed.');
         }
 
 
