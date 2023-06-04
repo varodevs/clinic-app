@@ -31,7 +31,7 @@ class UserController extends Controller
             $last_date = $last->date_appoint;
             return view('profile', compact('employee', 'appoints','sel','last_date'));
         }else{
-            $patient = $patient->getPatientByUser('id_user');
+            $patient = $patient->getPatientByUser(session('id_user'));
 
             $appoints = $appoint->getAppointsByPatient($patient->cod_patient);
 
