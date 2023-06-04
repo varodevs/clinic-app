@@ -10,6 +10,7 @@ use DateTime;
 use Twilio\Rest\Client;
 
 class RequestController extends Controller{
+    
     public function Request_view()
     {
         return view('request');
