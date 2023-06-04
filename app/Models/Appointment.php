@@ -50,8 +50,8 @@ class Appointment extends Model
 	 * 
 	 * @return $result Devuelve un bool
 	 */
-	public function createAppoint($date_appoint, $cod_employee, $cod_patient){
-		$result = DB::table('appointment')->insert(array('date_appoint'=> $date_appoint, 'employee_cod_emp'=>$cod_employee, 'patient_cod_patient'=>$cod_patient));
+	public function createAppoint($date_appoint,$confirmed, $cod_employee, $cod_patient){
+		$result = DB::table('appointment')->insert(array('date_appoint'=> $date_appoint,'confirmed'=>$confirmed, 'employee_cod_emp'=>$cod_employee, 'patient_cod_patient'=>$cod_patient));
 		return $result;
 	}
 
