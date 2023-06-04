@@ -3,7 +3,7 @@
         @csrf
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">First Name</span>
-            <input type="text" class="form-control" placeholder="First name" aria-label="ID" aria-describedby="basic-addon1" value="{{  }}" disabled>
+            <input type="text" class="form-control" placeholder="First name" aria-label="ID" aria-describedby="basic-addon1" value="" disabled>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Last Name</span>
