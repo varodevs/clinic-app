@@ -99,7 +99,7 @@ class Patient extends Model
 	}
 
 	public function getPatientLastID(){
-		$patient = DB::table('patient')->latest()->pluck('cod_patient');
+		$patient = DB::table('patient')->latest()->pluck('cod_patient')->first();
 		return $patient;
 	}
 

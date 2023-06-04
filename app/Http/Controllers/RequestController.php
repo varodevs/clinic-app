@@ -47,13 +47,8 @@ class RequestController extends Controller{
 
         $last_id = $patient->getPatientLastID();
 
-        if($last_id != null){
-
             $last_id++;
 
-        }else{
-            $last_id = 1;
-        }
 
         $resultado = $patient->createPatient($last_id,$request->fname,$request->lname,$phone,$request->birth,$age,$request->sex,session('id_user'), 0);        
         
