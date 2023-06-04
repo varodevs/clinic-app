@@ -52,7 +52,7 @@ class RequestController extends Controller{
             $last_id++;
 
 
-        $resultado = $patient->createPatient($last_id,$request->fname,$request->lname,$phone,$request->birth,$age,$request->sex,session('id_user'), 0);        
+        $resultado = $patient->createPatient($last_id,$request->fname,$request->lname,$phone,$request->birth,$age,$request->sex,session('id_user'), 3);        
         
         if($resultado){
 
