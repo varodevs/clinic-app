@@ -39,6 +39,7 @@ class LoginController extends Controller
 
                 $request->session()->put('id_user', $id_user);
                 $request->session()->put('role', $role);
+                $request->session()->put('username', $user_by_id->username);
 
                 switch($role){
                     case 4:
@@ -64,8 +65,9 @@ class LoginController extends Controller
     }
 
     public function Logout(Request $request){
-        $request->session()->put('id_user', "");
-        $request->session()->put('role', "");
+        session()->forget('id_user');
+        session()->forget('role');
+        session()->forget('username');
 
         return redirect('login')->with('status', 'Login failed');
     }

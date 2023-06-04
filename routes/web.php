@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TreatmentController;
+use App\Http\Controllers\UserController;
 use App\Mail\Email;
 use App\Models\Role;
 use Illuminate\Auth\Events\Login;
@@ -91,6 +92,13 @@ Route::post('admin/users-upd', [AdminController::class, 'Admin_updUsr'])->name('
 
 //Routes Admin-Delete
 Route::post('admin/users-del', [AdminController::class, 'Admin_delUsr'])->name('admin-del-usr');
+
+//Routes Profiles
+Route::get('user/dashboard', [UserController::class, 'userDashboard'])->name('dashboard');
+
+Route::get('user/profile', [UserController::class, 'userProfile'])->name('profile');
+
+Route::get('user/therapy', [UserController::class, 'userTherapy'])->name('history');
 
 
 //db test

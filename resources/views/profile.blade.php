@@ -13,24 +13,24 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Username</span>
-                    <input type="text" class="form-control" placeholder="ID" aria-label="ID" aria-describedby="basic-addon1" disabled>
+                    <input type="text" class="form-control" placeholder="ID" aria-label="ID" aria-describedby="basic-addon1" value="{{ session('username') }}" disabled>
                   </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Next appointment</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" disabled>
+                    <input type="datetime-local" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="{{ $last_date }}" disabled>
                 </div>
             </div>
             <div class="col-12 d-flex justify-content-center">
                 <div>
                     <ul class="nav justify-content-center">
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="{{ route('admin-appo') }}">Personal information</a>
+                          <a class="nav-link active" aria-current="page" href="{{ route('profile') }}">Personal information</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('admin-pat') }}">Appointments</a>
+                          <a class="nav-link" href="{{ route('dashboard') }}">Appointments</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('admin-emp') }}">Therapy history</a>    
+                          <a class="nav-link" href="{{ route('history') }}">Therapy history</a>    
                         </li>
                       </ul>
                 </div>
@@ -39,10 +39,10 @@
                 @if ($sel != null)
                     @switch($sel)
                     @case(1)
-                        @include('tables.appointments')
+                    @include('tables.appointments', ['array' => $array])
                         @break
                     @case(2)
-                        @include('tables.appointments')
+                        @include('profile-info')
                         @break
                     @case(3)
                         @include('tables.appointments')

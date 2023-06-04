@@ -78,11 +78,17 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('about') }}">About us</a>
                 </li>
-                @if (session('role') == 4)
+                @if (session('role') != 6)
                 <li class="nav-item">
                   <a class="nav-link" href="{{  route('admin')  }}">Admin</a>
                 </li>
-                @elseif (session('role') == 5 || session('role') == 6)
+                <li class="nav-item">
+                  <a class="nav-link" href="{{  route('profile')  }}">Admin</a>
+                </li>
+                @elseif (session('role') == 6)
+                <li class="nav-item">
+                  <a class="nav-link" href="{{  route('profile')  }}">Admin</a>
+                </li>
                 @endif
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('contact') }}">Contact us</a>
@@ -91,6 +97,14 @@
           </div>
     </div>
     <section class="_section">
+      @if(session('status'))
+        <div class="alert alert-success">
+          {{ session('status') }}
+        </div>
+        @php
+          session()->forget('status');
+        @endphp
+      @endif
       @yield('content')
       <div class="col-12">
         <div class="d-flex flex-column justify-content-center _content">

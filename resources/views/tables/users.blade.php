@@ -14,6 +14,9 @@
     </thead>
     <tbody>
         @if ($array != null)
+        @php
+            $j = 0;
+        @endphp
         @foreach ($array as $row)
         <tr>
             @php
@@ -38,17 +41,30 @@
                 <form action="{{ route('admin-upd-usr', ['row' => $row]) }}" method="POST">
                     @csrf                    
                     {{-- <input type="hidden" name="id" value={{ $id }} /> --}}
+                    @if ($j != 0)
                     <button type="submit" class="btn btn-primary">Update</button>
+                    @else
+                    <button type="submit" class="btn btn-primary" disabled>Update</button>
+                    @endif
+                    
                 </form>
             </td>
             <td>
                 <form action="{{ route('admin-del-usr') }}" method="POST">
                     @csrf                    
                     <input type="hidden" name="id_user" value={{ $id }} />
+                    @if (session('role') != 4)
+                    <button type="submit" class="btn btn-primary" disabled>Delete</button>
+                    @else
                     <button type="submit" class="btn btn-primary">Delete</button>
+                    @endif
+
                 </form>
             </td>
         </tr>
+        @php
+            $j++;
+        @endphp
     @endforeach
         @else
         <tr><td colspan="9"> -- No Data -- </td></tr>
