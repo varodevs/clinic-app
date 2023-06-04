@@ -69,6 +69,7 @@
                             <select class="form-control text-center" type="date" id="hourDropdown"></select>                            
                         </div>
                         <button class="btn btn-light _submit" type="submit">Send</button>
+                        <span>{{ $status }}</span>
                     </form>
                 </div>
             </div>
