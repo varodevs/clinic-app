@@ -30,8 +30,6 @@ namespace App\Http\Controllers;
             $hours = ['08:30:00','09:00:00','09:30:00','10:00:00','10:30:00','11:00:00','11:30:00','12:00:00','12:30:00','13:00:00','17:00:00','17:30:00','18:00:00','18:30:00','19:00:00','19:30:00','20:00:00'];
             
             if($found != 0){
-                $availableHours = $hours;
-            }else{
                 $taken = [];
                 foreach($dates_bd as $date){
                     $carbonDate = Carbon::createFromFormat('Y/m/d H:i:s.f', $date);
@@ -39,6 +37,9 @@ namespace App\Http\Controllers;
     
                     array_push($taken, $hour);
                 }  
+                
+            }else{
+                $availableHours = $hours;
             }
 
             $availableHours = array_diff($hours, $taken);
