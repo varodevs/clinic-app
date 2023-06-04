@@ -34,7 +34,7 @@
                                 <label class="_form-label" for="email">Email</label>
                                 <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
                                 <label class="_form-label" for="date">Check for dates</label>
-                                <input class="form-control" type="date" name="date" id="datetime">
+                                <input class="form-control" type="date" name="date" id="date">
                                 <label class="_form-label" for="id">ID</label>
                                 <input class="form-control" type="text" name="id" id="id">
                                 <label class="_form-label">Underage?</label>
@@ -53,6 +53,10 @@
                         <div class="my-4 w-75">
                             <label class="_form-label" for="textarea" >Describe your problem:</label>
                             <textarea class="form-control" name="textarea" id="textarea"></textarea>                            
+                        </div>
+                        <div class="my-4 w-25">
+                            <label class="_form-label" for="hourDropdown">Choose an hour</label>
+                            <select id="hourDropdown"></select>                            
                         </div>
                         <button class="btn btn-light _submit" type="submit">Send</button>
                     </form>
@@ -77,17 +81,17 @@
                 var maxDate = new Date();
                 maxDate.setFullYear(maxDate.getFullYear() + 1);
                 
-                $('#datetime').attr('min', minDate.toISOString().slice(0, 16));
-                $('#datetime').attr('max', maxDate.toISOString().slice(0, 16));
+                $('#date').attr('min', minDate.toISOString().slice(0, 16));
+                $('#date').attr('max', maxDate.toISOString().slice(0, 16));
             }
             
             // Function to handle change event of the input field
             function handleDateTimeChange() {
-                var selectedDate = new Date($('#datetime').val());
+                var selectedDate = new Date($('#date').val());
                 
                 if (isDateDisabled(selectedDate)) {
-                    $('#datetime').val('');
-                    alert('This date is disabled. Please select another date.');
+                    $('#date').val('');
+                    alert('The appointment list is complete.');
                 }
             }
             
@@ -97,5 +101,45 @@
             // Attach change event handler
             $('#datetime').on('change', handleDateTimeChange);
         });
+        </script>
+
+        <script>
+            const dateInput = document.getElementById('date');
+            const hourDropdown = document.getElementById('hourDropdown');
+            const special = document.getElementById('spec');
+
+            // Function to populate the hour dropdown based on the selected date
+            function populateHourDropdown() {
+                const selectedDate = date.value;
+                const selectedSpec = spec.value;
+                
+                // Make an AJAX request to check for available hours
+                $.ajax({
+                    url: "{{ route('checkDates') }}",
+                    type: 'GET',
+                    data: {
+                        date: selectedDate,
+                        idemp: selectedSpec
+                    },
+                    success: function(response) {
+                        // Clear previous options
+                        hourDropdown.innerHTML = '';
+
+                        // Populate the dropdown with available hours
+                        response.forEach(function(hour) {
+                            const option = document.createElement('option');
+                            option.value = hour;
+                            option.textContent = hour;
+                            hourDropdown.appendChild(option);
+                        });
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            }
+
+            // Attach change event listener to the date input field
+            dateInput.addEventListener('change', populateHourDropdown);
         </script>
 @endsection

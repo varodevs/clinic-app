@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -99,6 +100,10 @@ Route::get('user/dashboard', [UserController::class, 'userDashboard'])->name('da
 Route::get('user/profile', [UserController::class, 'userProfile'])->name('profile');
 
 Route::get('user/therapy', [UserController::class, 'userTherapy'])->name('history');
+
+//Route AJAX
+Route::get('/check-dates', [AppointmentController::class, 'checkDates'])->name('check');
+
 
 
 //db test
