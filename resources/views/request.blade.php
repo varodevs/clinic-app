@@ -72,8 +72,8 @@
 
             // Function to populate the hour dropdown based on the selected date
             function populateHourDropdown() {
-                const selectedDate = date.value;
-                const selectedSpec = spec.value;
+                const selectedDate = dateInput.value;
+                const selectedSpec = special.value;
                 
                 // Make an AJAX request to check for available hours
                 $.ajax({
@@ -102,6 +102,6 @@
             }
 
             // Attach change event listener to the date input field
-            date.addEventListener('change', populateHourDropdown);
+            dateInput.addEventListener('change', populateHourDropdown);
         </script>
 @endsection
