@@ -82,6 +82,8 @@ Route::get('admin', [AdminController::class, 'Admin_view'])->name('admin');
 //Routes Admin-appointments
 Route::get('admin/appointments', [AdminController::class, 'Admin_appo'])->name('admin-appo');
 
+Route::post('canceled', [UserController::class, 'delAppo'])->name('del-appo');
+
 //Routes Admin-Patients
 Route::get('admin/patients', [AdminController::class, 'Admin_pat'])->name('admin-pat');
 

@@ -28,17 +28,17 @@
                     @endphp
                     @endforeach
                     <td>
-                        <form action="{{ route('admin-del-appo') }}">
+                        <form action="">
                             @csrf                    
                             <input type="hidden" name="id" value={{ $id }} />
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>
                     </td>
                     <td>
-                        <form action="">
+                        <form action="{{ route('del-appo') }}">
                             @csrf                    
                             <input type="hidden" name="id" value={{ $id }} />
-                            <button type="submit" class="btn btn-primary">Delete</button>
+                            <button type="submit" class="btn btn-primary">Cancel</button>
                         </form>
                     </td>
                 </tr>

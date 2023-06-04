@@ -104,6 +104,10 @@ class UserController extends Controller
         }
     }
 
+    public function delAppo(){
+        
+    }
+
     /**
      * Show the form for creating a new resource.
      */
