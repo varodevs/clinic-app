@@ -81,7 +81,7 @@ class UserController extends Controller
                     $date_appoint = "";
                 }
 
-                return view('profile', compact('employee','sel','date_appoint'));
+                return view('profile', compact('employee','patient','sel','date_appoint'));
             }else{
                 $patient = $patient->getPatientByUser(session('id_user'));
 
@@ -99,7 +99,7 @@ class UserController extends Controller
                     $date_appoint = "";
                 }
     
-                return view('profile', compact('patient','sel','date_appoint'));
+                return view('profile', compact('employee','patient','sel','date_appoint'));
             }
         }
     }
