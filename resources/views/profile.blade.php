@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="col-12 px-4">
-                <p>{{ $patient }}</p>
+                {{  $patient }}
                 @if ($sel != null)
                     @switch($sel)
                     @case(1)
@@ -40,8 +40,6 @@
                         @include('profile-emp', ['employee' => $employee])
                         @elseif ($patient != null)
                         @include('profile-user', ['patient' => $patient])
-                        @else
-                        @include('profile-info')
                         @endif                                            
                         @break
                     @case(2)
