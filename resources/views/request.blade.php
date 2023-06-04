@@ -29,12 +29,12 @@
                                 </select>
                                 <label class="_form-label">Sex</label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="sex" value="1" id="sex">
+                                    <input class="form-check-input" type="radio" name="sex" value="1" id="sex">
                                     <label class="form-check-label" for="sex">Man</label>
                                 </div>
                                 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="sex" value="2" id="sex2">
+                                    <input class="form-check-input" type="radio" name="sex" value="2" id="sex2">
                                     <label class="form-check-label" for="sex2">Woman</label>
                                 </div>
                             </div>
@@ -49,12 +49,12 @@
                                 <input class="form-control" type="text" name="id" id="id">
                                 <label class="_form-label">Underage?</label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="underchck" value="1" id="under">
+                                    <input class="form-check-input" type="radio" name="underchck" value="1" id="under">
                                     <label class="form-check-label" for="under">Yes</label>
                                 </div>
                                 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="underchck" value="2" id="under2">
+                                    <input class="form-check-input" type="radio" name="underchck" value="2" id="under2">
                                     <label class="form-check-label" for="under2">No</label>
                                 </div>
                                 
