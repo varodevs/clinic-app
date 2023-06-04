@@ -69,8 +69,8 @@ class Patient extends Model
 	 * 
 	 * @return $result Devuelve un bool
 	 */
-	public function createPatient($first_name, $last_name, $phone, $date_birth, $age, $sex, $id_user, $cod_trauma){
-		$result = DB::table('patient')->insert(array('first_name'=> $first_name, 'last_name'=>$last_name, 'phone'=>$phone, 'date_birth'=>$date_birth, 'age'=>$age, 'sex'=>$sex, 'user_id_user'=>$id_user, 'trauma_cod_trauma'=>$cod_trauma));
+	public function createPatient($id,$first_name, $last_name, $phone, $date_birth, $age, $sex, $id_user, $cod_trauma){
+		$result = DB::table('patient')->insert(array('cod_patient'=>$id,'first_name'=> $first_name, 'last_name'=>$last_name, 'phone'=>$phone, 'date_birth'=>$date_birth, 'age'=>$age, 'sex'=>$sex, 'user_id_user'=>$id_user, 'trauma_cod_trauma'=>$cod_trauma));
 		return $result;
 	}
 
@@ -98,6 +98,10 @@ class Patient extends Model
 		return $patient;
 	}
 
+	public function getPatientLastID(){
+		$patient = DB::table('patient')->latest()->pluck('cod_patient');
+		return $patient;
+	}
 
 	/**
 	 * function getPatientByUser()

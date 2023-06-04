@@ -44,9 +44,21 @@ class RequestController extends Controller{
         sleep(5);
 
         $age = Carbon::parse($request->birth)->age;
-        $resultado = $patient->createPatient($request->fname,$request->lname,$phone,$request->birth,$age,$request->sex,session('id_user'), 0);
+
+        $last_id = $patient->getPatientLastID();
+
+        if($last_id != null){
+
+            $last_id++;
+
+        }else{
+            $last_id = 1;
+        }
+
+        $resultado = $patient->createPatient($last_id,$request->fname,$request->lname,$phone,$request->birth,$age,$request->sex,session('id_user'), 0);        
         
         if($resultado){
+
             $cod_patient = $patient->getPatientByUser(session('id_user'));
 
             $confirmed = 0;
