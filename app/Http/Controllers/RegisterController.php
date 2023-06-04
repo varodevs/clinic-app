@@ -49,7 +49,7 @@ class RegisterController extends Controller
         $this->validate(request(),[            
             'email' => 'required|email',
             'password' => 'required|min:8|max:12',
-            'code' => 'required|string',
+            'code' => 'required',
             ]);
             
             $hash_pssw = Hash::make($request->password);
