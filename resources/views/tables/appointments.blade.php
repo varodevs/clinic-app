@@ -19,6 +19,14 @@
                         $i=0;
                     @endphp                    
                     @foreach ($row as $column)
+                    @if ($i == 2)
+                        @if ($column != 0)
+                            <td>Si</td>
+                        @else
+                            <td>No</td>
+                        @endif
+                        
+                    @endif
                     <td>{{ $column }}</td>
                     @php
                         if ($i == 0) {
