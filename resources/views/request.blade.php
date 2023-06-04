@@ -56,7 +56,7 @@
                         </div>
                         <div class="my-4 w-25">
                             <label class="_form-label" for="hourDropdown">Choose an hour</label>
-                            <select id="hourDropdown"></select>                            
+                            <select class="form-control" type="date" id="hourDropdown"></select>                            
                         </div>
                         <button class="btn btn-light _submit" type="submit">Send</button>
                     </form>
