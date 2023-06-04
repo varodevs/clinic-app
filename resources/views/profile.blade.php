@@ -31,11 +31,11 @@
                       </ul>
                 </div>
             </div>
-            <div class="col-12 px-4">
-                <p>{{  $patient->first_name }}</p>
+            <div class="col-12 px-4">                
                 @if ($sel != null)
                     @switch($sel)
                     @case(1)
+                    <p>{{  $patient->first_name }}</p>
                         @if ($employee != null)
                         @include('profile-emp', ['employee' => $employee])
                         @elseif ($patient != null)
