@@ -11,22 +11,38 @@ namespace App\Http\Controllers;
             $selectedDate = $request->input('date');
             $selectedSpec = $request->input('idemp');
 
+            echo $selectedDate;
+
             $appoint = new Appointment();
 
             $appoints = $appoint->getAppointsByEmp($selectedSpec);
 
-            $dates = $appoints->date_appoint;
+            $dates_bd = [];
 
-            $hours = ['08:30:00','09:00:00','09:30:00','10:00:00','10:30:00','11:00:00','11:30:00','12:00:00','12:30:00','13:00:00','17:00:00','17:30:00','18:00:00','18:30:00','19:00:00','19:30:00','20:00:00'];
+            $found = 0;
 
-            $taken = [];
-            foreach($dates as $date){
-                $carbonDate = Carbon::createFromFormat('Y/m/d H:i:s.f', $date);
-                $hour = $carbonDate->format('H:i:s');
-
-                array_push($taken, $hour);
-            }                 
+            foreach($appoints as $appo){                
+                $date = $appo->date_appoint;
+                if($date.contains($selectedDate)){
+                    $found++;
+                    array_push($dates_bd, $date);
+                }
+            }
             
+            $hours = ['08:30:00','09:00:00','09:30:00','10:00:00','10:30:00','11:00:00','11:30:00','12:00:00','12:30:00','13:00:00','17:00:00','17:30:00','18:00:00','18:30:00','19:00:00','19:30:00','20:00:00'];
+            
+            if($found != 0){
+                $availableHours = $hours;
+            }else{
+                $taken = [];
+                foreach($dates_bd as $date){
+                    $carbonDate = Carbon::createFromFormat('Y/m/d H:i:s.f', $date);
+                    $hour = $carbonDate->format('H:i:s');
+    
+                    array_push($taken, $hour);
+                }  
+            }
+                
             $availableHours = array_diff($hours, $taken);
 
             return response()->json($availableHours);
