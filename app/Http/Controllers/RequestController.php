@@ -53,7 +53,8 @@ class RequestController extends Controller{
 
                 return redirect('dashboard')->with('status', 'Appoinment requested successfully.');
             }else{
-                return redirect('request', compact('resultado', 'dateTime'))->with('status', 'Appoinment request failed.');
+                return view('home', compact('result', 'dateTime'));
+                //return redirect('request', compact('resultado', 'dateTime'))->with('status', 'Appoinment request failed.');
             }
         }else{
             return view('home', compact('result', 'dateTime'));
