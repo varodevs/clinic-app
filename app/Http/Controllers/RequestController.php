@@ -51,14 +51,26 @@ class RequestController extends Controller{
 
         $age = Carbon::parse($request->birth)->age;
         $result = $patient->createPatient($request->fname,$request->lname,$request->phone,$request->birth,$age,$request->sex,session('id_user'), 0);
+        
+        if($result){
+            $cod_patient = $patient->getPatientByUser(session('id_user'));
 
-        $cod_patient = $patient->getPatientByUser(session('id_user'));
+            $confirmed = 0;
+            $result = $appoint->createAppoint($dateTime, $confirmed, $request->spec, $cod_patient);
 
-        $confirmed = 0;
-        $result = $appoint->createAppoint($dateTime, $confirmed, $request->spec, $cod_patient);
+            if($result){
+
+                return redirect('user/dashboard')->with('status', 'Appoinment requested successfully.');
+            }else{
+                return redirect('request')->with('status', 'Appoinment request failed.');
+            }
+        }else{
+            return redirect('request')->with('status', 'Appoinment request failed.');
+        }
 
 
-        return view('profile');
+       
+
     }
 
     

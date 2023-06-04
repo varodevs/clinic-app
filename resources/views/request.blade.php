@@ -27,6 +27,15 @@
                                     <option value="">Electrophysiologic &#10088;ECS&#10089;</option>
                                     <option value="">Sports Clinical Specialist &#10088;SCS&#10089;</option>
                                 </select>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="sex" value="1" id="sex">
+                                    <label class="form-check-label" for="sex">Man</label>
+                                </div>
+                                
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="sex" value="2" id="sex2">
+                                    <label class="form-check-label" for="sex2">Woman</label>
+                                </div>
                             </div>
                             <div>
                                 <label class="_form-label" for="lname">Last Name</label>
