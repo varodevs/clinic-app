@@ -28,7 +28,6 @@ class RequestController extends Controller{
 
     public function Request_done(Request $request)
     {
-        echo "entra";
         $request->validate([
             'fname' => 'required|string|min:2|max:10',
             'phone' => 'required|max:20',
@@ -49,19 +48,20 @@ class RequestController extends Controller{
         $patient = new Patient();
 
         $dateTime = Carbon::parse($request->date . ' ' . $request->hour);
+        
+        dump($dateTime);
 
         $age = Carbon::parse($request->birth)->age;
         $result = $patient->createPatient($request->fname,$request->lname,$request->phone,$request->birth,$age,$request->sex,session('id_user'), 0);
         
         if($result){
-            echo "entra1";
             $cod_patient = $patient->getPatientByUser(session('id_user'));
 
             $confirmed = 0;
             $result = $appoint->createAppoint($dateTime, $confirmed, $request->spec, $cod_patient);
 
             if($result){
-                echo "entra2";
+
                 return redirect('user/dashboard')->with('status', 'Appoinment requested successfully.');
             }else{
                 return redirect('request')->with('status', 'Appoinment request failed.');
@@ -75,26 +75,24 @@ class RequestController extends Controller{
 
     }
 
-    
 
-public function sendSMS($new_date, $phone)
-{
-    $twilioSID = env('TWILIO_SID');
-    $twilioAuthToken = env('TWILIO_AUTH_TOKEN');
-    $twilioPhoneNumber = env('TWILIO_PHONE_NUMBER');
+    public function sendSMS($date,$phone){
+        $twilioSID = env('TWILIO_SID');
+        $twilioAuthToken = env('TWILIO_AUTH_TOKEN');
+        $twilioPhoneNumber = env('TWILIO_PHONE_NUMBER');
 
-    $client = new Client($twilioSID, $twilioAuthToken);
-    
-    $client->messages->create(
-        $phone,
-        [
-            'from' => $twilioPhoneNumber,
-            'body' => 'Your appointment date is: '& $new_date
-        ]
-    );
+        $client = new Client($twilioSID, $twilioAuthToken);
+        
+        $client->messages->create(
+            $phone,
+            [
+                'from' => $twilioPhoneNumber,
+                'body' => 'Your appointment date is: '& $date
+            ]
+        );
 
-    return "SMS sent successfully.";
-}
+        return "SMS sent successfully.";
+    }
 
 }
 ?>
