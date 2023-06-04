@@ -4,9 +4,9 @@
         <tr>
             <td>ID</td>
             <td>Date</td>
+            <td>Confirmed</td>
             <td>Employee</td>
             <td>Patient</td>
-            <td>Confirmed</td>
             <td>Update</td>
             <td>Delete</td>
         </tr>
