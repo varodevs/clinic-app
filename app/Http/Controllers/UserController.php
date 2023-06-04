@@ -24,6 +24,7 @@ class UserController extends Controller
             $user = $user->getUserdById(session('id_user'));
             $sel = 2;
         if($user->role_cod_role != 6){
+            $sel2 = 1;
             $employee = $employee->getEmployeeByUser(session('id_user'));
 
             $array = $appoint->getAppointsByPatient($employee->cod_employee);
@@ -31,8 +32,9 @@ class UserController extends Controller
 
                 $date_appoint = $last->date_appoint;
 
-            return view('profile', compact('employee', 'array','sel','date_appoint'));
+            return view('profile', compact('employee', 'array','sel','sel2','date_appoint'));
         }else{
+            $sel2 = 2;
             $patient = $patient->getPatientByUser(session('id_user'));
 
                 $id_patient = $patient->cod_patient;
@@ -42,7 +44,7 @@ class UserController extends Controller
 
                 $date_appoint = $last->date_appoint;
 
-            return view('profile', compact('patient', 'array','sel','date_appoint'));
+            return view('profile', compact('patient', 'array','sel','sel2','date_appoint'));
         }
 
         

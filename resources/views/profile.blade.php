@@ -35,11 +35,10 @@
                 @if ($sel != null)
                     @switch($sel)
                     @case(1)
-                    <p>{{  $patient->first_name }}</p>
-                        @if ($employee != null)
+                        @if ($sel2 == 1)
                         @include('profile-emp', ['employee' => $employee])
-                        @elseif ($patient != null)
-                        @include('profile-user', ['fname' => $patient->first_name])
+                        @elseif ($sel2 == 2)
+                        @include('profile-user', ['patient' => $patient])
                         @endif                                            
                         @break
                     @case(2)
