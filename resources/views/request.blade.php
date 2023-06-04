@@ -34,7 +34,7 @@
                                 <label class="_form-label" for="email">Email</label>
                                 <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
                                 <label class="_form-label" for="date">Check for dates</label>
-                                <input class="form-control" type="datetime-local" name="date" id="datetime">
+                                <input class="form-control" type="date" name="date" id="datetime">
                                 <label class="_form-label" for="id">ID</label>
                                 <input class="form-control" type="text" name="id" id="id">
                                 <label class="_form-label">Underage?</label>
