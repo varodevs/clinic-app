@@ -25,7 +25,7 @@
             $i=0;
             @endphp
             @foreach ($row as $column)
-            @if ($i != 3)
+            @if ($i != 3 && $i != 4)
                 @if ($i == 6)
                 <td>{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}</td>
                 @else
