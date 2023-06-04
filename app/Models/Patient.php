@@ -99,7 +99,7 @@ class Patient extends Model
 	}
 
 	public function getPatientLast(){
-		$patient = DB::table('patient')->latest()->first();
+		$patient = DB::table('patient')->orderBy('cod_patient', 'desc')->first();
 		return $patient;
 	}
 
