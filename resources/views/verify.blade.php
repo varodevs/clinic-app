@@ -11,7 +11,7 @@
                 <h4></h4>
                 <p></p>
                 <div class="d-flex flex-column justify-content-center px-5 py-3 _div-login">
-                    <form class="d-flex flex-column justify-content-center _form" action="{{ route('login-done') }}" method="POST">
+                    <form class="d-flex flex-column justify-content-center _form" action="{{ route('verify-done') }}" method="POST">
                         @csrf
                         <label class="_form-label" for="email">Email</label>
                         <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
