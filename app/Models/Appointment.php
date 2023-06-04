@@ -65,8 +65,8 @@ class Appointment extends Model
 		return $appoints;
 	}
 
-	public function getLastAppoint(){
-		$appoints = DB::table('appointment')->first();
+	public function getLastAppointPat($cod_patient){
+		$appoints = DB::table('appointment')->where('patient_cod_patient', [$cod_patient])->first();
 		return $appoints;
 	}
 

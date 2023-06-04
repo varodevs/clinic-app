@@ -85,14 +85,14 @@ class UserController extends Controller
             }else{
                 $patient = $patient->getPatientByUser(session('id_user'));
 
-                if($patient != null){
+                //if($patient != null){
                     $id_patient = $patient->cod_patient;
-                }else{
-                    $id_patient = "";
-                }
+                //}else{
+                    //$id_patient = "";
+                //}
     
                 $array = $appoint->getAppointsByPatient($id_patient);
-                $last = $appoint->getLastAppoint();
+                $last = $appoint->getLastAppointPat($id_patient);
                 if($last != null){
                     $date_appoint = $last->date_appoint;
                 }else{
