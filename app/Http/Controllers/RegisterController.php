@@ -32,12 +32,13 @@ class RegisterController extends Controller
             ]);
             if($request->password == $request->pass_conf && $request->check_terms != null){
                 $cod_verify = Str::upper(Str::random(4));
+                $hash_cod_verify = Hash::make($cod_verify);
                 $name = $request->uname;
                 $role = 6;
                 $hash_pssw = Hash::make($request->password);
                 $user = new User();
                 $response = Mail::to($request->email)->send(new Email($name,$cod_verify));
-                $result=$user->createUser($request->uname, $request->email, $hash_pssw, $cod_verify, $role, now());
+                $result=$user->createUser($request->uname, $request->email, $hash_pssw, $hash_cod_verify, $role, now());
                 return redirect('verify');
             }else{
                 return redirect('register');
@@ -56,7 +57,7 @@ class RegisterController extends Controller
             $user_id=$user->getUserIdByEmail($request->email)[0];
             $user_by_id = $user->getUserdById($user_id);
 
-            if(Hash::check($password, $user_by_id->password) && $request->code == $user_by_id->cod_verify){
+            if(Hash::check($password, $user_by_id->password) && Hash::check($request->code, $user_by_id->cod_verify)){
                 $active = 0;
                 $result=$user->updateUser($user_id, $user_by_id->username, $user_by_id->email, $user_by_id->password, $user_by_id->cod_verify, $active,$user_by_id->reg_date);
                 return redirect('home');
