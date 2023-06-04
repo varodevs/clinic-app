@@ -25,9 +25,9 @@
                         @else
                             <td>No</td>
                         @endif
-                        
-                    @endif
+                    @else
                     <td>{{ $column }}</td>
+                    @endif
                     @php
                         if ($i == 0) {
                             $id=$column;
