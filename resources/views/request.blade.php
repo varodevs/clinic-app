@@ -74,7 +74,8 @@
             function populateHourDropdown() {
                 const selectedDate = dateInput.value;
                 const selectedSpec = special.value;
-                
+                alert(selectedDate);
+                alert(selectedSpec);
                 // Make an AJAX request to check for available hours
                 $.ajax({
                     url: "{{ route('check') }}",
