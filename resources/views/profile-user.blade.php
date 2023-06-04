@@ -1,4 +1,5 @@
 <div class="col-3 align-self-center m-3">
+    <h3>Patient information</h3>
     <form action="#" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="input-group mb-3">
