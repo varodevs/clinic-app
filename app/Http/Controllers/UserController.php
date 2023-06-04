@@ -40,7 +40,8 @@ class UserController extends Controller
             }
 
             $array = $appoint->getAppointsByPatient($id_patient);
-
+            $last = $appoint->getLastAppoint();
+            $last_date = $last->date_appoint;
             return view('profile', compact('patient', 'array','sel','last_date'));
         }
 
