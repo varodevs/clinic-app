@@ -67,7 +67,7 @@ class RequestController extends Controller{
 
             if($result){
 
-                return redirect('dashboard')->with('status', 'Appoinment requested successfully.');
+                return redirect('user/dashboard')->with('status', 'Appoinment requested successfully.');
             }else{
                 return redirect('request')->with('status', 'Appoinment request failed.');
             }
