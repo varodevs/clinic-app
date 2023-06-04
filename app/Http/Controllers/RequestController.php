@@ -12,6 +12,8 @@ use Twilio\Rest\Client;
 class RequestController extends Controller{
     public function Request_view()
     {
+        $variable = 'Hello, world!';
+        dump($variable);
         $appoint = new Appointment();
 
         $result = $appoint->getAppoints();
@@ -41,8 +43,7 @@ class RequestController extends Controller{
             'textarea' => 'string|max:200',
             'hour' => 'required'
             ]);
-            $variable = 'Hello, world!';
-            dump($variable);
+
         $phone = $request->phone;
 
         $appoint = new Appointment();
