@@ -27,7 +27,7 @@ class UserController extends Controller
             $sel2 = 1;
             $employee = $employee->getEmployeeByUser(session('id_user'));
 
-            $array = $appoint->getAppointsByPatient($employee->cod_employee);
+            $array = $appoint->getAppointsByEmp($employee->cod_employee);
             $last = $appoint->getLastAppointEmp($employee->cod_employee);
 
                 $date_appoint = $last->date_appoint;
