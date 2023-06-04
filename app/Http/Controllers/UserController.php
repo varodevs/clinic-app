@@ -33,9 +33,15 @@ class UserController extends Controller
         }else{
             $patient = $patient->getPatientByUser(session('id_user'));
 
-            $appoints = $appoint->getAppointsByPatient($patient->cod_patient);
+            if($patient != null){
+                $id_patient = $patient->cod_patient;
+            }else{
+                $id_patient = "";
+            }
 
-            return view('profile', compact('patient', 'appoints','sel','last_date'));
+            $array = $appoint->getAppointsByPatient($id_patient);
+
+            return view('profile', compact('patient', 'array','sel','last_date'));
         }
 
         
