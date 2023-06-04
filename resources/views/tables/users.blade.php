@@ -4,7 +4,6 @@
             <td>ID</td>
             <td>Username</td>
             <td>Email</td>
-            <td>Cod. verify</td>
             <td>Active</td>
             <td>Reg. date</td>
             <td>Role</td>
