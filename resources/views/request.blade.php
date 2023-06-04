@@ -23,9 +23,11 @@
                             <input class="form-control" type="date" name="birth" id="birth">
                             <label class="_form-label" for="spec">Speciality</label>
                             <select class="form-control" type="text" name="spec" id="spec">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
+                                <option value="19">Orthopaedic Clinical Specialist &#10088;OCS&#10089;</option>
+                                <option value="">Neurology Clinical Specialist &#10088;NCS&#10089;</option>
+                                <option value="">Pediatric Clinical Specialist &#10088;PCS&#10089;</option>
+                                <option value="">Electrophysiologic Clinical Specialist &#10088;ECS&#10089;</option>
+                                <option value="">Sports Clinical Specialist &#10088;SCS&#10089;</option>
                             </select>
                         </div>
                         <div>
@@ -33,6 +35,8 @@
                             <input class="form-control" type="text" name="lname" id="lname">
                             <label class="_form-label" for="email">Email</label>
                             <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
+                            <label class="_form-label" for="date">Check for dates</label>
+                            <input class="form-control" type="datetime-local" name="date" id="date">
                             <label class="_form-label" for="id">ID</label>
                             <input class="form-control" type="text" name="id" id="id">
                             <label class="_form-label">Underage?</label>
@@ -58,5 +62,28 @@
             </div>
         </div>
     </div>
-
+    <script>
+        $(document).ready(function() {
+          var disabledDates = ["2023-06-05", "2023-06-12", "2023-06-19"];
+        
+          $('#date').on('change', function() {
+            var selectedDate = $(this).val();
+        
+            if (disabledDates.includes(selectedDate)) {
+              $(this).val('');
+              alert('This date is disabled.');
+            }
+          });
+        
+          $('#date').on('focus', function() {
+            $(this).attr('min', '2023-06-01');
+            $(this).attr('max', '2023-06-30');
+        
+            disabledDates.forEach(function(date) {
+              $(this).removeAttr('disabled');
+              $('input[type="date"][value="' + date + '"]').attr('disabled', 'disabled');
+            });
+          });
+        });
+        </script>
 @endsection

@@ -44,7 +44,8 @@ class Employee extends Model
 		'title',
 		'title_court',
 		'date_birth',
-		'date_hire'
+		'date_hire',
+		'img_path'
 	];
 
 	//CRUD Employee

@@ -65,9 +65,16 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('more') }}">More Services</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('more') }}">Request an appoitment</a>
-                </li>
+                @if (session('id_user') != null && session('id_user') != "")
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('request') }}">Request an appoitment</a>
+                  </li>
+                @else
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">Request an appoitment</a>
+                  </li>
+                @endif
+
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('about') }}">About us</a>
                 </li>
@@ -89,7 +96,11 @@
         <div class="d-flex flex-column justify-content-center _content">
           <div class="d-flex align-self-center justify-content-evenly _appoint-banner">
             <p class="_appoint-p">We ensure out patients receive the best treatments.</p>
+            @if (session('id_user') != null && session('id_user') != "")
             <button class="btn btn-light _appoint-button"><a class="_link" href="{{ route('request') }}">REQUEST AN APPOINTMENT</a><img class="_appoint-img" src="{{ asset("img/appointment.png") }}" alt="Appointment Request Image"></button>
+            @else
+            <button class="btn btn-light _appoint-button"><a class="_link" href="{{ route('login') }}">REQUEST AN APPOINTMENT</a><img class="_appoint-img" src="{{ asset("img/appointment.png") }}" alt="Appointment Request Image"></button>
+            @endif            
           </div>
           <div class="d-flex justify-content-evenly">
             <div class="_img-bottom-div"><img class="_img-bottom" src="{{ asset("img/kinesio.jpg") }}" alt="Kinesiotherapy image"></div>
@@ -134,5 +145,6 @@
             </div>
         </div>
     </footer>  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
