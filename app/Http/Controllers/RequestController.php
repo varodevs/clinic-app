@@ -45,7 +45,9 @@ class RequestController extends Controller{
 
         $age = Carbon::parse($request->birth)->age;
 
-        $last_id = $patient->getPatientLastID();
+        $last_patient = $patient->getPatientLast();
+
+            $last_id= $last_patient->cod_patient;
 
             $last_id++;
 
