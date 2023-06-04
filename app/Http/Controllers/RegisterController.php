@@ -23,7 +23,7 @@ class RegisterController extends Controller
      */
     public function Register_done(Request $request)
     {
-        $this->validate(request(),[
+        $request->validate([
             'uname' => 'required|string|min:2|max:10',
             'email' => 'required|email|min:8|max:35',
             'password' => 'required|min:8|max:15',
@@ -47,7 +47,7 @@ class RegisterController extends Controller
     }
     public function Verify(Request $request)
     {
-        $this->validate(request(),[            
+        $request->validate([            
             'email' => 'required|email',
             'password' => 'required|min:8|max:12',
             'code' => 'required',

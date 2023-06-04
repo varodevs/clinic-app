@@ -27,13 +27,14 @@ class RequestController extends Controller{
 
     public function Request_done(Request $request)
     {
-        $this->validate(request(),[
+        $request->validate([
             'fname' => 'required|string|min:2|max:10',
             'phone' => 'required|max:20',
             'birth' => 'required|date',
             'spec' => 'required|',
             'lname' => 'required|string|min:2|max:10',
             'email' => 'required|email|min:8|max:35',
+            'date' => 'required|date',
             'id' => 'required|string',
             'underchck' => 'required',
             'textarea' => 'string|max:35',
@@ -49,11 +50,11 @@ class RequestController extends Controller{
         $day = $dayName = \Carbon\Carbon::createFromFormat('Y-m-d', $last_date)->format('l');
         $hour = explode($last_date, "")(1);
         $date = explode($last_date, "")(0);
-        if(!$day.equalTo("Saturday") || !$day.equalTo("Sunday") && $hour <= "19:00:00"){
+        if(!$day.equalTo("Saturday") && !$day.equalTo("Sunday") && $hour <= "19:00:00"){
             $new_date = $last_date->addHour();
-        }else{
-            $new_date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $last_date . ' ' . "8:00:00");
-        }
+        }elseif($hour > "19:00:00"){
+            $new_date = $last_date->addHour(13);
+        }else
         $age = Carbon::parse($request->birth)->age;
         $result = $patient->createPatient($request->fname,$request->lname,$request->phone,$request->birth,$age,$request->sex,session('id_user'), 0);
 
