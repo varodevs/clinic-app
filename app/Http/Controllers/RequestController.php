@@ -56,12 +56,12 @@ class RequestController extends Controller{
         
         if($result){
 
-            $cod_patient = $patient->getPatientByUser(session('id_user'));
+            $patient = $patient->getPatientByUser(session('id_user'));
+
+            $cod_patient = $patient->cod_patient;
 
             $confirmed = 0;
             $id_emp = intval($request->spec);
-
-            $dateTime = strval($dateTime);
 
             $result = $appoint->createAppoint($dateTime, $confirmed, $id_emp, $cod_patient);
 
