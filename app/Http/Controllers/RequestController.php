@@ -10,7 +10,7 @@ use DateTime;
 use Twilio\Rest\Client;
 
 class RequestController extends Controller{
-    
+
     public function Request_view()
     {
         return view('request');
@@ -26,7 +26,7 @@ class RequestController extends Controller{
             'lname' => 'required|string|min:2|max:10',
             'email' => 'required|email|min:8|max:35',
             'date' => 'required|date',
-            'id' => 'required|string',
+            'id' => 'required',
             'underchck' => 'required',
             'textarea' => 'string|max:200',
             'hour' => 'required'
@@ -56,12 +56,10 @@ class RequestController extends Controller{
 
                 return redirect('dashboard')->with('status', 'Appoinment requested successfully.');
             }else{
-                return view('home', compact('result', 'dateTime'));
-                //return redirect('request', compact('resultado', 'dateTime'))->with('status', 'Appoinment request failed.');
+                return redirect('request')->with('status', 'Appoinment request failed.');
             }
         }else{
-            return view('home', compact('result', 'dateTime'));
-            //return redirect('request', compact('resultado', 'dateTime'))->with('status', 'Appoinment request failed.');
+            return redirect('request')->with('status', 'Appoinment request failed.');
         }
 
 
