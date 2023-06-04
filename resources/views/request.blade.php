@@ -102,6 +102,6 @@
             }
 
             // Attach change event listener to the date input field
-            dateInput.addEventListener('change', populateHourDropdown);
+            date.addEventListener('change', populateHourDropdown);
         </script>
 @endsection
