@@ -69,7 +69,11 @@
                             <select class="form-control text-center" type="date" id="hourDropdown"></select>                            
                         </div>
                         <button class="btn btn-light _submit" type="submit">Send</button>
-                        <span>{{ $status }}</span>
+                        @if(session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
                     </form>
                 </div>
             </div>

@@ -23,7 +23,7 @@ class RequestController extends Controller{
             $array.array_push($row->date_appoint);
         }
 
-        return view('request')->with('status', '');
+        return view('request');
     }
 
     public function Request_done(Request $request)
