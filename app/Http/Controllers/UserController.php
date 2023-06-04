@@ -22,6 +22,7 @@ class UserController extends Controller
 
         if(session('id_user') != null && session('id_user') != ""){
             $user = $user->getUserdById(session('id_user'));
+            $sel = 2;
             $sel2 = 0;
         if($user->role_cod_role != 6){
             $sel2 = 1;
