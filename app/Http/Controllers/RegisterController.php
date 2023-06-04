@@ -60,7 +60,7 @@ class RegisterController extends Controller
             if(Hash::check($password, $user_by_id->password) && Hash::check($request->code, $user_by_id->cod_verify)){
                 $active = 0;
                 $result=$user->updateUser($user_id, $user_by_id->username, $user_by_id->email, $user_by_id->password, $user_by_id->cod_verify, $active,$user_by_id->reg_date);
-                return redirect('home');
+                return redirect('login');
             }else{
                 return redirect('verify');
             }
