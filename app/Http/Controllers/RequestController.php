@@ -52,17 +52,20 @@ class RequestController extends Controller{
             $last_id++;
 
 
-        $resultado = $patient->createPatient($last_id,$request->fname,$request->lname,$phone,$request->birth,$age,$request->sex,session('id_user'), 3);        
+        $result = $patient->createPatient($last_id,$request->fname,$request->lname,$phone,$request->birth,$age,$request->sex,session('id_user'), 3);        
         
-        if($resultado){
+        if($result){
 
             $cod_patient = $patient->getPatientByUser(session('id_user'));
 
             $confirmed = 0;
             $id_emp = intval($request->spec);
-            $resultado = $appoint->createAppoint($dateTime, $confirmed, $id_emp, $cod_patient);
 
-            if($resultado){
+            $dateTime = strval($dateTime);
+
+            $result = $appoint->createAppoint($dateTime, $confirmed, $id_emp, $cod_patient);
+
+            if($result){
 
                 return redirect('dashboard')->with('status', 'Appoinment requested successfully.');
             }else{
