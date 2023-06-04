@@ -38,10 +38,11 @@ class RequestController extends Controller{
             'date' => 'required|date',
             'id' => 'required|string',
             'underchck' => 'required',
-            'textarea' => 'string|max:35',
+            'textarea' => 'string|max:200',
             'hour' => 'required'
             ]);
-        
+            $variable = 'Hello, world!';
+            dump($variable);
         $phone = $request->phone;
 
         $appoint = new Appointment();
