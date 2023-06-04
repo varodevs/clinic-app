@@ -38,6 +38,7 @@
                         @if ($employee != null)
                         @include('profile-emp', ['employee' => $employee])
                         @elseif ($patient != null)
+                        <p>{{ $patient }}</p>
                         @include('profile-user', ['patient' => $patient])
                         @else
                         @include('profile-info')
