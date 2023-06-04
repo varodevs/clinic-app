@@ -39,10 +39,10 @@
                 @if ($sel != null)
                     @switch($sel)
                     @case(1)
-                    @include('tables.appointments', ['array' => $array])
+                        @include('profile-info')                    
                         @break
                     @case(2)
-                        @include('profile-info')
+                        @include('tables.appointments', ['array' => $array])
                         @break
                     @case(3)
                         @include('tables.appointments')
