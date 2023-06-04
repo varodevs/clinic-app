@@ -52,12 +52,12 @@ class RegisterController extends Controller
             'code' => 'required',
             ]);
             $password=$request->password;
-            //$hash_pssw = Hash::make($password);
+            $hash_pssw = Hash::make($password);
             $user = new User();
             $user_id=$user->getUserIdByEmail($request->email)[0];
             $user_by_id = $user->getUserdById($user_id);
 
-            if(Hash::check($password, $user_by_id->password) && $request->code == $user_by_id->cod_verify){
+            if(Hash::check($password, $hash_pssw) && $request->code == $user_by_id->cod_verify){
                 $active = 0;
                 $result=$user->updateUser($user_id, $user_by_id->username, $user_by_id->email, $user_by_id->password, $user_by_id->cod_verify, $active,$user_by_id->reg_date,$user_by_id->img_path);
                 return redirect('home');
