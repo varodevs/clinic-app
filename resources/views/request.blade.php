@@ -66,20 +66,20 @@
     </div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                var datePicker = document.getElementById('datePicker');
+                var date = document.getElementById('date');
                 
                 // Add an event listener to the input field
-                datePicker.addEventListener('focus', function() {
+                date.addEventListener('focus', function() {
                     // Retrieve the date picker popup
                     var datePopup = document.querySelector('input[type="date"]');
                     
                     // Add an event listener to the date picker popup
                     datePopup.addEventListener('click', function() {
                         // Retrieve the calendar element
-                        var calendar = document.querySelector('.datepicker');
+                        var calendar = document.querySelector('.date');
                         
                         // Retrieve all the day cells in the calendar
-                        var dayCells = calendar.querySelectorAll('.datepicker--cell-day');
+                        var dayCells = calendar.querySelectorAll('.date--cell-day');
                         
                         // Iterate through each day cell and disable Saturdays and Sundays
                         dayCells.forEach(function(cell) {
