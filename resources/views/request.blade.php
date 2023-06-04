@@ -65,7 +65,7 @@
         </div>
     </div>
         <script>
-            var input = document.getElementById('myDateInput');
+            var input = document.getElementById('date');
         
             input.addEventListener('input', function(event) {
             var selectedDate = new Date(event.target.value);
