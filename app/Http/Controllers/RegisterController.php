@@ -64,11 +64,6 @@ class RegisterController extends Controller
             }else{
                 return redirect('verify');
             }
-            
-            
 
-            
-            
-  
     }
 }
