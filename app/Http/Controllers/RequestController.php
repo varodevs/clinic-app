@@ -22,8 +22,8 @@ class RequestController extends Controller{
         foreach($result as $row){
             $array.array_push($row->date_appoint);
         }
-
-        return view('request');
+        
+        return view('request', compact('resultado', 'dateTime'));
     }
 
     public function Request_done(Request $request)
@@ -52,22 +52,22 @@ class RequestController extends Controller{
         echo $dateTime;
 
         $age = Carbon::parse($request->birth)->age;
-        $result = $patient->createPatient($request->fname,$request->lname,$request->phone,$request->birth,$age,$request->sex,session('id_user'), 0);
+        $resultado = $patient->createPatient($request->fname,$request->lname,$request->phone,$request->birth,$age,$request->sex,session('id_user'), 0);
         
-        if($result){
+        if($resultado){
             $cod_patient = $patient->getPatientByUser(session('id_user'));
 
             $confirmed = 0;
-            $result = $appoint->createAppoint($dateTime, $confirmed, $request->spec, $cod_patient);
+            $resultado = $appoint->createAppoint($dateTime, $confirmed, $request->spec, $cod_patient);
 
-            if($result){
+            if($resultado){
 
                 return redirect('dashboard')->with('status', 'Appoinment requested successfully.');
             }else{
-                return redirect('request')->with('status', 'Appoinment request failed.');
+                return redirect('request', compact('resultado', 'dateTime'))->with('status', 'Appoinment request failed.');
             }
         }else{
-            return redirect('request')->with('status', 'Appoinment request failed.');
+            return redirect('request', compact('resultado', 'dateTime'))->with('status', 'Appoinment request failed.');
         }
 
 
