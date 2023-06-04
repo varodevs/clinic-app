@@ -64,44 +64,6 @@
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function() {
-            // Array of disabled dates
-            var disabledDates = ['2023-05-28', '2023-06-05', '2023-06-12'];
-            
-            // Function to check if a date is disabled
-            function isDateDisabled(date) {
-                var formattedDate = date.toISOString().split('T')[0];
-                return disabledDates.includes(formattedDate);
-            }
-            
-            // Function to set the min and max attributes of the input field
-            function setDateTimeLimits() {
-                var minDate = new Date();
-                var maxDate = new Date();
-                maxDate.setFullYear(maxDate.getFullYear() + 1);
-                
-                $('#date').attr('min', minDate.toISOString().slice(0, 16));
-                $('#date').attr('max', maxDate.toISOString().slice(0, 16));
-            }
-            
-            // Function to handle change event of the input field
-            function handleDateTimeChange() {
-                var selectedDate = new Date($('#date').val());
-                
-                if (isDateDisabled(selectedDate)) {
-                    $('#date').val('');
-                    alert('The appointment list is complete.');
-                }
-            }
-            
-            // Set initial date limits
-            setDateTimeLimits();
-            
-            // Attach change event handler
-            $('#datetime').on('change', handleDateTimeChange);
-        });
-        </script>
 
         <script>
             const dateInput = document.getElementById('date');
