@@ -73,13 +73,10 @@ class UserController extends Controller
                 $employee = $employee->getEmployeeByUser(session('id_user'));
 
                 $array = $appoint->getAppointsByPatient($employee->cod_employee);
-                $last = $appoint->getLastAppoint();
-                $last = $appoint->getLastAppoint();
-                if($last != null){
+                $last = $appoint->getLastAppointEmp($employee->cod_employee);
+
                     $date_appoint = $last->date_appoint;
-                }else{
-                    $date_appoint = "";
-                }
+
 
                 return view('profile', compact('employee','patient','sel','date_appoint'));
             }else{

@@ -70,7 +70,6 @@ class Appointment extends Model
 		return $appoints;
 	}
 
-
 	/**
 	 * function getAppointsByPatient()
 	 * 
@@ -108,7 +107,10 @@ class Appointment extends Model
 		return $appoint;
 	}
 
-
+	public function getLastAppointEmp($cod_emp){
+		$appoints = DB::table('appointment')->where('employee_cod_emp', [$cod_emp])->first();
+		return $appoints;
+	}
 	/**
 	 * function updateAppoint()
 	 * 
