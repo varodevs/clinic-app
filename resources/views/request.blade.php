@@ -11,7 +11,7 @@
                 <h4></h4>
                 <p></p>
                 <div class="d-flex flex-column justify-content-center px-5 py-3 _div-login">
-                    <form class="d-flex flex-column justify-content-center _form" action="{{ route('contact') }}" method="GET">
+                    <form class="d-flex flex-column justify-content-center _form" action="{{ route('requestdone') }}" method="POST">
                         @csrf
                         <div class="d-flex justify-content-evenly w-75">
                             <div>

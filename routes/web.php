@@ -74,7 +74,7 @@ Route::get('request', [RequestController::class, 'Request_view'])->name('request
 
 //Route request form
 
-Route::post('requested', [RequestController::class, 'Request_done'])->name('request-done');
+Route::post('requested', [RequestController::class, 'Request_done'])->name('requestdone');
 
 //Routes Admin
 Route::get('admin', [AdminController::class, 'Admin_view'])->name('admin');
