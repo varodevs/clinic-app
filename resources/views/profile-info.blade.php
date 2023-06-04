@@ -1,4 +1,4 @@
-<div class="col-2 align-self-start m-3">
+<div class="col-3 align-self-center m-3">
     <form action="#" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="input-group mb-3">
