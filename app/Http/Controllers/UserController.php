@@ -15,10 +15,10 @@ class UserController extends Controller
      */
     public function userDashboard()
     {
-        $user = new User();
-        $appoint = new Appointment();
+        $user = new User();        
         $patient = new Patient();
         $employee = new Employee();
+        $appoint = new Appointment();
 
         if(session('id_user') != null && session('id_user') != ""){
             $user = $user->getUserdById(session('id_user'));
@@ -26,7 +26,7 @@ class UserController extends Controller
         if($user->role_cod_role != 6){
             $employee = $employee->getEmployeeByUser(session('id_user'));
 
-            $appoints = $appoint->getAppointsByPatient($employee->cod_employee);
+            $array = $appoint->getAppointsByPatient($employee->cod_employee);
             $last = $appoint->getLastAppoint();
             $last = $appoint->getLastAppoint();
             if($last != null){
@@ -34,7 +34,7 @@ class UserController extends Controller
             }else{
                 $date_appoint = "";
             }
-            return view('profile', compact('employee', 'appoints','sel','date_appoint'));
+            return view('profile', compact('employee', 'array','sel','date_appoint'));
         }else{
             $patient = $patient->getPatientByUser(session('id_user'));
 
@@ -58,6 +58,26 @@ class UserController extends Controller
         }else{
             return view('home');
         }        
+    }
+
+    public function userProfile(){
+        $user = new User();        
+        $patient = new Patient();
+        $employee = new Employee();
+
+        if(session('id_user') != null && session('id_user') != ""){
+            $user = $user->getUserdById(session('id_user'));
+            $sel = 1;
+            if($user->role_cod_role != 6){
+                $employee = $employee->getEmployeeByUser(session('id_user'));
+
+                return view('profile', compact('employee','sel'));
+            }else{
+                $patient = $patient->getPatientByUser(session('id_user'));
+    
+                return view('profile', compact('patient','sel'));
+            }
+        }
     }
 
     /**
