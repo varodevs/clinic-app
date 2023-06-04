@@ -25,10 +25,12 @@
             @endphp
             @foreach ($row as $column)
             @if ($i != 3 && $i != 4)
-                @if ($i == 6)
-                <td>{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}</td>
+                @if ($i == 2)
+                <td><input type="email" value="{{ $column }}" name="date_reg"/></td>
+                @elseif ($i == 6)
+                <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_reg"/></td>
                 @else
-                <td>{{ $column }}</td>
+                <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
                 @endif                
             @endif            
             @php
