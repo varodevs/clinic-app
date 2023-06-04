@@ -51,7 +51,7 @@ class Appointment extends Model
 	 * @return $result Devuelve un bool
 	 */
 	public function createAppoint($date_appoint, $cod_employee, $cod_patient){
-		$result = DB::table('appointment')->insert(array('date_appoint'=> $date_appoint, 'employee_cod_employee'=>$cod_employee, 'patient_cod_patient'=>$cod_patient));
+		$result = DB::table('appointment')->insert(array('date_appoint'=> $date_appoint, 'employee_cod_emp'=>$cod_employee, 'patient_cod_patient'=>$cod_patient));
 		return $result;
 	}
 
@@ -91,7 +91,7 @@ class Appointment extends Model
 	 * @return $return un array de $appoints
 	 */
 	public function getAppointsByEmp($cod_employee){
-		$appoints = DB::table('appointment')->where('employee_cod_employee', [$cod_employee])->get();
+		$appoints = DB::table('appointment')->where('employee_cod_emp', [$cod_employee])->get();
 		return $appoints;
 	}
 
@@ -104,7 +104,7 @@ class Appointment extends Model
 	 * @return $return un objeto query builder $appoint
 	 */
 	public function getAppoint($cod_employee, $cod_patient){
-		$appoint = DB::table('appointment')->where('employee_cod_employee', [$cod_employee])->where('patient_cod_patient', [$cod_patient])->first();
+		$appoint = DB::table('appointment')->where('employee_cod_emp', [$cod_employee])->where('patient_cod_patient', [$cod_patient])->first();
 		return $appoint;
 	}
 
