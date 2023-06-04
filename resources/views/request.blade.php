@@ -115,7 +115,7 @@
                 
                 // Make an AJAX request to check for available hours
                 $.ajax({
-                    url: "{{ route('checkDates') }}",
+                    url: "{{ route('check') }}",
                     type: 'GET',
                     data: {
                         date: selectedDate,
