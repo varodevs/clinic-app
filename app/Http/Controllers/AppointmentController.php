@@ -11,8 +11,6 @@ namespace App\Http\Controllers;
             $selectedDate = $request->input('date');
             $selectedSpec = $request->input('idemp');
 
-            echo $selectedDate;
-
             $appoint = new Appointment();
 
             $appoints = $appoint->getAppointsByEmp($selectedSpec);
@@ -42,7 +40,7 @@ namespace App\Http\Controllers;
                     array_push($taken, $hour);
                 }  
             }
-                
+
             $availableHours = array_diff($hours, $taken);
 
             return response()->json($availableHours);
