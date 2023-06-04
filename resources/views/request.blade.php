@@ -34,7 +34,7 @@
                                 <label class="_form-label" for="email">Email</label>
                                 <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
                                 <label class="_form-label" for="date">Check for dates</label>
-                                <input class="form-control" type="datetime-local" name="date" id="date">
+                                <input class="form-control" type="datetime-local" name="date" id="date" <?php echo date('N') >= 6 ? 'disabled' : ''; ?>>
                                 <label class="_form-label" for="id">ID</label>
                                 <input class="form-control" type="text" name="id" id="id">
                                 <label class="_form-label">Underage?</label>
@@ -68,8 +68,7 @@
             var selectedDate = $(this).val();
         
             if (disabledDates.includes(selectedDate)) {
-              $(this).val('');
-              alert('This date is disabled.');
+              $(this).val('');              
             }
           });
         

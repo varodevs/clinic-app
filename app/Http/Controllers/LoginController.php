@@ -52,7 +52,7 @@ class LoginController extends Controller
                         if($user_by_id->active != 0){
                             return redirect('/verify')->with('status', 'Login successful, but needs verification');
                         }else{
-                            return redirect('/profile')->with('status', 'Login successful');
+                            return redirect('user/dashboard')->with('status', 'Login successful');
                         }
                         break;
                     default:
@@ -69,6 +69,6 @@ class LoginController extends Controller
         session()->forget('role');
         session()->forget('username');
 
-        return redirect('login')->with('status', 'Login failed');
+        return redirect('login')->with('status', 'Logged out');
     }
 }

@@ -17,7 +17,8 @@ class RequestController extends Controller{
         $result = $appoint->getAppoints();
         $currentYear = Carbon::now()->year;
         $christmasDate = Carbon::create($currentYear, 12, 25);
-        $array[] = [$christmasDate];
+        $workday = Carbon::create($currentYear, 05, 1);
+        $array = [$christmasDate, $workday];
         foreach($result as $row){
             $array.array_push($row->date_appoint);
         }
