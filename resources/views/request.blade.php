@@ -65,34 +65,17 @@
         </div>
     </div>
         <script>
-                var date = document.getElementById('date');
-                
-                // Add an event listener to the input field
-                date.addEventListener('focus', function() {
-                    // Retrieve the date picker popup
-                    var datePopup = document.querySelector('input[type="date"]');
-                    
-                    // Add an event listener to the date picker popup
-                    datePopup.addEventListener('click', function() {
-                        // Retrieve the calendar element
-                        var calendar = document.querySelector('.date');
-                        
-                        // Retrieve all the day cells in the calendar
-                        var dayCells = calendar.querySelectorAll('.date--cell-day');
-                        
-                        // Iterate through each day cell and disable Saturdays and Sundays
-                        dayCells.forEach(function(cell) {
-                            // Retrieve the date from the data attribute of the cell
-                            var cellDate = new Date(cell.dataset.date);
-                            
-                            // Check if the cell date is a Saturday or Sunday
-                            if (cellDate.getDay() === 6 || cellDate.getDay() === 0) {
-                                // Disable the cell
-                                cell.setAttribute('disabled', 'disabled');
-                            }
-                        });
-                    });
-                });
+            var input = document.getElementById('myDateInput');
+        
+            input.addEventListener('input', function(event) {
+            var selectedDate = new Date(event.target.value);
+            var dayOfWeek = selectedDate.getDay();
+        
+            if (dayOfWeek === 0 || dayOfWeek === 6) { // Sunday: 0, Saturday: 6
+                event.target.value = ''; // Clear the input value
+                alert('Please choose a weekday.');
+            }
+            });
         </script>
         <script>
             const dateInput = document.getElementById('date');
