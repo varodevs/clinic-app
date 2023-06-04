@@ -64,7 +64,21 @@
             </div>
         </div>
     </div>
-
+    <script>
+        // Get the date input element
+        const dateInput = document.getElementById('date');
+    
+        // Disable Saturdays and Sundays
+        dateInput.addEventListener('input', function() {
+            const selectedDate = new Date(this.value);
+            const dayOfWeek = selectedDate.getDay(); // Sunday: 0, Monday: 1, ...
+    
+            // Disable if Saturday (6) or Sunday (0)
+            if (dayOfWeek === 6 || dayOfWeek === 0) {
+                this.value = ''; // Clear the value
+            }
+        });
+    </script>
         <script>
             const dateInput = document.getElementById('date');
             const hourDropdown = document.getElementById('hourDropdown');

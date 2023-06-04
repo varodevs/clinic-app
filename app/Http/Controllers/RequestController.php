@@ -39,30 +39,23 @@ class RequestController extends Controller{
             'id' => 'required|string',
             'underchck' => 'required',
             'textarea' => 'string|max:35',
+            'hour' => 'required'
             ]);
         
         $phone = $request->phone;
 
         $appoint = new Appointment();
         $patient = new Patient();
-        $last_appoint =$appoint->getLastAppoint();
-        $last_date = new DateTime();
-        $last_date = $last_appoint->date_appoint;
-        $day = $dayName = \Carbon\Carbon::createFromFormat('Y-m-d', $last_date)->format('l');
-        $hour = explode($last_date, "")(1);
-        $date = explode($last_date, "")(0);
-        if(!$day.equalTo("Saturday") && !$day.equalTo("Sunday") && $hour <= "19:00:00"){
-            $new_date = $last_date->addHour();
-        }elseif($hour > "19:00:00"){
-            $new_date = $last_date->addHour(13);
-        }else
+
+        $dateTime = Carbon::parse($request->date . ' ' . $request->hour);
+
         $age = Carbon::parse($request->birth)->age;
         $result = $patient->createPatient($request->fname,$request->lname,$request->phone,$request->birth,$age,$request->sex,session('id_user'), 0);
 
         $cod_patient = $patient->getPatientByUser(session('id_user'));
 
         $confirmed = 0;
-        $result = $appoint->createAppoint($new_date, $confirmed, $request->spec, $cod_patient);
+        $result = $appoint->createAppoint($dateTime, $confirmed, $request->spec, $cod_patient);
 
 
         return view('profile');
