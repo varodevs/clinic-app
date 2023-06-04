@@ -23,10 +23,8 @@
                             <input class="form-control" type="date" name="birth" id="birth">
                             <label class="_form-label" for="spec">Speciality</label>
                             <select class="form-control" type="text" name="spec" id="spec">
-                                <option value="19">Orthopaedic Clinical Specialist &#10088;OCS&#10089;</option>
-                                <option value="">Neurology Clinical Specialist &#10088;NCS&#10089;</option>
-                                <option value="">Pediatric Clinical Specialist &#10088;PCS&#10089;</option>
-                                <option value="">Electrophysiologic Clinical Specialist &#10088;ECS&#10089;</option>
+                                <option value="19">Pediatric &#10088;PCS&#10089;</option>
+                                <option value="">Electrophysiologic &#10088;ECS&#10089;</option>
                                 <option value="">Sports Clinical Specialist &#10088;SCS&#10089;</option>
                             </select>
                         </div>
