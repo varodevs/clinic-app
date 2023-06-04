@@ -22,7 +22,7 @@
                                 <label class="_form-label" for="birth">Date of Birth</label>
                                 <input class="form-control" type="date" name="birth" id="birth">
                                 <label class="_form-label" for="spec">Speciality</label>
-                                <select class="form-control" type="text" name="spec" id="spec">
+                                <select class="form-control" name="spec" id="spec">
                                     <option value="19">Pediatric &#10088;PCS&#10089;</option>
                                     <option value="">Electrophysiologic &#10088;ECS&#10089;</option>
                                     <option value="">Sports Clinical Specialist &#10088;SCS&#10089;</option>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="my-4 w-25">
                             <label class="_form-label" for="hourDropdown">Choose an hour</label>
-                            <select class="form-control text-center" type="date" id="hourDropdown"></select>                            
+                            <select class="form-control text-center" type="text" id="hourDropdown"></select>                            
                         </div>
                         <button class="btn btn-light _submit" type="submit">Send</button>
                         @if(session('status'))
