@@ -65,7 +65,6 @@
         </div>
     </div>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
                 var date = document.getElementById('date');
                 
                 // Add an event listener to the input field
@@ -94,7 +93,6 @@
                         });
                     });
                 });
-            });
         </script>
         <script>
             const dateInput = document.getElementById('date');
