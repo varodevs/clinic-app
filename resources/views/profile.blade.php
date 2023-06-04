@@ -39,7 +39,13 @@
                 @if ($sel != null)
                     @switch($sel)
                     @case(1)
-                        @include('profile-info')                    
+                        @if ($employee != null)
+                        @include('profile-emp', ['employee' => $employee])
+                        @elseif ($patient != null)
+                        @include('profile-user', ['patient' => $patient])
+                        @else
+                        @include('profile-info')
+                        @endif                                            
                         @break
                     @case(2)
                         @include('tables.appointments', ['array' => $array])

@@ -71,11 +71,11 @@ class UserController extends Controller
             if($user->role_cod_role != 6){
                 $employee = $employee->getEmployeeByUser(session('id_user'));
 
-                return view('profile', compact('employee','sel'));
+                return view('profile-emp', compact('employee','sel'));
             }else{
                 $patient = $patient->getPatientByUser(session('id_user'));
     
-                return view('profile', compact('patient','sel'));
+                return view('profile-user', compact('patient','sel'));
             }
         }
     }
