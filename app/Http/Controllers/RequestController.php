@@ -49,7 +49,7 @@ class RequestController extends Controller{
 
         $dateTime = Carbon::parse($request->date . ' ' . $request->hour);
         
-        dump($dateTime);
+        echo $dateTime;
 
         $age = Carbon::parse($request->birth)->age;
         $result = $patient->createPatient($request->fname,$request->lname,$request->phone,$request->birth,$age,$request->sex,session('id_user'), 0);
