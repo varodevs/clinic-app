@@ -124,10 +124,10 @@ class User extends Model
 	 * 
 	 * @return $return Devuelve un int
 	 */
-	public function updateUser($id_user, $username, $email, $password, $cod_verify, $active, $img_path){
+	public function updateUser($id_user, $username, $email, $password, $cod_verify, $active){
 		$result=DB::table('user')
             ->where('id_user', $id_user)
-			->update(array('username' => $username, 'email'=>$email, 'password'=>$password, 'cod_verify'=>$cod_verify, 'active'=>$active, 'img_path'=>$img_path));
+			->update(array('username' => $username, 'email'=>$email, 'password'=>$password, 'cod_verify'=>$cod_verify, 'active'=>$active));
 			return $result;
 	}
 
