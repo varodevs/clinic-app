@@ -64,6 +64,7 @@ class UserController extends Controller
         $user = new User();        
         $patient = new Patient();
         $employee = new Employee();
+        $appoint = new Appointment();
 
         if(session('id_user') != null && session('id_user') != ""){
             $user = $user->getUserdById(session('id_user'));
@@ -71,11 +72,34 @@ class UserController extends Controller
             if($user->role_cod_role != 6){
                 $employee = $employee->getEmployeeByUser(session('id_user'));
 
-                return view('profile', compact('employee','sel'));
+                $array = $appoint->getAppointsByPatient($employee->cod_employee);
+                $last = $appoint->getLastAppoint();
+                $last = $appoint->getLastAppoint();
+                if($last != null){
+                    $date_appoint = $last->date_appoint;
+                }else{
+                    $date_appoint = "";
+                }
+
+                return view('profile', compact('employee','sel','date_appoint'));
             }else{
                 $patient = $patient->getPatientByUser(session('id_user'));
+
+                if($patient != null){
+                    $id_patient = $patient->cod_patient;
+                }else{
+                    $id_patient = "";
+                }
     
-                return view('profile', compact('patient','sel'));
+                $array = $appoint->getAppointsByPatient($id_patient);
+                $last = $appoint->getLastAppoint();
+                if($last != null){
+                    $date_appoint = $last->date_appoint;
+                }else{
+                    $date_appoint = "";
+                }
+    
+                return view('profile', compact('patient','sel','date_appoint'));
             }
         }
     }
