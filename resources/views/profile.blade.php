@@ -39,7 +39,7 @@
                         @if ($employee != null)
                         @include('profile-emp', ['employee' => $employee])
                         @elseif ($patient != null)
-                        @include('profile-user', ['patient' => $patient])
+                        @include('profile-user', ['fname' => $patient->first_name])
                         @endif                                            
                         @break
                     @case(2)
