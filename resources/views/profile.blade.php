@@ -17,7 +17,7 @@
                   </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Next appointment</span>
-                    <input type="datetime-local" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="{{ $last_date }}" disabled>
+                    <input type="datetime-local" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="{{ $date_appoint }}" disabled>
                 </div>
             </div>
             <div class="col-12 d-flex justify-content-center">
