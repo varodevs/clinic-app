@@ -16,6 +16,9 @@
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Birth date</span>
+            @php
+                use Carbon\Carbon;
+            @endphp
             <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $carbonDate = Carbon::createFromFormat('Y/m/d', $patient->date_birth); }}" disabled>
         </div>
         <div class="input-group mb-3">
