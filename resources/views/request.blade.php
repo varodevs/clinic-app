@@ -64,21 +64,38 @@
             </div>
         </div>
     </div>
-    <script>
-        // Get the date input element
-        const dateInput = document.getElementById('date');
-    
-        // Disable Saturdays and Sundays
-        dateInput.addEventListener('input', function() {
-            const selectedDate = new Date(this.value);
-            const dayOfWeek = selectedDate.getDay(); // Sunday: 0, Monday: 1, ...
-    
-            // Disable if Saturday (6) or Sunday (0)
-            if (dayOfWeek === 6 || dayOfWeek === 0) {
-                this.value = ''; // Clear the value
-            }
-        });
-    </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var datePicker = document.getElementById('datePicker');
+                
+                // Add an event listener to the input field
+                datePicker.addEventListener('focus', function() {
+                    // Retrieve the date picker popup
+                    var datePopup = document.querySelector('input[type="date"]');
+                    
+                    // Add an event listener to the date picker popup
+                    datePopup.addEventListener('click', function() {
+                        // Retrieve the calendar element
+                        var calendar = document.querySelector('.datepicker');
+                        
+                        // Retrieve all the day cells in the calendar
+                        var dayCells = calendar.querySelectorAll('.datepicker--cell-day');
+                        
+                        // Iterate through each day cell and disable Saturdays and Sundays
+                        dayCells.forEach(function(cell) {
+                            // Retrieve the date from the data attribute of the cell
+                            var cellDate = new Date(cell.dataset.date);
+                            
+                            // Check if the cell date is a Saturday or Sunday
+                            if (cellDate.getDay() === 6 || cellDate.getDay() === 0) {
+                                // Disable the cell
+                                cell.setAttribute('disabled', 'disabled');
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
         <script>
             const dateInput = document.getElementById('date');
             const hourDropdown = document.getElementById('hourDropdown');
