@@ -73,16 +73,11 @@ class AdminController extends Controller
     public function Admin_updUsr(Request $request)
     {
         $user = new User();
-        $row = $request->input('row');
 
-        $id_user = $row(0);
-        $username= $row(1);
-        $email= $row(2);
-        $password= $row(3);
-        $cod_verify= $row(4);
-        $active= $row(5);
-        $img_path= $row(6);
+        $sel=4;
 
-        $result = $user->updateUser($id_user,$username,$email,$password,$cod_verify,$active,$img_path);
+        $result = $user->updateUser($request->id_user,$request->username,$request->email,$request->password,$request->cod_verify,$request->active,$request->img_path);
+
+        return redirect()->route('admin-usr', ['sel' => $sel]);
     }
 }

@@ -17,6 +17,8 @@
         @php
             $j = 0;
         @endphp
+        <form action="{{ route('admin-upd-usr' }}" method="POST">
+            @csrf   
         @foreach ($array as $row)
         <tr>
             @php
@@ -38,8 +40,7 @@
             @endphp
             @endforeach
             <td>
-                <form action="{{ route('admin-upd-usr', ['row' => $row]) }}" method="POST">
-                    @csrf                    
+                 
                     {{-- <input type="hidden" name="id" value={{ $id }} /> --}}
                     @if ($j != 0)
                     <button type="submit" class="btn btn-primary">Update</button>

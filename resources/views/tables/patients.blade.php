@@ -4,9 +4,11 @@
             <td>ID</td>
             <td>First name</td>
             <td>Last name</td>
+            <td>Phone</td>
             <td>Date birth</td>
             <td>Age</td>
             <td>Sex</td>
+            <td>Image</td>
             <td>Username</td>
             <td>Issued by</td>            
         </tr>

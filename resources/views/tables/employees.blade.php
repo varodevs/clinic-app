@@ -7,6 +7,7 @@
             <td>Title Court.</td>
             <td>Date Birth</td>
             <td>Date Hire</td>
+            <td>Image</td>
             <td>ID user</td>         
         </tr>
     </thead>
