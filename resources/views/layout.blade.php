@@ -79,7 +79,7 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('about') }}">About us</a>
                 </li>
-                @if (session('role') != 6)
+                @if (session('role') == 4 || (session('role') == 5)
                 <li class="nav-item">
                   <a class="nav-link" href="{{  route('admin')  }}">Admin</a>
                 </li>
