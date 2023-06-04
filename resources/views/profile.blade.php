@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="col-12 px-4">
-                {{  $patient }}
+                <p>{{  $patient->first_name }}</p>
                 @if ($sel != null)
                     @switch($sel)
                     @case(1)
