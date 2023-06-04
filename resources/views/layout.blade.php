@@ -83,11 +83,11 @@
                   <a class="nav-link" href="{{  route('admin')  }}">Admin</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{  route('profile')  }}">Admin</a>
+                  <a class="nav-link" href="{{  route('dashboard')  }}">Prodile</a>
                 </li>
                 @elseif (session('role') == 6)
                 <li class="nav-item">
-                  <a class="nav-link" href="{{  route('profile')  }}">Admin</a>
+                  <a class="nav-link" href="{{  route('dashboard')  }}">Prodile</a>
                 </li>
                 @endif
                 <li class="nav-item">

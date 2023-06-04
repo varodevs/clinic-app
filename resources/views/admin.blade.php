@@ -12,7 +12,7 @@
                     <img src="{{ asset('img/profile.png') }}" alt="" class="rounded-circle" height="110vh">
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">ID</span>
+                    <span class="input-group-text" id="basic-addon1">Username</span>
                     <input type="text" class="form-control" placeholder="ID" aria-label="ID" aria-describedby="basic-addon1" disabled>
                   </div>
                 <div class="input-group mb-3">
