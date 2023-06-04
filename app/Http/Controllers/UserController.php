@@ -23,7 +23,7 @@ class UserController extends Controller
         if(session('id_user') != null && session('id_user') != ""){
             $user = $user->getUserdById(session('id_user'));
             $sel = 2;
-        if($user->role != 6){
+        if($user->role_cod_role != 6){
             $employee = $employee->getEmployeeByUser(session('id_user'));
 
             $appoints = $appoint->getAppointsByPatient($employee->cod_employee);
