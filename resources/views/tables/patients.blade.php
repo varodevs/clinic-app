@@ -26,9 +26,8 @@
                     @if ($i==4)
                     <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_birth"/></td> 
                     @else
-                        
-                    @endif
                     <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
+                    @endif                   
                 @php                                
                     if ($i == 0) {
                         $id=$column;
