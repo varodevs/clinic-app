@@ -96,10 +96,12 @@ Route::get('admin/users', [AdminController::class, 'Admin_usr'])->name('admin-us
 //Routes Admin-Update
 Route::post('admin/users-upd', [AdminController::class, 'Admin_updUsr'])->name('admin-upd-usr');
 Route::post('admin/patients-upd', [AdminController::class, 'Admin_updPat'])->name('admin-upd-pat');
+Route::post('admin/emp-upd', [AdminController::class, 'Admin_updEmp'])->name('admin-upd-emp');
 
 //Routes Admin-Delete
 Route::post('admin/users-del', [AdminController::class, 'Admin_delUsr'])->name('admin-del-usr');
 Route::post('admin/patient-del', [AdminController::class, 'Admin_delPat'])->name('admin-del-pat');
+Route::post(('admin/emp-del'), [AdminController::class, 'Admin_delEmp'])->name('admin-del-emp');
 
 //Routes Profiles
 Route::get('user/dashboard', [UserController::class, 'userDashboard'])->name('dashboard');

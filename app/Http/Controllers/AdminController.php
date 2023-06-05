@@ -84,7 +84,7 @@ class AdminController extends Controller
     public function Admin_updPat(Request $request){
         $patient = new Patient();
         $sel=2;
-        $result = $patient->updatePatient($request->cod_patient,$request->first_name,$request->last_name,$request->phone,$request->date_birth,$request->age,$request->sex,$request->img_path);
+        $result = $patient->updatePatient($request->input0,$request->input1,$request->input2,$request->input3,$request->date_birth,$request->input5,$request->input6,$request->input7);
         return redirect()->route('admin-pat', ['sel' => $sel]);
     }
 
@@ -94,5 +94,20 @@ class AdminController extends Controller
         $sel=2;
         $result = $patient->deletePatient($cod_patient);
         return redirect()->route('admin-pat', ['sel' => $sel]);
+    }
+
+    public function Admin_updEmp(Request $request){
+        $employee = new Patient();
+        $sel=3;
+        $result = $employee->updateEmployee($request->input0,$request->input1,$request->input2,$request->input3,$request->date4,$request->date5,$request->input6,$request->input7);
+        return redirect()->route('admin-pat', ['sel' => $sel]);
+    }
+
+    public function Admin_delEmp(Request $request){
+        $cod_emp = $request->input('cod_emp');
+        $employee = new Patient();
+        $sel=3;
+        $result = $employee->deleteEmployee($cod_emp);
+        return redirect()->route('admin-emp', ['sel' => $sel]);
     }
 }
