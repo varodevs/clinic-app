@@ -78,17 +78,17 @@
         <div class="c-3 text-center w-50 m-3"><h4 class="align-self-center">CONTACT US</h4></div>
         <div class="w-25">
             <div id="map"></div>
+            <script>
+                var map;
+                function initMap() {
+                    map = new google.maps.Map(document.getElementById('map'), {
+                        center: {lat: -34.397, lng: 150.644},
+                        zoom: 8
+                    });
+                }
+                initMap();
+            </script>
         </div>
     </div>
 </div>
-<script>
-    var map;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
-        });
-    }
-    initMap();
-</script>
 @endsection
