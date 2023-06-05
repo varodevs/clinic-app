@@ -76,7 +76,7 @@
     </div>
     <div>
         <div class="w-75">
-            <div id="map"></div>
+            <div id="map" class="h-25"></div>
         </div>
     </div>
 </div>
