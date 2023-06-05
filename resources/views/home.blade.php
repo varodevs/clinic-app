@@ -104,7 +104,7 @@
                     </form>
                 </div>
             </div>
-            <div class="w-25">
+            <div class="w-75">
                 @include('Map');
             </div>
         </div>
