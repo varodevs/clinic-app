@@ -76,14 +76,6 @@
     </div>
     <div class="d-flex flex-column" mb-5>
         <div class="c-3 text-center w-50 m-3"><h4 class="align-self-center">CONTACT US</h4></div>
-        <div class="w-25">
-            <div id="map"></div>
-        </div>
     </div>
 </div>
 @endsection
-@section('scripts')
-    @parent
-    <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&libraries=places&callback=initialize" async defer></script>
-    <script src="/js/mapInput.js"></script>
-@stop
