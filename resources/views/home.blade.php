@@ -76,8 +76,18 @@
     </div>
     <div>
         <div class="w-75">
-            @include('Map')
+            <div id="map"></div>
         </div>
     </div>
 </div>
+<script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+        });
+    }
+    initMap();
+</script>
 @endsection
