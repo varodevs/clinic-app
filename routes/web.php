@@ -119,6 +119,9 @@ Route::get('/payment-form', [StripeController::class, 'stripe_view'])->name('pay
 Route::post('/checkout', [StripeController::class, 'checkout'])->name('checkout');
 Route::get('/success', [StripeController::class, 'success'])->name('success');
 
+//Route Maps
+Route::get('/map', 'MapController@showMap')->name('map');
+
 
 
 //db test
