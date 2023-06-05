@@ -8,7 +8,9 @@
             <td>Date Birth</td>
             <td>Date Hire</td>
             <td>Image</td>
-            <td>ID user</td>         
+            <td>ID user</td>
+            <td>-</td>
+            <td>-</td>         
         </tr>
     </thead>
     <tbody>
@@ -22,9 +24,9 @@
                 <tr>
                     @foreach ($row as $column)
                     @if ($i == 4 && $i == 5)
-                    <td><input class="w-50 text-center" type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date{{ $i }}"/></td>
+                    <td><input class="w-75 text-center" type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date{{ $i }}"/></td>
                     @else
-                    <td><input class="w-50 text-center" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
+                    <td><input class="w-75 text-center" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
                     @endif
                     @php                                
                     if ($i == 0) {
