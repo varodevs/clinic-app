@@ -42,7 +42,7 @@
                 @if ($sel != null)
                     @switch($sel)
                     @case(1)
-                        @include('tables.appointments', ['array' => $array])
+                        @include('tables.appointments-admin', ['array' => $array])
                         @break
                     @case(2)
                         @include('tables.patients', ['array' => $array])
