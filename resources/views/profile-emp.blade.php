@@ -18,11 +18,11 @@
             @php
                 use Carbon\Carbon;
             @endphp
-            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ Carbon::createFromFormat('Y/m/d', $employee->date_birth) }}" disabled>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $employee->date_birth->format('Y-m-d')) }}" disabled>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Date hired</span>
-            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ Carbon::createFromFormat('Y/m/d', $patient->date_hire) }}" disabled>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $patient->date_hire->format('Y-m-d') }}" disabled>
         </div>
         <div class="input-group mb-3">
             <label for="image">Upload Image:</label>
