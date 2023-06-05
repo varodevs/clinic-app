@@ -74,5 +74,38 @@
             <div class="w-25"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
         </div>
     </div>
+    <div class="c-12 d-flex flex-column align-items-center pt-5" mb-5>
+        <div class="c-3 text-center w-50 m-3"><h4 class="align-self-center">CONTACT US</h4></div>
+        <div  class="c-12 d-flex justify-content-evenly pt-5">
+            <div>
+                <div class="d-flex flex-column justify-content-center px-5 py-3 _div-login">
+                    <form class="d-flex flex-column justify-content-center _form" action="" method="POST">
+                    @csrf
+                    <div class="d-flex justify-content-evenly w-75">
+                        <div>
+                            <label class="_form-label" for="fname">First Name</label>
+                            <input class="form-control" type="text" name="fname" id="fname">
+                            <label class="_form-label" for="sname">Phone Number</label>
+                            <input class="form-control" type="text" name="sname" id="sname">
+                        </div>
+                        <div>
+                            <label class="_form-label" for="lname">Last Name</label>
+                            <input class="form-control" type="text" name="lname" id="lname">
+                            <label class="_form-label" for="email">Email</label>
+                            <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
+                            
+                        </div>
+                    </div>
+                        <div class="w-75">
+                            <label class="_form-label" for="textarea" >Describe your problem:</label>
+                            <textarea class="form-control" name="textarea" id="textarea"></textarea>
+                        </div>
+                    
+                    </form>
+                </div>
+            </div>
+            <div class="w-25"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+        </div>
+    </div>
 </div>
 @endsection
