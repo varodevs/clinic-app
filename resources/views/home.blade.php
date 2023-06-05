@@ -74,9 +74,9 @@
             <div class="w-25"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
         </div>
     </div>
-    <div>
+    <div class="c-12 d-flex flex-column align-items-center pt-5" mb-5>
         <div class="w-75">
-            <div id="map" class="h-25 w-75"></div>
+            <div id="map" class="h-25 w-50"></div>
         </div>
     </div>
 </div>
