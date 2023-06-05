@@ -1,5 +1,5 @@
 
-<table class="table table-dark text-center">
+<table class="table table-success table-striped text-center">
     <thead>
         <tr>
             <td>ID</td>
