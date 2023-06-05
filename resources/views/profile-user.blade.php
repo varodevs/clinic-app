@@ -18,8 +18,9 @@
             <span class="input-group-text" id="basic-addon1">Birth date</span>
             @php
                 use Carbon\Carbon;
+                $dateb = Carbon::parse($patient->date_birth);
             @endphp
-            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $patient->date_birth->format('Y-m-d') }}" disabled>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $dateb->format('Y-m-d') }}" disabled>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Age</span>

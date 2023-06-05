@@ -15,11 +15,35 @@
     </thead>
     <tbody>
         @if ($array != null)
+        <form action="{{ route('admin-upd-pat') }}" method="POST">
+            @csrf
             @foreach ($array as $row)
+                @php
+                    $i = 0;                 
+                @endphp                
                 <tr>
                     @foreach ($row as $column)
-                    <td>{{ $column }}</td>
+                    @if ($i==4)
+                    <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_birth"/></td> 
+                    @else
+                        
+                    @endif
+                    <td><input type="date"{{ $column }}name="input{{ $i }}"/></td>
+                @php
+                    $i++;                 
+                @endphp
                     @endforeach
+                    <td>
+                        <button type="submit" class="btn btn-primary">Update</button>   
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ route('admin-del-pat') }}" method="POST">
+                            @csrf                    
+                            <input type="hidden" name="id_user" value={{ $id }} />
+                            <button type="submit" class="btn btn-primary">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         @else

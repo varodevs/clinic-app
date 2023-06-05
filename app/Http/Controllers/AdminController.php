@@ -80,4 +80,19 @@ class AdminController extends Controller
 
         return redirect()->route('admin-usr', ['sel' => $sel]);
     }
+
+    public function Admin_updPat(Request $request){
+        $patient = new Patient();
+        $sel=2;
+        $result = $patient->updatePatient($request->cod_patient,$request->first_name,$request->last_name,$request->phone,$request->date_birth,$request->age,$request->sex,$request->img_path);
+        return redirect()->route('admin-pat', ['sel' => $sel]);
+    }
+
+    public function Admin_delPat(Request $request){
+        $cod_patient = $request->input('cod_patient');
+        $patient = new Patient();
+        $sel=2;
+        $result = $patient->deletePatient($cod_patient);
+        return redirect()->route('admin-pat', ['sel' => $sel]);
+    }
 }
