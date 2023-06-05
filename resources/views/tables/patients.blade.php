@@ -10,7 +10,9 @@
             <td>Sex</td>
             <td>Image</td>
             <td>Username</td>
-            <td>Issued by</td>            
+            <td>Issued by</td>
+            <td>-</td> 
+            <td>-</td>             
         </tr>
     </thead>
     <tbody>

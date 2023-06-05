@@ -6,6 +6,8 @@
             <td>Intervention Code</td>
             <td>Reg. date</td>
             <td>Cod. patient</td>
+            <td>-</td> 
+            <td>-</td> 
         </tr>
     </thead>
     <tbody>
