@@ -28,7 +28,7 @@
                 <div class="carousel-item">
                     <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5>MASOTERAPIA</h5>
-                        <img src="{{ asset('img/fisiatria.jpg') }}" class="_img-carou" alt="..." width="100%" height="200vh">                    
+                        <img src="{{ asset('img/osteopatia.jpg') }}" class="_img-carou" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                     
