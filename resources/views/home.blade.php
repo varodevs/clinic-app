@@ -48,7 +48,7 @@
                     </div>                    
                 </div>
                 <div class="carousel-item">
-                    <div class="c-1 d-flex flex-column align-self-center text-center">
+                    <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5>ELECTROTHERAPY</h5>
                         <img src="{{ asset('img/electro.webp') }}" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
