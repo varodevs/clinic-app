@@ -49,7 +49,11 @@ class UserController extends Controller
             $array = $appoint->getAppointsByPatient($id_patient);
             $last = $appoint->getLastAppointPat($id_patient);
 
+            if($last != null){
                 $date_appoint = $last->date_appoint;
+            }else{
+                $date_appoint = now();
+            }
 
             return view('profile', compact('patient', 'array','sel','sel2','date_appoint'));
         }
