@@ -13,7 +13,7 @@
     </thead>
     <tbody>
         @if ($array != null)
-        <form action="">
+        <form action="{{ route('admin-upd-appo') }}" method="POST">
             @csrf   
             @foreach ($array as $row)
                 <tr>
@@ -21,14 +21,10 @@
                         $i=0;
                     @endphp                    
                     @foreach ($row as $column)
-                    @if ($i == 2)
-                        @if ($column != 0)
-                            <td>Si</td>
-                        @else
-                            <td>No</td>
-                        @endif
+                    @if ($i == 1)
+                        <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_ap"/></td>
                     @else
-                    <td>{{ $column }}</td>
+                        <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
                     @endif
                     @php
                         if ($i == 0) {
@@ -43,9 +39,9 @@
                         </form>
                     </td>
                     <td>
-                        <form action="{{ route('del-appo') }}">
+                        <form action="{{ route('admin-del-appo') }}" method="POST">
                             @csrf                    
-                            <input type="hidden" name="id" value={{ $id }} />
+                            <input type="hidden" name="id_appo" value={{ $id }} />
                             <button type="submit" class="btn btn-primary">Cancel</button>
                         </form>
                     </td>

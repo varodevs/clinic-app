@@ -107,8 +107,14 @@ class UserController extends Controller
         }
     }
 
-    public function delAppo(){
-        
+    public function delAppo(Request $request){
+        $id_appo = $request->input('id_appo');
+
+        $appoint = new Appointment();
+        $sel = 1;
+        $result = $appoint->deleteAppoint($id_appo);
+
+        return redirect()->route('dashboard', ['sel' => $sel]);
     }
 
     /**

@@ -110,4 +110,24 @@ class AdminController extends Controller
         $result = $employee->deleteEmployee($cod_emp);
         return redirect()->route('admin-emp', ['sel' => $sel]);
     }
+
+    public function delAppoAdm(Request $request){
+        $id_appo = $request->input('id_appo');
+
+        $appoint = new Appointment();
+        $sel = 1;
+        $result = $appoint->deleteAppoint($id_appo);
+
+        return redirect()->route('admin-appo', ['sel' => $sel]);
+    }
+
+    public function updAppoAdm(Request $request){
+        $id_appo = $request->input('id_appo');
+
+        $appoint = new Appointment();
+        $sel = 1;
+        $result = $appoint->deleteAppoint($id_appo);
+
+        return redirect()->route('admin-appo', ['sel' => $sel]);
+    }
 }

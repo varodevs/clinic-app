@@ -83,7 +83,8 @@ Route::get('admin', [AdminController::class, 'Admin_view'])->name('admin');
 //Routes Admin-appointments
 Route::get('admin/appointments', [AdminController::class, 'Admin_appo'])->name('admin-appo');
 
-Route::post('canceled', [UserController::class, 'delAppo'])->name('del-appo');
+Route::post('admin/canceled', [AdminController::class, 'delAppoAdm'])->name('admin-del-appo');
+Route::post('admin/updated', [AdminController::class, 'updAppoAdm'])->name('admin-upd-appo');
 
 //Routes Admin-Patients
 Route::get('admin/patients', [AdminController::class, 'Admin_pat'])->name('admin-pat');
@@ -121,6 +122,9 @@ Route::get('/success', [StripeController::class, 'success'])->name('success');
 
 //Route Maps
 Route::get('/map', 'MapController@showMap')->name('map');
+
+//Route User cancel Appointment
+Route::post('canceled', [UserController::class, 'delAppo'])->name('del-appo');
 
 
 
