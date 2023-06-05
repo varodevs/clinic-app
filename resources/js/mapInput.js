@@ -1,4 +1,4 @@
-const map = new google.maps.Map(document.getElementById(fieldKey + '-map'), {
+const map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: latitude, lng: longitude},
     zoom: 13
 });
