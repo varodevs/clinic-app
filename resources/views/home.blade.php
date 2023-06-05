@@ -78,10 +78,10 @@
         <div class="c-3 align-self-center text-center w-50 m-3"><h4 class="align-self-center">CONTACT US</h4></div>    
     <div>
         <div class="d-flex justify-content-between">
-            <div class="d-flex flex-column justify-content-cente w-50 _div-login">
+            <div class="d-flex flex-column justify-content-cente w-25 _div-login">
                 <form class="d-flex flex-column justify-content-center _form" action="" method="POST">
                 @csrf
-                <div class="d-flex justify-content-evenly w-25">
+                <div class="d-flex justify-content-evenly w-100">
                     <div>
                         <label class="_form-label" for="fname">First Name</label>
                         <input class="form-control" type="text" name="fname" id="fname">
