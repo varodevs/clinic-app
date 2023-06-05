@@ -78,22 +78,6 @@
   -webkit-box-shadow: inset 0px 0px 70px 60px #f7f5f5;
   box-shadow: inset 0px 0px 70px 60px #f7f5f5; }
 
-._div-login-home {
-  background-color: #2c88ee;
-  border-radius: 10px; }
-
-._form {
-  align-items: center; }
-  ._form ._form-label {
-    color: #f7f5f5;
-    font-size: medium;
-    font-weight: bold; }
-  ._form ._form-input {
-    margin-bottom: 2vh; }
-  ._form ._submit {
-    color: #131212;
-    background-color: #f7f5f5; }
-
 ._div-login {
   background-color: #2c88ee;
   border-radius: 10px;
