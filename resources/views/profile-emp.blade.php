@@ -17,12 +17,14 @@
             <span class="input-group-text" id="basic-addon1">Birth date</span>
             @php
                 use Carbon\Carbon;
+                $dateb = Carbon::parse($employee->date_birth);
+                $dateh = Carbon::parse($patient->date_hire);
             @endphp
-            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $employee->date_birth->format('Y-m-d') }}" disabled>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $dateb->format('Y-m-d') }}" disabled>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Date hired</span>
-            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $patient->date_hire->format('Y-m-d') }}" disabled>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $dateh->format('Y-m-d') }}" disabled>
         </div>
         <div class="input-group mb-3">
             <label for="image">Upload Image:</label>
