@@ -13,7 +13,7 @@
     </thead>
     <tbody>
         @if ($array != null)
-        <form action="{{ route('admin-upd-emp') }}" method="POST">
+        <form class="col-12" action="{{ route('admin-upd-emp') }}" method="POST">
             @csrf
             @foreach ($array as $row)
                 @php
@@ -22,9 +22,9 @@
                 <tr>
                     @foreach ($row as $column)
                     @if ($i == 4 && $i == 5)
-                    <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date{{ $i }}"/></td>
+                    <td><input class="w-25" type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date{{ $i }}"/></td>
                     @else
-                    <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
+                    <td><input class="w-25" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
                     @endif
                     @php                                
                     if ($i == 0) {
