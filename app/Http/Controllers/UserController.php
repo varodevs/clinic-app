@@ -23,7 +23,6 @@ class UserController extends Controller
         if(session('id_user') != null && session('id_user') != ""){
             $user = $user->getUserdById(session('id_user'));
             $sel = 2;
-            $sel2 = 0;
         if($user->role_cod_role != 6){
             $sel2 = 1;
             $employee = $employee->getEmployeeByUser(session('id_user'));
@@ -37,6 +36,7 @@ class UserController extends Controller
 
             return view('profile', compact('employee', 'array','sel','sel2','date_appoint'));
         }else{
+            $sel2 = 2;
             $patient = $patient->getPatientByUser(session('id_user'));
 
                 $id_patient = $patient->cod_patient;

@@ -25,9 +25,11 @@
                         <li class="nav-item">
                           <a class="nav-link" href="{{ route('dashboard') }}">Appointments</a>
                         </li>
+                        @if (session('role') == 6)
                         <li class="nav-item">
                           <a class="nav-link" href="{{ route('history') }}">Therapy history</a>    
                         </li>
+                        @endif 
                       </ul>
                 </div>
             </div>
@@ -42,10 +44,17 @@
                         @endif                                            
                         @break
                     @case(2)
+                        @if ($sel2 == 1)
+                        @include('tables.appointments-admin', ['array' => $array])
+                        @elseif ($sel2 == 2)
                         @include('tables.appointments', ['array' => $array])
+                        @endif
+                        
                         @break
                     @case(3)
-                        @include('tables.appointments')
+                        @if (session('role') == 6)
+                        @include('tables.clinic-history')
+                        @endif                        
                         @break                
                     @default
                         @include('tables.appointments')                        

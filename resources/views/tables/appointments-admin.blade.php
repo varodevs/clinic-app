@@ -12,7 +12,9 @@
         </tr>
     </thead>
     <tbody>
-        @if ($array != null)            
+        @if ($array != null)
+        <form action="">
+            @csrf   
             @foreach ($array as $row)
                 <tr>
                     @php
@@ -35,6 +37,11 @@
                         $i++;
                     @endphp
                     @endforeach
+                    <td>                
+                            <input type="hidden" name="id" value={{ $id }} />
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
+                    </td>
                     <td>
                         <form action="{{ route('del-appo') }}">
                             @csrf                    

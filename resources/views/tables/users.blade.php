@@ -42,12 +42,11 @@
             @endforeach
             <td>
                  
-                    {{-- <input type="hidden" name="id" value={{ $id }} /> --}}
-                    @if ($j != 0)
+                @if ($j != 0)
                     <button type="submit" class="btn btn-primary">Update</button>
-                    @else
+                @else
                     <button type="submit" class="btn btn-primary" disabled>Update</button>
-                    @endif
+                @endif
                     
                 </form>
             </td>
