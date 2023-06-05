@@ -37,13 +37,10 @@ namespace App\Http\Controllers;
     
                     array_push($taken, $hour);
                 }  
-                
+                $availableHours = array_diff($hours, $taken);
             }else{
                 $availableHours = $hours;
             }
-
-            $availableHours = array_diff($hours, $taken);
-
             return response()->json($availableHours);
         }
     }
