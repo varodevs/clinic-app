@@ -22,9 +22,9 @@
                 <tr>
                     @foreach ($row as $column)
                     @if ($i == 4 && $i == 5)
-                    <td><input class="w-25" type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date{{ $i }}"/></td>
+                    <td><input class="w-50" type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date{{ $i }}"/></td>
                     @else
-                    <td><input class="w-25" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
+                    <td><input class="w-50" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
                     @endif
                     @php                                
                     if ($i == 0) {
