@@ -119,10 +119,10 @@ class Appointment extends Model
 	 * 
 	 * @return $return Devuelve un int
 	 */
-	public function updateAppoint($cod_appoint, $date_appoint){
+	public function updateAppoint($cod_appoint, $date_appoint, $confirmed){
 		$result=DB::table('appointment')
             ->where('cod_appoint', $cod_appoint)
-			->update(array('date_appoint' => $date_appoint));
+			->update(array('date_appoint' => $date_appoint,'confirmed' => $confirmed));
 			return $result;
 	}
 
