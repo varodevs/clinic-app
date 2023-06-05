@@ -76,7 +76,7 @@
     </div>
     <div class="d-flex flex-column" mb-5>
         <div class="c-3 text-center w-50 m-3"><h4 class="align-self-center">CONTACT US</h4></div>
-        <div class="w-75">
+        <div class="w-25">
             <div id="map"></div>
         </div>
     </div>
