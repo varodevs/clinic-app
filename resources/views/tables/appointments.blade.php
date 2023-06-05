@@ -19,7 +19,10 @@
                     @endphp                    
                     @foreach ($row as $column)
                     @if ($i == 1)
-                        <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_ap"/></td>
+                    <td>
+                        <input type="text" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}"/>
+                        <input type="datetime-local" name="date_ap" name="date_ap"/>
+                    </td>
                     @else
                         @if ($i == 2)
                             @if ($column != 0)
