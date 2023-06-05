@@ -1,7 +1,6 @@
 @extends('layout')
 
 @section('content')
-<script src="https://maps.googleapis.com/maps/api/js?key={{ config('app.google_maps_api_hey') }}&callback=initMap" async defer></script>
 <div class="col-12">
     <div class="container-fluid d-flex flex-column align-items-center pt-5">
         <div class="text-center w-50"><h2>Welcome to ActiveLife Physio</h2></div>
