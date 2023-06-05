@@ -76,7 +76,7 @@
     </div>
     <div class="c-12" mb-5>
 
-                <div class="d-flex flex-column justify-content-center _div-login">
+                <div class="c-4 d-flex flex-column justify-content-center _div-login">
                     <form class="d-flex flex-column justify-content-center _form" action="" method="POST">
                     @csrf
                     <div class="d-flex justify-content-evenly w-75">
