@@ -13,21 +13,21 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="c-3 d-flex flex-column align-self-center text-center">
-                        <h5>MASOTERAPIA</h5>
+                        <h5>MASOTHERAPY</h5>
                         <img src="{{ asset('img/fisioterapia-deportiva.jpg') }}" class="_img-carou" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="c-3 d-flex flex-column align-self-center text-center">
-                        <h5>MASOTERAPIA</h5>
+                        <h5>KINESIOTHERAPY</h5>
                         <img src="{{ asset('img/ejercicio-fisioterapia.webp') }}" class="_img-carou" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>                    
                 </div>
                 <div class="carousel-item">
                     <div class="c-3 d-flex flex-column align-self-center text-center">
-                        <h5>MASOTERAPIA</h5>
+                        <h5>OSTEOPATHY</h5>
                         <img src="{{ asset('img/osteopatia.jpg') }}" class="_img-carou" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
@@ -35,21 +35,21 @@
                 </div>
                 <div class="carousel-item">
                     <div class="c-3 d-flex flex-column align-self-center text-center">
-                        <h5>MASOTERAPIA</h5>
+                        <h5>RESPIRATORY</h5>
                         <img src="{{ asset('img/respiratoria.webp') }}" class="_img-carou" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>            
                 </div>
                 <div class="carousel-item">
                     <div class="c-3 d-flex flex-column align-self-center text-center">
-                        <h5>MASOTERAPIA</h5>
+                        <h5>NERUROLOGICAL</h5>
                         <img src="{{ asset('img/fisioterapia_neurologica.webp') }}" class="_img-carou" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>                    
                 </div>
                 <div class="carousel-item">
                     <div class="c-1 d-flex flex-column align-self-center text-center">
-                        <h5>MASOTERAPIA</h5>
+                        <h5>ELECTROTHERAPY</h5>
                         <img src="{{ asset('img/electro.webp') }}" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
