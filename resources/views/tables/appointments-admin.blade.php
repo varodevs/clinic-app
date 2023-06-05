@@ -25,7 +25,7 @@
                         <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_ap"/></td>
                     @else
                         @if ($i == 0)
-                        <input type="text" value="{{ $column }}" name="cod_appo" disabled/>
+                        <td><input type="text" value="{{ $column }}" name="cod_appo" disabled/></td>
                         @else
                         <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
                         @endif                       
