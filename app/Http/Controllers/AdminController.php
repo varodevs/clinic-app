@@ -126,7 +126,7 @@ class AdminController extends Controller
 
         $appoint = new Appointment();
         $sel = 1;
-        $result = $appoint->updateAppoint($id_appo,$request->input1,$request->input2);
+        $result = $appoint->updateAppoint(intVal($id_appo),$request->input1,intVal($request->input2));
 
         return redirect()->route('admin-appo', ['sel' => $sel]);
     }
