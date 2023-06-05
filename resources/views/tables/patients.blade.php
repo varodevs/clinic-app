@@ -28,8 +28,12 @@
                     @else
                         
                     @endif
-                    <td><input type="date"{{ $column }}name="input{{ $i }}"/></td>
-                @php
+                    <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
+                @php                                
+                    if ($i == 0) {
+                        $id=$column;
+                    }
+
                     $i++;                 
                 @endphp
                     @endforeach
@@ -40,7 +44,7 @@
                     <td>
                         <form action="{{ route('admin-del-pat') }}" method="POST">
                             @csrf                    
-                            <input type="hidden" name="id_user" value={{ $id }} />
+                            <input type="hidden" name="cod_patient" value={{ $id }} />
                             <button type="submit" class="btn btn-primary">Delete</button>
                         </form>
                     </td>
