@@ -1,4 +1,4 @@
-<div id="map" style="height: 400px;"></div>
+<div id="map"></div>
 
     <script>
         var map;
