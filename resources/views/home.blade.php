@@ -77,7 +77,7 @@
     <div class="c-12 d-flex flex-column align-items-center pt-5" mb-5>
         <div class="c-5 text-center w-50 m-3"><h4 class="align-self-center">CONTACT US</h4></div>
             <div  class="c-12 d-flex justify-content-evenly pt-5">
-                <div class="d-flex flex-column justify-content-center px-5 py-3 _div-login">
+                <div class="d-flex flex-column justify-content-center _div-login">
                     <form class="d-flex flex-column justify-content-center _form" action="" method="POST">
                     @csrf
                     <div class="d-flex justify-content-evenly w-75">
@@ -106,7 +106,6 @@
                     @include('Map');
                 </div>
             </div>
-        </div>
     </div>
 </div>
 @endsection
