@@ -75,10 +75,10 @@
         </div>
     </div>
     <div class="d-flex flex-column" mb-5>
-        <div class="c-3 align-self-center text-center w-50 h-100 m-3"><h4 class="align-self-center">CONTACT US</h4></div>    
+        <div class="c-3 align-self-center text-center w-50 h-100 mt-5"><h4 class="align-self-center">CONTACT US</h4></div>    
     <div>
         <div class="d-flex justify-content-evenly">
-            <div class="d-flex flex-column justify-content-cente w-50 _div-login">
+            <div class="d-flex flex-column justify-content-cente w-50 _div-login-home">
                 <form class="d-flex flex-column justify-content-center _form" action="" method="POST">
                 @csrf
                 <div class="d-flex justify-content-evenly w-75">
