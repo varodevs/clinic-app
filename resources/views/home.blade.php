@@ -102,9 +102,9 @@
                     
                     </form>
                 </div>
-            </div>
-            <div class="c-5 w-75">
-                @include('Map');
+                <div class="c-5 w-75">
+                    @include('Map');
+                </div>
             </div>
         </div>
     </div>
