@@ -18,7 +18,7 @@
             @php
                 use Carbon\Carbon;
                 $dateb = Carbon::parse($employee->date_birth);
-                $dateh = Carbon::parse($patient->date_hire);
+                $dateh = Carbon::parse($employee->date_hire);
             @endphp
             <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $dateb->format('Y-m-d') }}" disabled>
         </div>
