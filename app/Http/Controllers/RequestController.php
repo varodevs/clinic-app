@@ -61,7 +61,7 @@ class RequestController extends Controller{
         
         if($result){
 
-            $cod_patient = $patient->cod_patient;
+            $cod_patient = $patient_by_user->cod_patient;
 
             $confirmed = 0;
             $id_emp = intval($request->spec);
