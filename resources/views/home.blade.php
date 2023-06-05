@@ -12,21 +12,21 @@
         <div id="carouselExampleControls" class="carousel slide w-25" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active w25">
-                    <div class="d-flex flex-column align-self-center text-center">
+                    <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5>MASOTERAPIA</h5>
                         <img src="{{ asset('img/maso.jpg') }}" class="_img-carou" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="d-flex flex-column align-self-center text-center">
+                    <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5>MASOTERAPIA</h5>
                         <img src="{{ asset('img/kinesio.jpg') }}" class="_img-carou" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>                    
                 </div>
                 <div class="carousel-item">
-                    <div class="d-flex flex-column align-self-center text-center">
+                    <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5>MASOTERAPIA</h5>
                         <img src="{{ asset('img/fisiatria.jpg') }}" class="_img-carou" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -34,21 +34,21 @@
                     
                 </div>
                 <div class="carousel-item">
-                    <div class="d-flex flex-column align-self-center text-center">
+                    <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5>MASOTERAPIA</h5>
                         <img src="{{ asset('img/respiratoria.jpg') }}" class="_img-carou" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>            
                 </div>
                 <div class="carousel-item">
-                    <div class="d-flex flex-column align-self-center text-center">
+                    <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5>MASOTERAPIA</h5>
                         <img src="{{ asset('img/miofacial.jpg') }}" class="_img-carou" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>                    
                 </div>
                 <div class="carousel-item">
-                    <div class="d-flex flex-column align-self-center text-center">
+                    <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5>MASOTERAPIA</h5>
                         <img src="{{ asset('img/electro.jpg') }}" alt="..." width="100%" height="200vh">                    
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>

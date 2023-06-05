@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RequestController;
+use App\Http\Controllers\StripeController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\UserController;
@@ -112,6 +113,11 @@ Route::get('user/therapy', [UserController::class, 'userTherapy'])->name('histor
 
 //Route AJAX
 Route::get('/check-dates', [AppointmentController::class, 'checkDates'])->name('check');
+
+//Route Stripe
+Route::get('/payment-form', [StripeController::class, 'stripe_view'])->name('payment');
+Route::post('/checkout', [StripeController::class, 'checkout'])->name('checkout');
+Route::get('/success', [StripeController::class, 'success'])->name('success');
 
 
 
