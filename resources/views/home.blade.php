@@ -77,7 +77,7 @@
     <div class="d-flex flex-column" mb-5>
         <div class="c-3 align-self-center text-center w-50 m-3"><h4 class="align-self-center">CONTACT US</h4></div>    
     <div>
-        <div class="d-flez justify-content-between">
+        <div class="d-flex justify-content-between">
             <div class="d-flex flex-column justify-content-center _div-login">
                 <form class="d-flex flex-column justify-content-center _form" action="" method="POST">
                 @csrf
