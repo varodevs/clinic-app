@@ -10,6 +10,8 @@
     </thead>
     <tbody>
         @if ($array != null)
+        <form action="{{ route('admin-del-usr') }}" method="POST">
+            @csrf
         @foreach ($array as $row)
         <tr>
             @foreach ($row as $column)
@@ -27,9 +29,6 @@
                 </form>
             </td>
         </tr>
-        @php
-            $j++;
-        @endphp
     @endforeach
         @else
         <tr><td colspan="5"> -- No Data -- </td></tr>

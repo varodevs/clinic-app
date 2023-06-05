@@ -95,11 +95,11 @@ Route::get('admin/users', [AdminController::class, 'Admin_usr'])->name('admin-us
 
 //Routes Admin-Update
 Route::post('admin/users-upd', [AdminController::class, 'Admin_updUsr'])->name('admin-upd-usr');
-Route::post('admin/patients-upd', [AdminController::class, 'Admin_updPat'])->name('admin_upd_pat');
+Route::post('admin/patients-upd', [AdminController::class, 'Admin_updPat'])->name('admin-upd-pat');
 
 //Routes Admin-Delete
 Route::post('admin/users-del', [AdminController::class, 'Admin_delUsr'])->name('admin-del-usr');
-Route::post('admin/patient-del', [AdminController::class, 'Admin_delPat'])->name('admin_del_pat');
+Route::post('admin/patient-del', [AdminController::class, 'Admin_delPat'])->name('admin-del-pat');
 
 //Routes Profiles
 Route::get('user/dashboard', [UserController::class, 'userDashboard'])->name('dashboard');
