@@ -1,12 +1,12 @@
-<IfModule mod_rewrite.c>
-    <IfModule mod_negotiation.c>
-        Options -MultiViews -Indexes
-    </IfModule>
+    #<IfModule mod_rewrite.c>
+    #<IfModule mod_negotiation.c>
+    #    Options -MultiViews -Indexes
+    #</IfModule>
 
     RewriteEngine On
 
     #Redirect http to https
-    RewriteCond %{HTTP_HOST} ^www.vitalcore.es [NC]
+    RewriteCond %{HTTP_HOST} ^18.213.223.134 [NC]
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
