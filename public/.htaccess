@@ -3,6 +3,10 @@
         Options -MultiViews -Indexes
     </IfModule>
 
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "https://www.vitalcore.es"
+    </IfModule>
+
     RewriteEngine On
 
     #Redirect http to https
