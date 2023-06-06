@@ -6,7 +6,7 @@
     RewriteEngine On
 
     #Redirect http to https
-    RewriteCond %{HTTP_HOST} ^ec2-18-213-223-134.compute-1.amazonaws.com [NC]
+    RewriteCond %{HTTP_HOST} ^www.vitalcore.es [NC]
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
