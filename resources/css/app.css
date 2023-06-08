@@ -116,7 +116,7 @@ a._link:link {
 #map {
   width: 50vw; }
 
-@media all and (min-width: 576px) {
+@media all and (min-width: 876px) {
   ._footer {
     background-color: red; } }
 
