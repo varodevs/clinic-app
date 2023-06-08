@@ -18,6 +18,9 @@
     left: 0;
     top: 0;
 }
+._search-button{
+    font-size: 20vw;
+}
 ._nav-contacto{
     height: 8vh;
 }
@@ -25,11 +28,12 @@
     width: 15px;
 }
 
-._link:link{
+a._link:link {
     text-decoration: none;
     color: inherit;
+    font-size: 1vw;
+  }
 
-}
 ._nav-contacto{
     font-size: small;
 }
@@ -108,7 +112,8 @@
     background-color: #f7f5f5;
 }
 ._footer{
-    background-color: #8e8b82;
+    //background-color: #8e8b82;
+    background-color: red;
 }
 ._img-carou{
     margin-bottom: 10vh;
@@ -117,4 +122,16 @@
     height: 65vh;
     background-color: #d0dff0;
     position: relative;
+}
+#map{
+    width: 50vw;
+}
+
+//Media query
+
+// Small devices (landscape phones, 576px and up)
+@media all and (min-width: 576px) {
+    ._footer{
+        background-color: red;
+    }
 }

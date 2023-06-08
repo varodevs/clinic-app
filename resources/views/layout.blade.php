@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="{{ asset("/img/favicon-16x16.png") }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&callback=initMap"></script>
     <title>ActiveLife Physio</title>
@@ -15,14 +15,10 @@
 <body class="d-flex flex-column min-vh-100">
     <div class="container-fluid d-flex flex-column" id="NavsDiv">
       <img class="_bg-img" src="{{ asset("img/imagebgmenu.jpg") }}" alt="Background Image">
-
         <nav class="navbar navbar-expand-lg p-0" id="NavTop">
             <div class="container-fluid d-flex justify-content-end">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Navbarcentered" aria-controls="Navbarcentered" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="d-flex align-self-center w-75 _nav-contacto" id="NavbarCentered">
-                <ul class="navbar-nav me-auto h-75">
+              <div class="d-flex align-self-center w-75 _nav-contacto">
+                <ul class="navbar-nav me-auto h-75 _contact-top">
                   <li class="nav-item d-flex align-items-center">
                     <a class="nav-link" href="#">¿Do you have any question?</a>
                   </li>
@@ -33,20 +29,20 @@
                     <img class="_contact-img" src="{{ asset('img/phone.png') }}" alt="Phone link img"><a class="nav-link" href="#">clinic@email.com</a>
                   </li>
                 </ul>
-                <form class="d-flex h-75">
-                  <input class="form-control me-1 py-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-sm btn-outline-success me-1 py-2" type="submit">Search</button>
+                <form class="d-flex h-75" id="search">
+                  <input class="form-control w-75 me-1 py-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-sm btn-outline-success w-25 me-1 py-2" type="submit">Search</button>
                 </form>
                 <div class="d-flex h-75">
                   @if (Route::has('login'))
                     @if (session('id_user') != null && session('id_user') != "")
-                    <button class="btn btn-light mx-1 p-1"><a href="{{ route('logout') }}" class="_link">Sign out</a></button>
+                    <button class="btn btn-light mx-1 p-1"><a href="{{ route('logout') }}" class="_link w-75 h-75 text-center text-nowrap">Sign out</a></button>
                     @else
-                    <button class="btn btn-light mx-1 p-1"><a href="{{ route('login') }}" class="_link">Sign in</a></button>
+                    <button class="btn btn-light mx-1 p-1"><a href="{{ route('login') }}" class="_link w-75 h-75 text-center text-nowrap">Sign in</a></button>
                     @endif                    
                   @endif
                   @if (Route::has('register'))
-                  <button class="btn btn-light mx-1 p-1"><a href="{{ route('register') }}" class="_link">Sign up</a></button>
+                  <button class="btn btn-light mx-1 p-1"><a href="{{ route('register') }}" class="_link w-75 h-75 text-center text-nowrap">Sign up</a></button>
                   @endif
                 </div>
               </div>
@@ -160,6 +156,6 @@
                   </ul>
             </div>
         </div>
-    </footer>     
+    </footer>
 </body>
 </html>
