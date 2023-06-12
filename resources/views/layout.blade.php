@@ -33,7 +33,7 @@
                   <input class="form-control w-75 me-1 py-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-sm btn-outline-success w-25 me-1 py-2" type="submit">Search</button>
                 </form>
-                <div class="d-flex h-75">
+                <div class="d-flex h-75 _divLogin">
                   @if (Route::has('login'))
                     @if (session('id_user') != null && session('id_user') != "")
                     <a href="{{ route('logout') }}" class="w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-outline-primary h-100 _button">Sign out</button></a>
