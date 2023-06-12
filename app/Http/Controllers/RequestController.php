@@ -18,19 +18,19 @@ class RequestController extends Controller{
 
     public function Request_done(Request $request)
     {
-        // $request->validate([
-        //     'fname' => 'required|string|min:2|max:10',
-        //     'phone' => 'required|max:20',
-        //     'birth' => 'required|date',
-        //     'spec' => 'required|',
-        //     'lname' => 'required|string|min:2|max:10',
-        //     'email' => 'required|email|min:8|max:35',
-        //     'date' => 'required|date',
-        //     'id' => 'required',
-        //     'underchck' => 'required',
-        //     'textarea' => 'string|max:200',
-        //     'hour' => 'required'
-        //     ]);
+        $request->validate([
+            'fname' => 'required|string|min:2|max:10',
+            'phone' => 'required|max:20',
+            'birth' => 'required|date',
+            'spec' => 'required|',
+            'lname' => 'required|string|min:2|max:10',
+            'email' => 'required|email|min:8|max:35',
+             'date' => 'required|date',
+             'id' => 'required',
+             'underchck' => 'required',
+             'textarea' => 'string|max:200',
+             'hour' => 'required'
+             ]);
 
         $phone = $request->phone;
 
