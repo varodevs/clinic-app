@@ -139,13 +139,13 @@
             <div class="d-flex w-25">
                 <ul class="nav justify-content-center flex-nowrap">                
                     <li class="nav-item">
-                      <a href="https://www.facebook.com/your-page" target="_blank"><i class="fab fa-facebook"></i></a>
+                      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
                     </li>
                     <li class="nav-item">
-                      <a href="https://www.twitter.com/your-profile" target="_blank"><i class="fab fa-twitter"></i></a>
+                      <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
                     </li>
                     <li class="nav-item">
-                      <a href="https://www.instagram.com/your-account" target="_blank"><i class="fab fa-instagram"></i></a>
+                      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
                     </li>
                   </ul>
             </div>
