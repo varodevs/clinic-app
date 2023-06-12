@@ -8,7 +8,7 @@
     </div>
     
     <div class="c-12 d-flex flex-column align-items-center pt-5" mb-5>
-        <div class="c-3 text-center w-50 m-3"><h4>TREATMENTS</h4></div>
+        <div class="c-3 text-center w-50 m-3"><h4 class="_h4">TREATMENTS</h4></div>
         <div id="carouselExampleControls" class="carousel slide w-25" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -66,7 +66,7 @@
         </div>
     </div>
     <div class="c-12 d-flex flex-column align-items-center pt-5" mb-5>
-        <div class="c-3 text-center w-50 m-3"><h4 class="align-self-center">ABOUT US</h4></div>
+        <div class="c-3 text-center w-50 m-3"><h4 class="align-self-center _h4">ABOUT US</h4></div>
         <div  class="c-12 d-flex justify-content-evenly pt-5">
             <div>
                 <img src= {{ asset('img/equipo.jpg') }} height="250vh" />
