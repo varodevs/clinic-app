@@ -38,11 +38,11 @@
                     @if (session('id_user') != null && session('id_user') != "")
                     <a href="{{ route('logout') }}"><button class="btn btn-light">Sign out</button></a>
                     @else
-                    <button class="btn btn-light mx-1 p-1"><a href="{{ route('login') }}" class="_link w-75 h-75 text-center text-nowrap">Sign in</a></button>
+                    <a href="{{ route('login') }}"><button class="btn btn-light mx-1 p-1">Sign in</button></a>
                     @endif                    
                   @endif
                   @if (Route::has('register'))
-                  <button class="btn btn-light mx-1 p-1"><a href="{{ route('register') }}" class="_link w-75 h-75 text-center text-nowrap">Sign up</a></button>
+                  <a href="{{ route('register') }}" class="_link w-75 h-75 text-center text-nowrap"><button class="btn btn-light mx-1 p-1">Sign up</button></a>
                   @endif
                 </div>
               </div>
