@@ -10,7 +10,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&callback=initMap"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <title>ActiveLife Physio</title>
+    <title>VitalCore Physio</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
     <div class="container-fluid d-flex flex-column" id="NavsDiv">
@@ -36,20 +36,20 @@
                 <div class="d-flex h-75">
                   @if (Route::has('login'))
                     @if (session('id_user') != null && session('id_user') != "")
-                    <a href="{{ route('logout') }}" class="w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-light h-100 _button-login">Sign out</button></a>
+                    <a href="{{ route('logout') }}" class="w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-light h-100 text-primary">Sign out</button></a>
                     @else
-                    <a href="{{ route('login') }}" class="w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-light h-100 _button-login">Sign in</button></a>
+                    <a href="{{ route('login') }}" class="w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-light h-100 text-primary">Sign in</button></a>
                     @endif                    
                   @endif
                   @if (Route::has('register'))
-                  <a href="{{ route('register') }}" class="w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-light h-100 _button-login">Sign up</button></a>
+                  <a href="{{ route('register') }}" class="w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-light h-100 text-primary">Sign up</button></a>
                   @endif
                 </div>
               </div>
             </div>
           </nav>
           <div class="align-self-center w-75 m-1 _menu">      
-            <div id="logo" class="d-flex"><img src="{{ asset('img/logo.png') }}" alt="Logo img" height="50vh"><h1>ActiveLife</h1></div>
+            <div id="logo" class="d-flex"><img src="{{ asset('img/logo.png') }}" alt="Logo img" height="50vh"><h1>VitalCore</h1></div>
             <ul class="nav">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
