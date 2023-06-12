@@ -44,14 +44,14 @@
                     <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5 class="_h5">NERUROLOGICAL</h5>
                         <img src="{{ asset('img/fisioterapia_neurologica.webp') }}" alt="..." width="100%" height="200vh">                    
-                        <p class="_carou-p">Check and treatment of you neurological conditions.</p>
+                        <p class="_carou-p">Treatment of you neurological conditions.</p>
                     </div>                    
                 </div>
                 <div class="carousel-item">
                     <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5 class="_h5">ELECTROTHERAPY</h5>
                         <img src="{{ asset('img/electro.webp') }}" alt="..." width="100%" height="200vh">                    
-                        <p class="_carou-p">Electrical stimulation to promote healing, manage pain, and improve physical function.</p>
+                        <p class="_carou-p">Stimulation to improve physical function.</p>
                     </div>
                 </div>
             </div>
