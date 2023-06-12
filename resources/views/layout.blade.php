@@ -122,6 +122,10 @@
       </div>
     </section>
     <footer class="mt-auto">
+        <div>
+          <a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="VitalCore" width="20rem"></a>
+          <span>&copy;&nbsp;VitalCore</span>
+        </div>
         <div class="d-flex justify-content-around _footer">
             <div class="d-flex flex-nowrap w-25">
                 <ul class="nav justify-content-center flex-nowrap">
