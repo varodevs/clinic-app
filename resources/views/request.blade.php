@@ -30,12 +30,12 @@
                                 <label class="_form-label">Sex</label>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="sex" value="1" id="sex">
-                                    <label class="form-check-label" for="sex">Man</label>
+                                    <label class="form-check-label" for="sex">Male</label>
                                 </div>
                                 
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="sex" value="2" id="sex2">
-                                    <label class="form-check-label" for="sex2">Woman</label>
+                                    <label class="form-check-label" for="sex2">Female</label>
                                 </div>
                             </div>
                             <div>
