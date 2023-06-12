@@ -36,7 +36,7 @@
                 <div class="d-flex h-75">
                   @if (Route::has('login'))
                     @if (session('id_user') != null && session('id_user') != "")
-                    <button class="btn btn-light mx-1 p-1"><a href="{{ route('logout') }}" class="_link w-75 h-75 text-center text-nowrap">Sign out</a></button>
+                    <a href="{{ route('logout') }}"><button class="btn btn-light">Sign out</button></a>
                     @else
                     <button class="btn btn-light mx-1 p-1"><a href="{{ route('login') }}" class="_link w-75 h-75 text-center text-nowrap">Sign in</a></button>
                     @endif                    
