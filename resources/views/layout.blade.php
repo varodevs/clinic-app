@@ -48,50 +48,56 @@
               </div>
             </div>
           </nav>
-          <div class="align-self-center w-75 m-1 _menu">      
-            <div id="logo" class="d-flex"><img src="{{ asset('img/logo.png') }}" alt="Logo img" height="50vh"><h1>VitalCore</h1></div>
-            <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('team') }}">Our Team</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('treatment') }}">Treatments</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('more') }}">More Services</a>
-                </li>
-                @if (session('id_user') != null && session('id_user') != "")
+          <div class="align-self-center w-75 m-1 _menu">
+            <nav class="navbar">
+              <div id="logo" class="d-flex"><img src="{{ asset('img/logo.png') }}" alt="Logo img" height="50vh"><h1>VitalCore</h1></div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('request') }}">Request an appoitment</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
                   </li>
-                @else
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Request an appoitment</a>
+                    <a class="nav-link" href="{{ route('team') }}">Our Team</a>
                   </li>
-                @endif
-
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('about') }}">About us</a>
-                </li>
-                @if (session('role') == 4 || session('role') == 5)
-                <li class="nav-item">
-                  <a class="nav-link" href="{{  route('admin')  }}">Admin</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{  route('dashboard')  }}">Profile</a>
-                </li>
-                @elseif (session('role') == 6)
-                <li class="nav-item">
-                  <a class="nav-link" href="{{  route('dashboard')  }}">Profile</a>
-                </li>
-                @endif
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('contact') }}">Contact us</a>
-                </li>                
-              </ul>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('treatment') }}">Treatments</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('more') }}">More Services</a>
+                  </li>
+                  @if (session('id_user') != null && session('id_user') != "")
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('request') }}">Request an appoitment</a>
+                    </li>
+                  @else
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('login') }}">Request an appoitment</a>
+                    </li>
+                  @endif
+  
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('about') }}">About us</a>
+                  </li>
+                  @if (session('role') == 4 || session('role') == 5)
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{  route('admin')  }}">Admin</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{  route('dashboard')  }}">Profile</a>
+                  </li>
+                  @elseif (session('role') == 6)
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{  route('dashboard')  }}">Profile</a>
+                  </li>
+                  @endif
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('contact') }}">Contact us</a>
+                  </li>                
+                </ul>
+            </nav>          
           </div>
     </div>
     <section class="_section">
