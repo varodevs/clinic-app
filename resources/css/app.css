@@ -139,6 +139,9 @@
 ._img-carou {
   margin-bottom: 10vh; }
 
+.carousel-item .p {
+  height: 216px; }
+
 #NavsDiv {
   height: 65vh;
   background-color: #d0dff0;
