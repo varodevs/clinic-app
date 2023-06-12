@@ -58,44 +58,44 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+                    <a class="nav-link active _link" aria-current="page" href="{{ route('home') }}">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('team') }}">Our Team</a>
+                    <a class="nav-link _link" href="{{ route('team') }}">Our Team</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('treatment') }}">Treatments</a>
+                    <a class="nav-link _link" href="{{ route('treatment') }}">Treatments</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('more') }}">More Services</a>
+                    <a class="nav-link _link" href="{{ route('more') }}">More Services</a>
                   </li>
                   @if (session('id_user') != null && session('id_user') != "")
                     <li class="nav-item">
-                      <a class="nav-link" href="{{ route('request') }}">Request an appoitment</a>
+                      <a class="nav-link _link" href="{{ route('request') }}">Request an appoitment</a>
                     </li>
                   @else
                     <li class="nav-item">
-                      <a class="nav-link" href="{{ route('login') }}">Request an appoitment</a>
+                      <a class="nav-link _link" href="{{ route('login') }}">Request an appoitment</a>
                     </li>
                   @endif
   
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('about') }}">About us</a>
+                    <a class="nav-link _link" href="{{ route('about') }}">About us</a>
                   </li>
                   @if (session('role') == 4 || session('role') == 5)
                   <li class="nav-item">
-                    <a class="nav-link" href="{{  route('admin')  }}">Admin</a>
+                    <a class="nav-link _link" href="{{  route('admin')  }}">Admin</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{  route('dashboard')  }}">Profile</a>
+                    <a class="nav-link _link" href="{{  route('dashboard')  }}">Profile</a>
                   </li>
                   @elseif (session('role') == 6)
                   <li class="nav-item">
-                    <a class="nav-link" href="{{  route('dashboard')  }}">Profile</a>
+                    <a class="nav-link _link" href="{{  route('dashboard')  }}">Profile</a>
                   </li>
                   @endif
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('contact') }}">Contact us</a>
+                    <a class="nav-link _link" href="{{ route('contact') }}">Contact us</a>
                   </li>                
                 </ul>
               </div>
