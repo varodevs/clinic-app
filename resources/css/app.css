@@ -113,7 +113,7 @@
   height: 65vh;
   background-color: #d0dff0;
   position: relative;
-  padding-top: 1rem; }
+  margin-top: 1rem; }
 
 #map {
   width: 50vw; }
