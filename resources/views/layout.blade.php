@@ -26,7 +26,7 @@
                     <img class="_contact-img" src="{{ asset('img/atimg.png') }}" alt="Contact link img"><a class="nav-link" href="#">+44 7837262871</a>
                   </li>
                   <li class="nav-item d-flex align-items-center">
-                    <img class="_contact-img" src="{{ asset('img/phone.png') }}" alt="Phone link img"><a class="nav-link" href="#">clinic@email.com</a>
+                    <img class="_contact-img" src="{{ asset('img/phone.png') }}" alt="Phone link img"><a class="nav-link" href="#">vitalcore@gmail.com</a>
                   </li>
                 </ul>
                 <form class="d-flex h-75" id="search">
@@ -49,7 +49,7 @@
             </div>
           </nav>
           <div class="align-self-center w-75 m-1 _menu">
-            <div id="logo" class="d-flex"><img src="{{ asset('img/logo.png') }}" alt="Logo img" height="50vh"><h1>VitalCore</h1></div>
+            <div id="logo" class="d-flex"><a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="VitalCore Logo" height="50vh"><h1>VitalCore</h1></a></div>
             <nav class="navbar navbar-expand-lg navbar-light">
               <div class="container-fluid">
               <button class="btn btn-dark navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -9,6 +9,10 @@
   ._menu .img {
     width: 100px; }
 
+.h1 {
+  color: #2c88ee;
+  font-family: Arial, Helvetica, sans-serif; }
+
 .nav-link {
   color: #2c88ee;
   font-size: medium;
