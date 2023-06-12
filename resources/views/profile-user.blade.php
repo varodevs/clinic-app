@@ -4,15 +4,15 @@
         @csrf
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">First Name</span>
-            <input type="text" class="form-control" placeholder="First name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $patient->first_name }}" disabled>
+            <input type="text" class="form-control" placeholder="First name" aria-label="ID" aria-describedby="basic-addon1" @if($patient != null) value="{{ $patient->first_name }}" @endif disabled>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Last Name</span>
-            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $patient->last_name }}" disabled>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" @if($patient != null) value="{{ $patient->last_name }}" @endif disabled>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Phone</span>
-            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $patient->phone }}" disabled>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" @if($patient != null) value="{{ $patient->phone }}" @endif disabled>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Birth date</span>
@@ -20,15 +20,15 @@
                 use Carbon\Carbon;
                 $dateb = Carbon::parse($patient->date_birth);
             @endphp
-            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $dateb->format('Y-m-d') }}" disabled>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" @if($patient != null) value="{{ $dateb->format('Y-m-d') }}" @endif disabled>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Age</span>
-            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $patient->age }}" disabled>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" @if($patient != null) value="{{ $patient->age }}" @endif disabled>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Sex</span>
-            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" value="{{ $patient->sex }}" disabled>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" @if($patient != null) value="{{ $patient->sex }}" @endif disabled>
         </div>
         <div class="input-group mb-3">
             <label for="image">Upload Image:</label>
