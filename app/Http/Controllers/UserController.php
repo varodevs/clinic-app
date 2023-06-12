@@ -46,6 +46,8 @@ class UserController extends Controller
 
             if($patient != null){
                 $id_patient = $patient->cod_patient;
+            }else{
+                $id_patient = null;
             }
                 
 
