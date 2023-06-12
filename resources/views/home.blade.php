@@ -22,14 +22,14 @@
                     <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5 class="_h5">KINESIOTHERAPY</h5>
                         <img src="{{ asset('img/ejercicio-fisioterapia.webp') }}" alt="..." width="100%" height="200vh">                    
-                        <p class="_carou-p">Physical activity to improve functional abilities.</p>
+                        <p class="_carou-p">Improve your functional abilities.</p>
                     </div>                    
                 </div>
                 <div class="carousel-item">
                     <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5 class="_h5">OSTEOPATHY</h5>
                         <img src="{{ asset('img/osteopatia.jpg') }}" alt="..." width="100%" height="200vh">                    
-                        <p class="_carou-p">Take care of yout musculoskeletal condition.</p>
+                        <p class="_carou-p">A better musculoskeletal condition.</p>
                     </div>
                     
                 </div>
