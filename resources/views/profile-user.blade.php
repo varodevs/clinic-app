@@ -18,7 +18,9 @@
             <span class="input-group-text" id="basic-addon1">Birth date</span>
             @php
                 use Carbon\Carbon;
-                $dateb = Carbon::parse($patient->date_birth);
+                if($patient != null){
+                    $dateb = Carbon::parse($patient->date_birth);
+                }                
             @endphp
             <input type="text" class="form-control" placeholder="Last name" aria-label="ID" aria-describedby="basic-addon1" @if($patient != null) value="{{ $dateb->format('Y-m-d') }}" @endif disabled>
         </div>
