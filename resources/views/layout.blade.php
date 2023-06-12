@@ -49,9 +49,9 @@
             </div>
           </nav>
           <div class="align-self-center w-75 m-1 _menu">
-            <nav class="navbar d-flex">
+            <nav class="navbar">
               <div id="logo" class="d-flex"><img src="{{ asset('img/logo.png') }}" alt="Logo img" height="50vh"><h1>VitalCore</h1></div>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -97,6 +97,7 @@
                     <a class="nav-link" href="{{ route('contact') }}">Contact us</a>
                   </li>                
                 </ul>
+              </div>
             </nav>          
           </div>
     </div>
