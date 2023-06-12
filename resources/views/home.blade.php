@@ -15,21 +15,21 @@
                     <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5 class="_h5">MASOTHERAPY</h5>
                         <img src="{{ asset('img/fisioterapia-deportiva.jpg') }}" alt="..." width="100%" height="200vh">                    
-                        <p class="_carou-p">Massage therapy is a holistic healing practice that involves the manipulation of soft tissues in the body, including muscles, tendons, ligaments, and fascia. It is a therapeutic technique that has been used for centuries to promote relaxation, relieve pain, and improve overall well-being.</p>
+                        <p class="_carou-p">Heal with massage therapy.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5 class="_h5">KINESIOTHERAPY</h5>
                         <img src="{{ asset('img/ejercicio-fisioterapia.webp') }}" alt="..." width="100%" height="200vh">                    
-                        <p class="_carou-p">Kinesiotherapy is a specialized form of exercise therapy that focuses on using movement and physical activity to improve and restore functional abilities in individuals with various medical conditions, injuries, or disabilities. It is a rehabilitative approach that aims to enhance strength, flexibility, endurance, coordination, and overall physical fitness.</p>
+                        <p class="_carou-p">Recover using movement and physical activity to improve and restore functional abilities.</p>
                     </div>                    
                 </div>
                 <div class="carousel-item">
                     <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5 class="_h5">OSTEOPATHY</h5>
                         <img src="{{ asset('img/osteopatia.jpg') }}" alt="..." width="100%" height="200vh">                    
-                        <p class="_carou-p">Osteopathy is a holistic healthcare approach that focuses on the musculoskeletal system and its impact on overall health and well-being. It is based on the principle that the body has the inherent ability to heal itself and that optimal health is achieved when the body's structure, function, and systems are in balance.</p>
+                        <p class="_carou-p">Take care of yout musculoskeletal.</p>
                     </div>
                     
                 </div>
@@ -37,21 +37,21 @@
                     <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5 class="_h5">RESPIRATORY</h5>
                         <img src="{{ asset('img/respiratoria.webp') }}" alt="..." width="100%" height="200vh">                    
-                        <p class="_carou-p">Respiratory physiotherapy, also known as pulmonary physiotherapy or respiratory therapy, is a specialized area of physiotherapy that focuses on the assessment, treatment, and management of respiratory conditions and disorders. It aims to optimize lung function, improve breathing mechanics, and enhance overall respiratory health.</p>
+                        <p class="_carou-p">Healing by a proper respiratory habit.</p>
                     </div>            
                 </div>
                 <div class="carousel-item">
                     <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5 class="_h5">NERUROLOGICAL</h5>
                         <img src="{{ asset('img/fisioterapia_neurologica.webp') }}" alt="..." width="100%" height="200vh">                    
-                        <p class="_carou-p">Neurological physiotherapy, also known as neuro physiotherapy or neurorehabilitation, is a specialized area of physiotherapy that focuses on the assessment and treatment of individuals with neurological conditions affecting the central nervous system, such as stroke, traumatic brain injury, spinal cord injury, multiple sclerosis, Parkinson's disease, and other neurological disorders.</p>
+                        <p class="_carou-p">Check and treatment of you neurological conditions.</p>
                     </div>                    
                 </div>
                 <div class="carousel-item">
                     <div class="c-3 d-flex flex-column align-self-center text-center">
                         <h5 class="_h5">ELECTROTHERAPY</h5>
                         <img src="{{ asset('img/electro.webp') }}" alt="..." width="100%" height="200vh">                    
-                        <p class="_carou-p">Electrotherapy is a therapeutic modality that uses electrical stimulation to promote healing, manage pain, and improve physical function. It involves the application of electrical currents or impulses to specific areas of the body, either directly through electrodes or indirectly through specialized devices.</p>
+                        <p class="_carou-p">Electrical stimulation to promote healing, manage pain, and improve physical function.</p>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
         </div>
     </div>
     <div class="d-flex flex-column" mb-5>
-        <div class="c-3 align-self-center text-center w-50 h-100 mt-5"><h4 class="align-self-center">CONTACT US</h4></div>    
+        <div class="c-3 align-self-center text-center w-50 h-100 mt-5"><h4 class="align-self-center _h4">CONTACT US</h4></div>    
     <div>
         <div class="d-flex justify-content-evenly">
             <div style="height: 100%;" class="d-flex flex-column justify-content-cente w-50 _div-login">
