@@ -168,5 +168,15 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/6e079c207d.js" crossorigin="anonymous"></script>
+    <script>
+      var map;
+      function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: -34.397, lng: 150.644},
+              zoom: 8
+          });
+      }
+      initMap();
+  </script>
 </body>
 </html>
