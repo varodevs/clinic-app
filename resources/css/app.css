@@ -8,7 +8,7 @@
   z-index: 1; }
   ._menu .img {
     width: 100px; }
-  ._menu ._link {
+  ._menu .nav-link {
     color: #2c88ee;
     font-size: medium;
     font-weight: 600; }
