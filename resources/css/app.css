@@ -112,7 +112,8 @@
 #NavsDiv {
   height: 65vh;
   background-color: #d0dff0;
-  position: relative; }
+  position: relative;
+  padding-top: 1rem; }
 
 #map {
   width: 50vw; }
