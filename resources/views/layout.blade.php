@@ -50,7 +50,7 @@
           </nav>
           <div class="align-self-center w-75 m-1 _menu">
             <div id="logo" class="d-flex"><img src="{{ asset('img/logo.png') }}" alt="Logo img" height="50vh"><h1>VitalCore</h1></div>
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg navbar-light">
               <div class="container-fluid">
               <button class="btn btn-dark navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
