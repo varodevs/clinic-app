@@ -146,13 +146,13 @@
             <div class="d-flex flex-nowrap w-25">
                 <ul class="nav justify-content-evenly flex-nowrap">                
                     <li class="nav-item">
-                      <a class="nav-link" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                      <a class="nav-link flex-column justify-items-center" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                      <a class="nav-link flex-column justify-items-center" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                      <a class="nav-link flex-column justify-items-center" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
                     </li>
                   </ul>
             </div>
