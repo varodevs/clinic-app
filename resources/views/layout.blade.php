@@ -49,7 +49,7 @@
             </div>
           </nav>
           <div class="align-self-center w-75 m-1 _menu">
-            <div id="logo" class="d-flex"><a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="VitalCore Logo" height="50vh"><h1>VitalCore</h1></a></div>
+            <div id="logo"><a class="d-flex" href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="VitalCore Logo" height="50vh"><h1>VitalCore</h1></a></div>
             <nav class="navbar navbar-expand-lg navbar-light">
               <div class="container-fluid">
               <button class="btn btn-dark navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
