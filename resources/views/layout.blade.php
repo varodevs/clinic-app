@@ -42,7 +42,7 @@
                     @endif                    
                   @endif
                   @if (Route::has('register'))
-                  <a href="{{ route('register') }}" class="_link w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-light">Sign up</button></a>
+                  <a href="{{ route('register') }}" class="_link w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-light h-100">Sign up</button></a>
                   @endif
                 </div>
               </div>
