@@ -117,8 +117,4 @@
 #map {
   width: 50vw; }
 
-@media screen and (max-width: 576px) {
-  ._contact-top {
-    display: none; } }
-
 /*# sourceMappingURL=app.css.map */
