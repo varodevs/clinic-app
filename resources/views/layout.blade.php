@@ -151,5 +151,6 @@
             </div>
         </div>
     </footer>
+    <script src="https://kit.fontawesome.com/6e079c207d.js" crossorigin="anonymous"></script>
 </body>
 </html>
