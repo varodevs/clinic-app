@@ -20,13 +20,13 @@
               <div class="d-flex align-self-center w-75 mt-1 _nav-contacto">
                 <ul class="navbar-nav me-auto h-75 _contact-top">
                   <li class="nav-item d-flex align-items-center">
-                    <a class="nav-link" href="#">¿Do you have any question?</a>
+                    <a class="nav-link" href="{{ route('contact') }}">¿Do you have any question?</a>
                   </li>
                   <li class="nav-item d-flex align-items-center">
-                    <img class="_contact-img" src="{{ asset('img/atimg.png') }}" alt="Contact link img"><a class="nav-link" href="#">+44 7837262871</a>
+                    <img class="_contact-img" src="{{ asset('img/atimg.png') }}" alt="Contact link img"><a class="nav-link" href="{{ route('contact') }}">+44 7837262871</a>
                   </li>
                   <li class="nav-item d-flex align-items-center">
-                    <img class="_contact-img" src="{{ asset('img/phone.png') }}" alt="Phone link img"><a class="nav-link" href="#">vitalcore@gmail.com</a>
+                    <img class="_contact-img" src="{{ asset('img/phone.png') }}" alt="Phone link img"><a class="nav-link" href="{{ route('contact') }}">info@vitalcore.es</a>
                   </li>
                 </ul>
                 <form class="d-flex h-75" id="search">
