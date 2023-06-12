@@ -17,7 +17,7 @@
       <img class="_bg-img" src="{{ asset("img/imagebgmenu.jpg") }}" alt="Background Image">
         <nav class="navbar navbar-expand-lg p-0" id="NavTop">
             <div class="container-fluid d-flex justify-content-end">
-              <div class="d-flex align-self-center w-75 _nav-contacto">
+              <div class="d-flex align-self-center w-75 mt-1 _nav-contacto">
                 <ul class="navbar-nav me-auto h-75 _contact-top">
                   <li class="nav-item d-flex align-items-center">
                     <a class="nav-link" href="#">¿Do you have any question?</a>
