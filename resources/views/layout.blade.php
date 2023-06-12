@@ -121,8 +121,8 @@
         </div>
       </div>
     </section>
-    <footer class="mt-auto _footer">
-        <div class="d-flex justify-content-around">
+    <footer class="mt-auto">
+        <div class="d-flex justify-content-around _footer">
             <div class="d-flex w-25">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
