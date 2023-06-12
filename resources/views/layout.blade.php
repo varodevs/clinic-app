@@ -125,33 +125,27 @@
         <div class="d-flex justify-content-around _footer">
             <div class="d-flex flex-nowrap w-25">
                 <ul class="nav justify-content-center flex-nowrap">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                  </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Active</a>
+                      <a class="nav-link" href="#">Terms of Service</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                      <a class="nav-link" href="#">Privacy Policy</a>
                     </li>
                   </ul>
             </div>
             <div class="d-flex w-25">
-                <ul class="nav justify-content-center flex-nowrap">
+                <ul class="nav justify-content-center flex-nowrap">                
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Active</a>
+                      <a href="https://www.facebook.com/your-page" target="_blank"><i class="fab fa-facebook"></i></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
+                      <a href="https://www.twitter.com/your-profile" target="_blank"><i class="fab fa-twitter"></i></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                      <a href="https://www.instagram.com/your-account" target="_blank"><i class="fab fa-instagram"></i></a>
                     </li>
                   </ul>
             </div>
