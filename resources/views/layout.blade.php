@@ -123,14 +123,17 @@
     </section>
     <footer class="mt-auto">
         <div class="d-flex justify-content-evenly _footer">
-          <div class="d-flex flex-nowrap justify-content-center w-25">
-            <a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="VitalCore" width="20rem"></a>
-            <span>&copy;&nbsp;VitalCore</span>
-          </div>
+            <div class="d-flex flex-nowrap justify-content-center w-25">
+              <ul class="nav justify-content-center flex-nowrap">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="VitalCore" width="20rem"><span>&copy;&nbsp;VitalCore</span></a>
+                </li>
+              </ul>                            
+            </div>
             <div class="d-flex flex-nowrap w-50">
                 <ul class="nav justify-content-center flex-nowrap">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('contact') }}">Contact</a>
                   </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Terms of Service</a>
@@ -143,13 +146,13 @@
             <div class="d-flex flex-nowrap w-25">
                 <ul class="nav justify-content-evenly flex-nowrap">                
                     <li class="nav-item">
-                      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                      <a class="nav-link" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
                     </li>
                     <li class="nav-item">
-                      <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                      <a class="nav-link" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
                     </li>
                     <li class="nav-item">
-                      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                      <a class="nav-link" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
                     </li>
                   </ul>
             </div>
