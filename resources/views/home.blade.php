@@ -74,7 +74,7 @@
             <div class="w-25"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
         </div>
     </div>
-    <div class="d-flex flex-column" mb-5>
+    <div class="d-flex flex-column mb-5">
         <div class="c-3 align-self-center text-center w-50 h-100 mt-5"><h4 class="align-self-center _h4">CONTACT US</h4></div>    
     <div>
         <div class="d-flex justify-content-evenly">
