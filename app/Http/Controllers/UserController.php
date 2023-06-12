@@ -44,7 +44,10 @@ class UserController extends Controller
             $sel2 = 2;
             $patient = $patient->getPatientByUser(session('id_user'));
 
+            if($patient != null){
                 $id_patient = $patient->cod_patient;
+            }
+                
 
             $array = $appoint->getAppointsByPatient($id_patient);
             $last = $appoint->getLastAppointPat($id_patient);
