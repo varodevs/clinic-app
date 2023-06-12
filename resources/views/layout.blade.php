@@ -36,13 +36,13 @@
                 <div class="d-flex h-75">
                   @if (Route::has('login'))
                     @if (session('id_user') != null && session('id_user') != "")
-                    <a href="{{ route('logout') }}" class="_link w-75 text-center text-nowrap"><button class="btn btn-light">Sign out</button></a>
+                    <a href="{{ route('logout') }}" class="_link w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-light">Sign out</button></a>
                     @else
-                    <a href="{{ route('login') }}" class="_link w-75 text-center text-nowrap"><button class="btn btn-light">Sign in</button></a>
+                    <a href="{{ route('login') }}" class="_link w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-light">Sign in</button></a>
                     @endif                    
                   @endif
                   @if (Route::has('register'))
-                  <a href="{{ route('register') }}" class="_link w-75 text-center text-nowrap"><button class="btn btn-light">Sign up</button></a>
+                  <a href="{{ route('register') }}" class="_link w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-light">Sign up</button></a>
                   @endif
                 </div>
               </div>
