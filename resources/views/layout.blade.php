@@ -123,8 +123,8 @@
     </section>
     <footer class="mt-auto">
         <div class="d-flex justify-content-around _footer">
-            <div class="d-flex w-25">
-                <ul class="nav justify-content-center">
+            <div class="d-flex flex-nowrap w-25">
+                <ul class="nav justify-content-center flex-nowrap">
                     <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="#">Active</a>
                     </li>
@@ -140,7 +140,7 @@
                   </ul>
             </div>
             <div class="d-flex w-25">
-                <ul class="nav justify-content-center">
+                <ul class="nav justify-content-center flex-nowrap">
                     <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="#">Active</a>
                     </li>
