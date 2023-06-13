@@ -25,7 +25,7 @@
                         @enderror
                         <button class="btn btn-light _submit" type="submit">Sign in</button>
                     </form>
-                    <a href=""><p class="_carou-p">Forgot your password?</p></a>
+                    <a href="{{ route('reset-view') }}"><p class="_carou-p w-100 text-center">Forgot your password?</p></a>
                 </div>
             </div>
         </div>
