@@ -22,7 +22,7 @@
             @else
             <td><input class="w-75 text-center" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
             @endif
-            if ($i == 0) {
+            @if ($i == 0) {
                 $id=$column;
             }
             $i++;
