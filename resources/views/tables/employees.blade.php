@@ -15,9 +15,9 @@
     </thead>
     <tbody>
         @if ($array != null)
-        <form class="col-12" action="{{ route('admin-upd-emp') }}" method="POST">
             @csrf
             @foreach ($array as $row)
+            <form class="col-12" action="{{ route('admin-upd-emp') }}" method="POST">
                 @php
                     $i = 0;
                 @endphp
@@ -37,9 +37,9 @@
                 @endphp
                     @endforeach
                     <td>
-                        <button type="submit" class="btn btn-primary">Update</button>   
-                        </form>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </td>
+            </form>                    
                     <td>
                         <form action="{{ route('admin-del-emp') }}" method="POST">
                             @csrf                    
