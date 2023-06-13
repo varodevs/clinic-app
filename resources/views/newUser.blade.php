@@ -14,10 +14,6 @@
             <input type="text" class="form-control" name="email" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">password</span>
-            <input type="text" class="form-control" name="passw" placeholder="Phone Number" aria-label="pn" aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Role</span>
             <select name="role">
                 <option value="5">Employee</option>
