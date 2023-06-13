@@ -32,13 +32,13 @@
                             <a class="nav-link" href="{{ route('admin-usr') }}">Users</a>    
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin-usr') }}">Therapies</a>    
+                            <a class="nav-link" href="{{ route('admin-ther') }}">Therapies</a>    
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin-usr') }}">Clinic History</a>    
+                            <a class="nav-link" href="{{ route('admin-ch') }}">Clinic History</a>    
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin-usr') }}">Traumatology</a>    
+                            <a class="nav-link" href="{{ route('admin-trau') }}">Traumatology</a>    
                         </li>
                       </ul>
                 </div>
