@@ -24,7 +24,7 @@ class AdminController extends Controller
         $appointment = new Appointment();
         $sel=1;
         $array = $appointment->getAppoints();
-        return view('admin', compact('array', 'sel'));
+        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
     }
 
     public function Admin_appo()

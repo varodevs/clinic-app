@@ -168,6 +168,16 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/6e079c207d.js" crossorigin="anonymous"></script>
+    @if(isset($scrollToSection))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var section = document.getElementById('{{ $scrollToSection }}');
+            if (section) {
+                section.scrollIntoView();
+            }
+        });
+    </script>
+@endif
     <script>
       var map;
       function initMap() {
