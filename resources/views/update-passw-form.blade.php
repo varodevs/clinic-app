@@ -11,7 +11,7 @@
                 <h4 class="_h4">Reset your password</h4>
                 <p class="_carou-p">Make sure both passwords are the same.</p>
                 <div class="d-flex flex-column justify-content-center px-5 py-3 _div-login">
-                    <form class="d-flex flex-column justify-content-center _form" action="{{ route('verify-reset') }}" method="POST">
+                    <form class="d-flex flex-column justify-content-center _form" action="{{ route('reset-submit') }}" method="POST">
                         @csrf
                         <label class="_form-label" for="email">Email</label>
                         <input class="form-control _form-input" type="email" name="email" id="email" placeholder="name@email.com">

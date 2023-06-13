@@ -62,7 +62,9 @@ Route::post('verify-form', [RegisterController::class, 'Verify'])->name('verify-
 //Routes Resend
 Route::get('verify-reset-form', [Resend::class, 'ResendPasswView'])->name('reset-view');
 
-Route::post('verify-passw', [Resend::class, 'ResetSubmit'])->name('reset-submit');
+Route::post('verify-email-reset', [Resend::class, 'ResetSubmit'])->name('reset-email');
+
+Route::post('verify-passw-reset', [Resend::class, 'ResetSubmit'])->name('reset-submit');
 
 //Routes contact
 Route::get('contact', [ContactController::class, 'Contact_view'])->name('contact');
