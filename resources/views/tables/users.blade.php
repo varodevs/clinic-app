@@ -73,5 +73,5 @@
     </tbody>
 </table>
 <div>
-    <a href="{{ route('admin-new-usr-view') }}"><button class="btn btn-primary"></button></a>
+    <a href="{{ route('admin-new-usr-view') }}"><button class="btn btn-primary">New User</button></a>
 </div>
