@@ -125,7 +125,7 @@ Route::get('admin/new-user-form', [AdminController::class, 'Admin_newAppoView'])
 
 Route::post('admin/new-user', [AdminController::class, 'Admin_newUsr'])->name('admin-new-usr');
 
-Route::post('admin/new-appo', [AdminController::class, 'Admin_newAppo'])->name('admin-new-appo');
+//Route::post('admin/new-appo', [AdminController::class, 'Admin_newAppo'])->name('admin-new-appo');
 
 // Route::post('admin/new-pat', [AdminController::class, 'Admin_newPat'])->name('admin-new-pat');
 
