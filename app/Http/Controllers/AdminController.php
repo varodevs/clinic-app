@@ -11,6 +11,8 @@ use App\Models\Patient;
 use App\Models\Therapy;
 use App\Models\Employee;
 use App\Models\User;
+use App\Mail\Email;
+use App\Mail\EmailPassw;
 
 class AdminController extends Controller
 {
@@ -70,7 +72,6 @@ class AdminController extends Controller
         $request->validate([
             'uname' => 'required|string|min:2|max:10',
             'email' => 'required|email|min:8|max:35',
-            'passw' => 'required|min:8|max:15',
             'role' => 'required',
             ]);
         $cod_verify = Str::upper(Str::random(4));
@@ -80,7 +81,7 @@ class AdminController extends Controller
         $user = new User();
 
         $sel=4;
-
+        $response = Mail::to($request->email)->send(new EmailPassw($request->uname,$cod_verify, $password));
         $result = $user->createUser($request->uname, $request->email, $hash_pssw, $hash_cod_verify, intval($request->role), now());
 
         return redirect()->route('admin-usr', ['sel' => $sel]);

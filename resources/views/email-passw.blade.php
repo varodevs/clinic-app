@@ -10,7 +10,7 @@
     <title>Clinic</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <h1>Saludos, {{ $name }}</h1>
+    <h1>Greetings, {{ $name }}</h1>
     @if ({{ $passw }} != null)
     <p>This is your provisional password: {{ $passw }} Please change it for on safer as soon as you can.        
     @endif
