@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-3 align-self-center m-3">
-    <h3>New User</h3>
+    <h3 class="_h3">New User</h3>
     <form action="{{ route('admin-new-usr') }}" method="POST">
         @csrf
         <div class="input-group mb-3">
