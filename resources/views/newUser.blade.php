@@ -21,6 +21,6 @@
                 <option value="6">User</option>
             </select>
         </div>
-        <button type="submit">Create User</button>
+        <button class="btn btn-success" type="submit">Create User</button>
     </form>
 </div>
