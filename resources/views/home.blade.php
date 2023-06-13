@@ -71,7 +71,7 @@
             <div>
                 <img src= {{ asset('img/about-us.jpg') }} height="250vh" />
             </div>
-            <div class="w-25 _carou-p"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+            <div class="w-25"><p class="_carou-p">Welcome to [Your Physiotherapy Clinic Name], where we are dedicated to helping you achieve optimal physical health and well-being. With a team of highly skilled and compassionate physiotherapists, we provide personalized care and evidence-based treatments to address a wide range of musculoskeletal and movement-related conditions.</p></div>
         </div>
     </div>
     <div class="d-flex flex-column mb-5">
