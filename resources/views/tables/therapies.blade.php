@@ -5,6 +5,8 @@
             <td>Name</td>
             <td>Description</td>
             <td>Material</td>
+            <td>-</td> 
+            <td>-</td> 
         </tr>
     </thead>
     <tbody>
@@ -47,3 +49,6 @@
         @endif
     </tbody>
 </table>
+<div>
+    <a href="{{ route('admin-new-ther-view') }}"><button class="btn btn-primary">New Therapy</button></a>
+</div>

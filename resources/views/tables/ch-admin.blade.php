@@ -52,3 +52,6 @@
         @endif
     </tbody>
 </table>
+<div>
+    <a href="{{ route('admin-new-ch-view') }}"><button class="btn btn-primary">New Clinic History</button></a>
+</div>
