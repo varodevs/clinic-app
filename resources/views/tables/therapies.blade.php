@@ -26,7 +26,7 @@
                 $id=$column;
             }
             $i++;
-            @endphp
+            @endif
             @endforeach
             <td>
                 <button type="submit" class="btn btn-primary">Update</button>   
