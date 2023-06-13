@@ -25,6 +25,9 @@
             @endphp
             @foreach ($row as $column)
             @if ($i != 3 && $i != 4)
+                @if ($i == 0)
+                <td><input type="text" value="{{ $column }}" name="id" disabled/></td>
+                @endif
                 @if ($i == 2)
                 <td><input type="email" value="{{ $column }}" name="date_reg"/></td>
                 @elseif ($i == 6)
