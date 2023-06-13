@@ -94,8 +94,8 @@ class AdminController extends Controller
 
     //New User Form and Submit
 
-    public function Admin_newUsrView(){
-        return view('new-appo-form')->with('scrollToSection', 'section');
+    public function AdminNewUsrView(){
+        return view('newUser')->with('scrollToSection', 'section');
     }
 
     public function Admin_newUsr(Request $request){
@@ -120,7 +120,7 @@ class AdminController extends Controller
 
     //New Appointment Form and Submit
 
-    public function Admin_newAppoView(){
+    public function AdminNewAppoView(){
         return view('newAppo')->with('scrollToSelection', 'section');
     }
 
