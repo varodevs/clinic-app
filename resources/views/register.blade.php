@@ -8,8 +8,8 @@
         </div>
         <div class="d-flex justify-content-center _content">
             <div class="d-flex flex-column justify-content-center">
-                <h4></h4>
-                <p></p>
+                <h4 class="_h4">Sign up</h4>
+                <p class="_carou-p">Sign up to our site to create a new user account.</p>
                 <div class="d-flex flex-column justify-content-center px-5 py-3 _div-login">
                     <form class="d-flex flex-column justify-content-center _form" action="{{ route('register-done') }}" method="POST">
                         @csrf

@@ -1,3 +1,6 @@
+@extends('layout')
+
+@section('content')
 <div class="col-3 align-self-center m-3">
     <h3>New User</h3>
     <form action="{{ route('admin-new-usr') }}" method="POST">
@@ -24,3 +27,4 @@
         <button class="btn btn-success" type="submit">Create User</button>
     </form>
 </div>
+@endsection
