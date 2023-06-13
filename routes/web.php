@@ -126,11 +126,17 @@ Route::post('admin/new-trau',[AdminController::class, 'Admin_newTrau'])->name('a
 Route::post('admin/users-upd', [AdminController::class, 'Admin_updUsr'])->name('admin-upd-usr');
 Route::post('admin/patients-upd', [AdminController::class, 'Admin_updPat'])->name('admin-upd-pat');
 Route::post('admin/emp-upd', [AdminController::class, 'Admin_updEmp'])->name('admin-upd-emp');
+Route::post(('admin/ther-upd'), [AdminController::class, 'Admin_updTher'])->name('admin-upd-ther');
+Route::post(('admin/ch-upd'), [AdminController::class, 'Admin_updCh'])->name('admin-upd-ch');
+Route::post(('admin/ch-upd'), [AdminController::class, 'Admin_updTrau'])->name('admin-upd-trau');
 
 //Routes Admin-Delete
 Route::post('admin/users-del', [AdminController::class, 'Admin_delUsr'])->name('admin-del-usr');
 Route::post('admin/patient-del', [AdminController::class, 'Admin_delPat'])->name('admin-del-pat');
 Route::post(('admin/emp-del'), [AdminController::class, 'Admin_delEmp'])->name('admin-del-emp');
+Route::post(('admin/ther-del'), [AdminController::class, 'Admin_delTher'])->name('admin-del-ther');
+Route::post(('admin/ch-del'), [AdminController::class, 'Admin_delCh'])->name('admin-del-ch');
+Route::post(('admin/ch-trau'), [AdminController::class, 'Admin_delTrau'])->name('admin-del-trau');
 
 //Routes Profiles
 Route::get('user/dashboard', [UserController::class, 'userDashboard'])->name('dashboard');

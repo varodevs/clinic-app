@@ -11,7 +11,7 @@
     </thead>
     <tbody>
         @if ($array != null)
-        <form action="{{ route('admin-del-usr') }}" method="POST">
+        <form action="{{ route('admin-upd-ther') }}" method="POST">
             @csrf
         @foreach ($array as $row)
         <tr>
@@ -36,7 +36,7 @@
                 </form>
             </td>
             <td>
-                <form action="{{ route('admin-del-usr') }}" method="POST">
+                <form action="{{ route('admin-del-ther') }}" method="POST">
                     @csrf                    
                     <input type="hidden" name="id_user" value={{ $id }} />
                     <button type="submit" class="btn btn-primary">Delete</button>
