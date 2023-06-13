@@ -20,7 +20,9 @@
                 <option value="5">Employee</option>
                 <option value="6">User</option>
             </select>
-        </div>
-        <button class="btn btn-success" type="submit">Create User</button>
+        </div>      
     </form>
+    <div>
+        <button class="btn btn-success" type="submit">Create User</button>
+    </div>  
 </div>
