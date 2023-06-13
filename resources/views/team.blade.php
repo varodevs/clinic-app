@@ -6,8 +6,8 @@
     <h3 class="mx-3">Our Team</h3>
 </div>
     <div class="container-fluid d-flex flex-column align-items-center pt-5">
-        <div class="text-center w-50"><h4>From AtiveLife team</h4></div>
-        <div class="text-center w-75"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+        <div class="text-center w-50"><h4>From VitalCore team</h4></div>
+        <div class="text-center w-75"><p>At VitalCore, we understand that each individual is unique, and that's why we take a customized approach to your treatment. We believe in treating the root cause of your condition, not just the symptoms, to ensure long-lasting results.</p></div>
     </div>
 
     <div class="c-12 d-flex flex-row flex-wrap justify-content-center pt-5 _div-treat" mb-5>
