@@ -116,10 +116,6 @@ class AdminController extends Controller
         return redirect()->route('admin-usr#section', ['sel' => $sel]);
     }
 
-    // public function Admin_newAppoView(){
-    //     return view('newAppo')->with('scrollToSection', 'section');
-    // }
-
     public function Admin_newAppoView(){
         return view('newAppo')->with('scrollToSection', 'section');
     }
@@ -138,7 +134,7 @@ class AdminController extends Controller
 
         $result = $appoint->createAppoint($request->date,0, $request->cod_employee, $request->cod_patient);
 
-        return redirect()->route('admin-appo#section', ['sel' => $sel]);
+        return redirect()->route('admin-appo', ['sel' => $sel]);
     }
 
     public function Admin_newPatView(){
