@@ -92,6 +92,8 @@ class AdminController extends Controller
         return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
     }
 
+    //New User Form and Submit
+
     public function Admin_newUsrView(){
         return view('newUser')->with('scrollToSection', 'section');
     }
@@ -116,8 +118,10 @@ class AdminController extends Controller
         return redirect()->route('admin-usr#section', ['sel' => $sel]);
     }
 
+    //New Appointment Form and Submit
+
     public function Admin_newAppoView(){
-        return view('newAppo')->with('scrollToSection', 'section');
+        return view('newAppo')->with('scrollToSelection', 'section');
     }
 
     public function Admin_newAppo(Request $request){
@@ -136,6 +140,8 @@ class AdminController extends Controller
 
         return redirect()->route('admin-appo', ['sel' => $sel]);
     }
+
+    //New Patient Form and Submit
 
     public function Admin_newPatView(){
         return view('newPat')->with('scrollToSection', 'section');
@@ -169,6 +175,8 @@ class AdminController extends Controller
         return redirect()->route('admin-pat#section', ['sel' => $sel]);
     }
 
+    //New Employee Form and Submit
+
     public function Admin_newEmpView(){
         return view('newAppo')->with('scrollToSection', 'section');
     }
@@ -191,6 +199,8 @@ class AdminController extends Controller
 
         return redirect()->route('admin-emp#section', ['sel' => $sel]);
     }
+
+    //New Therapy Form and Submit
 
     public function Admin_newTherView(){
         return view('newTher')->with('scrollToSection', 'section');
@@ -215,6 +225,8 @@ class AdminController extends Controller
         return redirect()->route('admin-ther#section', ['sel' => $sel]);
     }
 
+    //New CH Form and Submit
+
     public function Admin_newChView(){
         return view('newCh')->with('scrollToSection', 'section');
     }
@@ -236,6 +248,8 @@ class AdminController extends Controller
         return redirect()->route('admin-ch#section', ['sel' => $sel]);
     }
 
+    //New Trauma Form and Submit
+
     public function Admin_newTrauView(){
         return view('newCh')->with('scrollToSection', 'section');
     }
@@ -254,6 +268,8 @@ class AdminController extends Controller
 
         return redirect()->route('admin-trau#section', ['sel' => $sel]);
     }
+
+    //Delete User
 
     public function Admin_delUsr(Request $request)
     {
