@@ -151,6 +151,8 @@ Route::post(('admin/ch-upd'), [AdminController::class, 'Admin_updCh'])->name('ad
 
 Route::post(('admin/ch-upd'), [AdminController::class, 'Admin_updTrau'])->name('admin-upd-trau');
 
+Route::post('admin/addr-upd',[AdminController::class, 'Admin_updAddr'])->name('admin-upd-addr');
+
 //Routes Admin-Delete
 Route::post('admin/users-del', [AdminController::class, 'Admin_delUsr'])->name('admin-del-usr');
 
@@ -162,7 +164,9 @@ Route::post(('admin/ther-del'), [AdminController::class, 'Admin_delTher'])->name
 
 Route::post(('admin/ch-del'), [AdminController::class, 'Admin_delCh'])->name('admin-del-ch');
 
-Route::post(('admin/ch-trau'), [AdminController::class, 'Admin_delTrau'])->name('admin-del-trau');
+Route::post(('admin/trau-del'), [AdminController::class, 'Admin_delTrau'])->name('admin-del-trau');
+
+Route::post('admin/addr-del',[AdminController::class, 'Admin_delAddr'])->name('admin-del-addr');
 
 //Routes Profiles
 Route::get('user/dashboard', [UserController::class, 'userDashboard'])->name('dashboard');

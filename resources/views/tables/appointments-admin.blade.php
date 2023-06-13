@@ -40,9 +40,8 @@
                         $i++;
                     @endphp
                     @endforeach
-                    <td>                
-                            <input type="hidden" name="id" value={{ $id }} />
-                            <button type="submit" class="btn btn-primary">Update</button>
+                    <td>
+                        <button type="submit" class="btn btn-primary">Update</button>
                         </form>
                     </td>
                     <td>
@@ -60,5 +59,7 @@
     </tbody>
 </table>
 <div>
-    <a href="{{ route('admin-new-appo-view') }}"><button class="btn btn-primary">New Appointment</button></a>
+    <form action="{{ route('admin-new-appo-view') }}" method="GET">
+        <button class="btn btn-primary">New Appointment</button>
+    </form>
 </div>

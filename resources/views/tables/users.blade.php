@@ -75,5 +75,7 @@
     </tbody>
 </table>
 <div>
-    <a href="{{ route('admin-new-usr-view') }}"><button class="btn btn-primary">New User</button></a>
+    <form action="{{ route('admin-new-usr-view') }}" method="GET">
+        <button class="btn btn-primary">New User</button>
+    </form>
 </div>

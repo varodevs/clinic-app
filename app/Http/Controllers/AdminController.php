@@ -330,6 +330,14 @@ class AdminController extends Controller
         return redirect()->route('admin-appo', ['sel' => $sel]);
     }
 
+    public function Admin_updAddr(Request $request){
+
+    }
+
+    public function Admin_delAddr(Request $request){
+
+    }
+
     public function Admin_delTher(Request $request){
 
     }

@@ -9,7 +9,7 @@
     </thead>
     <tbody>
         @if ($array != null)
-        <form action="{{ route('admin-del-usr') }}" method="POST">
+        <form action="{{ route('admin-del-trau') }}" method="POST">
             @csrf
         @foreach ($array as $row)
         <tr>
@@ -34,7 +34,7 @@
                 </form>
             </td>
             <td>
-                <form action="{{ route('admin-del-usr') }}" method="POST">
+                <form action="{{ route('admin-del-trau') }}" method="POST">
                     @csrf                    
                     <input type="hidden" name="id_trau" value={{ $id }} />
                     <button type="submit" class="btn btn-primary">Delete</button>
@@ -48,5 +48,7 @@
     </tbody>
 </table>
 <div>
-    <a href="{{ route('admin-new-trau-view') }}"><button class="btn btn-primary">New Trauma</button></a>
+    <form action="{{ route('admin-new-trau-view') }}" method="GET">
+        <button class="btn btn-primary">New Trauma</button>
+    </form>
 </div>
