@@ -17,32 +17,32 @@
     </thead>
     <tbody>
         @if ($array != null)
-        <form action="{{ route('admin-upd-pat') }}" method="POST">ç
-            @csrf
-            @foreach ($array as $row)
-                @php
-                    $i = 0;                 
-                @endphp                
-                <tr>
-                    @foreach ($row as $column)
-                    @if ($i==4)
-                    <td><input class="w-75 text-center" type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_birth"/></td> 
-                    @else
-                    <td><input class="w-75 text-center" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
-                    @endif                   
-                @php                                
-                    if ($i == 0) {
-                        $id=$column;
-                    }
+            <form action="{{ route('admin-upd-pat') }}" method="POST">ç
+                @csrf
+                @foreach ($array as $row)
+                    @php
+                        $i = 0;                 
+                    @endphp                
+                    <tr>
+                        @foreach ($row as $column)
+                        @if ($i==4)
+                        <td><input class="w-75 text-center" type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_birth"/></td> 
+                        @else
+                        <td><input class="w-75 text-center" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
+                        @endif                   
+                    @php                                
+                        if ($i == 0) {
+                            $id=$column;
+                        }
 
-                    $i++;                 
-                @endphp
-                    @endforeach
-                    <td>
-                        <button type="submit" class="btn btn-primary">Update</button>   
+                        $i++;                 
+                    @endphp
+                        @endforeach
+                        <td>
+                            <button type="submit" class="btn btn-primary">Update</button>   
 
-                    </td>
-        </form>
+                        </td>
+            </form>
                     <td>
                         <form action="{{ route('admin-del-pat') }}" method="POST">
                             @csrf                    
