@@ -17,7 +17,7 @@
     </thead>
     <tbody>
         @if ($array != null)
-            <form action="{{ route('admin-upd-pat') }}" method="POST">ç
+            <form action="{{ route('admin-upd-pat') }}" method="POST">
                 @csrf
                 @foreach ($array as $row)
                     @php
