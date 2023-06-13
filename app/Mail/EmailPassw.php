@@ -42,7 +42,7 @@ class EmailPassw extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'email',
+            view: 'email-passw',
         );
     }
 
