@@ -21,6 +21,12 @@
             <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
             @endif
             <td><input class="w-75 text-center" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
+            @php
+            if ($i == 0) {
+                $id=$column;
+            }
+            $i++;
+            @endphp
             @endforeach
             <td>
                 <button type="submit" class="btn btn-primary">Update</button>   
@@ -34,12 +40,6 @@
                 </form>
             </td>
         </tr>
-        @php
-        if ($i == 0) {
-            $id=$column;
-        }
-        $i++;
-        @endphp
     @endforeach
         @else
         <tr><td colspan="4"> -- No Data -- </td></tr>
