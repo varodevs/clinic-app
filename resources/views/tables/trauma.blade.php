@@ -3,8 +3,6 @@
         <tr>
             <td>ID</td>
             <td>Name</td>
-            <td>Description</td>
-            <td>Material</td>
         </tr>
     </thead>
     <tbody>

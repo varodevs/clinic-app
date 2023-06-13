@@ -58,6 +58,15 @@
                     @case(4)
                         @include('tables.users', ['array' => $array])
                         @break
+                    @case(5)
+                        @include('tables.therapies', ['array' => $array])
+                        @break
+                    @case(6)
+                        @include('tables.ch-admin', ['array' => $array])
+                        @break
+                    @case(7)
+                        @include('tables.trauma', ['array' => $array])
+                        @break
                     @default
                         @include('tables.appointments', ['array' => $array])           
                 @endswitch

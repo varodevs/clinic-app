@@ -95,9 +95,32 @@ Route::get('admin/employees', [AdminController::class, 'Admin_emp'])->name('admi
 //Routes Admin-Users
 Route::get('admin/users', [AdminController::class, 'Admin_usr'])->name('admin-usr');
 
+//Routes Admin-Therapies
+Route::get('admin/therapies', [AdminController::class, 'Admin_ther'])->name('admin-ther');
+
+//Routes Admin-CH
+Route::get('admin/gh', [AdminController::class, 'Admin_ch'])->name('admin-ch');
+
+//Routes Admin-Trauma
+Route::get('admin/trauma', [AdminController::class, 'Admin_trau'])->name('admin-trau');
+
 //Routes Admin-Create
 Route::get('admin/new-user-form',[AdminController::class, 'Admin_newUsrView'])->name('admin-new-usr-view');
 Route::post('admin/new-user',[AdminController::class, 'Admin_newUsr'])->name('admin-new-usr');
+Route::get('admin/new-appo-form',[AdminController::class, 'Admin_newAppoView'])->name('admin-new-appo-view');
+Route::post('admin/new-appo',[AdminController::class, 'Admin_newAppo'])->name('admin-new-appo');
+Route::get('admin/new-pat-form',[AdminController::class, 'Admin_newPatView'])->name('admin-new-pat-view');
+Route::post('admin/new-pat',[AdminController::class, 'Admin_newPat'])->name('admin-new-pat');
+Route::get('admin/new-emp-form',[AdminController::class, 'Admin_newEmpView'])->name('admin-new-emp-view');
+Route::post('admin/new-emp',[AdminController::class, 'Admin_newEmp'])->name('admin-new-emp');
+Route::get('admin/new-ther-form',[AdminController::class, 'Admin_newTherView'])->name('admin-new-ther-view');
+Route::post('admin/new-ther',[AdminController::class, 'Admin_newTher'])->name('admin-new-ther');
+Route::get('admin/new-ch-form',[AdminController::class, 'Admin_newChView'])->name('admin-new-ch-view');
+Route::post('admin/new-ch',[AdminController::class, 'Admin_newCh'])->name('admin-new-ch');
+Route::get('admin/new-trau-form',[AdminController::class, 'Admin_newTrauView'])->name('admin-new-trau-view');
+Route::post('admin/new-trau',[AdminController::class, 'Admin_newTrau'])->name('admin-new-trau');
+
+
 
 //Routes Admin-Update
 Route::post('admin/users-upd', [AdminController::class, 'Admin_updUsr'])->name('admin-upd-usr');

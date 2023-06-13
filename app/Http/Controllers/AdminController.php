@@ -11,6 +11,7 @@ use App\Models\Patient;
 use App\Models\Therapy;
 use App\Models\Employee;
 use App\Models\User;
+use App\Models\Ch;
 use App\Mail\Email;
 use App\Mail\EmailPassw;
 
@@ -63,6 +64,33 @@ class AdminController extends Controller
         return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
     }
 
+    public function Admin_ther()
+    {
+        $user = new User();
+        $sel=5;
+
+        $array = $user->getUsers();
+        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
+    }
+
+    public function Admin_ch()
+    {
+        $user = new User();
+        $sel=6;
+
+        $array = $user->getUsers();
+        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
+    }
+
+    public function Admin_trau()
+    {
+        $user = new User();
+        $sel=7;
+
+        $array = $user->getUsers();
+        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
+    }
+
     public function Admin_newUsrView(){
         return view('newUser')->with('scrollToSection', 'section');
     }
@@ -87,6 +115,144 @@ class AdminController extends Controller
         return redirect()->route('admin-usr#section', ['sel' => $sel]);
     }
 
+    public function Admin_newAppoView(){
+        return view('newAppo')->with('scrollToSection', 'section');
+    }
+
+    public function Admin_newAppo(Request $request){
+
+        $request->validate([
+            'date' => 'required',
+            'cod_emp' => 'required',
+            'cod_pat' => 'required',
+            ]);
+        
+        $appoint = new Appointment();
+
+        $sel=1;
+
+        $result = $appoint->createAppoint($request->date,0, $request->cod_employee, $request->cod_patient);
+
+        return redirect()->route('admin-appo#section', ['sel' => $sel]);
+    }
+
+    public function Admin_newPatView(){
+        return view('newPat')->with('scrollToSection', 'section');
+    }
+
+    public function Admin_newPat(Request $request){
+
+        $request->validate([
+            'fname' => 'required',
+            'lname' => 'required',
+            'phone' => 'required',
+            'bdate' => 'required',
+            'age' => 'required',
+            'sex' => 'required',
+            'id_user' => 'required',
+            'cod_doc' => 'required',
+            ]);
+        
+        $patient = new Patient();
+
+        $last_patient = $patient->getPatientLast();
+
+        $last_id= $last_patient->cod_patient;
+
+        $last_id++;
+
+        $sel=2;
+
+        $result = $patient->createPatient($last_id,$request->fname,$request->lname,$request->phone,$request->bdate,$request->age,$request->sex, $request->id_user, $request->cod_doc);
+
+        return redirect()->route('admin-pat#section', ['sel' => $sel]);
+    }
+
+    public function Admin_newEmpView(){
+        return view('newAppo')->with('scrollToSection', 'section');
+    }
+
+    public function Admin_newEmp(Request $request){
+
+        $request->validate([
+            'fname' => 'required',
+            'title' => 'required',
+            'tcourt' => 'required',
+            'bdate' => 'required',
+            'hdate' => 'required',
+            ]);
+        
+        $employee = new Employee();
+
+        $sel=3;
+
+        $result = $employee->createAppoint($request->fname,$request->title,$request->tcourt,$request->bdate,$request->hdate);
+
+        return redirect()->route('admin-emp#section', ['sel' => $sel]);
+    }
+
+    public function Admin_newTherView(){
+        return view('newTher')->with('scrollToSection', 'section');
+    }
+
+    public function Admin_newTher(Request $request){
+
+        $request->validate([
+            'fname' => 'required',
+            'title' => 'required',
+            'tcourt' => 'required',
+            'bdate' => 'required',
+            'hdate' => 'required',
+            ]);
+        
+        $therapy = new Therapy();
+
+        $sel=5;
+
+        $result = $therapy->createTherapy($request->fname,$request->title,$request->tcourt,$request->bdate,$request->hdate);
+
+        return redirect()->route('admin-ther#section', ['sel' => $sel]);
+    }
+
+    public function Admin_newChView(){
+        return view('newCh')->with('scrollToSection', 'section');
+    }
+
+    public function Admin_newCh(Request $request){
+
+        $request->validate([
+            'lesion' => 'required',
+            'interv' => 'required',
+            'rdate' => 'required',
+            ]);
+        
+        $ch = new Ch();
+
+        $sel=6;
+
+        $result = $ch->createCh($request->lesion,$request->interv,$request->rdate);
+
+        return redirect()->route('admin-ch#section', ['sel' => $sel]);
+    }
+
+    public function Admin_newTrauView(){
+        return view('newCh')->with('scrollToSection', 'section');
+    }
+
+    public function Admin_newTrau(Request $request){
+
+        $request->validate([
+            'name' => 'required',
+            ]);
+        
+        $ch = new Ch();
+
+        $sel=6;
+
+        $result = $ch->createTrauma($request->name);
+
+        return redirect()->route('admin-trau#section', ['sel' => $sel]);
+    }
 
     public function Admin_delUsr(Request $request)
     {

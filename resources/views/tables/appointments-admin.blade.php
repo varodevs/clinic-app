@@ -59,3 +59,6 @@
         @endif
     </tbody>
 </table>
+<div>
+    <a href="{{ route('admin-new-appo-view') }}"><button class="btn btn-primary">New Appointment</button></a>
+</div>
