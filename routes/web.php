@@ -49,6 +49,7 @@ Route::get('logout',[LoginController::class,'Logout'])->name('logout');
 
 //Routes Register
 Route::get('register', [RegisterController::class,'Register_view'])->name('register');
+
 Route::post('register-form', [RegisterController::class,'Register_done'])->name('register-done');
 
 //Routes Verify
@@ -62,6 +63,7 @@ Route::get('contact', [ContactController::class, 'Contact_view'])->name('contact
 
 //Routes treatments
 Route::get('treatments', [TreatmentController::class, 'Treatment_view'])->name('treatment');
+
 Route::get('more-treatments', [TreatmentController::class, 'More_view'])->name('more');
 
 //Routes about
@@ -84,6 +86,7 @@ Route::get('admin', [AdminController::class, 'Admin_view'])->name('admin');
 Route::get('admin/appointments', [AdminController::class, 'Admin_appo'])->name('admin-appo');
 
 Route::post('admin/canceled', [AdminController::class, 'delAppoAdm'])->name('admin-del-appo');
+
 Route::post('admin/updated', [AdminController::class, 'updAppoAdm'])->name('admin-upd-appo');
 
 //Routes Admin-Patients
@@ -104,38 +107,60 @@ Route::get('admin/gh', [AdminController::class, 'Admin_ch'])->name('admin-ch');
 //Routes Admin-Trauma
 Route::get('admin/trauma', [AdminController::class, 'Admin_trau'])->name('admin-trau');
 
-//Routes Admin-Create
+//Routes Admin-Create Forms
 Route::get('admin/new-user-form',[AdminController::class, 'Admin_newUsrView'])->name('admin-new-usr-view');
-Route::post('admin/new-user',[AdminController::class, 'Admin_newUsr'])->name('admin-new-usr');
+
 Route::get('admin/new-appo-form',[AdminController::class, 'Admin_newAppoView'])->name('admin-new-appo-view');
-Route::post('admin/new-appo',[AdminController::class, 'Admin_newAppo'])->name('admin-new-appo');
+
 Route::get('admin/new-pat-form',[AdminController::class, 'Admin_newPatView'])->name('admin-new-pat-view');
-Route::post('admin/new-pat',[AdminController::class, 'Admin_newPat'])->name('admin-new-pat');
+
 Route::get('admin/new-emp-form',[AdminController::class, 'Admin_newEmpView'])->name('admin-new-emp-view');
-Route::post('admin/new-emp',[AdminController::class, 'Admin_newEmp'])->name('admin-new-emp');
+
 Route::get('admin/new-ther-form',[AdminController::class, 'Admin_newTherView'])->name('admin-new-ther-view');
-Route::post('admin/new-ther',[AdminController::class, 'Admin_newTher'])->name('admin-new-ther');
+
 Route::get('admin/new-ch-form',[AdminController::class, 'Admin_newChView'])->name('admin-new-ch-view');
-Route::post('admin/new-ch',[AdminController::class, 'Admin_newCh'])->name('admin-new-ch');
+
 Route::get('admin/new-trau-form',[AdminController::class, 'Admin_newTrauView'])->name('admin-new-trau-view');
+//Routes Admin-Create
+
+Route::post('admin/new-user',[AdminController::class, 'Admin_newUsr'])->name('admin-new-usr');
+
+Route::post('admin/new-appo',[AdminController::class, 'Admin_newAppo'])->name('admin-new-appo');
+
+Route::post('admin/new-pat',[AdminController::class, 'Admin_newPat'])->name('admin-new-pat');
+
+Route::post('admin/new-emp',[AdminController::class, 'Admin_newEmp'])->name('admin-new-emp');
+
+Route::post('admin/new-ther',[AdminController::class, 'Admin_newTher'])->name('admin-new-ther');
+
+Route::post('admin/new-ch',[AdminController::class, 'Admin_newCh'])->name('admin-new-ch');
+
 Route::post('admin/new-trau',[AdminController::class, 'Admin_newTrau'])->name('admin-new-trau');
-
-
 
 //Routes Admin-Update
 Route::post('admin/users-upd', [AdminController::class, 'Admin_updUsr'])->name('admin-upd-usr');
+
 Route::post('admin/patients-upd', [AdminController::class, 'Admin_updPat'])->name('admin-upd-pat');
+
 Route::post('admin/emp-upd', [AdminController::class, 'Admin_updEmp'])->name('admin-upd-emp');
+
 Route::post(('admin/ther-upd'), [AdminController::class, 'Admin_updTher'])->name('admin-upd-ther');
+
 Route::post(('admin/ch-upd'), [AdminController::class, 'Admin_updCh'])->name('admin-upd-ch');
+
 Route::post(('admin/ch-upd'), [AdminController::class, 'Admin_updTrau'])->name('admin-upd-trau');
 
 //Routes Admin-Delete
 Route::post('admin/users-del', [AdminController::class, 'Admin_delUsr'])->name('admin-del-usr');
+
 Route::post('admin/patient-del', [AdminController::class, 'Admin_delPat'])->name('admin-del-pat');
+
 Route::post(('admin/emp-del'), [AdminController::class, 'Admin_delEmp'])->name('admin-del-emp');
+
 Route::post(('admin/ther-del'), [AdminController::class, 'Admin_delTher'])->name('admin-del-ther');
+
 Route::post(('admin/ch-del'), [AdminController::class, 'Admin_delCh'])->name('admin-del-ch');
+
 Route::post(('admin/ch-trau'), [AdminController::class, 'Admin_delTrau'])->name('admin-del-trau');
 
 //Routes Profiles
@@ -150,7 +175,9 @@ Route::get('/check-dates', [AppointmentController::class, 'checkDates'])->name('
 
 //Route Stripe
 Route::get('/payment-form', [StripeController::class, 'stripe_view'])->name('payment');
+
 Route::post('/checkout', [StripeController::class, 'checkout'])->name('checkout');
+
 Route::get('/success', [StripeController::class, 'success'])->name('success');
 
 //Route Maps
