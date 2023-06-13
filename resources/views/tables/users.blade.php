@@ -16,9 +16,10 @@
         @php
             $j = 0;
         @endphp
-        <form action="{{ route('admin-upd-usr') }}" method="POST">
-            @csrf   
+   
         @foreach ($array as $row)
+        <form action="{{ route('admin-upd-usr') }}" method="POST">
+            @csrf
         <tr>
             @php
             $i=0;

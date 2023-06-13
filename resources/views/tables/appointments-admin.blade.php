@@ -11,10 +11,10 @@
         </tr>
     </thead>
     <tbody>
-        @if ($array != null)
-            <form action="{{ route('admin-upd-appo') }}" method="POST">
-                @csrf   
+        @if ($array != null)              
                 @foreach ($array as $row)
+                <form action="{{ route('admin-upd-appo') }}" method="POST">
+                    @csrf 
                     <tr>
                         @php
                             $i=0;
@@ -41,8 +41,9 @@
                         @endforeach
                         <td>
                             <button type="submit" class="btn btn-primary">Update</button>
-                    </form>
+                    
                         </td>
+                </form>
                         <td>
                             <form action="{{ route('admin-del-appo') }}" method="POST">
                                 @csrf                    
@@ -57,4 +58,8 @@
         @endif
     </tbody>
 </table>
-<form action="">aaaaaa</form>
+<div>
+    <form action="{{ route("admin-new-appo-view") }}" method="GET">
+        <button class="btn btn-primary">New Appointment</button>
+    </form>
+</div>
