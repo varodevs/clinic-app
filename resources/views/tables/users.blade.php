@@ -56,7 +56,7 @@
                 <form action="{{ route('admin-del-usr') }}" method="POST">
                     @csrf                    
                     <input type="hidden" name="id_user" value={{ $id }} />
-                    @if (session('role') != 4)
+                    @if (session('role') != 4 && $j == 0)
                     <button type="submit" class="btn btn-danger" disabled>Delete</button>
                     @else
                     <button type="submit" class="btn btn-danger">Delete</button>
