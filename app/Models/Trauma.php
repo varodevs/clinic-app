@@ -50,7 +50,7 @@ class Trauma extends Model
 	 * 
 	 * @return $return devuelve un array $ch
 	 */
-	public function getTherapies(){
+	public function getTraumas(){
 		$traumas = DB::table('trauma')->get();
 		return $traumas;
 	}
@@ -63,7 +63,7 @@ class Trauma extends Model
 	 * 
 	 * @return $return un objeto queryBuilder ($therapy)
 	 */
-	public function getTrauma($cod_trauma){
+	public function getTraumaById($cod_trauma){
 		$trauma = DB::table('trauma')->where('cod_trauma', [$cod_trauma])->first();
 		return $trauma;
 	}

@@ -12,6 +12,7 @@ use App\Models\Therapy;
 use App\Models\Employee;
 use App\Models\User;
 use App\Models\Ch;
+use App\Models\Trauma;
 use App\Mail\Email;
 use App\Mail\EmailPassw;
 
@@ -66,28 +67,28 @@ class AdminController extends Controller
 
     public function Admin_ther()
     {
-        $user = new User();
+        $ther = new Therapy();
         $sel=5;
 
-        $array = $user->getUsers();
+        $array = $ther->getTherapies();
         return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
     }
 
     public function Admin_ch()
     {
-        $user = new User();
+        $ch = new Ch();
         $sel=6;
 
-        $array = $user->getUsers();
+        $array = $ch->getFullCh();
         return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
     }
 
     public function Admin_trau()
     {
-        $user = new User();
+        $trau = new Trauma();
         $sel=7;
 
-        $array = $user->getUsers();
+        $array = $trau->getTraumas();
         return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
     }
 
