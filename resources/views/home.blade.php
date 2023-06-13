@@ -4,7 +4,7 @@
 <div class="col-12">
     <div class="container-fluid d-flex flex-column align-items-center pt-5">
         <div class="text-center w-50"><h2 class="_h2">Welcome to VitalCore Physio</h2></div>
-        <div class="text-center w-75"><p>At our physiotherapy clinic, we are dedicated to helping you restore your mobility, alleviate pain, and enhance your overall quality of life. Our team of skilled physiotherapists is committed to providing personalized care and tailored treatment plans to meet your unique needs.</p></div>
+        <div class="text-center w-75"><p class="_carou-p">At our physiotherapy clinic, we are dedicated to helping you restore your mobility, alleviate pain, and enhance your overall quality of life. Our team of skilled physiotherapists is committed to providing personalized care and tailored treatment plans to meet your unique needs.</p></div>
     </div>
     
     <div class="c-12 d-flex flex-column align-items-center pt-5" mb-5>
@@ -71,7 +71,7 @@
             <div>
                 <img src= {{ asset('img/about-us.jpg') }} height="250vh" />
             </div>
-            <div class="w-25"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+            <div class="w-25 _carou-p"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
         </div>
     </div>
     <div class="d-flex flex-column mb-5">
