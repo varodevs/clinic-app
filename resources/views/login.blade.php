@@ -25,6 +25,7 @@
                         @enderror
                         <button class="btn btn-light _submit" type="submit">Sign in</button>
                     </form>
+                    <a href=""><p class="_carou-p">Forgot your password?</p></a>
                 </div>
             </div>
         </div>

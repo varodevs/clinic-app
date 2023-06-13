@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RequestController;
+use App\Http\Controllers\Resend;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TreatmentController;
@@ -57,6 +58,8 @@ Route::get('verify', function () {
     return view('verify');
 })->name('verify');
 Route::post('verify-form', [RegisterController::class, 'Verify'])->name('verify-done');
+
+Route::post('verify-passw', [Resend::class, 'ResetSubmit'])->name('reset-submit');
 
 //Routes contact
 Route::get('contact', [ContactController::class, 'Contact_view'])->name('contact');

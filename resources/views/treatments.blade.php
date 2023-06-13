@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-12">
-  <div class="container-fluid d-flex flex-column justify-content-center _div-azul">
+  <div class="container-fluid d-flex flex-column justify-content-center _div-azul" id="section">
     <h3 class="mx-3">Treatments</h3>
 </div>
     <div class="container-fluid d-flex flex-column align-items-center pt-5">

@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-12">
     <div class="container-fluid d-flex flex-column align-items-center pt-5">
-        <div class="text-center w-50"><h2 class="_h2">Welcome to VitalCore Physio</h2></div>
+        <div class="text-center w-50" id="section"><h2 class="_h2">Welcome to VitalCore Physio</h2></div>
         <div class="text-center w-75"><p class="_carou-p">At our physiotherapy clinic, we are dedicated to helping you restore your mobility, alleviate pain, and enhance your overall quality of life. Our team of skilled physiotherapists is committed to providing personalized care and tailored treatment plans to meet your unique needs.</p></div>
     </div>
     
