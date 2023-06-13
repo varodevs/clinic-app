@@ -27,7 +27,6 @@
                 @else
                 <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
                 @endif
-            <td><input class="w-75 text-center" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
             @endforeach
             <td>
                 <button type="submit" class="btn btn-primary">Update</button>   
