@@ -12,26 +12,26 @@
     </thead>
     <tbody>
         @if ($array != null)
+        @foreach ($array as $row)
         <form action="{{ route('admin-del-ch') }}" method="POST">
             @csrf
-        @foreach ($array as $row)
-        <tr>
-            @php
-            $i=0;
-            @endphp
-            @foreach ($row as $column)
-                @if ($i==0)
-                <td><input type="text" value="{{ $column }}" name="id" disabled/></td>
-                @elseif ($i==2)
-                <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_reg" disabled/></td>
-                @else
-                <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
-                @endif
-            @endforeach
-            <td>
-                <button type="submit" class="btn btn-primary">Update</button>   
-                </form>
-            </td>
+            <tr>
+                @php
+                $i=0;
+                @endphp
+                @foreach ($row as $column)
+                    @if ($i==0)
+                    <td><input type="text" value="{{ $column }}" name="id" disabled/></td>
+                    @elseif ($i==2)
+                    <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_reg" disabled/></td>
+                    @else
+                    <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
+                    @endif
+                @endforeach
+                <td>
+                    <button type="submit" class="btn btn-primary">Update</button>   
+                </td>
+        </form>
             <td>
                 <form action="{{ route('admin-del-ch') }}" method="POST">
                     @csrf                    
@@ -53,7 +53,7 @@
     </tbody>
 </table>
 <div>
-    <form action="" method="GET">
+    <form action="{{ route('admin-new-ch-view') }}" method="GET">
         <button class="btn btn-primary">New Clinic History</button>
     </form>
 </div>

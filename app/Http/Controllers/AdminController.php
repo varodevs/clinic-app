@@ -176,7 +176,7 @@ class AdminController extends Controller
     //New Employee Form and Submit
 
     public function Admin_newEmpView(){
-        return view('newAppo')->with('scrollToSection', 'section');
+        return view('newEmp')->with('scrollToSection', 'section');
     }
 
     public function Admin_newEmp(Request $request){
