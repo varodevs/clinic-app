@@ -16,10 +16,10 @@
         </tr>
     </thead>
     <tbody>
-        @if ($array != null)
-            <form action="{{ route('admin-upd-pat') }}" method="POST">
+        @if ($array != null)            
                 @csrf
                 @foreach ($array as $row)
+                <form action="{{ route('admin-upd-pat') }}" method="POST">
                     @php
                         $i = 0;                 
                     @endphp                
