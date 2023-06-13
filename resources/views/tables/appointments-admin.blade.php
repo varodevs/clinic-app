@@ -58,7 +58,7 @@
     </tbody>
 </table>
 <div>
-    <form action="{{ route('admin-new-appo-view') }}" method="GET">
+    <form action="" method="GET">
         <button class="btn btn-primary">New Appointment</button>
     </form>
 </div>
