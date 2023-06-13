@@ -23,10 +23,10 @@
                           <a class="nav-link active" aria-current="page" href="{{ route('admin-appo') }}">Appointments</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('admin-pat') }}">Patients</a>
+                          <a class="nav-link" href="{{ route('admin-pat#section') }}">Patients</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('admin-emp') }}">Employees</a>    
+                          <a class="nav-link" href="{{ route('admin-emp#section') }}">Employees</a>    
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin-usr') }}">Users</a>    
