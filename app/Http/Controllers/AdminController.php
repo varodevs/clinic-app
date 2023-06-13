@@ -64,7 +64,7 @@ class AdminController extends Controller
     }
 
     public function Admin_newUsrView(){
-        return view('newUser');
+        return view('newUser')->with('scrollToSection', 'section');
     }
 
     public function Admin_newUsr(Request $request){
