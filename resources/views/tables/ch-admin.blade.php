@@ -3,7 +3,7 @@
         <tr>
             <td>ID</td>
             <td>Lesion</td>
-            <td>Intervention Code</td>
+            <td>Intervention</td>
             <td>Reg. date</td>
             <td>Cod. patient</td>
             <td>-</td> 

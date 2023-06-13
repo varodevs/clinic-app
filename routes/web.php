@@ -102,7 +102,7 @@ Route::get('admin/users', [AdminController::class, 'Admin_usr'])->name('admin-us
 Route::get('admin/therapies', [AdminController::class, 'Admin_ther'])->name('admin-ther');
 
 //Routes Admin-CH
-Route::get('admin/gh', [AdminController::class, 'Admin_ch'])->name('admin-ch');
+Route::get('admin/ch', [AdminController::class, 'Admin_ch'])->name('admin-ch');
 
 //Routes Admin-Trauma
 Route::get('admin/trauma', [AdminController::class, 'Admin_trau'])->name('admin-trau');
@@ -112,7 +112,7 @@ Route::get('admin/new-user-form', [AdminController::class, 'Admin_newUsrView'])-
 
 Route::get('admin/new-appo-form', [AdminController::class, 'Admin_newAppoView'])->name('admin-new-appo-view');
 
-// Route::get('admin/new-pat-form', [AdminController::class, 'Admin_newPatView'])->name('admin-new-pat-view');
+Route::get('admin/new-pat-form', [AdminController::class, 'Admin_newPatView'])->name('admin-new-pat-view');
 
 // Route::get('admin/new-emp-form', [AdminController::class, 'Admin_newEmpView'])->name('admin-new-emp-view');
 
