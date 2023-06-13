@@ -55,7 +55,7 @@
     </tbody>
 </table>
 <div>
-    <form action="{{ route('admin-new-emp-view') }}" method="GET">
+    <form action="" method="GET">
         <button class="btn btn-primary" type="submit">New Employee</button>
     </form>
 </div>

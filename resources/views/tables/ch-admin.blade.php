@@ -53,7 +53,7 @@
     </tbody>
 </table>
 <div>
-    <form action="{{ route('admin-new-ch-view') }}" method="GET">
+    <form action="" method="GET">
         <button class="btn btn-primary">New Clinic History</button>
     </form>
 </div>

@@ -57,7 +57,7 @@
     </tbody>
 </table>
 <div>
-    <form action="{{ route('admin-new-pat-view') }}" method="GET">
+    <form action="" method="GET">
         <button class="btn btn-primary" type="submit">New Patient</button>
     </form>
 </div>
