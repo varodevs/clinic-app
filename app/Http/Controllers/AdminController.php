@@ -116,6 +116,10 @@ class AdminController extends Controller
         return redirect()->route('admin-usr#section', ['sel' => $sel]);
     }
 
+    // public function Admin_newAppoView(){
+    //     return view('newAppo')->with('scrollToSection', 'section');
+    // }
+
     public function Admin_newAppoView(){
         return view('newAppo')->with('scrollToSection', 'section');
     }
