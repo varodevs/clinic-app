@@ -97,7 +97,7 @@ Route::get('admin/users', [AdminController::class, 'Admin_usr'])->name('admin-us
 
 //Routes Admin-Create
 Route::get('admin/new-user-form',[AdminController::class, 'Admin_newUsrView'])->name('admin-new-usr-view');
-Route::get('admin/new-user',[AdminController::class, 'Admin_newUsr'])->name('admin-new-usr');
+Route::post('admin/new-user',[AdminController::class, 'Admin_newUsr'])->name('admin-new-usr');
 
 //Routes Admin-Update
 Route::post('admin/users-upd', [AdminController::class, 'Admin_updUsr'])->name('admin-upd-usr');
