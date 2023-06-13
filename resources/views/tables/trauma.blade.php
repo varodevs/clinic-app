@@ -9,30 +9,30 @@
     </thead>
     <tbody>
         @if ($array != null)
+        @foreach ($array as $row)
         <form action="{{ route('admin-del-trau') }}" method="POST">
             @csrf
-        @foreach ($array as $row)
-        <tr>
-            @php
-            $i=0;
-            @endphp
-            @foreach ($row as $column)
-            @if ($i == 0)
-            <td><input type="text" value="{{ $column }}" name="id" disabled/></td>
-            @else
-            <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
-            @endif
-            @php
-            if ($i == 0) {
-                $id=$column;
-            }
-            $i++;
-            @endphp
-            @endforeach
-            <td>
-                <button type="submit" class="btn btn-primary">Update</button>   
-                </form>
-            </td>
+            <tr>
+                @php
+                $i=0;
+                @endphp
+                @foreach ($row as $column)
+                @if ($i == 0)
+                <td><input type="text" value="{{ $column }}" name="id" disabled/></td>
+                @else
+                <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
+                @endif
+                @php
+                if ($i == 0) {
+                    $id=$column;
+                }
+                $i++;
+                @endphp
+                @endforeach
+                <td>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </td>
+        </form>
             <td>
                 <form action="" method="POST">
                     @csrf                    

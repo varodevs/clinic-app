@@ -13,7 +13,7 @@
         @foreach ($array as $row)
         <tr>
             @foreach ($row as $column)
-            <td>{{ $column }}</td>
+            <td><input type="text" value="{{ $column }}" name="input{{ $i }}" disabled/></td>
             @endforeach
         </tr>
     @endforeach

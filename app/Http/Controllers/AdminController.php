@@ -13,6 +13,7 @@ use App\Models\Employee;
 use App\Models\User;
 use App\Models\Ch;
 use App\Models\Trauma;
+use App\Models\Address;
 use App\Mail\Email;
 use App\Mail\EmailPassw;
 
@@ -92,6 +93,15 @@ class AdminController extends Controller
         return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
     }
 
+    public function Admin_addr()
+    {
+        $addr = new Address();
+        $sel=7;
+
+        $array = $addr->getAddresses();
+        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
+    }
+
     //New User Form and Submit
 
     public function Admin_NewUsrView(){
@@ -136,7 +146,7 @@ class AdminController extends Controller
 
         $result = $appoint->createAppoint($request->date,0, $request->cod_employee, $request->cod_patient);
 
-        return redirect()->route('admin-appo');
+        return redirect()->route('admin-appo#section');
     }
 
     //New Patient Form and Submit
@@ -193,7 +203,7 @@ class AdminController extends Controller
 
         $sel=3;
 
-        $result = $employee->createAppoint($request->fname,$request->title,$request->tcourt,$request->bdate,$request->hdate);
+        $result = $employee->createEmployee($request->fname,$request->title,$request->tcourt,$request->bdate,$request->hdate);
 
         return redirect()->route('admin-emp#section', ['sel' => $sel]);
     }
@@ -249,7 +259,7 @@ class AdminController extends Controller
     //New Trauma Form and Submit
 
     public function Admin_newTrauView(){
-        return view('newCh')->with('scrollToSection', 'section');
+        return view('newTrau')->with('scrollToSection', 'section');
     }
 
     public function Admin_newTrau(Request $request){
@@ -265,6 +275,33 @@ class AdminController extends Controller
         $result = $ch->createTrauma($request->name);
 
         return redirect()->route('admin-trau#section', ['sel' => $sel]);
+    }
+
+    //New Address Form and Submit
+
+    public function Admin_newAddrView(){
+        return view('newTrau')->with('scrollToSection', 'section');
+    }
+
+    public function Admin_newAddr(Request $request){
+
+        $request->validate([
+            'street' => 'required',
+            'pc' => 'required',
+            'city' => 'required',
+            'country' => 'required',
+            'num' => 'required',
+            'flat' => 'required',
+            'cod_pat' => 'required',
+            ]);
+        
+        $addr = new Address();
+
+        $sel=6;
+
+        $result = $addr->createAddress($request->street,$request->pc,$request->city,$request->country,$request->num,$request->flat,$request->cod_pat);
+
+        return redirect()->route('admin-addr#section', ['sel' => $sel]);
     }
 
     //Delete User

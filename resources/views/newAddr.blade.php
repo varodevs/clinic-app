@@ -45,22 +45,38 @@
         </div>
 
         <div class="col-3 align-self-center m-3">
-            <h3 class="_h3">New Appointment</h3>
-            <form action="{{ admin-new-appo }}" method="POST">
+            <h3 class="_h3">New Address</h3>
+            <form action="{{ admin-new-addr }}" method="POST">
                 @csrf
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Date</span>
-                    <input type="date" class="form-control" name="date" placeholder="Username" aria-label="fn" aria-describedby="basic-addon1">
+                    <span class="input-group-text" id="basic-addon1">Street</span>
+                    <input type="text" class="form-control" name="street" placeholder="Username" aria-label="fn" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Cod. Employee</span>
-                    <input type="text" class="form-control" name="cod_emp" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
+                    <span class="input-group-text" id="basic-addon1">PC</span>
+                    <input type="text" class="form-control" name="pc" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">City</span>
+                    <input type="text" class="form-control" name="city" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Country</span>
+                    <input type="text" class="form-control" name="country" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Number</span>
+                    <input type="text" class="form-control" name="num" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Flat</span>
+                    <input type="text" class="form-control" name="flat" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Cod. Patient</span>
                     <input type="text" class="form-control" name="cod_pat" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
                 </div>
-                <button class="btn btn-success" type="submit">Create Appointment</button>
+                <button class="btn btn-success" type="submit">Create Address</button>
             </form>
         </div>
 @endsection

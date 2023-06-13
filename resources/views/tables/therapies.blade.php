@@ -10,11 +10,10 @@
         </tr>
     </thead>
     <tbody>
-        @if ($array != null)
-        
-            @csrf
+        @if ($array != null)                
         @foreach ($array as $row)
         <form action="{{ route('admin-upd-ther') }}" method="POST">
+            @csrf
             <tr>
                 @php
                 $i=0;

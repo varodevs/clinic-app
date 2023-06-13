@@ -20,18 +20,17 @@
                     @foreach ($row as $column)
                     @if ($i == 1)
                     <td>
-                        <input type="text" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}"/>
-                        <input type="datetime-local" name="date_ap" name="date_ap"/>
+                        <input type="text" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" disabled/>
                     </td>
                     @else
                         @if ($i == 2)
                             @if ($column != 0)
-                                <td>Si</td>
+                            <td><input type="text" value="Si" name="input{{ $i }}" disabled/></td>
                             @else
-                                <td>No</td>
+                            <td><input type="text" value="No" name="input{{ $i }}" disabled/></td>
                             @endif
                         @else
-                        <td>{{ $column }}</td>
+                        <td><input type="text" value="{{ $column }}" name="input{{ $i }}" disabled/></td>
                     @endif                                        
                     @endif
                     @php

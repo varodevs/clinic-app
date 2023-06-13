@@ -107,6 +107,9 @@ Route::get('admin/ch', [AdminController::class, 'Admin_ch'])->name('admin-ch');
 //Routes Admin-Trauma
 Route::get('admin/trauma', [AdminController::class, 'Admin_trau'])->name('admin-trau');
 
+//Routes Admin-Address
+Route::get('admin/address', [AdminController::class, 'Admin_addr'])->name('admin-addr');
+
 //Routes Admin-Create Forms
 Route::get('admin/new-user-form', [AdminController::class, 'Admin_newUsrView'])->name('admin-new-usr-view');
 
@@ -121,6 +124,8 @@ Route::get('admin/new-ther-form', [AdminController::class, 'Admin_newTherView'])
 Route::get('admin/new-ch-form', [AdminController::class, 'Admin_newChView'])->name('admin-new-ch-view');
 
 Route::get('admin/new-trau-form', [AdminController::class, 'Admin_newTrauView'])->name('admin-new-trau-view');
+
+Route::get('admin/new-addr-form', [AdminController::class, 'Admin_newAddrView'])->name('admin-new-addr-view');
 
 //Routes Admin-Create
 

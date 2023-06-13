@@ -14,10 +14,10 @@
         </tr>
     </thead>
     <tbody>
-        @if ($array != null)
-            @csrf
+        @if ($array != null)            
             @foreach ($array as $row)
             <form class="col-12" action="{{ route('admin-upd-emp') }}" method="POST">
+                @csrf
                 @php
                     $i = 0;
                 @endphp
