@@ -6,10 +6,12 @@
         <div class="container-fluid d-flex flex-column justify-content-center _div-azul" id="section">
             <h3 class="mx-3">Sign up</h3>
         </div>
+        <div class="container-fluid d-flex flex-column align-items-center pt-5">
+            <div class="text-center w-50"><h2>Sign up</h2></div>
+            <div class="text-center w-75"><p>Sign up to our site to create a new user account.</p></div>
+        </div>
         <div class="d-flex justify-content-center _content">
             <div class="d-flex flex-column justify-content-center">
-                <h4 class="_h4">Sign up</h4>
-                <p class="_carou-p">Sign up to our site to create a new user account.</p>
                 <div class="d-flex flex-column justify-content-center px-5 py-3 _div-login">
                     <form class="d-flex flex-column justify-content-center _form" action="{{ route('register-done') }}" method="POST">
                         @csrf
