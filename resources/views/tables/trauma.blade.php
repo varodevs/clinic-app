@@ -11,7 +11,15 @@
             @csrf
         @foreach ($array as $row)
         <tr>
+            @php
+            $i=0;
+            @endphp
             @foreach ($row as $column)
+            @if ($i == 0)
+            <td><input type="text" value="{{ $column }}" name="id" disabled/></td>
+            @else
+            <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
+            @endif
             <td><input class="w-75 text-center" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
             @endforeach
             <td>
@@ -26,6 +34,12 @@
                 </form>
             </td>
         </tr>
+        @php
+        if ($i == 0) {
+            $id=$column;
+        }
+        $i++;
+        @endphp
     @endforeach
         @else
         <tr><td colspan="4"> -- No Data -- </td></tr>
