@@ -81,7 +81,7 @@ class AdminController extends Controller
 
         $sel=4;
 
-        $result = $user->createUser($request->uname, $request->email, $hash_pssw, $hash_cod_verify, $request->role, now());
+        $result = $user->createUser($request->uname, $request->email, $hash_pssw, $hash_cod_verify, intval($request->role), now());
 
         return redirect()->route('admin-usr', ['sel' => $sel]);
     }
