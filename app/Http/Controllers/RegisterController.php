@@ -30,19 +30,26 @@ class RegisterController extends Controller
             'pass_conf' => 'required|same:password',
             'check_terms' => 'accepted',
             ]);
+
+            $user = new User();
+            $id_user = $user->getUserIdByEmail($request->email);
+
+            if($id_user != null){
+                return redirect('register')->with('scrollToSelection', 'section');
+        }else{
             if($request->password == $request->pass_conf && $request->check_terms != null){
                 $cod_verify = Str::upper(Str::random(4));
                 $hash_cod_verify = Hash::make($cod_verify);
                 $name = $request->uname;
                 $role = 6;
-                $hash_pssw = Hash::make($request->password);
-                $user = new User();
+                $hash_pssw = Hash::make($request->password);                
                 $response = Mail::to($request->email)->send(new Email($name,$cod_verify));
                 $result=$user->createUser($request->uname, $request->email, $hash_pssw, $hash_cod_verify, $role, now());
                 return redirect('verify');
             }else{
                 return redirect('register');
-            }      
+            }
+        }
   
     }
     public function Verify(Request $request)
