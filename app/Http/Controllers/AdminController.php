@@ -134,11 +134,9 @@ class AdminController extends Controller
         
         $appoint = new Appointment();
 
-        $sel=1;
-
         $result = $appoint->createAppoint($request->date,0, $request->cod_employee, $request->cod_patient);
 
-        return redirect()->route('admin-appo', ['sel' => $sel]);
+        return redirect()->route('admin-appo');
     }
 
     //New Patient Form and Submit
