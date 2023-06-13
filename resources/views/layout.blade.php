@@ -75,7 +75,7 @@
                     </li>
                   @else
                     <li class="nav-item">
-                      <a class="nav-link {{ Request::route()->getName() === 'login' ? 'active' : '' }}" href="{{ route('login') }}">Request an appoitment</a>
+                      <a class="nav-link" href="{{ route('login') }}">Request an appoitment</a>
                     </li>
                   @endif
   
