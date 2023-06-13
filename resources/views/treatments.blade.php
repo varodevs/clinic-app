@@ -16,48 +16,48 @@
             <img src="{{ asset('img/fisioterapia-deportiva.jpg') }}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Masotherapy</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <p class="card-text">Heal with massage therapy.</p>
+              <a href="#" class="btn btn-primary">Read more</a>
             </div>
           </div>
           <div class="card w-25 m-3">
             <img src="{{ asset('img/ejercicio-fisioterapia.webp') }}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Kinesiotherapy</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <p class="card-text">Improve your functional abilities.</p>
+              <a href="#" class="btn btn-primary">Read More</a>
             </div>
           </div>
           <div class="card w-25 m-3">
             <img src="{{ asset('img/osteopatia.jpg') }}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Osteopathy</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <p class="card-text">A better musculoskeletal condition.</p>
+              <a href="#" class="btn btn-primary">Read More</a>
             </div>
           </div>
           <div class="card w-25 m-3">
             <img src="{{ asset('img/respiratoria.webp') }}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Respiratory therapy</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <p class="card-text">Healing by a proper respiratory habit.</p>
+              <a href="#" class="btn btn-primary">Read More</a>
             </div>
           </div>
           <div class="card w-25 m-3">
             <img src="{{ asset('img/fisioterapia_neurologica.webp') }}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Neurological therapy</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <p class="card-text">Treatment of you neurological conditions.</p>
+              <a href="#" class="btn btn-primary">Read More</a>
             </div>
           </div>
           <div class="card w-25 m-3">
             <img src="{{ asset('img/fisiatria.jpg') }}" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Phisiatrist</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">Phisiatry</h5>
+              <p class="card-text">Stimulation to improve physical function.</p>
+              <a href="#" class="btn btn-primary">Read More</a>
             </div>
           </div>
     </div>

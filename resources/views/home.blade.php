@@ -49,8 +49,8 @@
                 </div>
                 <div class="carousel-item">
                     <div class="c-3 d-flex flex-column align-self-center text-center">
-                        <h5 class="_h5">ELECTROTHERAPY</h5>
-                        <img src="{{ asset('img/electro.webp') }}" alt="..." width="100%" height="200vh">                    
+                        <h5 class="_h5">PHYSIATRY</h5>
+                        <img src="{{ asset('img/fisiatria.jpg') }}" alt="..." width="100%" height="200vh">                    
                         <p class="_carou-p">Stimulation to improve physical function.</p>
                     </div>
                 </div>

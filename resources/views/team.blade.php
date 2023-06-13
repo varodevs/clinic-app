@@ -16,21 +16,21 @@
             <img src="{{ asset('img/fisio1.jpg') }}" class="card-img-top align-self-center w-50" alt="...">
             <div class="card-body">
               <h5 class="card-title">Robert McFadden</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>              
+              <p class="card-text">Specialist in Masotherapy and kinesiotherapy.</p>              
             </div>
           </div>
           <div class="card w-25 m-3">
             <img src="{{ asset('img/fisio2.jpg') }}" class="card-img-top align-self-center w-50" alt="...">
             <div class="card-body">
               <h5 class="card-title">Kirsty Samuels</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>              
+              <p class="card-text">Specialist in Ostheopathy and Respiratory.</p>              
             </div>
           </div>
           <div class="card w-25 m-3">
             <img src="{{ asset('img/fisio3.jpg') }}" class="card-img-top align-self-center w-50" alt="...">
             <div class="card-body">
               <h5 class="card-title">Sarah Stewart</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>              
+              <p class="card-text">Specialist in Neuroligical and Physiatry.</p>              
             </div>
           </div>
     </div>
