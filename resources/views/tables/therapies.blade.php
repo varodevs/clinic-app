@@ -38,7 +38,7 @@
             <td>
                 <form action="{{ route('admin-del-ther') }}" method="POST">
                     @csrf                    
-                    <input type="hidden" name="id_user" value={{ $id }} />
+                    <input type="hidden" name="id_ther" value={{ $id }} />
                     <button type="submit" class="btn btn-primary">Delete</button>
                 </form>
             </td>
