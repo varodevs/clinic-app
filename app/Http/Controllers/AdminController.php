@@ -24,7 +24,7 @@ class AdminController extends Controller
         $appointment = new Appointment();
         $sel=1;
         $array = $appointment->getAppoints();
-        return view('admin', compact('array', 'sel'));
+        return view('admin#section', compact('array', 'sel'));
     }
 
     public function Admin_appo()
@@ -33,7 +33,7 @@ class AdminController extends Controller
         $sel=1;
 
         $array = $appointment->getAppoints();
-        return view('admin', compact('array', 'sel'));
+        return view('admin#section', compact('array', 'sel'));
     }
 
     public function Admin_pat()
@@ -42,7 +42,7 @@ class AdminController extends Controller
         $sel=2;
 
         $array = $patient->getPatients();
-        return view('admin', compact('array', 'sel'));
+        return view('admin#section', compact('array', 'sel'));
     }
 
     public function Admin_emp()
@@ -51,7 +51,7 @@ class AdminController extends Controller
         $sel=3;
 
         $array = $employee->getEmployees();
-        return view('admin', compact('array', 'sel'));
+        return view('admin#section', compact('array', 'sel'));
     }
 
     public function Admin_usr()
@@ -60,7 +60,7 @@ class AdminController extends Controller
         $sel=4;
 
         $array = $user->getUsers();
-        return view('admin', compact('array', 'sel'));
+        return view('admin#section', compact('array', 'sel'));
     }
 
     public function Admin_newUsrView(){
