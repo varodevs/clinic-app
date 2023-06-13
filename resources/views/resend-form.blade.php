@@ -21,7 +21,7 @@
                         @error('email')
                         <span>{{ $message }}</span>
                         @enderror
-                        <button class="btn btn-light _submit" type="submit">Send Reset Link</button>
+                        <button class="btn btn-light _submit mt-2" type="submit">Send Reset Link</button>
                     </form>
                 </div>
             </div>
