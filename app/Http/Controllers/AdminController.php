@@ -95,7 +95,7 @@ class AdminController extends Controller
     //New User Form and Submit
 
     public function Admin_newUsrView(){
-        return view('newUser')->with('scrollToSection', 'section');
+        return view('new-appo-form')->with('scrollToSection', 'section');
     }
 
     public function Admin_newUsr(Request $request){
