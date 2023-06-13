@@ -55,9 +55,9 @@
                     @csrf                    
                     <input type="hidden" name="id_user" value={{ $id }} />
                     @if (session('role') != 4)
-                    <button type="submit" class="btn btn-primary" disabled>Delete</button>
+                    <button type="submit" class="btn btn-danger" disabled>Delete</button>
                     @else
-                    <button type="submit" class="btn btn-primary">Delete</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
                     @endif
 
                 </form>
@@ -72,3 +72,6 @@
         @endif
     </tbody>
 </table>
+<div>
+    <a href="{{ route('admin-new-usr-view') }}"><button class="btn btn-primary"></button></a>
+</div>

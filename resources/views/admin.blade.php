@@ -31,6 +31,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin-usr') }}">Users</a>    
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin-usr') }}">Therapies</a>    
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin-usr') }}">Clinic History</a>    
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin-usr') }}">Traumatology</a>    
+                        </li>
                       </ul>
                 </div>
             </div>

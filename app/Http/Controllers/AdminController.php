@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use App\Models\Appointment;
 use App\Models\Patient;
 use App\Models\Therapy;
@@ -59,6 +60,32 @@ class AdminController extends Controller
         $array = $user->getUsers();
         return view('admin', compact('array', 'sel'));
     }
+
+    public function Admin_newUsrView(){
+        return view('newUser');
+    }
+
+    public function Admin_newUsr(Request $request){
+
+        $request->validate([
+            'uname' => 'required|string|min:2|max:10',
+            'email' => 'required|email|min:8|max:35',
+            'passw' => 'required|min:8|max:15',
+            'role' => 'required',
+            ]);
+        $cod_verify = Str::upper(Str::random(4));
+        $hash_cod_verify = Hash::make($cod_verify);
+        $password = Str::upper(Str::random(5));
+        $hash_pssw = Hash::make($password);
+        $user = new User();
+
+        $sel=4;
+
+        $result = $user->createUser($request->uname, $request->email, $hash_pssw, $hash_cod_verify, $request->role, now());
+
+        return redirect()->route('admin-usr', ['sel' => $sel]);
+    }
+
 
     public function Admin_delUsr(Request $request)
     {
