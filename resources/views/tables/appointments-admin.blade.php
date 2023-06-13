@@ -57,7 +57,4 @@
         @endif
     </tbody>
 </table>
-
-<form action="" method="GET">
-    <button class="btn btn-primary">New Appointment</button>
-</form>
+<form action="">aaaaaa</form>
