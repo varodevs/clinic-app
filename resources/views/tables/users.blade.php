@@ -28,7 +28,7 @@
                 @if ($i == 2)
                 <td><input type="email" value="{{ $column }}" name="date_reg"/></td>
                 @elseif ($i == 6)
-                <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_reg"/></td>
+                <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_reg" disabled/></td>
                 @else
                 <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
                 @endif                
