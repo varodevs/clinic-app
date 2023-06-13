@@ -17,7 +17,7 @@
     </thead>
     <tbody>
         @if ($array != null)
-        <form action="{{ route('admin-upd-pat') }}" method="POST">
+        <form action="{{ route('admin-upd-pat') }}" method="POST">ç
             @csrf
             @foreach ($array as $row)
                 @php
@@ -40,8 +40,9 @@
                     @endforeach
                     <td>
                         <button type="submit" class="btn btn-primary">Update</button>   
-                        </form>
+
                     </td>
+        </form>
                     <td>
                         <form action="{{ route('admin-del-pat') }}" method="POST">
                             @csrf                    
