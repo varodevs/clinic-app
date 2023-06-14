@@ -130,7 +130,7 @@ class UserController extends Controller
                 $sel2 = 1;
                 $employee = $employee->getEmployeeByUser(session('id_user'));
 
-                return view('profile', compact('array','employee','patient','sel','sel2','date_appoint'));
+                return view('profile', compact('array','employee','patient','sel','sel2'));
             }else{
                 $sel2 = 2;
 
@@ -143,7 +143,7 @@ class UserController extends Controller
                 }
 
                 $array = $ch->getChByPatient($id_patient);
-                return view('profile', compact('array','employee','patient','sel','sel2','date_appoint'));
+                return view('profile', compact('array','employee','patient','sel','sel2'));
             }            
         }
     }
