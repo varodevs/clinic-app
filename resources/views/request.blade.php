@@ -16,11 +16,11 @@
                         <div class="d-flex justify-content-evenly w-75">
                             <div>
                                 <label class="_form-label" for="fname">First Name</label>
-                                <input class="form-control" type="text" name="fname" id="fname">
+                                <input class="form-control" type="text" name="fname" id="fname" @if ($array != null) value="{{ $array->first_name }}" @endif>
                                 <label class="_form-label" for="phone">Phone Number</label>
-                                <input class="form-control" type="text" name="phone" id="phone">
+                                <input class="form-control" type="text" name="phone" id="phone" @if ($array != null) value="{{ $array->phone }}" @endif>
                                 <label class="_form-label" for="birth">Date of Birth</label>
-                                <input class="form-control" type="date" name="birth" id="birth">
+                                <input class="form-control" type="date" name="birth" id="birth" @if ($array != null) value="{{ $array->date_birth }}" @endif>
                                 <label class="_form-label" for="spec">Speciality</label>
                                 <select class="form-control" name="spec" id="spec">
                                     <option value=2>Pediatric &#10088;PCS&#10089;</option>
@@ -40,9 +40,9 @@
                             </div>
                             <div>
                                 <label class="_form-label" for="lname">Last Name</label>
-                                <input class="form-control" type="text" name="lname" id="lname">
+                                <input class="form-control" type="text" name="lname" id="lname" @if ($array != null) value="{{ $array->last_name }}" @endif>
                                 <label class="_form-label" for="email">Email</label>
-                                <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
+                                <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com" @if ($array != null) value="{{ $array->email }}" @endif>
                                 <label class="_form-label" for="date">Check for dates</label>
                                 <input class="form-control" type="date" name="date" id="date">
                                 <label class="_form-label" for="id">ID</label>
@@ -56,8 +56,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="underchck" value="2" id="under2">
                                     <label class="form-check-label" for="under2">No</label>
-                                </div>
-                                
+                                </div>                                
                             </div>
                         </div>
                         <div class="my-4 w-75">

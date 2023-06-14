@@ -13,7 +13,13 @@ class RequestController extends Controller{
 
     public function Request_view()
     {
-        return view('request');
+        $pat = new Patient();
+
+        $arrays = $pat->getPatientByUser(session('id_user'));
+
+
+
+        return view('request', compact('array'));
     }
 
     public function Request_done(Request $request)
