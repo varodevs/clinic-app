@@ -94,7 +94,7 @@ class User extends Model
 	 * @return $return devuelve un mediumint (id_user)
 	 */
 	public function getUserIdByEmail($email){
-		$id_user = DB::table('user')->where('email', [$email])->pluck('id_user');
+		$id_user = DB::table('user')->where('email', [$email])->value('id_user');
 		return $id_user;
 	}
 
