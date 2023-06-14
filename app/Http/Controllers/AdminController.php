@@ -192,6 +192,7 @@ class AdminController extends Controller
 
         $request->validate([
             'fname' => 'required',
+            'email' => 'required|email',
             'title' => 'required',
             'tcourt' => 'required',
             'bdate' => 'required',
@@ -202,7 +203,13 @@ class AdminController extends Controller
 
         $sel=3;
 
-        $result = $employee->createEmployee($request->fname,$request->title,$request->tcourt,$request->bdate,$request->hdate);
+        $user = new User();
+
+        $user = $user->createUser('username', $request->email, 'ABCD', 'ABCD', 5, now());
+
+        $id_user = $user->getUserByEmail($request->email);
+
+        $result = $employee->createEmployee($request->fname,$request->title,$request->tcourt,$request->bdate,$request->hdate, $id_user);
 
         return redirect()->route('admin-emp#section', ['sel' => $sel]);
     }

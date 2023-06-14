@@ -53,6 +53,10 @@
                     <input type="text" class="form-control" name="fname" placeholder="Full Name" aria-label="fn" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Email</span>
+                    <input type="email" class="form-control" name="email" placeholder="name@email.com" aria-label="fn" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Title</span>
                     <input type="text" class="form-control" name="title" placeholder="Title" aria-label="fn" aria-describedby="basic-addon1">
                 </div>
