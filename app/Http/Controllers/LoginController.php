@@ -64,7 +64,7 @@ class LoginController extends Controller
                     return redirect('login')->with('status', 'Login failed');
                 }  
             }else{
-                return redirect('login')->with('status', 'Login failed');
+                return redirect('login')->with('scrollToSelection', 'section','status', 'Login failed');
             }
     }
 

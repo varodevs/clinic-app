@@ -45,9 +45,9 @@ class RegisterController extends Controller
                 $hash_pssw = Hash::make($request->password);                
                 $response = Mail::to($request->email)->send(new Email($name,$cod_verify));
                 $result=$user->createUser($request->uname, $request->email, $hash_pssw, $hash_cod_verify, $role, now());
-                return redirect('verify');
+                return redirect('verify')->with('scrollToSelection', 'section');
             }else{
-                return redirect('register');
+                return redirect('register')->with('scrollToSelection', 'section');
             }
         }
   
