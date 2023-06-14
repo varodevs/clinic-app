@@ -201,8 +201,11 @@ Route::get('/success', [StripeController::class, 'success'])->name('success');
 //Route Maps
 Route::get('/map', 'MapController@showMap')->name('map');
 
-//Route User cancel Appointment
-Route::post('canceled', [UserController::class, 'delAppo'])->name('del-appo');
+//Route User Actions
+Route::post('user/appoint-canceled', [UserController::class, 'delAppo'])->name('del-appo');
+
+Route::post('user/modified', [UserController::class, 'modUser'])->name('upd-pat');
+Route::post('user/img-updated', [UserController::class, 'uplImg'])->name('mod-img');
 
 
 

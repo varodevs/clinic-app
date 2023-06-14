@@ -1,6 +1,6 @@
 <div class="col-3 align-self-center m-3">
     <h3>Patient information</h3>
-    <form action="#" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('upd-pat') }}" method="POST">
         @csrf
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">First Name</span>
@@ -40,6 +40,8 @@
             @endphp
             <input type="text" class="form-control" placeholder="Sex" aria-label="sex" aria-describedby="basic-addon1" @if($patient != null) value="{{ $sex }}" @endif disabled>
         </div>
+    </form>
+    <form action="{{ route('upd-img') }}" method="POST" enctype="multipart/form-data">
         <div class="input-group mb-3">
             <label for="image">Upload Image:</label>
             <input type="file" name="image" id="image">

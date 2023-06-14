@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 use App\Models\Appointment;
 use App\Models\Ch;
 use App\Models\Employee;
 use App\Models\Patient;
 use App\Models\User;
-use App\Models\Therapy;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -158,51 +158,26 @@ class UserController extends Controller
         return redirect()->route('dashboard', ['sel' => $sel]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function modUser(Request $request){
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    public function uplImg(Request $request){
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(User $user)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(User $user)
-    {
-        //
+        $request->validate([
+            'image' => 'required|image|max:2048',
+        ]);
+    
+        $image = $request->file('image');
+    
+        $uniqueId = uniqid();
+    
+        $storagePath = '/public/img/userimg';
+    
+        $imageName = $uniqueId . '.' . $image->getClientOriginalExtension();
+    
+        Storage::putFileAs($storagePath, $image, $imageName);
+    
+        return redirect()->back()->with('success', 'Image uploaded successfully.');
     }
 }
