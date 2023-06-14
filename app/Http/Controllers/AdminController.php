@@ -171,7 +171,7 @@ class AdminController extends Controller
 
         $user = new User();
 
-        $result = $user->createUser('username', $request->email, 'ABCD', 'ABCD', 5, now());
+        $result = $user->createUser('username', $request->email, 'ABCD', 'ABCD', 6, now());
 
         $id_user = $user->getUserIdByEmail($request->email);
 
