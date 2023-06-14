@@ -51,7 +51,7 @@ class RequestController extends Controller{
                 $last_id = 1;
             }
 
-        $patient_by_user = $patient->getPatientByUser(session('id_user'));
+            $patient_by_user = $patient->getPatientByUser(session('id_user'));
 
         if($patient_by_user == null){
             $result = $patient->createPatient($last_id,$request->fname,$request->lname,$phone,$request->birth,$age,$request->sex,session('id_user'), 3);
@@ -60,7 +60,7 @@ class RequestController extends Controller{
         }
         
         if($result){
-
+            $patient_by_user = $patient->getPatientByUser(session('id_user'));
             $cod_patient = $patient_by_user->cod_patient;
 
             $confirmed = 0;
