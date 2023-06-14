@@ -41,7 +41,7 @@
             <input type="text" class="form-control" placeholder="Sex" aria-label="sex" aria-describedby="basic-addon1" @if($patient != null) value="{{ $sex }}" @endif disabled>
         </div>
     </form>
-    <form action="{{ route('upd-img') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('upd-img') }}" method="GET" enctype="multipart/form-data">
         <div class="input-group mb-3">
             <label for="image">Upload Image:</label>
             <input type="file" name="image" id="image">
