@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Appointment;
 use App\Models\Patient;
+use App\Models\User;
 use Carbon\Carbon;
 use Cron\HoursField;
 use DateTime;
@@ -16,8 +17,10 @@ class RequestController extends Controller{
         $pat = new Patient();
 
         $array = $pat->getPatientByUser(session('id_user'));
+        $user = new User();
 
-        return view('request', compact('array'));
+        $user = $user->getUserdById(session('id_user'));
+        return view('request', compact('array','user'));
     }
 
     public function Request_done(Request $request)

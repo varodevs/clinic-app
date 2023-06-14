@@ -45,8 +45,8 @@
                             <div>
                                 <label class="_form-label" for="lname">Last Name</label>
                                 <input class="form-control" type="text" name="lname" id="lname" @if ($array != null) value="{{ $array->last_name }}" @endif>
-                                <label class="_form-label" for="email">Email</label>
-                                <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
+                                <label class="_form-label" for="email">Email</label>                                
+                                <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com" value="{{ $user->email }}">
                                 <label class="_form-label" for="date">Check for dates</label>
                                 <input class="form-control" type="date" name="date" id="date">
                                 <label class="_form-label" for="id">ID</label>
