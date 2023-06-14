@@ -121,11 +121,10 @@ class AdminController extends Controller
         $hash_pssw = Hash::make($password);
         $user = new User();
 
-        $sel=4;
         $response = Mail::to($request->email)->send(new EmailPassw($request->uname,$cod_verify, $password));
         $result = $user->createUser($request->uname, $request->email, $hash_pssw, $hash_cod_verify, intval($request->role), now());
 
-        return redirect()->route('admin-usr#section', ['sel' => $sel]);
+        return redirect()->route('admin-usr');
     }
 
     //New Appointment Form and Submit
@@ -146,7 +145,7 @@ class AdminController extends Controller
 
         $result = $appoint->createAppoint($request->date,0, $request->cod_employee, $request->cod_patient);
 
-        return redirect()->route('admin-appo#section');
+        return redirect()->route('admin-appo');
     }
 
     //New Patient Form and Submit
@@ -180,7 +179,7 @@ class AdminController extends Controller
 
         $result = $patient->createPatient($last_id,$request->fname,$request->lname,$request->phone,$request->bdate,$request->age,$request->sex, $request->id_user, $request->cod_doc);
 
-        return redirect()->route('admin-pat#section', ['sel' => $sel]);
+        return redirect()->route('admin-pat', ['sel' => $sel]);
     }
 
     //New Employee Form and Submit
@@ -230,7 +229,7 @@ class AdminController extends Controller
 
         $result = $therapy->createTherapy($request->fname,$request->title,$request->tcourt,$request->bdate,$request->hdate);
 
-        return redirect()->route('admin-ther#section', ['sel' => $sel]);
+        return redirect()->route('admin-ther', ['sel' => $sel]);
     }
 
     //New CH Form and Submit
@@ -253,7 +252,7 @@ class AdminController extends Controller
 
         $result = $ch->createCh($request->lesion,$request->interv,$request->rdate);
 
-        return redirect()->route('admin-ch#section', ['sel' => $sel]);
+        return redirect()->route('admin-ch', ['sel' => $sel]);
     }
 
     //New Trauma Form and Submit
@@ -274,7 +273,7 @@ class AdminController extends Controller
 
         $result = $ch->createTrauma($request->name);
 
-        return redirect()->route('admin-trau#section', ['sel' => $sel]);
+        return redirect()->route('admin-trau', ['sel' => $sel]);
     }
 
     //New Address Form and Submit
@@ -301,7 +300,7 @@ class AdminController extends Controller
 
         $result = $addr->createAddress($request->street,$request->pc,$request->city,$request->country,$request->num,$request->flat,$request->cod_pat);
 
-        return redirect()->route('admin-addr#section', ['sel' => $sel]);
+        return redirect()->route('admin-addr', ['sel' => $sel]);
     }
 
     //Delete User
