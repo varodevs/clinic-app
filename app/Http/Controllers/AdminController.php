@@ -250,7 +250,7 @@ class AdminController extends Controller
 
         $sel=6;
 
-        $result = $ch->createCh($request->lesion,$request->interv,$request->rdate);
+        $result = $ch->createCh($request->lesion,$request->interv,now());
 
         return redirect()->route('admin-ch', ['sel' => $sel]);
     }
