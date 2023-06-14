@@ -50,11 +50,11 @@
                 @csrf
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">First Name</span>
-                    <input type="text" class="form-control" name="fname" placeholder="Username" aria-label="fn" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" name="fname" placeholder="First name" aria-label="fn" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Last Name</span>
-                    <input type="text" class="form-control" name="lname" placeholder="Username" aria-label="fn" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" name="lname" placeholder="Last name" aria-label="fn" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Email</span>
