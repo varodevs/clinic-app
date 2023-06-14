@@ -227,20 +227,16 @@ class AdminController extends Controller
     public function Admin_newTher(Request $request){
 
         $request->validate([
-            'fname' => 'required',
-            'title' => 'required',
-            'tcourt' => 'required',
-            'bdate' => 'required',
-            'hdate' => 'required',
+            'name' => 'required',
+            'desc' => 'required',
+            'mats' => 'required',                        
             ]);
         
-        $therapy = new Therapy();
+        $therapy = new Therapy();        
 
-        $sel=5;
+        $result = $therapy->createTherapy($request->name,$request->desc,$request->mats);
 
-        $result = $therapy->createTherapy($request->fname,$request->title,$request->tcourt,$request->bdate,$request->hdate);
-
-        return redirect()->route('admin-ther', ['sel' => $sel]);
+        return redirect()->route('admin-ther');
     }
 
     //New CH Form and Submit
