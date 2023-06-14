@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\Ch;
 use App\Models\Employee;
 use App\Models\Patient;
 use App\Models\User;
+use App\Models\Therapy;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -113,6 +115,21 @@ class UserController extends Controller
     
                 return view('profile', compact('employee','patient','sel','sel2','date_appoint'));
             }
+        }
+    }
+
+    public function userTherapy(){
+        $ch = new Ch();
+
+        if(session('id_user') != null && session('id_user') != ""){
+
+            $pat = new Patient();
+
+            $patient = $pat->getPatientByUser(session('id_user'));
+
+            $array = $ch->getChByPatient($patient->cod_patient);
+
+            return view('clinic-history', compact('array','patient'));
         }
     }
 

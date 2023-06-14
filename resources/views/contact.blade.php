@@ -32,7 +32,7 @@
                             <label class="_form-label" for="textarea" >Describe your problem:</label>
                             <textarea class="form-control" name="textarea" id="textarea"></textarea>
                         </div>
-                    
+                        <button class="btn btn-light _submit" type="submit">Send</button>
                     </form>
                 </div>
             </div>
