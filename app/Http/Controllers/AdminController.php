@@ -249,17 +249,14 @@ class AdminController extends Controller
 
         $request->validate([
             'lesion' => 'required',
-            'interv' => 'required',
-            'rdate' => 'required',
+            'interv' => 'required',            
             ]);
         
         $ch = new Ch();
 
-        $sel=6;
-
         $result = $ch->createCh($request->lesion,$request->interv,now());
 
-        return redirect()->route('admin-ch', ['sel' => $sel]);
+        return redirect()->route('admin-ch');
     }
 
     //New Trauma Form and Submit
