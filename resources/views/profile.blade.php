@@ -27,7 +27,7 @@
                         </li>
                         @if (session('role') == 6)
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('history') }}">Therapy history</a>    
+                          <a class="nav-link" href="{{ route('history') }}">Clinic history</a>    
                         </li>
                         @endif 
                       </ul>
