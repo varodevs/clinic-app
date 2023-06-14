@@ -15,9 +15,7 @@ class RequestController extends Controller{
     {
         $pat = new Patient();
 
-        $arrays = $pat->getPatientByUser(session('id_user'));
-
-
+        $array = $pat->getPatientByUser(session('id_user'));
 
         return view('request', compact('array'));
     }
