@@ -177,6 +177,23 @@ class UserController extends Controller
         $imageName = $uniqueId . '.' . $image->getClientOriginalExtension();
     
         Storage::putFileAs($storagePath, $image, $imageName);
+
+        $img_path = "img/userimg/".$imageName;
+
+        if(session('role') != 6){
+            $emp = new Employee();
+
+            $employee = $emp->getEmployeeByUser(session('id_user'));
+
+            $result = $emp->updateEmployee($employee->cod_emp, $employee->name_emp, $employee->title, $employee->title_court, $employee->date_birth, $employee->date_hire, $img_path);
+
+        }else{
+            $pat = new Patient();
+
+            $patient = $pat->getPatientByUser(session('id_user'));
+
+            $result = $pat->updatePatient($patient->cod_patient,$patient->first_name,$patient->last_name,$patient->phone,$patient->date_birth,$patient->age,$patient->sex,$patient->first_name,session('id_user'),$img_path);
+        }
     
         return redirect()->back()->with('success', 'Image uploaded successfully.');
     }
