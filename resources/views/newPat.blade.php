@@ -57,8 +57,12 @@
                     <input type="text" class="form-control" name="lname" placeholder="Username" aria-label="fn" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Email</span>
+                    <input type="text" class="form-control" name="email" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Phone</span>
-                    <input type="text" class="form-control" name="phone" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" name="phone" aria-label="ln" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Date of Birth</span>
@@ -74,10 +78,6 @@
                         <option value="1">Male</option>
                         <option value="2">Female</option>
                     </select>
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Id User</span>
-                    <input type="text" class="form-control" name="id_user" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Cod. Doctor</span>

@@ -159,15 +159,21 @@ class AdminController extends Controller
         $request->validate([
             'fname' => 'required',
             'lname' => 'required',
+            'email' => 'required|email',
             'phone' => 'required',
             'bdate' => 'required',
             'age' => 'required',
             'sex' => 'required',
-            'id_user' => 'required',
             'cod_doc' => 'required',
             ]);
         
         $patient = new Patient();
+
+        $user = new User();
+
+        $result = $user->createUser('username', $request->email, 'ABCD', 'ABCD', 5, now());
+
+        $id_user = $user->getUserIdByEmail($request->email);
 
         $last_patient = $patient->getPatientLast();
 
@@ -177,7 +183,7 @@ class AdminController extends Controller
 
         $sel=2;
 
-        $result = $patient->createPatient($last_id,$request->fname,$request->lname,$request->phone,$request->bdate,$request->age,$request->sex, $request->id_user, $request->cod_doc);
+        $result = $patient->createPatient($last_id,$request->fname,$request->lname,$request->phone,$request->bdate,$request->age,$request->sex, $id_user, $request->cod_doc);
 
         return redirect()->route('admin-pat', ['sel' => $sel]);
     }
