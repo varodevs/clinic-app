@@ -33,6 +33,7 @@ class UserController extends Controller
 
             $array = $appoint->getAppointsByEmp($id_emp);
             $last = $appoint->getLastAppointEmp($id_emp);
+            $img_path = $employee->img_path;
 
             if($last != null){
                 $date_appoint = $last->date_appoint;
@@ -41,7 +42,7 @@ class UserController extends Controller
             }
                 
 
-            return view('profile', compact('employee', 'array','sel','sel2','date_appoint'));
+            return view('profile', compact('employee', 'array','sel','sel2','date_appoint','img_path'));
         }else{
             $sel2 = 2;
             $patient = $patient->getPatientByUser(session('id_user'));
@@ -55,6 +56,7 @@ class UserController extends Controller
 
             $array = $appoint->getAppointsByPatient($id_patient);
             $last = $appoint->getLastAppointPat($id_patient);
+            $img_path = $patient->img_path;
 
             if($last != null){
                 $date_appoint = $last->date_appoint;
@@ -62,7 +64,7 @@ class UserController extends Controller
                 $date_appoint = now();
             }
 
-            return view('profile', compact('patient', 'array','sel','sel2','date_appoint'));
+            return view('profile', compact('patient', 'array','sel','sel2','date_appoint','img_path'));
         }
 
         
