@@ -199,9 +199,7 @@ class AdminController extends Controller
             'hdate' => 'required',
             ]);
         
-        $employee = new Employee();
-
-        $sel=3;
+        $employee = new Employee();        
 
         $user = new User();
 
@@ -211,7 +209,7 @@ class AdminController extends Controller
 
         $result = $employee->createEmployee($request->fname,$request->title,$request->tcourt,$request->bdate,$request->hdate, $id_user);
 
-        return redirect()->route('admin-emp#section', ['sel' => $sel]);
+        return redirect()->route('admin-emp');
     }
 
     //New Therapy Form and Submit
