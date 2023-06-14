@@ -9,7 +9,7 @@
             <td>Age</td>
             <td>Sex</td>
             <td>Image</td>
-            <td>Username</td>
+            <td>User ID</td>
             <td>Issued by</td>
             <td>-</td> 
             <td>-</td>             
