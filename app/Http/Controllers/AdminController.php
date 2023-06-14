@@ -267,11 +267,11 @@ class AdminController extends Controller
             'name' => 'required',
             ]);
         
-        $ch = new Ch();
+        $trau = new Trauma();
 
         $sel=6;
 
-        $result = $ch->createTrauma($request->name);
+        $result = $trau->createTrauma($request->name);
 
         return redirect()->route('admin-trau', ['sel' => $sel]);
     }
