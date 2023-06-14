@@ -38,24 +38,18 @@ class RequestController extends Controller{
         $patient = new Patient();
 
         $dateTime = Carbon::parse($request->date . ' ' . $request->hour);
-        
-        dump($dateTime);
-        
-        sleep(5);
 
         $age = Carbon::parse($request->birth)->age;
 
         $last_patient = $patient->getPatientLast();
 
-            $last_id= $last_patient->cod_patient;
 
-            if($last_id != null){
+        if($last_patient != null){
+            $last_id= $last_patient->cod_patient;           
                 $last_id++;
             }else{
                 $last_id = 1;
             }
-
-            
 
         $patient_by_user = $patient->getPatientByUser(session('id_user'));
 
