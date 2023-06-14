@@ -62,7 +62,7 @@ class Employee extends Model
 	 * @return $result Devuelve un bool
 	 */
 	public function createEmployee($name_emp, $title, $title_court, $date_birth, $date_hire){
-		$result = DB::table('employee')->insert(array('name_emp'=> $name_emp, 'title'=>$title, 'title_court'=>$title_court, 'date_birth'=>$date_birth, 'active'=>1, '$date_hire'=>$date_hire));
+		$result = DB::table('employee')->insert(array('name_emp'=> $name_emp, 'title'=>$title, 'title_court'=>$title_court, 'date_birth'=>$date_birth, '$date_hire'=>$date_hire));
 		return $result;
 	}
 
