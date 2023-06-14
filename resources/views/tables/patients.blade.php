@@ -26,7 +26,9 @@
                     <tr>
                         @foreach ($row as $column)
                         @if ($i==4)
-                        <td><input class="w-75 text-center" type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_birth"/></td> 
+                        <td><input class="w-75 text-center" type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d') }}" name="date_birth"/></td> 
+                        @elseif($i == 0)
+                        <td><input class="w-75 text-center" type="text" value="{{ $column }}" name="input{{ $i }}" disabled/></td>
                         @else
                         <td><input class="w-75 text-center" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
                         @endif                   
