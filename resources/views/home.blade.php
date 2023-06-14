@@ -103,7 +103,7 @@
                 
                 </form>
             </div>
-            <div id="map" style="width: 300px;height: 300px;"></div>
+            <div id="mapDiv" style="width: 300px;height: 300px;"></div>
         </div>
 
     </div>
