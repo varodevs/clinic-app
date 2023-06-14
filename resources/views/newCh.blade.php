@@ -60,7 +60,7 @@
                     <span class="input-group-text" id="basic-addon1">Date Registry</span>
                     <input type="date" class="form-control" name="rdate" aria-label="ln" aria-describedby="basic-addon1">
                 </div>
-                <button class="btn btn-success" type="submit">Create Therapy</button>
+                <button class="btn btn-success" type="submit">Create Clinic History</button>
             </form>
         </div>
 @endsection
