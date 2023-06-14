@@ -42,7 +42,7 @@
                                 <label class="_form-label" for="lname">Last Name</label>
                                 <input class="form-control" type="text" name="lname" id="lname" @if ($array != null) value="{{ $array->last_name }}" @endif>
                                 <label class="_form-label" for="email">Email</label>
-                                <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com" @if ($array != null) value="{{ $array->email }}" @endif>
+                                <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
                                 <label class="_form-label" for="date">Check for dates</label>
                                 <input class="form-control" type="date" name="date" id="date">
                                 <label class="_form-label" for="id">ID</label>
@@ -50,12 +50,20 @@
                                 <label class="_form-label">Underage?</label>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="underchck" value="1" id="under">
+                                    @if ($array->age > 18)
+                                    <label class="form-check-label" for="under" checked>Yes</label>    
+                                    @else
                                     <label class="form-check-label" for="under">Yes</label>
+                                    @endif                                    
                                 </div>
                                 
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="underchck" value="2" id="under2">
+                                    @if ($array->age < 18)
                                     <label class="form-check-label" for="under2">No</label>
+                                    @else
+                                    <label class="form-check-label" for="under2" checked>No</label>
+                                    @endif                                    
                                 </div>                                
                             </div>
                         </div>
