@@ -29,39 +29,43 @@ class LoginController extends Controller
 
             $email = $request->email;
             $password = $request->password;
-            $id_user = $user->getUserIdByEmail($email)[0];
+            $id_user = $user->getUserIdByEmail($email);
 
-            $user_by_id=$user->getUserdById($id_user);
+            if($id_user != null){
+                $user_by_id=$user->getUserdById($id_user);
 
-            $role = $user_by_id->role_cod_role;
-
-            if($email == $user_by_id->email && Hash::check($password, $user_by_id->password)){
-
-                $request->session()->put('id_user', $id_user);
-                $request->session()->put('role', $role);
-                $request->session()->put('username', $user_by_id->username);
-
-                switch($role){
-                    case 4:
-                        return redirect('/admin')->with('status', 'Login successful');
-                        break;
-                    case 5:
-                        return redirect('/')->with('status', 'Login successful');
-                        break;                                                
-                    case 6:
-                        if($user_by_id->active != 0){
-                            return redirect('/verify')->with('status', 'Login successful, but needs verification');
-                        }else{
-                            return redirect('user/dashboard')->with('status', 'Login successful');
-                        }
-                        break;
-                    default:
-                    return redirect('login')->with('status', 'Login failed. The user has no role.');
-                        break;
-                }
-           }else{
+                $role = $user_by_id->role_cod_role;
+    
+                if($email == $user_by_id->email && Hash::check($password, $user_by_id->password)){
+    
+                    $request->session()->put('id_user', $id_user);
+                    $request->session()->put('role', $role);
+                    $request->session()->put('username', $user_by_id->username);
+    
+                    switch($role){
+                        case 4:
+                            return redirect('/admin')->with('status', 'Login successful');
+                            break;
+                        case 5:
+                            return redirect('/')->with('status', 'Login successful');
+                            break;                                                
+                        case 6:
+                            if($user_by_id->active != 0){
+                                return redirect('/verify')->with('status', 'Login successful, but needs verification');
+                            }else{
+                                return redirect('user/dashboard')->with('status', 'Login successful');
+                            }
+                            break;
+                        default:
+                        return redirect('login')->with('status', 'Login failed. The user has no role.');
+                            break;
+                    }
+               }else{
+                    return redirect('login')->with('status', 'Login failed');
+                }  
+            }else{
                 return redirect('login')->with('status', 'Login failed');
-            }   
+            }
     }
 
     public function Logout(Request $request){
