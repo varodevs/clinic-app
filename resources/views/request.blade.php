@@ -20,12 +20,16 @@
                                 <label class="_form-label" for="phone">Phone Number</label>
                                 <input class="form-control" type="text" name="phone" id="phone" @if ($array != null) value="{{ $array->phone }}" @endif>
                                 <label class="_form-label" for="birth">Date of Birth</label>
-                                <input class="form-control" type="date" name="birth" id="birth" @if ($array != null) value="{{ $array->date_birth }}" @endif>
+                                @if ($array != null)
+                                <input class="form-control" type="text" name="birth" id="birth" value="{{ $array->date_birth }}">
+                                @else
+                                <input class="form-control" type="date" name="birth" id="birth">
+                                @endif                                
                                 <label class="_form-label" for="spec">Speciality</label>
                                 <select class="form-control" name="spec" id="spec">
                                     <option value=2>Pediatric &#10088;PCS&#10089;</option>
                                     <option value=3>Electrophysiologic &#10088;ECS&#10089;</option>
-                                    <option value="">Sports Clinical Specialist &#10088;SCS&#10089;</option>
+                                    <option value=4>Sports Clinical Specialist &#10088;SCS&#10089;</option>
                                 </select>
                                 <label class="_form-label">Sex</label>
                                 <div class="form-check">
