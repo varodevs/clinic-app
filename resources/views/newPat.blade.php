@@ -66,11 +66,11 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Date of Birth</span>
-                    <input type="date" class="form-control" name="bdate" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
+                    <input type="date" class="form-control" name="bdate" aria-label="ln" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Age</span>
-                    <input type="text" class="form-control" name="age" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" name="age" aria-label="ln" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Sex</span>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Cod. Doctor</span>
-                    <input type="text" class="form-control" name="cod_doc" placeholder="name@email.com" aria-label="ln" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" name="cod_doc" aria-label="ln" aria-describedby="basic-addon1">
                 </div>
                 <button class="btn btn-success" type="submit">Create Patient</button>
             </form>
