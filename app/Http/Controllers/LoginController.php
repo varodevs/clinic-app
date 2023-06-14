@@ -31,7 +31,7 @@ class LoginController extends Controller
             $password = $request->password;
             $id_user = $user->getUserIdByEmail($email);
 
-            if($id_user != null){
+            if($id_user != 0 && $id_user != null){
                 $user_by_id=$user->getUserdById($id_user);
 
                 $role = $user_by_id->role_cod_role;
