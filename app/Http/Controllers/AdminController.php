@@ -117,7 +117,7 @@ class AdminController extends Controller
             ]);
         $cod_verify = Str::upper(Str::random(4));
         $hash_cod_verify = Hash::make($cod_verify);
-        $password = Str::upper(Str::random(5));
+        $password = Str::upper(Str::random(8));
         $hash_pssw = Hash::make($password);
         $user = new User();
 
