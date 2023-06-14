@@ -102,7 +102,7 @@ class UserController extends Controller
                 if($patient != null){
                     $id_patient = $patient->cod_patient;
                 }else{
-                    $id_patient = null;
+                    $id_patient = 0;
                 }
     
                 $array = $appoint->getAppointsByPatient($id_patient);
@@ -119,17 +119,32 @@ class UserController extends Controller
     }
 
     public function userTherapy(){
+        $user = new User();        
+        $pat = new Patient();
+        $employee = new Employee();
         $ch = new Ch();
-
+        $sel = 3;
         if(session('id_user') != null && session('id_user') != ""){
 
-            $pat = new Patient();
+            if(session('role') != 6){
+                $sel2 = 1;
+                $employee = $employee->getEmployeeByUser(session('id_user'));
 
-            $patient = $pat->getPatientByUser(session('id_user'));
+                return view('profile', compact('array','employee','patient','sel','sel2','date_appoint'));
+            }else{
+                $sel2 = 2;
 
-            $array = $ch->getChByPatient($patient->cod_patient);
+                $patient = $pat->getPatientByUser(session('id_user'));
 
-            return view('tables.clinic-history', compact('array','patient'));
+                if($patient != null){
+                    $id_patient = $patient->cod_patient;
+                }else{
+                    $id_patient = 0;
+                }
+
+                $array = $ch->getChByPatient($id_patient);
+                return view('profile', compact('array','employee','patient','sel','sel2','date_appoint'));
+            }            
         }
     }
 
