@@ -61,7 +61,7 @@ class RegisterController extends Controller
             ]);
             $password=$request->password;
             $user = new User();
-            $user_id=$user->getUserIdByEmail($request->email)[0];
+            $user_id=$user->getUserIdByEmail($request->email);
             $user_by_id = $user->getUserdById($user_id);
 
             if(Hash::check($password, $user_by_id->password) && Hash::check($request->code, $user_by_id->cod_verify)){
