@@ -35,7 +35,8 @@ class ChTherapy extends Model
 	 * function getChTherapies()
 	 * 
 	 * @param $cod_ch Codigo historial
-	 */
+	 */	
+
 	public function getChTherapies($cod_c){
 		$ChTherapies = DB::table('ch_therapy')->where('cod_c', [$cod_c])->get();
 		return $ChTherapies;
