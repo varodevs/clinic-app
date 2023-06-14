@@ -129,7 +129,7 @@ class UserController extends Controller
 
             $array = $ch->getChByPatient($patient->cod_patient);
 
-            return view('clinic-history', compact('array','patient'));
+            return view('tables.clinic-history', compact('array','patient'));
         }
     }
 
