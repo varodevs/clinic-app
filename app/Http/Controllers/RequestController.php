@@ -20,7 +20,7 @@ class RequestController extends Controller{
     {
         $request->validate([
             'fname' => 'required|string|min:2|max:10',
-            'phone' => 'required|max:20',
+            'phone' => 'required|max:30',
             'birth' => 'required|date',
             'spec' => 'required|',
             'lname' => 'required|string|min:2|max:10',
@@ -49,7 +49,13 @@ class RequestController extends Controller{
 
             $last_id= $last_patient->cod_patient;
 
-            $last_id++;
+            if($last_id != null){
+                $last_id++;
+            }else{
+                $last_id = 1;
+            }
+
+            
 
         $patient_by_user = $patient->getPatientByUser(session('id_user'));
 
