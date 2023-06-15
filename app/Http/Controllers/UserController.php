@@ -183,7 +183,7 @@ class UserController extends Controller
     
         Storage::putFileAs($storagePath, $image, $imageName);
 
-        $img_path = "img/userimg/".$imageName;
+        $img_path = 'img/userimg/' . $imageName;
 
         if(session('role') != 6){
             $emp = new Employee();
