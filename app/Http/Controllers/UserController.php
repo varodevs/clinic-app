@@ -177,13 +177,13 @@ class UserController extends Controller
     
         $uniqueId = uniqid();
     
-        $storagePath = 'app/public/img/userimg/';
+        $storagePath = 'app/public/img/userimg';
     
         $imageName = $uniqueId . '.' . $image->getClientOriginalExtension();
     
         Storage::putFileAs($storagePath, $image, $imageName);
 
-        $img_path = $storagePath . $imageName;
+        $img_path = $storagePath. '/' . $imageName;
 
         if(session('role') != 6){
             $emp = new Employee();
