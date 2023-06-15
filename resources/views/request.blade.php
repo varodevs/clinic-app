@@ -88,19 +88,6 @@
         </div>
     </div>
         <script>
-            var input = document.getElementById('date');
-        
-            input.addEventListener('input', function(event) {
-            var selectedDate = new Date(event.target.value);
-            var dayOfWeek = selectedDate.getDay();
-        
-            if (dayOfWeek === 0 || dayOfWeek === 6) { // Sunday: 0, Saturday: 6
-                event.target.value = ''; // Clear the input value
-                alert('Please choose a weekday.');
-            }
-            });
-        </script>
-        <script>
             const dateInput = document.getElementById('date');
             const hourDropdown = document.getElementById('hourDropdown');
             const special = document.getElementById('spec');
