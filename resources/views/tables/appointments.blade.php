@@ -7,6 +7,7 @@
             <td>Confirmed</td>
             <td>Employee</td>
             <td>Patient</td>
+            <td>Confirm</td>
             <td>Cancel</td>
         </tr>
     </thead>
@@ -41,6 +42,14 @@
                     @endphp
                     @endforeach
                     <td>
+                        <form action="{{ route('upd-appo') }}" method="POST">
+                            @csrf                    
+                            <input type="hidden" name="id_appo" value={{ $id }} />
+                            <input type="hidden" name="conf" value=1 />
+                            <button type="submit" class="btn btn-primary">Confirm</button>
+                        </form>
+                    </td>
+                    <td>
                         <form action="{{ route('del-appo') }}" method="POST">
                             @csrf                    
                             <input type="hidden" name="id_appo" value={{ $id }} />
@@ -50,7 +59,7 @@
                 </tr>
             @endforeach
         @else
-        <tr><td colspan="5"> -- No Data -- </td></tr>
+        <tr><td colspan="7"> -- No Data -- </td></tr>
         @endif
     </tbody>
 </table>
