@@ -23,7 +23,7 @@ namespace App\Http\Controllers;
             foreach($appoints as $appo)
             {
                 $date = $appo->date_appoint;
-                $carbonDate = Carbon::createFromFormat('Y-m-d', $selectedDate);
+                $carbonDate = Carbon::createFromFormat('d-m-Y', $selectedDate);
                 $carbonDate2 = Carbon::createFromFormat('Y-m-d', $date);
                 $formattedSelectedDate = $carbonDate->format('Y-m-d');
                 $formattedDate2 = $carbonDate2->format('Y-m-d');
