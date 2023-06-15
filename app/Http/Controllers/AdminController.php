@@ -406,11 +406,12 @@ class AdminController extends Controller
             $conf = 1;
         }
         $id_appo = $request->input('id_appo');
+        $date = \Carbon\Carbon::parse($request->input1)->format('Y-m-d H:i:s');
 
         $appoint = new Appointment();
 
         $sel = 1;
-        $result = $appoint->updateAppoint(intVal($id_appo),$request->input1,$conf);
+        $result = $appoint->updateAppoint(intVal($id_appo),$date,$conf);
 
         return redirect()->route('admin-appo', ['sel' => $sel]);
     }
