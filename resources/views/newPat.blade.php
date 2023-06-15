@@ -86,4 +86,19 @@
                 <button class="btn btn-success" type="submit">Create Patient</button>
             </form>
         </div>
+
+        <script>
+            document.getElementById('bdate').addEventListener('change', function() {
+                var birthDate = new Date(this.value);
+                var now = new Date();
+                var age = now.getFullYear() - birthDate.getFullYear();
+        
+                // Adjust the age based on the current month and day
+                if (now.getMonth() < birthDate.getMonth() || (now.getMonth() == birthDate.getMonth() && now.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+        
+                document.getElementById('age').value = age;
+            });
+        </script>
 @endsection
