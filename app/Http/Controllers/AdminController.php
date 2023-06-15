@@ -373,8 +373,9 @@ class AdminController extends Controller
 
     public function Admin_updEmp(Request $request){
         $employee = new Employee();
+        $carbonDate = \Carbon\Carbon::parse($request->date4)->format('Y-m-d H:i:s.f');
         $sel=3;
-        $result = $employee->updateEmployee(intval($request->input0),$request->input1,$request->input2,$request->input3,$request->date4,intval($request->input5),intval($request->input6),intval($request->input7));
+        $result = $employee->updateEmployee(intval($request->input0),$request->input1,$request->input2,$request->input3,$carbonDate,intval($request->input5),intval($request->input6),intval($request->input7));
         return redirect()->route('admin-pat', ['sel' => $sel]);
     }
 
