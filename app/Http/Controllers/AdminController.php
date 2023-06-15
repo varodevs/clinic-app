@@ -397,11 +397,20 @@ class AdminController extends Controller
     }
 
     public function updAppoAdm(Request $request){
+        $request->validate([
+            'input1' => 'required',
+            'input2' => 'required',
+            ]);
+        $conf = 0;
+        if($request->input2 == "Si"){
+            $conf = 1;
+        }
         $id_appo = $request->input('id_appo');
 
         $appoint = new Appointment();
+
         $sel = 1;
-        $result = $appoint->updateAppoint(intVal($id_appo),$request->input1,intVal($request->input2));
+        $result = $appoint->updateAppoint(intVal($id_appo),$request->input1,$conf);
 
         return redirect()->route('admin-appo', ['sel' => $sel]);
     }
