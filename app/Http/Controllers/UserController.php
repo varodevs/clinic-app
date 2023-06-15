@@ -197,7 +197,7 @@ class UserController extends Controller
 
             $patient = $pat->getPatientByUser(session('id_user'));
 
-            $result = $pat->updatePatient($patient->cod_patient,$patient->first_name,$patient->last_name,$patient->phone,$patient->date_birth,$patient->age,$patient->sex,$patient->first_name,session('id_user'),$img_path);
+            $result = $pat->updatePatient($patient->cod_patient,$patient->first_name,$patient->last_name,$patient->phone,$patient->date_birth,$patient->age,$patient->sex,$img_path);
         }
     
         return redirect()->route('profile')->with('success', 'Image uploaded successfully.');
