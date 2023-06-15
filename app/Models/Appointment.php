@@ -126,6 +126,13 @@ class Appointment extends Model
 			return $result;
 	}
 
+	public function confirmAppoint($cod_appoint,$confirmed){
+		$result=DB::table('appointment')
+            ->where('cod_appoint', $cod_appoint)
+			->update(array('confirmed' => $confirmed));
+			return $result;
+	}
+
 
 	/**
 	 * function deleteAppoint()

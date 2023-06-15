@@ -159,6 +159,17 @@ class UserController extends Controller
         return redirect()->route('dashboard', ['sel' => $sel]);
     }
 
+    public function confAppo(Request $request){
+        $id_appo = $request->input('id_appo');
+        $conf = $request->input('conf');
+
+        $appoint = new Appointment();
+        $sel = 1;
+        $result = $appoint->confirmAppoint($id_appo,$conf);
+
+        return redirect()->route('dashboard', ['sel' => $sel]);
+    }
+
     public function modUser(Request $request){
 
     }
