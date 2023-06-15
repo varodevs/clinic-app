@@ -186,7 +186,7 @@ Route::get('user/dashboard', [UserController::class, 'userDashboard'])->name('da
 
 Route::get('user/profile', [UserController::class, 'userProfile'])->name('profile');
 
-Route::get('user/therapy', [UserController::class, 'userTherapy'])->name('history');
+Route::get('user/therapy', [UserController::class, 'userCh'])->name('history');
 
 //Route AJAX
 Route::get('/check-dates', [AppointmentController::class, 'checkDates'])->name('check');

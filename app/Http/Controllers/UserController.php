@@ -123,7 +123,7 @@ class UserController extends Controller
         }
     }
 
-    public function userTherapy(){
+    public function userCh(){
         $user = new User();        
         $pat = new Patient();
         $employee = new Employee();
@@ -131,14 +131,6 @@ class UserController extends Controller
         $sel = 3;
         if(session('id_user') != null && session('id_user') != ""){
 
-            if(session('role') != 6){
-                $sel2 = 1;
-                $employee = $employee->getEmployeeByUser(session('id_user'));
-
-                $img_path = $employee->img_path;
-
-                return view('profile', compact('array','employee','patient','sel','sel2'));
-            }else{
                 $sel2 = 2;
 
                 $patient = $pat->getPatientByUser(session('id_user'));                
@@ -151,8 +143,9 @@ class UserController extends Controller
                 }
 
                 $array = $ch->getChByPatient($id_patient);
-                return view('profile', compact('array','employee','patient','sel','sel2'));
-            }            
+                return view('profile', compact('array','employee','patient','sel','sel2','img_path'));          
+        }else{
+            return view('home');
         }
     }
 
