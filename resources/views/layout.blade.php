@@ -118,9 +118,9 @@
           <div class="d-flex align-self-center justify-content-evenly _appoint-banner">
             <p class="_appoint-p">We ensure out patients receive the best treatments.</p>
             @if (session('id_user') != null && session('id_user') != "")
-            <button class="btn btn-light _appoint-button"><a class="_link" href="{{ route('request') }}">REQUEST AN APPOINTMENT</a><img class="_appoint-img" src="{{ asset("img/appointment.png") }}" alt="Appointment Request Image"></button>
+            <button class="btn btn-light _appoint-button"><a class="_link-request" href="{{ route('request') }}">REQUEST AN APPOINTMENT</a><img class="_appoint-img" src="{{ asset("img/appointment.png") }}" alt="Appointment Request Image"></button>
             @else
-            <button class="btn btn-light _appoint-button"><a class="_link" href="{{ route('login') }}">REQUEST AN APPOINTMENT</a><img class="_appoint-img" src="{{ asset("img/appointment.png") }}" alt="Appointment Request Image"></button>
+            <button class="btn btn-light _appoint-button"><a class="_link-request" href="{{ route('login') }}">REQUEST AN APPOINTMENT</a><img class="_appoint-img" src="{{ asset("img/appointment.png") }}" alt="Appointment Request Image"></button>
             @endif            
           </div>
           <div class="d-flex justify-content-evenly">
