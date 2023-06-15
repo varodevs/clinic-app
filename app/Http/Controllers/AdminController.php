@@ -377,7 +377,7 @@ class AdminController extends Controller
         $carbonDate2 = \Carbon\Carbon::parse($request->date5)->format('Y-m-d H:i:s');
         $sel=3;
         $result = $employee->updateEmployee(intval($request->input0),$request->input1,$request->input2,$request->input3,$carbonDate,$carbonDate2,intval($request->input6),intval($request->input7));
-        return redirect()->route('admin-pat', ['sel' => $sel]);
+        return redirect()->route('admin-emp', ['sel' => $sel]);
     }
 
     public function Admin_delEmp(Request $request){
