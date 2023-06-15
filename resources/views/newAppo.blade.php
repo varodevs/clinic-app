@@ -46,7 +46,7 @@
 
         <div class="col-3 align-self-center m-3">
             <h3 class="_h3">New Appointment</h3>
-            <form action="{{ admin-new-appo }}" method="POST">
+            <form action="{{ route('admin-new-appo') }}" method="POST">
                 @csrf
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Date</span>
