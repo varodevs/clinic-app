@@ -47,13 +47,23 @@
   font-weight: 500;
   text-decoration: none; }
 
-._divLogin ._button {
-  background-color: #f7f5f5; }
-
 ._divContact {
+  background-color: #2c88ee;
   height: 80%;
-  margin: 1rem;
-  background-color: #2c88ee; }
+  border-radius: 10px;
+  margin: 1rem; }
+
+._form {
+  align-items: center; }
+  ._form ._form-label {
+    color: #f7f5f5;
+    font-size: medium;
+    font-weight: bold; }
+  ._form ._form-input {
+    margin-bottom: 2vh; }
+  ._form ._submit {
+    color: #131212;
+    background-color: #f7f5f5; }
 
 ._bg-img {
   height: 65vh;
