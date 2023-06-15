@@ -27,7 +27,7 @@ class RegisterController extends Controller
         $request->validate([
             'uname' => 'required|string|min:2|max:10',
             'email' => 'required|email|min:8|max:35',
-            Rule::unique('users', 'email'),
+            Rule::unique('user', 'email'),
             'password' => 'required|min:8|max:15',
             'pass_conf' => 'required|same:password',
             'check_terms' => 'accepted',
