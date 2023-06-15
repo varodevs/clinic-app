@@ -143,7 +143,7 @@ class AdminController extends Controller
         
         $appoint = new Appointment();
 
-        $result = $appoint->createAppoint($request->date,0, $request->cod_employee, $request->cod_patient);
+        $result = $appoint->createAppoint($request->date,0, $request->cod_emp, $request->cod_pat);
 
         return redirect()->route('admin-appo');
     }
