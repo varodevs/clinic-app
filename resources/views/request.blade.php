@@ -87,43 +87,4 @@
             </div>
         </div>
     </div>
-        <script>
-            const dateInput = document.getElementById('date');
-            const hourDropdown = document.getElementById('hourDropdown');
-            const special = document.getElementById('spec');
-
-            // Function to populate the hour dropdown based on the selected date
-            function populateHourDropdown() {
-                const selectedDate = dateInput.value;
-                const selectedSpec = special.value;
-
-                // Make an AJAX request to check for available hours
-                $.ajax({
-                    url: "{{ route('check') }}",
-                    type: 'GET',
-                    data: {
-                        date: selectedDate,
-                        idemp: selectedSpec
-                    },
-                    success: function(response) {
-                        // Clear previous options
-                        hourDropdown.innerHTML = '';
-
-                        // Populate the dropdown with available hours
-                        response.forEach(function(hour) {
-                            const option = document.createElement('option');
-                            option.value = hour;
-                            option.textContent = hour;
-                            hourDropdown.appendChild(option);
-                        });
-                    },
-                    error: function(xhr) {
-                        console.log(xhr.responseText);
-                    }
-                });
-            }
-
-            // Attach change event listener to the date input field
-            dateInput.addEventListener('change', populateHourDropdown);
-        </script>
 @endsection
