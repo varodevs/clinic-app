@@ -159,6 +159,11 @@
 
 ._footer {
   background-color: #8E8B82; }
+  ._footer .nav-link {
+    text-decoration: none;
+    color: #d0dff0;
+    font-size: small;
+    font-weight: 500; }
 
 ._profile-imgDiv {
   width: 100px;
