@@ -7,11 +7,11 @@
             <h3 class="mx-3 align-self-start">Your Profile</h3>
         </div>
         <div class="col-12 d-flex flex-column">
-            <div class="col-2 d-flex align-self-start m-3">
+            <div class="col-2 d-flex align-self-start justify-content-evenly m-3">
                 <div class="_profile-imgDiv">
                     <img src="{{ asset('storage/'.$img_path) }}" alt="Profile image" class="rounded-circle">
                 </div>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3 h-50">
                     <span class="input-group-text" id="basic-addon1">Username</span>
                     <input type="text" class="form-control" placeholder="ID" aria-label="ID" aria-describedby="basic-addon1" value="{{ session('username') }}" disabled>
                   </div>
