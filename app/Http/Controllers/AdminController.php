@@ -181,9 +181,11 @@ class AdminController extends Controller
 
         $last_id++;
 
+        $img_path = 'img/userimg/default.png';
+
         $sel=2;
 
-        $result = $patient->createPatient($last_id,$request->fname,$request->lname,$request->phone,$request->bdate,$request->age,$request->sex, $id_user, $request->cod_doc);
+        $result = $patient->createPatient($last_id,$request->fname,$request->lname,$request->phone,$request->bdate,$request->age,$request->sex, $id_user, $request->cod_doc, $img_path);
 
         return redirect()->route('admin-pat', ['sel' => $sel]);
     }
@@ -212,8 +214,9 @@ class AdminController extends Controller
         $result = $user->createUser('username', $request->email, 'ABCD', 'ABCD', 5, now());
 
         $id_user = $user->getUserIdByEmail($request->email);
+        $img_path = 'img/userimg/default.png';
 
-        $result = $employee->createEmployee($request->fname,$request->title,$request->tcourt,$request->bdate,$request->hdate, $id_user);
+        $result = $employee->createEmployee($request->fname,$request->title,$request->tcourt,$request->bdate,$request->hdate, $id_user,$img_path);
 
         return redirect()->route('admin-emp');
     }

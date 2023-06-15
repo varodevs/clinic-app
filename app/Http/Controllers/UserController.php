@@ -51,7 +51,8 @@ class UserController extends Controller
                 $id_patient = $patient->cod_patient;
                 $img_path = $patient->img_path;
             }else{
-                $id_patient = null;                
+                $id_patient = null;
+                $img_path = 'img/userimg/default.png';
             }
                 
             $array = $appoint->getAppointsByPatient($id_patient);
