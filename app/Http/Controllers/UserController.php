@@ -174,8 +174,8 @@ class UserController extends Controller
         ]);
     
         $image = $request->file('image');
-    
-        $uniqueId = uniqid();
+        $prefix = 'ui';
+        $uniqueId = uniqid($prefix);
     
         $storagePath = 'public/img/userimg/';
     
