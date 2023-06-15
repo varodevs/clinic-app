@@ -74,7 +74,7 @@
                         </div>
                         <div class="my-4 w-25">
                             <label class="_form-label" for="hourDropdown">Choose an hour</label>
-                            <select class="form-control text-center" type="text" id="hourDropdown"></select>                            
+                            <select class="form-control text-center" type="text" name="hour" id="hourDropdown"></select>                            
                         </div>
                         <button class="btn btn-light _submit" type="submit">Send</button>
                         @if(session('status'))
