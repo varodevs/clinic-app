@@ -42,6 +42,7 @@
         </div>
     </form>
     <form action="{{ route('mod-img') }}" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="input-group mb-3">
             <label for="image">Upload Image:</label>
             <input type="file" name="image" id="image">
