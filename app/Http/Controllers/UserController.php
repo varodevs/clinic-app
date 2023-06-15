@@ -47,7 +47,7 @@ class UserController extends Controller
             $sel2 = 2;
             $emp = new Employee();
             $patient = $patient->getPatientByUser(session('id_user'));
-
+            $name = "";
             if($patient != null){
                 $id_patient = $patient->cod_patient;
                 $img_path = $patient->img_path;
