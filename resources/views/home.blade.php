@@ -78,7 +78,7 @@
         <div class="c-3 align-self-center text-center w-50 h-100 mt-5"><h4 class="align-self-center _h4">CONTACT US</h4></div>    
     <div>
         <div class="d-flex justify-content-evenly">
-            <div style="height: 100%;" class="d-flex flex-column justify-content-cente w-50 _div-login">
+            <div style="height: 100%;" class="d-flex flex-column justify-content-cente w-50 _divContact">
                 <form class="d-flex flex-column justify-content-center _form" action="" method="POST">
                 @csrf
                 <div class="d-flex justify-content-evenly w-75">
@@ -90,7 +90,7 @@
                     </div>
                     <div>
                         <label class="_form-label" for="sname">Phone Number</label>
-                        <input class="form-control" type="text" name="sname" id="sname" placeholder="Phone number">
+                        <input class="form-control" type="text" name="phone" id="phone" placeholder="Phone number">
                         <label class="_form-label" for="email">Email</label>
                         <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
                         
@@ -100,7 +100,7 @@
                         <label class="_form-label" for="textarea" >Describe your problem:</label>
                         <textarea class="form-control" name="textarea" id="textarea" placeholder="A brief description of your problem"></textarea>
                     </div>
-                
+                    <button class="btn btn-primary" type="submit">Send</button>
                 </form>
             </div>
             <div id="mapDiv" style="width: 300px;height: 300px;"></div>
