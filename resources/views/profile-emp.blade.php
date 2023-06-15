@@ -26,6 +26,9 @@
             <span class="input-group-text" id="basic-addon1">Date hired</span>
             <input type="text" class="form-control" placeholder="Date hired" aria-label="ID" aria-describedby="basic-addon1" @if($employee != null) value="{{ $dateh->format('Y-m-d') }}" @endif disabled>
         </div>
+    </form>
+    <form action="{{ route('mod-img') }}" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="input-group mb-3">
             <label for="image">Upload Image:</label>
             <input type="file" name="image" id="image">

@@ -135,14 +135,17 @@ class UserController extends Controller
                 $sel2 = 1;
                 $employee = $employee->getEmployeeByUser(session('id_user'));
 
+                $img_path = $employee->img_path;
+
                 return view('profile', compact('array','employee','patient','sel','sel2'));
             }else{
                 $sel2 = 2;
 
-                $patient = $pat->getPatientByUser(session('id_user'));
+                $patient = $pat->getPatientByUser(session('id_user'));                
 
                 if($patient != null){
                     $id_patient = $patient->cod_patient;
+                    $img_path = $employee->img_path;
                 }else{
                     $id_patient = 0;
                 }
