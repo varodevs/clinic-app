@@ -183,12 +183,14 @@ class UserController extends Controller
     
         Storage::putFileAs($storagePath, $image, $imageName);
 
-        $img_path = 'storage' . $storagePath . $imageName;
+        $img_path = $storagePath . $imageName;
 
         if(session('role') != 6){
             $emp = new Employee();
 
             $employee = $emp->getEmployeeByUser(session('id_user'));
+            $previousImage = $employee->img_path;
+            Storage::delete($previousImage);
 
             $result = $emp->updateEmployee($employee->cod_emp, $employee->name_emp, $employee->title, $employee->title_court, $employee->date_birth, $employee->date_hire, $img_path);
 
@@ -196,6 +198,8 @@ class UserController extends Controller
             $pat = new Patient();
 
             $patient = $pat->getPatientByUser(session('id_user'));
+            $previousImage = $patient->img_path;
+            Storage::delete($previousImage);
 
             $result = $pat->updatePatient($patient->cod_patient,$patient->first_name,$patient->last_name,$patient->phone,$patient->date_birth,$patient->age,$patient->sex,$img_path);
         }
