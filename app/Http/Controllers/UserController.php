@@ -105,13 +105,15 @@ class UserController extends Controller
 
                 if($patient != null){
                     $id_patient = $patient->cod_patient;
+                    $img_path = $patient->img_path;
                 }else{
                     $id_patient = 0;
+                    $img_path = 'img/userimg/default.png';
                 }
     
                 $array = $appoint->getAppointsByPatient($id_patient);
                 $last = $appoint->getLastAppointPat($id_patient);
-                $img_path = $patient->img_path;
+                
 
                 if($last != null){
                     $date_appoint = $last->date_appoint;
