@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
 use App\Models\User;
 use App\Mail\Email;
@@ -26,6 +27,7 @@ class RegisterController extends Controller
         $request->validate([
             'uname' => 'required|string|min:2|max:10',
             'email' => 'required|email|min:8|max:35',
+            Rule::unique('users', 'email'),
             'password' => 'required|min:8|max:15',
             'pass_conf' => 'required|same:password',
             'check_terms' => 'accepted',
