@@ -61,7 +61,8 @@ class RequestController extends Controller{
             $patient_by_user = $patient->getPatientByUser(session('id_user'));
 
         if($patient_by_user == null){
-            $result = $patient->createPatient($last_id,$request->fname,$request->lname,$phone,$request->birth,$age,$request->sex,session('id_user'), 3);
+            $img_path = 'img/userimg/default.png';
+            $result = $patient->createPatient($last_id,$request->fname,$request->lname,$phone,$request->birth,$age,$request->sex,session('id_user'), 3,$img_path);
         }else{
             $result = true;
         }
