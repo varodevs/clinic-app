@@ -85,7 +85,7 @@
                   </li>
                   @if (session('role') == 4 || session('role') == 5)
                   <li class="nav-item">
-                    <a class="nav-link {{ Request::route()->getName() === 'admin' ? 'active' : '' }}" href="{{  route('admin')  }}">Admin</a>
+                    <a class="nav-link {{ Request::route()->getName() === 'admin' ? 'active' : '' }}" href="{{  route('admin')  }}">Management</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link {{ Request::route()->getName() === 'dashboard' ? 'active' : '' }}" href="{{  route('dashboard')  }}">Profile</a>
