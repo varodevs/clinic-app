@@ -42,7 +42,7 @@
                     @endphp
                     @endforeach
                     <td>
-                        <form action="{{ route('upd-appo') }}" method="POST">
+                        <form action="{{ route('conf-appo') }}" method="POST">
                             @csrf                    
                             <input type="hidden" name="id_appo" value={{ $id }} />
                             <input type="hidden" name="conf" value=1 />
