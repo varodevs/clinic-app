@@ -42,9 +42,8 @@
                     @endif                    
                   @endif
                   @if (Route::has('register'))
-                  @if (session('id_user') != null && session('id_user') != "")
-                  <a href="{{ route('register') }}" class="w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-outline-primary h-100 _button" hidden>Sign up</button></a>
-                  @endif
+                  
+                  <a href="{{ route('register') }}" class="w-75 h-100 text-center text-nowrap mx-1"><button class="btn btn-outline-primary h-100 _button" @if (session('id_user') != null && session('id_user') != "") hidden @endif>Sign up</button></a>                  
                   @endif
                 </div>
               </div>
