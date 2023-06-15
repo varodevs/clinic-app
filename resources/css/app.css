@@ -142,9 +142,9 @@
   background-color: #8E8B82; }
 
 ._profile-imgDiv {
-  width: 200px;
+  width: 100px;
   /* Adjust the width to your desired size */
-  height: 200px;
+  height: 100px;
   /* Adjust the height to your desired size */
   overflow: hidden; }
   ._profile-imgDiv img {
