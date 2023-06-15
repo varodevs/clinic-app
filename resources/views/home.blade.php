@@ -84,13 +84,13 @@
                 <div class="d-flex justify-content-evenly w-75">
                     <div>
                         <label class="_form-label" for="fname">First Name</label>
-                        <input class="form-control" type="text" name="fname" id="fname">
-                        <label class="_form-label" for="sname">Phone Number</label>
-                        <input class="form-control" type="text" name="sname" id="sname">
+                        <input class="form-control" type="text" name="fname" id="fname" placeholder="First name">
+                        <label class="_form-label" for="lname">Last Name</label>
+                        <input class="form-control" type="text" name="lname" id="lname" placeholder="Last name">
                     </div>
                     <div>
-                        <label class="_form-label" for="lname">Last Name</label>
-                        <input class="form-control" type="text" name="lname" id="lname">
+                        <label class="_form-label" for="sname">Phone Number</label>
+                        <input class="form-control" type="text" name="sname" id="sname" placeholder="Phone number">
                         <label class="_form-label" for="email">Email</label>
                         <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
                         
@@ -98,7 +98,7 @@
                 </div>
                     <div class="w-75">
                         <label class="_form-label" for="textarea" >Describe your problem:</label>
-                        <textarea class="form-control" name="textarea" id="textarea"></textarea>
+                        <textarea class="form-control" name="textarea" id="textarea" placeholder="A brief description of your problem"></textarea>
                     </div>
                 
                 </form>
