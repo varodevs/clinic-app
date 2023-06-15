@@ -45,6 +45,7 @@ class UserController extends Controller
             return view('profile', compact('employee', 'array','sel','sel2','date_appoint','img_path'))->with('scrollToSection', 'section');
         }else{
             $sel2 = 2;
+            $emp = new Employee();
             $patient = $patient->getPatientByUser(session('id_user'));
 
             if($patient != null){
@@ -61,11 +62,13 @@ class UserController extends Controller
 
             if($last != null){
                 $date_appoint = $last->date_appoint;
+                $employee = $emp->getEmployee($last->employee_cod_emp);
+                $name = $employee->name_emp;
             }else{
                 $date_appoint = now();
             }
 
-            return view('profile', compact('patient', 'array','sel','sel2','date_appoint','img_path'))->with('scrollToSection', 'section');
+            return view('profile', compact('patient', 'array','sel','sel2','date_appoint','img_path','name'))->with('scrollToSection', 'section');
         }
 
         

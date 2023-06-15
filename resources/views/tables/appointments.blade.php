@@ -31,7 +31,12 @@
                             <td><input type="text" value="No" name="input{{ $i }}" disabled/></td>
                             @endif
                         @else
+                        @if ($i == 3)
+                        <td><input type="text" value="{{ $name }}" name="input{{ $i }}" disabled/></td>
+                        @elseif ($i == 4)
+                        @else
                         <td><input type="text" value="{{ $column }}" name="input{{ $i }}" disabled/></td>
+                        @endif
                     @endif                                        
                     @endif
                     @php
