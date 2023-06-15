@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
     use App\Models\Appointment;
 
     class AppointmentController extends Controller{
+
         public function checkDates(Request $request)
         {
             $selectedDate = $request->input('date');
@@ -19,16 +20,18 @@ namespace App\Http\Controllers;
 
             $found = 0;
 
-            foreach($appoints as $appo){                
+            foreach($appoints as $appo)
+            {
                 $date = $appo->date_appoint;
                 $carbonDate = Carbon::createFromFormat('Y-m-d', $selectedDate);
                 $carbonDate2 = Carbon::createFromFormat('Y-m-d', $date);
-                $selectedDate = $carbonDate->format('Y-m-d');
-                $date2 = $carbonDate2->format('Y-m-d');
-                $date = $date->format('Y-m-d H:i:s');
-                if($selectedDate == $date2){
+                $formattedSelectedDate = $carbonDate->format('Y-m-d');
+                $formattedDate2 = $carbonDate2->format('Y-m-d');
+                $formattedDateTime = $date->format('Y-m-d H:i:s');
+                
+                if($formattedSelectedDate == $formattedDate2){
                     $found++;
-                    array_push($dates_bd, $date);
+                    array_push($dates_bd, $formattedDateTime);
                 }
             }
             
