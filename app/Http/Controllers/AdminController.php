@@ -36,64 +36,85 @@ class AdminController extends Controller
     public function Admin_appo()
     {
         $appointment = new Appointment();
+        $emp = new Employee();
+        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $img_path = $employee->img_path;
         $sel=1;
 
         $array = $appointment->getAppoints();
-        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
+        return view('admin', compact('array', 'sel','img_path'))->with('scrollToSection', 'section');
     }
 
     public function Admin_pat()
     {
         $patient = new Patient();
+        $emp = new Employee();
+        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $img_path = $employee->img_path;
         $sel=2;
 
         $array = $patient->getPatients();
-        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
+        return view('admin', compact('array', 'sel','img_path'))->with('scrollToSection', 'section');
     }
 
     public function Admin_emp()
     {
         $employee = new Employee();
+        $emp = new Employee();
+        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $img_path = $employee->img_path;
         $sel=3;
 
         $array = $employee->getEmployees();
-        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
+        return view('admin', compact('array', 'sel','img_path'))->with('scrollToSection', 'section');
     }
 
     public function Admin_usr()
     {
         $user = new User();
+        $emp = new Employee();
+        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $img_path = $employee->img_path;
         $sel=4;
 
         $array = $user->getUsers();
-        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
+        return view('admin', compact('array', 'sel','img_path'))->with('scrollToSection', 'section');
     }
 
     public function Admin_ther()
     {
         $ther = new Therapy();
+        $emp = new Employee();
+        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $img_path = $employee->img_path;
         $sel=5;
 
         $array = $ther->getTherapies();
-        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
+        return view('admin', compact('array', 'sel','img_path'))->with('scrollToSection', 'section');
     }
 
     public function Admin_ch()
     {
         $ch = new Ch();
+        $emp = new Employee();
+        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $img_path = $employee->img_path;
         $sel=6;
 
         $array = $ch->getFullCh();
-        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
+        return view('admin', compact('array', 'sel','img_path'))->with('scrollToSection', 'section');
     }
 
     public function Admin_trau()
     {
         $trau = new Trauma();
+        $emp = new Employee();
+        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $img_path = $employee->img_path;
         $sel=7;
 
         $array = $trau->getTraumas();
-        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
+        return view('admin', compact('array', 'sel','img_path'))->with('scrollToSection', 'section');
     }
 
     public function Admin_addr()
@@ -102,7 +123,7 @@ class AdminController extends Controller
         $sel=7;
 
         $array = $addr->getAddresses();
-        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
+        return view('admin', compact('array', 'sel','img_path'))->with('scrollToSection', 'section');
     }
 
     //New User Form and Submit
