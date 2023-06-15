@@ -31,9 +31,9 @@
                                 @else
                                     @if ($i == 2)
                                         @if ($column != 0)
-                                            <td><input type="text" value="Si" name="input{{ $i }}"/></td>
+                                            <td><input type="text" value="Si" name="input{{ $i }}" disabled/></td>
                                         @else
-                                            <td><input type="text" value="No" name="input{{ $i }}"/></td>
+                                            <td><input type="text" value="No" name="input{{ $i }}" disabled/></td>
                                         @endif
                                     @else
                                     <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
