@@ -6,7 +6,7 @@
         <div class="container-fluid d-flex flex-column justify-content-center _div-azul" id="section">
             <h3 class="mx-3 align-self-start">Your Profile</h3>
         </div>
-        <div class="col-12 d-flex flex-column">
+        <div class="col-12 d-flex">
             <div class="col-2 align-self-start m-3">
                 <div class="d-flex flex-column justify-content-center _profile-imgDiv">
                     <img src="{{ asset('storage/'.$img_path) }}" alt="Profile image" class="rounded-circle">
