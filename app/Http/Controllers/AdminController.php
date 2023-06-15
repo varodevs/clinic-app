@@ -397,10 +397,10 @@ class AdminController extends Controller
     }
 
     public function updAppoAdm(Request $request){
-        $request->validate([
-            'input1' => 'required',
-            'input2' => 'required',
-            ]);
+        // $request->validate([
+        //     'input1' => 'required',
+        //     'input2' => 'required',
+        //     ]);
         $conf = 0;
         if($request->input2 == "Si"){
             $conf = 1;
