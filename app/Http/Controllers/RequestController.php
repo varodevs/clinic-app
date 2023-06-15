@@ -35,7 +35,7 @@ class RequestController extends Controller{
         //      'date' => 'required|date',
         //      'id' => 'required',
         //      'underchck' => 'required',
-        //      'textarea' => 'string|max:200',
+        //      'textarea' => 'string|min:2|max:200',
         //      'hour' => 'required'
         //      ]);
 
@@ -84,10 +84,7 @@ class RequestController extends Controller{
             }
         }else{
             return redirect('request')->with('status', 'Appoinment request failed.');
-        }
-
-
-       
+        }    
 
     }
 

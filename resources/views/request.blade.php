@@ -50,8 +50,8 @@
                                 <label class="_form-label">Underage?</label>
                                 <div class="form-check">
                                     @if($array != null)
-                                    <input class="form-check-input" type="radio" name="underchck" value="1" id="under">                                
-                                    <label class="form-check-label" for="under" @if ($array->age >= 18) checked @endif>Yes</label>    
+                                    <input class="form-check-input" type="radio" name="underchck" value="1" id="under" @if ($array->age >= 18) checked @endif>                                
+                                    <label class="form-check-label" for="under">Yes</label>    
                                     @else
                                     <input class="form-check-input" type="radio" name="underchck" value="1" id="under">
                                     <label class="form-check-label" for="under">Yes</label>
@@ -59,8 +59,8 @@
                                 </div>                               
                                 <div class="form-check">
                                     @if($array != null)
-                                    <input class="form-check-input" type="radio" name="underchck" value="2" id="under2">                                
-                                    <label class="form-check-label" for="under2" @if ($array->age < 18) checked @endif>No</label>    
+                                    <input class="form-check-input" type="radio" name="underchck" value="2" id="under2" @if ($array->age < 18) checked @endif>                                
+                                    <label class="form-check-label" for="under2">No</label>    
                                     @else
                                     <input class="form-check-input" type="radio" name="underchck" value="2" id="under2">
                                     <label class="form-check-label" for="under2">No</label>
