@@ -143,6 +143,7 @@ class UserController extends Controller
                     $img_path = $patient->img_path;
                 }else{
                     $id_patient = 0;
+                    $img_path = 'img/userimg/default.png';
                 }
 
                 $array = $ch->getChByPatient($id_patient);
