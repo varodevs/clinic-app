@@ -5,8 +5,7 @@
             <td>ID</td>
             <td>Date</td>
             <td>Confirmed</td>
-            <td>Employee</td>
-            <td>Patient</td>
+            <td>Physiotherapist</td>
             <td>Confirm</td>
             <td>Cancel</td>
         </tr>
