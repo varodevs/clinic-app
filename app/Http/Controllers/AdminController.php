@@ -410,8 +410,6 @@ class AdminController extends Controller
 
         $appoint = new Appointment();
 
-        var_dump($id_appo,$conf, $date);
-
         $sel = 1;
         $result = $appoint->updateAppoint(intVal($id_appo),$date,$conf);
 

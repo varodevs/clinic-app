@@ -21,7 +21,8 @@ namespace App\Http\Controllers;
 
             foreach($appoints as $appo){                
                 $date = $appo->date_appoint;
-                if($date.contains($selectedDate)){
+                $carbonDate = Carbon::createFromFormat('Y/m/d', $selectedDate);
+                if($date.contains($carbonDate)){
                     $found++;
                     array_push($dates_bd, $date);
                 }
