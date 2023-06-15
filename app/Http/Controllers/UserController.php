@@ -42,7 +42,7 @@ class UserController extends Controller
             }
                 
 
-            return view('profile', compact('employee', 'array','sel','sel2','date_appoint','img_path'));
+            return view('profile', compact('employee', 'array','sel','sel2','date_appoint','img_path'))->with('scrollToSection', 'section');
         }else{
             $sel2 = 2;
             $patient = $patient->getPatientByUser(session('id_user'));
@@ -64,7 +64,7 @@ class UserController extends Controller
                 $date_appoint = now();
             }
 
-            return view('profile', compact('patient', 'array','sel','sel2','date_appoint','img_path'));
+            return view('profile', compact('patient', 'array','sel','sel2','date_appoint','img_path'))->with('scrollToSection', 'section');
         }
 
         
@@ -97,7 +97,7 @@ class UserController extends Controller
                 }
 
 
-                return view('profile', compact('employee','patient','sel','sel2','date_appoint','img_path'));
+                return view('profile', compact('employee','patient','sel','sel2','date_appoint','img_path'))->with('scrollToSection', 'section');
             }else{
                 $sel2 = 2;
                 $patient = $patient->getPatientByUser(session('id_user'));
@@ -118,7 +118,7 @@ class UserController extends Controller
                     $date_appoint = "";
                 }
     
-                return view('profile', compact('employee','patient','sel','sel2','date_appoint','img_path'));
+                return view('profile', compact('employee','patient','sel','sel2','date_appoint','img_path'))->with('scrollToSection', 'section');
             }
         }
     }
@@ -143,7 +143,7 @@ class UserController extends Controller
                 }
 
                 $array = $ch->getChByPatient($id_patient);
-                return view('profile', compact('array','employee','patient','sel','sel2','img_path'));          
+                return view('profile', compact('array','employee','patient','sel','sel2','img_path'))->with('scrollToSection', 'section');          
         }else{
             return view('home');
         }
@@ -200,6 +200,6 @@ class UserController extends Controller
             $result = $pat->updatePatient($patient->cod_patient,$patient->first_name,$patient->last_name,$patient->phone,$patient->date_birth,$patient->age,$patient->sex,$img_path);
         }
     
-        return redirect()->route('profile')->with('success', 'Image uploaded successfully.');
+        return redirect()->route('profile')->with('scrollToSection', 'section');
     }
 }
