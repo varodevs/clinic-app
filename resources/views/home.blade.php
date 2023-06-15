@@ -84,15 +84,15 @@
                 <div class="d-flex justify-content-evenly w-75">
                     <div>
                         <label class="_form-label" for="fname">First Name</label>
-                        <input class="form-control" type="text" name="fname" id="fname" placeholder="First name">
+                        <input class="form-control _form-input" type="text" name="fname" id="fname" placeholder="First name">
                         <label class="_form-label" for="lname">Last Name</label>
-                        <input class="form-control" type="text" name="lname" id="lname" placeholder="Last name">
+                        <input class="form-control _form-input" type="text" name="lname" id="lname" placeholder="Last name">
                     </div>
                     <div>
                         <label class="_form-label" for="sname">Phone Number</label>
-                        <input class="form-control" type="text" name="phone" id="phone" placeholder="Phone number">
+                        <input class="form-control _form-input" type="text" name="phone" id="phone" placeholder="Phone number">
                         <label class="_form-label" for="email">Email</label>
-                        <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
+                        <input class="form-control _form-input" type="email" name="email" id="email" placeholder="name@email.com">
                         
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                         <label class="_form-label" for="textarea" >Describe your problem:</label>
                         <textarea class="form-control" name="textarea" id="textarea" placeholder="A brief description of your problem"></textarea>
                     </div>
-                    <button class="btn btn-primary" type="submit">Send</button>
+                    <button class="btn btn-primary _submit" type="submit">Send</button>
                 </form>
             </div>
             <div id="mapDiv" style="width: 300px;height: 300px;"></div>
