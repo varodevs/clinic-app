@@ -23,7 +23,7 @@
                 @endphp
                 <tr>
                     @foreach ($row as $column)
-                    @if ($i == 4 && $i == 5)
+                    @if ($i == 5 && $i == 6)
                     <td><input class="w-75 text-center" type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date{{ $i }}"/></td>
                     @else
                     <td><input class="w-75 text-center" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
