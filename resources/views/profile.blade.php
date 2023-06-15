@@ -8,7 +8,7 @@
         </div>
         <div class="col-12 d-flex flex-column">
             <div class="col-2 align-self-start m-3">
-                <div class="d-flex flex-column justify-content-center w-50">
+                <div class="d-flex flex-column justify-content-center w-50 _profile-imgDiv">
                     <img src="{{ asset('storage/'.$img_path) }}" alt="" class="rounded-circle" height="200" width="200">
                 </div>
                 <div class="input-group mb-3">

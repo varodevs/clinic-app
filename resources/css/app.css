@@ -141,6 +141,17 @@
 ._footer {
   background-color: #8E8B82; }
 
+._profile-imgDiv {
+  width: 200px;
+  /* Adjust the width to your desired size */
+  height: 200px;
+  /* Adjust the height to your desired size */
+  overflow: hidden; }
+  ._profile-imgDiv img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%; }
+
 ._img-carou {
   margin-bottom: 10vh; }
 
