@@ -16,21 +16,21 @@
                     <div class="d-flex justify-content-evenly w-75">
                         <div>
                             <label class="_form-label" for="fname">First Name</label>
-                            <input class="form-control" type="text" name="fname" id="fname">
+                            <input class="form-control _form-input" type="text" name="fname" id="fname">
                             <label class="_form-label" for="sname">Phone Number</label>
-                            <input class="form-control" type="text" name="sname" id="sname">
+                            <input class="form-control _form-input" type="text" name="sname" id="sname">
                         </div>
                         <div>
                             <label class="_form-label" for="lname">Last Name</label>
-                            <input class="form-control" type="text" name="lname" id="lname">
+                            <input class="form-control _form-input" type="text" name="lname" id="lname">
                             <label class="_form-label" for="email">Email</label>
-                            <input class="form-control" type="email" name="email" id="email" placeholder="name@email.com">
+                            <input class="form-control _form-input" type="email" name="email" id="email" placeholder="name@email.com">
                             
                         </div>
                     </div>
                         <div class="w-75">
                             <label class="_form-label" for="textarea" >Describe your problem:</label>
-                            <textarea class="form-control" name="textarea" id="textarea"></textarea>
+                            <textarea class="form-control _form-input" name="textarea" id="textarea"></textarea>
                         </div>
                         <button class="btn btn-light _submit" type="submit">Send</button>
                     </form>

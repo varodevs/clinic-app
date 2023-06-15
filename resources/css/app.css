@@ -63,7 +63,8 @@
     margin-bottom: 2vh; }
   ._form ._submit {
     color: #131212;
-    background-color: #f7f5f5; }
+    background-color: #f7f5f5;
+    margin-top: 1rem; }
 
 ._bg-img {
   height: 65vh;
