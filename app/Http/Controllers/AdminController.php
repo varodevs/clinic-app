@@ -372,7 +372,7 @@ class AdminController extends Controller
     }
 
     public function Admin_updEmp(Request $request){
-        $employee = new Patient();
+        $employee = new Employee();
         $sel=3;
         $result = $employee->updateEmployee($request->input0,$request->input1,$request->input2,$request->input3,$request->date4,$request->date5,$request->input6,$request->input7);
         return redirect()->route('admin-pat', ['sel' => $sel]);
