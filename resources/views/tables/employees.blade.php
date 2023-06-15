@@ -25,6 +25,7 @@
                     @foreach ($row as $column)
                     @if ($i == 5 && $i == 6)
                     <td><input class="w-75 text-center" type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date{{ $i }}"/></td>
+                    <input type="datetime-local" name="date{{ $i }}" id="date"/>
                     @else
                     <td><input class="w-75 text-center" type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
                     @endif
