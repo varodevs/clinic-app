@@ -70,7 +70,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Age</span>
-                    <input type="text" class="form-control" name="age" aria-label="ln" aria-describedby="basic-addon1" disabled>
+                    <input type="text" class="form-control" name="age" id="age" aria-label="ln" aria-describedby="basic-addon1" disabled>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Sex</span>
