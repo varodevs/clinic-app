@@ -25,9 +25,12 @@ class AdminController extends Controller
     public function Admin_view()
     {
         $appointment = new Appointment();
+        $emp = new Employee();
+        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $img_path = $employee->img_path;
         $sel=1;
         $array = $appointment->getAppoints();
-        return view('admin', compact('array', 'sel'))->with('scrollToSection', 'section');
+        return view('admin', compact('array', 'sel','img_path'))->with('scrollToSection', 'section');
     }
 
     public function Admin_appo()
