@@ -23,8 +23,8 @@ namespace App\Http\Controllers;
             foreach($appoints as $appo)
             {
                 $date = $appo->date_appoint;
-                $carbonDate = Carbon::createFromFormat('d-m-Y', $selectedDate);
-                $carbonDate2 = Carbon::createFromFormat('Y-m-d', $date);
+                $carbonDate = Carbon::createFromFormat('d/m/Y', $selectedDate);
+                $carbonDate2 = Carbon::createFromFormat('Y-m-d H:i:s.f', $date);
                 $formattedSelectedDate = $carbonDate->format('Y-m-d');
                 $formattedDate2 = $carbonDate2->format('Y-m-d');
                 $formattedDateTime = $date->format('Y-m-d H:i:s');
@@ -40,7 +40,7 @@ namespace App\Http\Controllers;
             if($found != 0){
                 $taken = [];
                 foreach($dates_bd as $date){
-                    $carbonDate = Carbon::createFromFormat('Y-m-d H:i:s', $date);
+                    $carbonDate = Carbon::createFromFormat('Y-m-d H:i:s.f', $date);
                     $hour = $carbonDate->format('H:i:s');
     
                     array_push($taken, $hour);
