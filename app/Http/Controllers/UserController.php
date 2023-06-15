@@ -137,7 +137,7 @@ class UserController extends Controller
 
                 if($patient != null){
                     $id_patient = $patient->cod_patient;
-                    $img_path = $employee->img_path;
+                    $img_path = $patient->img_path;
                 }else{
                     $id_patient = 0;
                 }
