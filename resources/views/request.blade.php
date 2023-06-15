@@ -20,7 +20,7 @@
                                 <label class="_form-label" for="phone">Phone Number</label>
                                 <input class="form-control" type="text" name="phone" id="phone" @if ($array != null) value="{{ $array->phone }}" @endif>
                                 <label class="_form-label" for="birth">Date of Birth</label>                                
-                                <input class="form-control" type="text" name="birth" id="birth" @if ($array != null) value="{{ \Carbon\Carbon::parse($array->date_birth)->format('Y-m-d') }}" @endif>
+                                <input class="form-control" name="birth" id="birth" @if ($array != null) type="text" value="{{ \Carbon\Carbon::parse($array->date_birth)->format('Y-m-d') }}" @else type="date" @endif>
                                 <label class="_form-label" for="spec">Speciality</label>
                                 <select class="form-control" name="spec" id="spec">
                                     <option value=2>Pediatric &#10088;PCS&#10089;</option>
