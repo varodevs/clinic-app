@@ -59,13 +59,12 @@ class AdminController extends Controller
 
     public function Admin_emp()
     {
-        $employee = new Employee();
         $emp = new Employee();
         $employee = $emp->getEmployeeByUser(session('id_user'));
         $img_path = $employee->img_path;
         $sel=3;
 
-        $array = $employee->getEmployees();
+        $array = $emp->getEmployees();
         return view('admin', compact('array', 'sel','img_path'))->with('scrollToSection', 'section');
     }
 
