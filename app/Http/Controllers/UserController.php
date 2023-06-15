@@ -177,7 +177,7 @@ class UserController extends Controller
     
         $uniqueId = uniqid();
     
-        $storagePath = 'img/userimg';
+        $storagePath = 'app/public/img/userimg';
     
         $imageName = $uniqueId . '.' . $image->getClientOriginalExtension();
     
