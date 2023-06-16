@@ -487,7 +487,7 @@ class AdminController extends Controller
 
         $trau = new Trauma();
         $sel = 7;
-        $result = $trau->deleteTherapy($id_trau);
+        $result = $trau->deleteTrauma($id_trau);
 
         return redirect()->route('admin-trau', ['sel' => $sel]);
 
