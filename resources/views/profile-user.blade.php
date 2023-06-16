@@ -87,7 +87,7 @@
             <span class="input-group-text" id="basic-addon1">Flat</span>
             <input type="text" class="form-control" placeholder="Flat" name="flat" aria-label="pn" aria-describedby="basic-addon1">
         </div>
-        <input type="hidden" name="cod_pat" @if($patient != null) value="{{ $patient->cod_patient }}" @endif>
-        <button class="btn btn-primary _submit" type="submit" @if($patient != null) disabled @endif>Add Address</button>
+        <input type="hidden" name="cod_pat" @if($patient == null) value="{{ $patient->cod_patient }}" @endif>
+        <button class="btn btn-primary _submit" type="submit" @if($patient == null) disabled @endif>Add Address</button>
     </form>
 </div>
