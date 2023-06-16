@@ -421,7 +421,13 @@ class AdminController extends Controller
     }
 
     public function Admin_delTher(Request $request){
+        $id_ther = $request->input('id_ther');
 
+        $ther = new Therapy();
+        $sel = 5;
+        $result = $ther->deleteTherapy($id_ther);
+
+        return redirect()->route('admin-appo', ['sel' => $sel]);
     }
 
     public function Admin_updTher(Request $request){
@@ -430,6 +436,14 @@ class AdminController extends Controller
 
     public function Admin_delCh(Request $request){
 
+        $id_ch = $request->input('id_ch');
+
+        $ch = new Ch();
+        $sel = 6;
+        $result = $ch->deleteTherapy($id_ch);
+
+        return redirect()->route('admin-appo', ['sel' => $sel]);
+
     }
 
     public function Admin_updCh(Request $request){
@@ -437,6 +451,14 @@ class AdminController extends Controller
     }
 
     public function Admin_delTrau(Request $request){
+
+        $id_trau = $request->input('id_trau');
+
+        $trau = new Trauma();
+        $sel = 7;
+        $result = $trau->deleteTherapy($id_trau);
+
+        return redirect()->route('admin-appo', ['sel' => $sel]);
 
     }
 
