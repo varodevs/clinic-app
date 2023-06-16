@@ -54,7 +54,19 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Intervention</span>
-                    <input type="text" class="form-control" name="interv" placeholder="Intervention" aria-label="fn" aria-describedby="basic-addon1">
+                    <select class="form-control" name="interv" id="ther">
+                        @foreach ($therapies as $ther)
+                            <option value={{ $ther->cod_therapy }}>{{ $ther->name_ther }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Intervention</span>
+                    <select class="form-control" name="interv" id="ther">
+                        @foreach ($patients as $pat)
+                            <option value={{ $pat->cod_patient }}>{{ $pat->first_name }}&nbsp;{{ $pat->last_name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <button class="btn btn-success" type="submit">Create Clinic History</button>
             </form>

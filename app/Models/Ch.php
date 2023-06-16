@@ -52,8 +52,8 @@ class Ch extends Model
 	 * 
 	 * @return $result Devuelve un bool
 	 */
-	public function createCh($lesion, $intervention, $reg_date){
-		$result = DB::table('ch')->insert(array('lesion'=> $lesion, 'intervention'=>$intervention, 'reg_date'=>$reg_date));
+	public function createCh($lesion, $intervention, $reg_date, $cod_pat){
+		$result = DB::table('ch')->insert(array('lesion'=> $lesion, 'intervention'=>$intervention, 'reg_date'=>$reg_date, 'patient_cod_patient'=>$cod_pat));
 		return $result;
 	}
 

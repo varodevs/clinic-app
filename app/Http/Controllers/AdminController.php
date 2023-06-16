@@ -16,6 +16,7 @@ use App\Models\Trauma;
 use App\Models\Address;
 use App\Mail\Email;
 use App\Mail\EmailPassw;
+use App\Models\ChTherapy;
 use Carbon\Carbon;
 
 class AdminController extends Controller
@@ -269,7 +270,11 @@ class AdminController extends Controller
     //New CH Form and Submit
 
     public function Admin_newChView(){
-        return view('newCh')->with('scrollToSection', 'section');
+        $ther = new Therapy();
+        $pat = new Patient();
+        $therapies = $ther->getTherapies();
+        $patients = $pat->getPatients();
+        return view('newCh')->with(['scrollToSection' => 'section','therapies' => $therapies,'patients' => $patients]);
     }
 
     public function Admin_newCh(Request $request){
@@ -278,10 +283,14 @@ class AdminController extends Controller
             'lesion' => 'required',
             'interv' => 'required',            
             ]);
-        
+        $pat = new Patient();
         $ch = new Ch();
+        $chTher = new ChTherapy();
+        
+        $patient = $pat->getPatientByUser(session('id_user'));
+        $result = $ch->createCh($request->lesion,$request->interv,now(),intval($patient->cod_patient));
 
-        $result = $ch->createCh($request->lesion,$request->interv,now());
+
 
         return redirect()->route('admin-ch');
     }
