@@ -280,7 +280,7 @@ class UserController extends Controller
                  $addr->country = $request->country;
                  $addr->number = $request->number;
                  $addr->flat = $request->flat;
-                 $addr->patient_cod_patient = $request->cod_pat;
+                 $addr->patient_cod_patient = intval($request->cod_pat);
              
                  $addr->save();
             
