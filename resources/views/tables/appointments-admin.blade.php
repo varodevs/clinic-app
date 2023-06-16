@@ -72,4 +72,4 @@
     </form>
 </div>
 
-<span>{{ $date }}</span>
+<span>{{ session('date') }}</span>
