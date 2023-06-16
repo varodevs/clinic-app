@@ -50,3 +50,44 @@
         <button type="submit">Upload</button>
     </form>
 </div>
+<div class="col-9 align-self-center">
+    <h4>Address</h4>
+    <form action="" method="post">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Street</span>
+            <input type="text" class="form-control" placeholder="Street" name="street" aria-label="pn" aria-describedby="basic-addon1">
+        </div>
+    </form>
+    <form action="" method="post">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">P.C</span>
+            <input type="text" class="form-control" placeholder="pc" name="pc" aria-label="pn" aria-describedby="basic-addon1">
+        </div>
+    </form>
+    <form action="" method="post">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">City</span>
+            <input type="text" class="form-control" placeholder="City" name="city" aria-label="pn" aria-describedby="basic-addon1">
+        </div>
+    </form>
+    <form action="" method="post">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Country</span>
+            <input type="text" class="form-control" placeholder="Country" name="country" aria-label="pn" aria-describedby="basic-addon1">
+        </div>
+    </form>
+    <form action="" method="post">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Number</span>
+            <input type="text" class="form-control" placeholder="Number" name="number" aria-label="pn" aria-describedby="basic-addon1">
+        </div>
+    </form>
+    <form action="" method="post">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Flat</span>
+            <input type="text" class="form-control" placeholder="Flat" name="flat" aria-label="pn" aria-describedby="basic-addon1">
+        </div>
+    </form>
+    <input type="hidden" name="cod_pat" @if($patient != null) value="{{ $patient->cod_patient }}" @endif>
+    <button type="submit">Add Address</button>
+</div>
