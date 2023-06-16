@@ -58,7 +58,7 @@ class Address extends Model
 	 * @return $result Devuelve un bool
 	 */
 	public function createAddress($street, $pc, $city, $country, $number, $flat, $cod_patient){
-		$result = DB::table('address')->insert(array('street'=> $street, 'pc'=>$pc, 'city'=>$city, 'country'=>$country, 'number'=>$number, '$flat'=>$flat, 'patient_cod_patient'=>$cod_patient));
+		$result = DB::table('address')->insert(array('street'=> $street, 'pc'=>$pc, 'city'=>$city, 'country'=>$country, 'number'=>$number, 'flat'=>$flat, 'patient_cod_patient'=>$cod_patient));
 		return $result;
 	}
 
