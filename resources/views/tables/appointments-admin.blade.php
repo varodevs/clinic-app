@@ -71,3 +71,5 @@
         <button class="btn btn-primary">New Appointment</button>
     </form>
 </div>
+
+<span>{{ $date }}</span>

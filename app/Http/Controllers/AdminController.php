@@ -410,12 +410,12 @@ class AdminController extends Controller
         $id_appo = $request->input('id_appo');
         $date = \Carbon\Carbon::parse($request->date_ap)->format('Y-m-d H:i:s');
 
-        $appoint = new Appointment();
+        $appoint = new Appointment();        
 
         $sel = 1;
         $result = $appoint->updateAppoint(intVal($id_appo),$date,$conf);
 
-        return redirect()->route('admin-appo', ['sel' => $sel]);
+        return redirect()->route('admin-appo', ['sel' => $sel, 'date' => $date]);
     }
 
     public function Admin_delTher(Request $request){
