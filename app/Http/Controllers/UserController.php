@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\Appointment;
@@ -82,6 +83,7 @@ class UserController extends Controller
         $patient = new Patient();
         $employee = new Employee();
         $appoint = new Appointment();
+        $addr = new Address();
 
         if(session('id_user') != null && session('id_user') != ""){
             $user = $user->getUserdById(session('id_user'));
@@ -113,7 +115,8 @@ class UserController extends Controller
                     $id_patient = 0;
                     $img_path = 'img/userimg/default.png';
                 }
-    
+                
+                $address = $addr->getAddressByCod($id_patient);
                 $array = $appoint->getAppointsByPatient($id_patient);
                 $last = $appoint->getLastAppointPat($id_patient);
                 
@@ -124,7 +127,7 @@ class UserController extends Controller
                     $date_appoint = "";
                 }
     
-                return view('profile', compact('employee','patient','sel','sel2','date_appoint','img_path'))->with('scrollToSection', 'section');
+                return view('profile', compact('employee','patient','sel','sel2','date_appoint','img_path','address'))->with('scrollToSection', 'section');
             }
         }
     }
@@ -223,5 +226,26 @@ class UserController extends Controller
         }
     
         return redirect()->route('profile')->with('scrollToSection', 'section');
+    }
+
+    public function addAddr(Request $request){
+        $request->validate([
+                'street' => 'max:50',
+                'pc' => 'max:10',
+                'city' => 'max:45',
+                'country' => 'max:25',
+                'number' => 'max:3',
+                'flat' => 'max:3',
+                'cod_pat' => 'required',
+
+                 ]);
+
+            $addr = new Address();
+
+            $result = $addr->createAddress($request->street,$request->pc,$request->city,$request->country,$request->number,$request->flat,$request->cod_pat);
+
+            $address = $addr->getAddressByCod($request->cod_pat);
+
+            return redirect()->route('profile')->with(['scrollToSection' => 'section','address'=>$address]);
     }
 }

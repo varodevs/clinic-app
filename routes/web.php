@@ -210,6 +210,8 @@ Route::post('user/modified', [UserController::class, 'modUser'])->name('upd-pat'
 
 Route::post('user/img-updated', [UserController::class, 'uplImg'])->name('mod-img');
 
+Route::post('user/new-address', [UserController::class, 'addAddr'])->name('add-addr');
+
 
 
 //db test
