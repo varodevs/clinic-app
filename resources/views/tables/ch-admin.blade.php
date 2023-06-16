@@ -21,12 +21,21 @@
                 @endphp
                 @foreach ($row as $column)
                     @if ($i==0)
+                    @php
+                        $id=$column;
+                    @endphp
                     <td><input type="text" value="{{ $column }}" name="id" disabled/></td>
                     @elseif ($i==2)
                     <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_reg" disabled/></td>
                     @else
                     <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
                     @endif
+                    @php
+                    if ($i == 0) {
+                        $id=$column;
+                    }
+                    $i++;
+                    @endphp
                 @endforeach
                 <td>
                     <button type="submit" class="btn btn-primary">Update</button>   
@@ -40,12 +49,6 @@
                 </form>
             </td>
         </tr>
-        @php
-        if ($i == 0) {
-            $id=$column;
-        }
-        $i++;
-        @endphp
     @endforeach
         @else
         <tr><td colspan="5"> -- No Data -- </td></tr>
