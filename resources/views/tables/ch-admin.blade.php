@@ -26,7 +26,7 @@
                     @endphp
                     <td><input type="text" value="{{ $column }}" disabled/></td>
                     @elseif ($i==3)
-                    <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_reg" disabled/></td>
+                    <td><input class="w-75 text-center" type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}"/></td> 
                     @else
                     <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
                     @endif
