@@ -481,7 +481,7 @@ class AdminController extends Controller
 
         $therapy = $ther->getTherapy(intval($request->input2));
 
-        $result = $ch->updateCh(intval($request->id_ch),$request->input1,$therapy->name_ther,now(),intval($request->input4));
+        $result = $ch->updateCh(intval($request->id_ch),$request->input1,$request->input2,now(),intval($request->input4));
 
         return redirect()->route('admin-ther');
 
