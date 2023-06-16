@@ -52,7 +52,7 @@
 </div>
 <div class="col-9 align-self-center">
     <h4>Address</h4>
-    <form action="{{ route('add-addr') }}" method="POST">
+    <form @if($address != null) action="{{ route('upd-addr') }}" @else action="{{ route('add-addr') }}" @endif  method="POST">
         @csrf
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Street</span>
@@ -79,6 +79,7 @@
             <input type="text" class="form-control" placeholder="Flat" name="flat" aria-label="pn" aria-describedby="basic-addon1" @if($address != null) value="{{ $address->flat }}" @endif>
         </div>
         <input type="hidden" name="cod_pat" @if($patient != null) value="{{ $patient->cod_patient }}" @endif>
-        <button class="btn btn-primary _submit" type="submit" @if($patient == null) disabled @endif>Add Address</button>
+        <input type="hidden" name="cod_addr" @if($address != null) value="{{ $address->cod_address }}" @endif>
+        <button class="btn btn-primary _submit" type="submit" @if($patient == null) disabled @endif>@if($address != null) Update Address @else Add Address @endif</button>
     </form>
 </div>

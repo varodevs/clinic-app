@@ -249,6 +249,40 @@ class UserController extends Controller
                 'flat' => $request->flat,
                 'patient_cod_patient' => $request->cod_pat,
             ]);
+
+            //$result = $addr->createAddress($request->street,$request->pc,$request->city,$request->country,$request->number,$request->flat,intval($request->cod_pat));
+
+            $address = $addr->getAddressByCod($request->cod_pat);
+
+            return redirect()->route('profile')->with(['scrollToSection' => 'section','address'=> $address]);
+    }
+
+    public function updAddr(Request $request){
+        $request->validate([
+                'street' => 'max:50',
+                'pc' => 'max:10',
+                'city' => 'max:45',
+                'country' => 'max:25',
+                'number' => 'max:3',
+                'flat' => 'max:3',
+                 ]);
+
+                 $addr = Address::find(intval($request->cod_address));
+
+                 if (!$addr) {
+                     // Handle the case when the record is not found
+                     return redirect()->back()->withErrors(['message' => 'Address not found.']);
+                 }
+             
+                 $addr->street = $request->street;
+                 $addr->pc = $request->pc;
+                 $addr->city = $request->city;
+                 $addr->country = $request->country;
+                 $addr->number = $request->number;
+                 $addr->flat = $request->flat;
+                 $addr->patient_cod_patient = $request->cod_pat;
+             
+                 $addr->save();
             
             //$result = $addr->createAddress($request->street,$request->pc,$request->city,$request->country,$request->number,$request->flat,intval($request->cod_pat));
 

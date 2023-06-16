@@ -212,6 +212,8 @@ Route::post('user/img-updated', [UserController::class, 'uplImg'])->name('mod-im
 
 Route::post('user/new-address', [UserController::class, 'addAddr'])->name('add-addr');
 
+Route::post('user/update-address', [UserController::class, 'updAddr'])->name('upd-addr');
+
 
 
 //db test
