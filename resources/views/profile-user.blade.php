@@ -55,37 +55,27 @@
     <form action="{{ route('add-addr') }}" method="POST">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Street</span>
-            <input type="text" class="form-control" placeholder="Street" name="street" aria-label="pn" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Street" name="street" aria-label="pn" aria-describedby="basic-addon1" @if($address != null) value="{{ $address->street }}" @endif>
         </div>
-    </form>
-    <form action="" method="post">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">P.C</span>
-            <input type="text" class="form-control" placeholder="pc" name="pc" aria-label="pn" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="pc" name="pc" aria-label="pn" aria-describedby="basic-addon1" @if($address != null) value="{{ $address->pc }}" @endif>
         </div>
-    </form>
-    <form action="" method="post">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">City</span>
-            <input type="text" class="form-control" placeholder="City" name="city" aria-label="pn" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="City" name="city" aria-label="pn" aria-describedby="basic-addon1" @if($address != null) value="{{ $address->city }}" @endif>
         </div>
-    </form>
-    <form action="" method="post">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Country</span>
-            <input type="text" class="form-control" placeholder="Country" name="country" aria-label="pn" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Country" name="country" aria-label="pn" aria-describedby="basic-addon1" @if($address != null) value="{{ $address->country }}" @endif>
         </div>
-    </form>
-    <form action="" method="post">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Number</span>
-            <input type="text" class="form-control" placeholder="Number" name="number" aria-label="pn" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Number" name="number" aria-label="pn" aria-describedby="basic-addon1" @if($address != null) value="{{ $address->number }}" @endif>
         </div>
-    </form>
-    <form action="" method="post">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Flat</span>
-            <input type="text" class="form-control" placeholder="Flat" name="flat" aria-label="pn" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Flat" name="flat" aria-label="pn" aria-describedby="basic-addon1" @if($address != null) value="{{ $address->flat }}" @endif>
         </div>
         <input type="hidden" name="cod_pat" @if($patient == null) value="{{ $patient->cod_patient }}" @endif>
         <button class="btn btn-primary _submit" type="submit" @if($patient == null) disabled @endif>Add Address</button>
