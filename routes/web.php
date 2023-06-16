@@ -162,7 +162,7 @@ Route::post(('admin/ther-upd'), [AdminController::class, 'Admin_updTher'])->name
 
 Route::post(('admin/ch-upd'), [AdminController::class, 'Admin_updCh'])->name('admin-upd-ch');
 
-Route::post(('admin/ch-upd'), [AdminController::class, 'Admin_updTrau'])->name('admin-upd-trau');
+Route::post(('admin/trau-upd'), [AdminController::class, 'Admin_updTrau'])->name('admin-upd-trau');
 
 Route::post('admin/addr-upd',[AdminController::class, 'Admin_updAddr'])->name('admin-upd-addr');
 
