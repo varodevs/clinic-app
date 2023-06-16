@@ -265,28 +265,23 @@ class UserController extends Controller
                 'country' => 'max:25',
                 'number' => 'max:3',
                 'flat' => 'max:3',
-                 ]);                 
+                 ]);
 
-                 $addr = Address::find(intval($request->cod_address));
+                 $addr = new Address();
 
-                 if (!$addr) {
-                     // Handle the case when the record is not found
-                     return redirect()->back()->withErrors(['message' => 'Address not found.']);
-                 }
-             
                  $addr->street = $request->street;
                  $addr->pc = $request->pc;
                  $addr->city = $request->city;
                  $addr->country = $request->country;
                  $addr->number = $request->number;
                  $addr->flat = $request->flat;
-             
-                 $addr->save();
+                 $addr->patient_cod_patient = $request->cod_pat;
+
+                 $result = $addr->updateAddress(intval($request->cod_address),$request->street,$request->pc,$request->city,$request->country,$request->number,$request->flat);
             
             //$result = $addr->createAddress($request->street,$request->pc,$request->city,$request->country,$request->number,$request->flat,intval($request->cod_pat));
-            $addr = new Address();
-                
-            $address = $addr->getAddressByCod($request->cod_pat);
+
+            $address = $addr->getAddressByCod(intval($request->cod_address));
 
             return redirect()->route('profile')->with(['scrollToSection' => 'section','address'=> $address]);
     }
