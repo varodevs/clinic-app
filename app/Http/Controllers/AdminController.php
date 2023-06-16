@@ -479,9 +479,8 @@ class AdminController extends Controller
         $cT = new ChTherapy();
 
         $therapy = $ther->getTherapy(intval($request->input2));
-        $patient = $pat->getPatient(intval($request->cod_pat));
 
-        $result = $ch->updateCh(intval($request->cod_ch),$request->input1,$therapy->name_ther,now(),intval($request->input4));
+        $result = $ch->updateCh(intval($request->id_ch),$request->input1,$therapy->name_ther,now(),intval($request->input4));
 
         return redirect()->route('admin-ther');
 

@@ -24,7 +24,7 @@
                     @php
                         $id=$column;
                     @endphp
-                    <td><input type="text" value="{{ $column }}" name="cod_ch" disabled/></td>
+                    <td><input type="text" value="{{ $column }}" disabled/></td>
                     @elseif ($i==3)
                     <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_reg" disabled/></td>
                     @else
@@ -38,6 +38,7 @@
                     @endphp
                 @endforeach
                 <td>
+                    <input type="hidden" name="id_ch" value={{ $id }} />
                     <button type="submit" class="btn btn-primary">Update</button>   
                 </td>
         </form>
