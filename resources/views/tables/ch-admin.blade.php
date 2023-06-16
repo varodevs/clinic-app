@@ -25,7 +25,7 @@
                         $id=$column;
                     @endphp
                     <td><input type="text" value="{{ $column }}" name="id" disabled/></td>
-                    @elseif ($i==2)
+                    @elseif ($i==3)
                     <td><input type="date" value="{{ \Carbon\Carbon::parse($column)->format('Y-m-d H:i:s') }}" name="date_reg" disabled/></td>
                     @else
                     <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
