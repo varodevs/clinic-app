@@ -258,21 +258,24 @@ class UserController extends Controller
     }
 
     public function updAddr(Request $request){
-        // $request->validate([
-        //         'street' => 'max:50',
-        //         'pc' => 'max:10',
-        //         'city' => 'max:45',
-        //         'country' => 'max:25',
-        //         'number' => 'max:3',
-        //         'flat' => 'max:3',
-        //          ]);
+        $request->validate([
+                'street' => 'max:50',
+                'pc' => 'max:10',
+                'city' => 'max:45',
+                'country' => 'max:25',
+                'number' => 'max:3',
+                'flat' => 'max:3',
+                 ]);
 
                  $addr = new Address();
 
                  $result = $addr->updateAddress(intval($request->cod_address),$request->street,$request->pc,$request->city,$request->country,$request->number,$request->flat);        
 
             $address = $addr->getAddressByCod(intval($request->cod_address));
-
-            return redirect()->route('profile')->with(['scrollToSection' => 'section','address'=> $address]);
+            if($result){
+                return redirect()->route('profile')->with(['scrollToSection' => 'section','address'=> $address,'status' => 'Address updated successfully']);
+            }else{
+                return redirect()->route('profile')->with(['scrollToSection' => 'section','address'=> $address,'status' => 'Address updated failed']);
+            }            
     }
 }

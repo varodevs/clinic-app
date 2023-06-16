@@ -82,4 +82,5 @@
         <input type="hidden" name="cod_addr" @if($address != null) value="{{ $address->cod_address }}" @endif>
         <button class="btn btn-primary _submit" type="submit" @if($patient == null) disabled @endif>@if($address != null) Update Address @else Add Address @endif</button>
     </form>
+    <span>{{ $status }}</span>
 </div>
