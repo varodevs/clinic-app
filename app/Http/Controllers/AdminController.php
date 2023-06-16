@@ -460,7 +460,7 @@ class AdminController extends Controller
 
         $ch = new Ch();
         $sel = 6;
-        $result = $ch->deleteTherapy($id_ch);
+        $result = $ch->deleteCh($id_ch);
 
         return redirect()->route('admin-ch', ['sel' => $sel]);
 
