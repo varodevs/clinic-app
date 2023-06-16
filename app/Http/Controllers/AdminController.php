@@ -427,7 +427,7 @@ class AdminController extends Controller
         $sel = 5;
         $result = $ther->deleteTherapy($id_ther);
 
-        return redirect()->route('admin-appo', ['sel' => $sel]);
+        return redirect()->route('admin-ther', ['sel' => $sel]);
     }
 
     public function Admin_updTher(Request $request){
@@ -442,7 +442,7 @@ class AdminController extends Controller
         $sel = 6;
         $result = $ch->deleteTherapy($id_ch);
 
-        return redirect()->route('admin-appo', ['sel' => $sel]);
+        return redirect()->route('admin-ch', ['sel' => $sel]);
 
     }
 
@@ -458,7 +458,7 @@ class AdminController extends Controller
         $sel = 7;
         $result = $trau->deleteTherapy($id_trau);
 
-        return redirect()->route('admin-appo', ['sel' => $sel]);
+        return redirect()->route('admin-trau', ['sel' => $sel]);
 
     }
 
