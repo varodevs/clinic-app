@@ -47,7 +47,7 @@
             <label for="image">Upload Image:</label>
             <input type="file" name="image" id="image">
         </div>
-        <button class="btn btn-primary _submit" type="submit" @if($patient != null) disabled @endif>Upload</button>
+        <button class="btn btn-primary _submit" type="submit" @if($patient == null) disabled @endif>Upload</button>
     </form>
 </div>
 <div class="col-9 align-self-center">
