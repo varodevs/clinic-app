@@ -236,7 +236,6 @@ class UserController extends Controller
                 'country' => 'max:25',
                 'number' => 'max:3',
                 'flat' => 'max:3',
-                'cod_pat' => 'required',
                  ]);
 
             $addr = new Address();
