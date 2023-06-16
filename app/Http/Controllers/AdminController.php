@@ -470,8 +470,9 @@ class AdminController extends Controller
 
         $request->validate([
             'lesion' => 'required',
-            'cod_ther' => 'required',
-            'cod_pat' => 'required',            
+            'input1' => 'required',
+            'input2' => 'required',
+            'input3' => 'required',            
             ]);
         $pat = new Patient();
         $ch = new Ch();
