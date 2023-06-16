@@ -468,6 +468,23 @@ class AdminController extends Controller
 
     public function Admin_updCh(Request $request){
 
+        $request->validate([
+            'lesion' => 'required',
+            'cod_ther' => 'required',
+            'cod_pat' => 'required',            
+            ]);
+        $pat = new Patient();
+        $ch = new Ch();
+        $ther = new Therapy();
+        $cT = new ChTherapy();
+
+        $therapy = $ther->getTherapy(intval($request->cod_ther));       
+        $patient = $pat->getPatient(intval($request->cod_pat));
+
+        $result = $ch->updateCh(intval($request->cod_ch),$request->lesion,$therapy->name_ther,now(),intval($request->cod_pat));
+
+        return redirect()->route('admin-ther');
+
     }
 
     public function Admin_delTrau(Request $request){
@@ -484,5 +501,11 @@ class AdminController extends Controller
 
     public function Admin_updTrau(Request $request){
 
+        $ther = new Therapy();
+        $sel = 7;
+
+        $result = $ther->updateTherapy(intval($request->id_ther),$request->input1,$request->input2,$request->input3);
+
+        return redirect()->route('admin-ther', ['sel' => $sel]);
     }
 }
