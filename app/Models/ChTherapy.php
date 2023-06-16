@@ -32,6 +32,16 @@ class ChTherapy extends Model
 	];
 
 	/**
+	 * function createChTher()
+	 * 
+	 * @param $cod_ch Codigo historial
+	 */	
+	public function createChTher($cod_ch,$cod_ther){
+		$result = DB::table('ch_therapy')->insert(array('ch_cod_ch' => $cod_ch, 'therapy_cod_therapy' => $cod_ther));
+		return $result;
+	}
+
+	/**
 	 * function getChTherapies()
 	 * 
 	 * @param $cod_ch Codigo historial

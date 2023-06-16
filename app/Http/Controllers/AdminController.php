@@ -281,17 +281,21 @@ class AdminController extends Controller
 
         $request->validate([
             'lesion' => 'required',
-            'interv' => 'required',            
+            'cod_ther' => 'required',
+            'cod_pat' => 'required',            
             ]);
         $pat = new Patient();
         $ch = new Ch();
-        $chTher = new ChTherapy();
-        
-        $patient = $pat->getPatientByUser(session('id_user'));
-        $result = $ch->createCh($request->lesion,$request->interv,now(),intval($patient->cod_patient));
+        $ther = new Therapy();
+        $cT = new ChTherapy();
 
+        $therapy = $ther->getTherapy(intval($request->cod_ther));       
+        $patient = $pat->getPatient(intval($request->cod_pat));
+        $result = $ch->createCh($request->lesion,$therapy->name_ther,now(),intval($request->cod_ther));
 
+        $ch = $ch->getChByPatientLast(intval($request->cod_pat));
 
+        $chTher=$cT->createChTher(intval($ch->cod_ch),intval($request->cod_ther));
         return redirect()->route('admin-ch');
     }
 

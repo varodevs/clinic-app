@@ -46,7 +46,7 @@
 
         <div class="col-3 align-self-center m-3">
             <h3 class="_h3">New Clinic History</h3>
-            <form action="{{ route('admin-new-ther') }}" method="POST">
+            <form action="{{ route('admin-new-ch') }}" method="POST">
                 @csrf
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Lesion</span>
@@ -54,15 +54,15 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Intervention</span>
-                    <select class="form-control" name="interv" id="ther">
+                    <select class="form-control" name="cod_ther" id="ther">
                         @foreach ($therapies as $ther)
                             <option value={{ $ther->cod_therapy }}>{{ $ther->name_ther }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Intervention</span>
-                    <select class="form-control" name="interv" id="ther">
+                    <span class="input-group-text" id="basic-addon1">Patient</span>
+                    <select class="form-control" name="cod_pat" id="ther">
                         @foreach ($patients as $pat)
                             <option value={{ $pat->cod_patient }}>{{ $pat->first_name }}&nbsp;{{ $pat->last_name }}</option>
                         @endforeach

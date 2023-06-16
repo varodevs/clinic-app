@@ -81,6 +81,18 @@ class Ch extends Model
 		return $ch;
 	}
 
+		/**
+	 * function getChByPatientLast()
+	 * 
+	 * @param $cod_patient Codigo paciente
+	 * 
+	 * @return $return devuelve un array $ch
+	 */
+	public function getChByPatientLast($cod_patient){
+		$ch = DB::table('ch')->where('patient_cod_patient', [$cod_patient])->first();
+		return $ch;
+	}
+
 
 	/**
 	 * function getCh()
