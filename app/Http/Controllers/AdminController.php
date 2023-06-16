@@ -483,7 +483,7 @@ class AdminController extends Controller
 
         $result = $ch->updateCh(intval($request->id_ch),$request->input1,$request->input2,now(),intval($request->input4));
 
-        return redirect()->route('admin-ther');
+        return redirect()->route('admin-ch');
 
     }
 
