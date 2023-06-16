@@ -246,6 +246,6 @@ class UserController extends Controller
 
             $address = $addr->getAddressByCod($request->cod_pat);
 
-            return redirect()->route('profile')->with(['scrollToSection' => 'section','address'=>$address]);
+            return redirect()->route('profile')->with(['scrollToSection' => 'section','address'=> $address]);
     }
 }
