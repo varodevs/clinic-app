@@ -89,7 +89,7 @@ class Ch extends Model
 	 * @return $return devuelve un array $ch
 	 */
 	public function getChByPatientLast($cod_patient){
-		$ch = DB::table('ch')->where('patient_cod_patient', [$cod_patient])->latest()->first();
+		$ch = DB::table('ch')->where('patient_cod_patient', [$cod_patient])->orderByDesc('cod_ch')->first();
 		return $ch;
 	}
 
