@@ -447,7 +447,6 @@ class AdminController extends Controller
 
         $ther = new Therapy();
         $sel = 5;
-        $therapy = $ther->getTherapy(intval($request->id_ther));
 
         $result = $ther->updateTherapy(intval($request->id_ther),$request->input1,$request->input2,$request->input3);
 
