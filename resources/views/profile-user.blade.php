@@ -53,6 +53,7 @@
 <div class="col-9 align-self-center">
     <h4>Address</h4>
     <form action="{{ route('add-addr') }}" method="POST">
+        @csrf
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Street</span>
             <input type="text" class="form-control" placeholder="Street" name="street" aria-label="pn" aria-describedby="basic-addon1" @if($address != null) value="{{ $address->street }}" @endif>
