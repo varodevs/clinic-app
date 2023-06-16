@@ -445,6 +445,14 @@ class AdminController extends Controller
 
     public function Admin_updTher(Request $request){
 
+        $ther = new Therapy();
+        $sel = 5;
+        $therapy = $ther->getTherapy(intval($request->id_ther));
+
+        $result = $ther->updateTherapy(intval($request->id_ther),$request->input1,$request->input2,$request->input3);
+
+        return redirect()->route('admin-ther', ['sel' => $sel]);
+
     }
 
     public function Admin_delCh(Request $request){
