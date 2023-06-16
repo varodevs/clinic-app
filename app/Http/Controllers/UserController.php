@@ -240,7 +240,7 @@ class UserController extends Controller
 
             $addr = new Address();
 
-            $result = $addr->createAddress($request->street,$request->pc,$request->city,$request->country,$request->number,$request->flat,$request->cod_pat);
+            $result = $addr->createAddress($request->street,$request->pc,$request->city,$request->country,$request->number,$request->flat,intval($request->cod_pat));
 
             $address = $addr->getAddressByCod($request->cod_pat);
 
