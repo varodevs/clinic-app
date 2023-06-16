@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\DB;
 class Address extends Model
 {
 	protected $table = 'address';
+	protected $primaryKey = 'cod_address';
 	public $timestamps = false;
 
 	protected $casts = [
