@@ -468,12 +468,6 @@ class AdminController extends Controller
 
     public function Admin_updCh(Request $request){
 
-        $request->validate([
-            'lesion' => 'required',
-            'input1' => 'required',
-            'input2' => 'required',
-            'input3' => 'required',            
-            ]);
         $pat = new Patient();
         $ch = new Ch();
         $ther = new Therapy();
