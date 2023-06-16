@@ -40,7 +40,8 @@ class Address extends Model
 		'city',
 		'country',
 		'number',
-		'flat'
+		'flat',
+		'patient_cod_patient'
 	];
 
 //CRUD Address
