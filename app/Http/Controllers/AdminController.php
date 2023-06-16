@@ -16,6 +16,7 @@ use App\Models\Trauma;
 use App\Models\Address;
 use App\Mail\Email;
 use App\Mail\EmailPassw;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -408,7 +409,8 @@ class AdminController extends Controller
             $conf = 1;
         }
         $id_appo = $request->input('id_appo');
-        $date = \Carbon\Carbon::parse($request->date_ap)->format('Y-m-d H:i:s');
+        $carbonDate = Carbon::createFromFormat('d/m/Y H:i', $request->date_ap);
+        $date = $carbonDate->format('Y-m-d H:i:s', $carbonDate);
 
         $appoint = new Appointment();        
 
