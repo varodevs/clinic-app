@@ -291,7 +291,7 @@ class AdminController extends Controller
 
         $therapy = $ther->getTherapy(intval($request->cod_ther));       
         $patient = $pat->getPatient(intval($request->cod_pat));
-        $result = $ch->createCh($request->lesion,$therapy->name_ther,now(),intval($request->cod_ther));
+        $result = $ch->createCh($request->lesion,$therapy->name_ther,now(),intval($request->cod_pat));
 
         $ch = $ch->getChByPatientLast(intval($request->cod_pat));
 
