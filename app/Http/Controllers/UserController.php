@@ -267,6 +267,8 @@ class UserController extends Controller
                 'flat' => 'max:3',
                  ]);
 
+                 $addr = new Address();
+
                  $addr = Address::find(intval($request->cod_address));
 
                  if (!$addr) {
@@ -280,7 +282,6 @@ class UserController extends Controller
                  $addr->country = $request->country;
                  $addr->number = $request->number;
                  $addr->flat = $request->flat;
-                 $addr->patient_cod_patient = intval($request->cod_pat);
              
                  $addr->save();
             
