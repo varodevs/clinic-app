@@ -102,9 +102,7 @@ class UserController extends Controller
                     $date_appoint = now();
                 }
 
-                $message = $status;
-
-                return view('profile', compact('employee','patient','sel','sel2','date_appoint','img_path','message'))->with('scrollToSection', 'section');
+                return view('profile', compact('employee','patient','sel','sel2','date_appoint','img_path'))->with('scrollToSection', 'section');
             }else{
                 $sel2 = 2;
                 $patient = $patient->getPatientByUser(session('id_user'));
