@@ -115,7 +115,7 @@ class UserController extends Controller
                     $img_path = 'img/userimg/default.png';
                 }
                 
-                $address = $addr->getAddressByCod($id_patient);
+                $address = $addr->getAddressByCodPat($id_patient);
                 $array = $appoint->getAppointsByPatient($id_patient);
                 $last = $appoint->getLastAppointPat($id_patient);
                 
@@ -251,7 +251,7 @@ class UserController extends Controller
 
             //$result = $addr->createAddress($request->street,$request->pc,$request->city,$request->country,$request->number,$request->flat,intval($request->cod_pat));
 
-            $address = $addr->getAddressByCod($request->cod_pat);
+            $address = $addr->getAddressByCod($request->cod_address);
 
             return redirect()->route('profile')->with(['scrollToSection' => 'section','address'=> $address]);
     }
@@ -268,9 +268,15 @@ class UserController extends Controller
 
                  $addr = new Address();
 
-                 $result = $addr->updateAddress(intval($request->cod_address),$request->street,$request->pc,$request->city,$request->country,$request->number,$request->flat);        
+                 $pat = new Patient();
 
-            $address = $addr->getAddressByCod(intval($request->cod_address));
+                 $patient = $pat->getPatientByUser(session('id_user'));
+
+                 $address = $addr->getAddressByCod(intval($patient->cod_patient));
+
+            $result = $addr->updateAddress($address->cod_address,$request->street,$request->pc,$request->city,$request->country,$request->number,$request->flat);        
+
+            $address = $addr->getAddressByCod(intval($patient->cod_patient));
             if($result){
                 return redirect()->route('profile')->with(['scrollToSection' => 'section','address'=> $address,'status' => 'Address updated successfully']);
             }else{

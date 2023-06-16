@@ -79,12 +79,23 @@ class Address extends Model
 	/**
 	 * function getAddressByCod()
 	 * 
-	 * @param $id_user id de usuario
+	 * @param $cod_address id de usuario
 	 * 
 	 * @return $return un objeto queryBuilder ($user)
 	 */
 	public function getAddressByCod($cod_address){
 		$address = DB::table('address')->where('cod_address', [$cod_address])->first();
+		return $address;
+	}
+	/**
+	 * function getAddressByCodPat()
+	 * 
+	 * @param $patient_cod_patient id de usuario
+	 * 
+	 * @return $return un objeto queryBuilder ($user)
+	 */
+	public function getAddressByCodPat($cod_pat){
+		$address = DB::table('address')->where('patient_cod_patient', [$cod_pat])->first();
 		return $address;
 	}
 
