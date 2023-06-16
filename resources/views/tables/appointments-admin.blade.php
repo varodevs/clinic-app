@@ -6,8 +6,8 @@
             <td>Confirmed</td>
             <td>Employee</td>
             <td>Patient</td>
-            <td>Update</td>
-            <td>Delete</td>
+            <td>-</td>
+            <td>-</td>
         </tr>
     </thead>
     <tbody>
