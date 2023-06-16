@@ -10,7 +10,7 @@
     <tbody>
         @if ($array != null)
         @foreach ($array as $row)
-        <form action="{{ route('admin-del-trau') }}" method="POST">
+        <form action="{{ route('admin-upd-trau') }}" method="POST">
             @csrf
             <tr>
                 @php
@@ -18,7 +18,7 @@
                 @endphp
                 @foreach ($row as $column)
                 @if ($i == 0)
-                <td><input type="text" value="{{ $column }}" name="id" disabled/></td>
+                <td><input type="text" value="{{ $column }}" disabled/></td>
                 @else
                 <td><input type="text" value="{{ $column }}" name="input{{ $i }}"/></td>
                 @endif
@@ -30,11 +30,12 @@
                 @endphp
                 @endforeach
                 <td>
+                    <input type="hidden" name="id_trau" value={{ $id }} />
                     <button type="submit" class="btn btn-primary">Update</button>
                 </td>
         </form>
             <td>
-                <form action="" method="POST">
+                <form action="{{ route('admin-del-trau') }}" method="POST">
                     @csrf                    
                     <input type="hidden" name="id_trau" value={{ $id }} />
                     <button type="submit" class="btn btn-primary">Delete</button>

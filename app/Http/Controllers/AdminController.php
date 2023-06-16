@@ -495,11 +495,11 @@ class AdminController extends Controller
 
     public function Admin_updTrau(Request $request){
 
-        $ther = new Therapy();
+        $trau = new Trauma();
         $sel = 7;
 
-        $result = $ther->updateTherapy(intval($request->id_ther),$request->input1,$request->input2,$request->input3);
+        $result = $trau->updateTrauma(intval($request->id_trau),$request->input1);
 
-        return redirect()->route('admin-ther', ['sel' => $sel]);
+        return redirect()->route('admin-trau', ['sel' => $sel]);
     }
 }
