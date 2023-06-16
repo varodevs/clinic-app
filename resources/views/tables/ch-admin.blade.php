@@ -13,7 +13,7 @@
     <tbody>
         @if ($array != null)
         @foreach ($array as $row)
-        <form action="{{ route('admin-del-ch') }}" method="POST">
+        <form action="{{ route('admin-upd-ch') }}" method="POST">
             @csrf
             <tr>
                 @php
