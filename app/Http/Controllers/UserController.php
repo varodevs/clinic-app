@@ -265,9 +265,7 @@ class UserController extends Controller
                 'country' => 'max:25',
                 'number' => 'max:3',
                 'flat' => 'max:3',
-                 ]);
-
-                 $addr = new Address();
+                 ]);                 
 
                  $addr = Address::find(intval($request->cod_address));
 
@@ -286,7 +284,8 @@ class UserController extends Controller
                  $addr->save();
             
             //$result = $addr->createAddress($request->street,$request->pc,$request->city,$request->country,$request->number,$request->flat,intval($request->cod_pat));
-
+            $addr = new Address();
+                
             $address = $addr->getAddressByCod($request->cod_pat);
 
             return redirect()->route('profile')->with(['scrollToSection' => 'section','address'=> $address]);
