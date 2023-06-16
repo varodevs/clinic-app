@@ -47,12 +47,12 @@
             <label for="image">Upload Image:</label>
             <input type="file" name="image" id="image">
         </div>
-        <button class="btn btn-primary _submit" type="submit">Upload</button>
+        <button class="btn btn-primary _submit" type="submit" @if($patient != null) disabled @endif>Upload</button>
     </form>
 </div>
 <div class="col-9 align-self-center">
     <h4>Address</h4>
-    <form action="{{ route('add-address') }}" method="GET">
+    <form action="{{ route('add-addr') }}" method="POST">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Street</span>
             <input type="text" class="form-control" placeholder="Street" name="street" aria-label="pn" aria-describedby="basic-addon1">
@@ -88,6 +88,6 @@
             <input type="text" class="form-control" placeholder="Flat" name="flat" aria-label="pn" aria-describedby="basic-addon1">
         </div>
         <input type="hidden" name="cod_pat" @if($patient != null) value="{{ $patient->cod_patient }}" @endif>
-        <button class="btn btn-primary _submit" type="submit">Add Address</button>
+        <button class="btn btn-primary _submit" type="submit" @if($patient != null) disabled @endif>Add Address</button>
     </form>
 </div>
