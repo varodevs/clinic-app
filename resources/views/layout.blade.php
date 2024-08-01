@@ -1,4 +1,4 @@
-@vite(['resources/sass/app.scss','resources/css/app.css', 'resources/js/app.js'])
+@vite(['resources/scss/app.scss','resources/css/app.css', 'resources/js/app.js'])
 <!DOCTYPE html>
 <html lang="en">
 <head>
