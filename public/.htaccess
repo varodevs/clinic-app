@@ -4,7 +4,7 @@
 </IfModule>
 
 <IfModule mod_headers.c>
-    Header set Access-Control-Allow-Origin "https://www.vitalcore.es"
+    Header set Access-Control-Allow-Origin "https://vitalcore.vercel.app"
 </IfModule>
 
 RewriteEngine On
