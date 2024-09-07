@@ -11,13 +11,6 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    css: {
-        preprocessorOptions: {
-            scss: {
-                additionalData: `@import "@/resources/scss/app.scss";`, // If you need global SCSS variables or mixins
-            },
-        },
-    },
     build: {
         outDir: 'public/build',
         manifest: true,
