@@ -22,7 +22,10 @@ export default defineConfig({
         outDir: 'public/build',
         manifest: true,
         rollupOptions: {
-          input: 'public/index.php',
+            output: {
+                // General pattern for asset file names
+                assetFileNames: 'assets/[name].[hash].[ext]',
+            },
         },
       },
 });
