@@ -3,7 +3,7 @@
     "scripts": {
         "dev": "vite --host 0.0.0.0",
         "build": "vite build",
-        "vercel-dev": "echo hello",
+        "vercel-build": "echo hello",
         "postinstall": "composer install --ignore-platform-reqs && npm run build"
     },
     "devDependencies": {
