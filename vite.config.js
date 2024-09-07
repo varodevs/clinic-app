@@ -15,7 +15,7 @@ export default defineConfig({
         outDir: 'public/build',
         manifest: true,
         rollupOptions: {
-          input: 'public\index.php',
+          input: 'public/index.php',
         },
       },
 });
