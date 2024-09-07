@@ -54,15 +54,23 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['stderr'], // Switch from 'single' to 'stderr'
+            'channels' => ['single'],
             'ignore_exceptions' => false,
         ],
 
-        // File-based log channels like 'single', 'daily', and 'emergency' are not suitable for Vercel.
-
-        'stderr' => [
-            'driver' => 'errorlog', // Log to the error log
+        'single' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
+            'replace_placeholders' => true,
+        ],
+
+        'daily' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/laravel.log'),
+            'level' => env('LOG_LEVEL', 'debug'),
+            'days' => 14,
+            'replace_placeholders' => true,
         ],
 
         'slack' => [
@@ -81,6 +89,18 @@ return [
             'handler_with' => [
                 'host' => env('PAPERTRAIL_URL'),
                 'port' => env('PAPERTRAIL_PORT'),
+                'connectionString' => 'tls://'.env('PAPERTRAIL_URL').':'.env('PAPERTRAIL_PORT'),
+            ],
+            'processors' => [PsrLogMessageProcessor::class],
+        ],
+
+        'stderr' => [
+            'driver' => 'monolog',
+            'level' => env('LOG_LEVEL', 'debug'),
+            'handler' => StreamHandler::class,
+            'formatter' => env('LOG_STDERR_FORMATTER'),
+            'with' => [
+                'stream' => 'php://stderr',
             ],
             'processors' => [PsrLogMessageProcessor::class],
         ],
@@ -88,6 +108,7 @@ return [
         'syslog' => [
             'driver' => 'syslog',
             'level' => env('LOG_LEVEL', 'debug'),
+            'facility' => LOG_USER,
             'replace_placeholders' => true,
         ],
 
@@ -100,6 +121,10 @@ return [
         'null' => [
             'driver' => 'monolog',
             'handler' => NullHandler::class,
+        ],
+
+        'emergency' => [
+            'path' => storage_path('logs/laravel.log'),
         ],
     ],
 
