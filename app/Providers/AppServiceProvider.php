@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
 
 if(env('APP_ENV') == 'production'){
-    URL::forceScheme(‘https’);
+    URL::forceScheme('https');
 }
 
 class AppServiceProvider extends ServiceProvider
