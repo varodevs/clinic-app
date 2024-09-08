@@ -13,6 +13,7 @@ export default defineConfig({
         }),
     ],
     build: {
+        assetsInlineLimit: 0,
         outDir: 'public/build',
         manifest: true,
         rollupOptions: {
