@@ -214,6 +214,10 @@ Route::post('user/new-address', [UserController::class, 'addAddr'])->name('add-a
 
 Route::post('user/update-address', [UserController::class, 'updAddr'])->name('upd-addr');
 
+Route::get('/create-symlink', function (){
+    symlink(storage_path('/app/public'), public_path('storage'));
+    echo "Symlink Created. Thanks";
+});
 
 
 //db test
