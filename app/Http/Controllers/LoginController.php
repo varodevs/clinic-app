@@ -43,13 +43,13 @@ class LoginController extends Controller
                     $request->session()->put('username', $user_by_id->username);
     
                     switch($role){
-                        case 4:
+                        case 0:
                             return redirect('/admin')->with('status', 'Login successful');
                             break;
-                        case 5:
+                        case 1:
                             return redirect('/')->with('status', 'Login successful');
                             break;                                                
-                        case 6:
+                        case 2:
                             if($user_by_id->active != 0){
                                 return redirect('/verify')->with('status', 'Login successful, but needs verification');
                             }else{
