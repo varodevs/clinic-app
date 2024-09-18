@@ -28,7 +28,7 @@ class AdminController extends Controller
     {
         $appointment = new Appointment();
         $emp = new Employee();
-        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $employee = $emp->getEmployeeByUser(Redis::get('id_user'));
         $img_path = $employee->img_path;
         $sel=1;
         $array = $appointment->getAppoints();
@@ -39,7 +39,7 @@ class AdminController extends Controller
     {
         $appointment = new Appointment();
         $emp = new Employee();
-        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $employee = $emp->getEmployeeByUser(Redis::get('id_user'));
         $img_path = $employee->img_path;
         $sel=1;
 
@@ -51,7 +51,7 @@ class AdminController extends Controller
     {
         $patient = new Patient();
         $emp = new Employee();
-        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $employee = $emp->getEmployeeByUser(Redis::get('id_user'));
         $img_path = $employee->img_path;
         $sel=2;
 
@@ -62,7 +62,7 @@ class AdminController extends Controller
     public function Admin_emp()
     {
         $emp = new Employee();
-        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $employee = $emp->getEmployeeByUser(Redis::get('id_user'));
         $img_path = $employee->img_path;
         $sel=3;
 
@@ -74,7 +74,7 @@ class AdminController extends Controller
     {
         $user = new User();
         $emp = new Employee();
-        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $employee = $emp->getEmployeeByUser(Redis::get('id_user'));
         $img_path = $employee->img_path;
         $sel=4;
 
@@ -86,7 +86,7 @@ class AdminController extends Controller
     {
         $ther = new Therapy();
         $emp = new Employee();
-        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $employee = $emp->getEmployeeByUser(Redis::get('id_user'));
         $img_path = $employee->img_path;
         $sel=5;
 
@@ -98,7 +98,7 @@ class AdminController extends Controller
     {
         $ch = new Ch();
         $emp = new Employee();
-        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $employee = $emp->getEmployeeByUser(Redis::get('id_user'));
         $img_path = $employee->img_path;
         $sel=6;
 
@@ -110,7 +110,7 @@ class AdminController extends Controller
     {
         $trau = new Trauma();
         $emp = new Employee();
-        $employee = $emp->getEmployeeByUser(session('id_user'));
+        $employee = $emp->getEmployeeByUser(Redis::get('id_user'));
         $img_path = $employee->img_path;
         $sel=7;
 
