@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
@@ -37,10 +38,17 @@ class LoginController extends Controller
                 $role = $user_by_id->role_cod_role;
     
                 if($email == $user_by_id->email && Hash::check($password, $user_by_id->password)){
-    
-                    $request->session()->put('id_user', $id_user);
-                    $request->session()->put('role', $role);
-                    $request->session()->put('username', $user_by_id->username);
+                    
+                    //Redis session storage
+
+                    Redis::set('id_user', $id_user);
+                    Redis::set('role', $role);
+                    Redis::set('username', $user_by_id->username);
+
+                    
+                    // $request->session()->put('id_user', $id_user);
+                    // $request->session()->put('role', $role);
+                    // $request->session()->put('username', $user_by_id->username);
     
                     switch($role){
                         case 0:
@@ -69,9 +77,8 @@ class LoginController extends Controller
     }
 
     public function Logout(Request $request){
-        session()->forget('id_user');
-        session()->forget('role');
-        session()->forget('username');
+        
+        Redis::del('id_user', 'role', 'username');
 
         return redirect('login')->with('status', 'Logged out');
     }
