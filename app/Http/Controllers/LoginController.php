@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
@@ -21,6 +22,7 @@ class LoginController extends Controller
      */
     public function Login_done(Request $request)
     {
+        dd(Session::all());
         $this->validate(request(),[
             'email' => 'required|email|min:8|max:35',
             'password' => 'required|min:8|max:15',
