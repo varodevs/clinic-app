@@ -16,6 +16,7 @@ class LoginController extends Controller
     public function Login_view()
     {
         return view('login');
+        Session::put('test', 'sesion de los cojones');
     }
     /**
      * Handles Login form submit
