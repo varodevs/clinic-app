@@ -43,9 +43,9 @@ class LoginController extends Controller
                     
                     //Redis session storage
 
-                    Redis::set('id_user', $id_user);
-                    Redis::set('role', $role);
-                    Redis::set('username', $user_by_id->username);
+                    Session::put('id_user', $id_user);
+                    Session::put('role', $role);
+                    Session::put('username', $user_by_id->username);
 
                     
                     // $request->session()->put('id_user', $id_user);
@@ -80,7 +80,7 @@ class LoginController extends Controller
 
     public function Logout(Request $request){
         
-        Redis::del('id_user', 'role', 'username');
+        Session::flush();
 
         return redirect('login')->with('status', 'Logged out');
     }
